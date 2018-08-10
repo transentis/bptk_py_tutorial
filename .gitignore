@@ -1,0 +1,11 @@
+*.pyc
+*__pycache
+*.csv
+*.log
+results/
+venv
+.idea/
+.ipynb_checkpoints/
+dist/
+*.egg-info
+build/
