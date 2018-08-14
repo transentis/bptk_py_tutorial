@@ -59,11 +59,11 @@ class simulation_model():
     self.stoptime = 120
     self.equations = {
   	# Stocks 
-  		'closedTasks': lambda t : 0 if  t  <=  self.starttime  else self.memoize('closedTasks',t-self.dt) +  self.dt  * ( self.memoize('completionRate',t-self.dt) ),
+  		'closedTasks': lambda t : ( (0) if ( t  <=  self.starttime ) else (self.memoize('closedTasks',t-self.dt) +  self.dt  * ( self.memoize('completionRate',t-self.dt) )) ),
 
-  		'openTasks': lambda t : self.memoize('initialOpenTasks', t) if  t  <=  self.starttime  else self.memoize('openTasks',t-self.dt) +  self.dt  * ( -1 * ( self.memoize('completionRate',t-self.dt) ) ),
+  		'openTasks': lambda t : ( (self.memoize('initialOpenTasks', t)) if ( t  <=  self.starttime ) else (self.memoize('openTasks',t-self.dt) +  self.dt  * ( -1 * ( self.memoize('completionRate',t-self.dt) ) )) ),
 
-  		'staff': lambda t : self.memoize('initialStaff', t) if  t  <=  self.starttime  else self.memoize('staff',t-self.dt) +  self.dt  * 0,
+  		'staff': lambda t : ( (self.memoize('initialStaff', t)) if ( t  <=  self.starttime ) else (self.memoize('staff',t-self.dt) +  self.dt  * 0) ),
     # flows 
   		'completionRate': lambda t : max( 0, min( self.memoize('openTasks', t), self.memoize('staff', t) * self.memoize('productivity', t) / self.memoize('effortPerTask', t) ) ),
   		# converters 

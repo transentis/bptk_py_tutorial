@@ -4,19 +4,12 @@
     "model":"simulation_models/sd_simple_project",
     "scenarios":{
       "scenario100": {
-        "constants": {
-          "deadline": 100,
-          "effortPerTask": 1,
-          "initialOpenTasks": 100,
-          "initialStaff": 1
-        }
+          "constants": {
+              
+          }
       },
       "scenario80":{
         "constants": {
-          "deadline": 80,
-          "effortPerTask": 1,
-          "initialOpenTasks": 100,
-          "initialStaff": 1
         }
       },
     "scenario120":{
