@@ -12,33 +12,22 @@
 import statistics
 import math
 import random
+import numpy as np
+from scipy.interpolate import interp1d
 
-# linear interpolation between a set points
-def LERP(x, points):
-	first = 0
-	last = len(points)-1
+# linear interpolation between a set of points
+def LERP(x,points):
+    x_vals = np.array([ x[0] for x in points])
+    y_vals = np.array([x[1] for x in points])
 
-	def getX(i):
-			return points[i][0]
+    if x<= x_vals[0]:
+        return y_vals[0]
 
-	def getY(i):
-			return points[i][1]
+    if x >= x_vals[len(x_vals)-1]:
+        return y_vals[len(x_vals)-1]
 
-	def getOffset(x):
-			for i in range(first,last):
-					if x < getX(i): return i-1
-			return last -1
-
-	if x <= getX(first): return getY(first)
-	if x >= getX(last): return getY(last)
-
-	n = getOffset(x)
-	x0 = getX(n)
-	y0 = getY(n)
-	x1 = getX(n+1)
-	y1 = getY(n+1)
-
-	return (y1 - y0) * (x - x0) / (x1 - x0) + y0
+    f = interp1d(x_vals, y_vals)
+    return float(f(x))
 
 
 class simulation_model():
