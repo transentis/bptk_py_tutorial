@@ -5,7 +5,7 @@
     "scenarios":{
       "scenario100": {
           "constants": {
-              "deadline" : 100
+              "deadline" : "100"
           }
       },
       "scenario80":{
