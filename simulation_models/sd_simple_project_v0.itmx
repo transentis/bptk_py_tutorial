@@ -8,7 +8,7 @@
 		<product version="1.1" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<sim_specs isee:simulation_delay="0" method="Euler" time_units="Days" isee:pause_after_rates="false" isee:instantaneous_flows="false">
-		<start>1</start>
+		<start>0</start>
 		<stop>120</stop>
 		<dt>0.25</dt>
 	</sim_specs>
@@ -83,7 +83,7 @@
 				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
 				<lamp color="black" background="white" font_size="9pt"/>
 			</style>
-			<view isee:show_pages="true" page_width="571" page_height="818" isee:page_cols="2" isee:scroll_x="200" isee:scroll_y="7.5" zoom="160" isee:popup_graphs_are_comparative="true" type="stock_flow">
+			<view isee:show_pages="true" page_width="571" page_height="818" isee:page_cols="2" isee:scroll_x="517.5" isee:scroll_y="76.25" zoom="160" isee:popup_graphs_are_comparative="true" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top" label_angle="0">
 						<shape type="rectangle" width="45" height="35"/>
@@ -173,7 +173,9 @@
 				<style/>
 				<stacked_container uid="13" x="110" y="74" width="492" height="282">
 					<graph background="#FFFFC9" axis_label_font_size="9pt" x="356" y="215" comparative="true" type="time_series" isee:time_precision="1" isee:time_scale_by="1" show_grid="true" include_units_in_legend="false" plot_numbers="true" num_x_grid_lines="5" num_y_grid_lines="5" num_x_labels="5" num_y_labels="3" title="title" left_axis_multi_scale="true" left_axis_auto_scale="true" right_axis_multi_scale="true" right_axis_auto_scale="true">
-						<isee:comparative_list next_run_active="true"/>
+						<isee:comparative_list next_run_active="true">
+							<isee:data name="Run 1"/>
+						</isee:comparative_list>
 						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
 							<format precision="1" scale_by="1"/>
 							<entity name="Open_tasks"/>
@@ -207,7 +209,9 @@
 				<style/>
 				<stacked_container uid="18" x="128" y="86" width="475" height="270">
 					<table background="#E0E0E0" font_size="9pt" orientation="vertical" column_width="59" interval="1" report_balances="ending" report_flows="summed" header_text_align="center" header_font_size="12pt" x="128" y="86" width="475" height="270" comparative="true" title="title">
-						<isee:comparative_list next_run_active="true"/>
+						<isee:comparative_list next_run_active="true">
+							<isee:data name="Run 1"/>
+						</isee:comparative_list>
 						<item type="time"/>
 						<item>
 							<format precision="0.01" scale_by="1" delimit_000s="true"/>
