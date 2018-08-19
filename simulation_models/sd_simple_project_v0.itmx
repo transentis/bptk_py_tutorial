@@ -2,7 +2,7 @@
 <xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
 	<header>
 		<smile version="1.0" namespace="std, isee" uses_arrays="1"/>
-		<name>sd_simple_project</name>
+		<name>sd_simple_project_v0</name>
 		<uuid>f68e3a2e-4535-45cd-9927-72c71ca297e7</uuid>
 		<vendor>isee systems, inc.</vendor>
 		<product version="1.1" isee:saved_by_v1="true" lang="en">Stella Architect</product>
@@ -52,7 +52,7 @@
 				<gf>
 					<xscale min="0" max="2.5"/>
 					<yscale min="0" max="1.25"/>
-					<ypts>0.4,0.444,0.506,0.594,1,1.119,1.1625,1.2125,1.2375,1.245,1.25</ypts>
+					<ypts>0.093,0.093,0.093,0.086,1,1.186,1.236,1.25,1.25,1.25,1.25</ypts>
 				</gf>
 			</aux>
 			<stock name="Closed Tasks">
@@ -60,7 +60,7 @@
 				<inflow>Completion_rate</inflow>
 			</stock>
 			<aux name="Initial Open Tasks">
-				<eqn>100</eqn>
+				<eqn>110</eqn>
 			</aux>
 			<aux name="Initial Staff">
 				<eqn>1</eqn>
@@ -83,7 +83,7 @@
 				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
 				<lamp color="black" background="white" font_size="9pt"/>
 			</style>
-			<view isee:show_pages="true" page_width="571" page_height="818" isee:page_cols="2" isee:scroll_x="76.25" isee:scroll_y="68.75" zoom="160" isee:popup_graphs_are_comparative="true" type="stock_flow">
+			<view isee:show_pages="true" page_width="571" page_height="818" isee:page_cols="2" isee:scroll_x="200" isee:scroll_y="7.5" zoom="160" isee:popup_graphs_are_comparative="true" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top" label_angle="0">
 						<shape type="rectangle" width="45" height="35"/>
@@ -161,7 +161,7 @@
 				<aux color="black" font_color="black" x="440" y="369" name="Remaining time"/>
 				<stock color="black" font_color="black" x="385" y="210" name="Staff"/>
 				<aux color="black" font_color="black" x="458" y="227" name="Effort per Task"/>
-				<aux color="black" font_color="black" x="557" y="220" name="Productivity"/>
+				<aux color="black" font_color="black" x="561" y="220" name="Productivity"/>
 				<stock color="black" font_color="black" x="557" y="131" name="Closed Tasks"/>
 				<aux x="780" y="123" name="Initial Open Tasks"/>
 				<aux x="776" y="190" name="Initial Staff"/>

@@ -1,0 +1,67 @@
+{
+  "smSimpleProjectManagement":{
+    "source":"simulation_models/sd_simple_project.itmx",
+    "model":"simulation_models/sd_simple_project",
+    "scenarios":{
+      "base":{},
+      "scenario100": {
+        "constants": {
+          "deadline": 100,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        }
+      },
+      "scenario80":{
+        "constants": {
+          "deadline": 80,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        }
+      },
+    "scenario120":{
+        "constants": {
+          "deadline": 120,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        }
+      }
+    }
+  },
+    "smSimpleProjectManagementV0":{
+    "source":"simulation_models/sd_simple_project_v0.itmx",
+    "model":"simulation_models/sd_simple_project_v0",
+    "scenarios":{
+      "base":{},
+      "scenario100": {
+        "constants": {
+          "deadline": 100,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        }
+      },
+      "scenario80":{
+        "constants": {
+          "deadline": 80,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        }
+      },
+    "scenario120":{
+        "constants": {
+          "deadline": 120,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        }
+      }
+    }
+  }
+}
+
+
+

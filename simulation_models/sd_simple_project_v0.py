@@ -68,14 +68,14 @@ class simulation_model():
       ,
   		'effortPerTask': lambda t : 1
       ,
-  		'initialOpenTasks': lambda t : 100
+  		'initialOpenTasks': lambda t : 110
       ,
   		'initialStaff': lambda t : 1
       ,
     }
 
     self.points = {
-  		'productivity': [ [0,0.4],[0.25,0.444],[0.5,0.506],[0.75,0.594],[1,1],[1.25,1.119],[1.5,1.1625],[1.75,1.2125],[2,1.2375],[2.25,1.245],[2.5,1.25] ],
+  		'productivity': [ [0,0.093],[0.25,0.093],[0.5,0.093],[0.75,0.086],[1,1],[1.25,1.186],[1.5,1.236],[1.75,1.25],[2,1.25],[2.25,1.25],[2.5,1.25] ],
   	 }
 
     self.dimensions = {
