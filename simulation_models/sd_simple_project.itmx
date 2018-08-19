@@ -10,13 +10,18 @@
 	<sim_specs isee:simulation_delay="0" method="Euler" time_units="Days" isee:pause_after_rates="false" isee:instantaneous_flows="false">
 		<start>0</start>
 		<stop>120</stop>
-		<dt>0.25</dt>
+		<dt>1</dt>
 	</sim_specs>
 	<dimensions>
 		<dim name="Dim_Name_1" size="1"/>
 	</dimensions>
 	<isee:prefs show_module_prefix="true" live_update_on_drag="true" layer="model"/>
 	<model_units/>
+	<data>
+		<export frequency="on_demand" isee:overwrite="false" resource="/Users/olivergrasl/git/bptk_py_readme/results/stella_results.xlsx" type="Excel" worksheet="Scenario120" interval="DT">
+			<all/>
+		</export>
+	</data>
 	<isee:sensi_specs run="false" method="multivariate" runs="0"/>
 	<model>
 		<variables>
@@ -60,7 +65,7 @@
 				<inflow>Completion_rate</inflow>
 			</stock>
 			<aux name="Initial Open Tasks">
-				<eqn>100</eqn>
+				<eqn>120</eqn>
 			</aux>
 			<aux name="Initial Staff">
 				<eqn>1</eqn>
@@ -176,6 +181,9 @@
 						<isee:comparative_list next_run_active="true">
 							<isee:data name="Run 1"/>
 							<isee:data name="Run 2"/>
+							<isee:data name="Run 3"/>
+							<isee:data name="Run 4"/>
+							<isee:data name="Run 5"/>
 						</isee:comparative_list>
 						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
 							<format precision="1" scale_by="1"/>
@@ -213,6 +221,9 @@
 						<isee:comparative_list next_run_active="true">
 							<isee:data name="Run 1"/>
 							<isee:data name="Run 2"/>
+							<isee:data name="Run 3"/>
+							<isee:data name="Run 4"/>
+							<isee:data name="Run 5"/>
 						</isee:comparative_list>
 						<item type="time"/>
 						<item>

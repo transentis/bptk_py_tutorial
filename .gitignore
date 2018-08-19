@@ -2,7 +2,6 @@
 *__pycache
 *.csv
 *.log
-results/
 venv
 .idea/
 .ipynb_checkpoints/

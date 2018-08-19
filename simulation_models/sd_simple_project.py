@@ -43,7 +43,7 @@ class simulation_model():
 
   def __init__(self):
     # Simulation Buildins
-    self.dt = 0.25
+    self.dt = 1
     self.starttime = 0
     self.stoptime = 120
     self.equations = {
@@ -68,7 +68,7 @@ class simulation_model():
       ,
   		'effortPerTask': lambda t : 1
       ,
-  		'initialOpenTasks': lambda t : 100
+  		'initialOpenTasks': lambda t : 120
       ,
   		'initialStaff': lambda t : 1
       ,
