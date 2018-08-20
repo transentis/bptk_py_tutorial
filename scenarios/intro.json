@@ -1,35 +1,31 @@
-{
-  "smSimpleProjectManagement":{
+{  
+    "smSimpleProjectManagement":{
     "source":"simulation_models/sd_simple_project.itmx",
     "model":"simulation_models/sd_simple_project",
-    "scenarios": {
-      "base": {},
-      "scenario100": {
-        "constants": {
-          "deadline": 100,
-          "effortPerTask": 1,
-          "initialOpenTasks": 100,
-          "initialStaff": 1
-        }
-      },
-      "scenario80": {
-        "constants": {
+    "base_constants": {
           "deadline": 100,
           "effortPerTask": 1,
           "initialOpenTasks": 80,
           "initialStaff": 1
+    },
+    "scenarios": {
+      "base": {},
+      "scenario100": {
+        "constants": {
+          "initialOpenTasks": 100
+        }
+      },
+      "scenario80": {
+        "constants": {
         }
       },
       "scenario120": {
         "constants": {
-          "deadline": 100,
-          "effortPerTask": 1,
-          "initialOpenTasks": 120,
-          "initialStaff": 1
+          "initialOpenTasks": 120
         },
         "strategy": {
           "20": {
-            "deadline": 110
+            "deadline": 120
           }
         }
       }
