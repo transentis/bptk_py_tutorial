@@ -10,7 +10,7 @@
 	<sim_specs isee:simulation_delay="0" method="Euler" time_units="Days" isee:pause_after_rates="false" isee:instantaneous_flows="false">
 		<start>0</start>
 		<stop>120</stop>
-		<dt>0.25</dt>
+		<dt>1</dt>
 	</sim_specs>
 	<dimensions>
 		<dim name="Dim_Name_1" size="1"/>

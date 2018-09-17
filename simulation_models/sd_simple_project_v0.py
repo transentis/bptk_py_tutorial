@@ -43,7 +43,7 @@ class simulation_model():
 
   def __init__(self):
     # Simulation Buildins
-    self.dt = 0.25
+    self.dt = 1
     self.starttime = 0
     self.stoptime = 120
     self.equations = {
