@@ -1,0 +1,48 @@
+{
+  "ABMsmSimpleProjectManagement": {
+    "type": "abm",
+    "name": "Simple Project Management Model",
+    "model" : "abm.spm.SPM.SPM",
+
+    "scenarios": {
+      "scenarioSPM": {
+        "runspecs": {
+          "starttime": 0,
+          "stoptime": 120,
+          "dt": 1.0
+        },
+        "properties": [
+          {
+            "name": "effortPerTask",
+            "type": "Double",
+            "value": 1,
+            "step": 0.5
+          },
+          {
+            "name": "deadline",
+            "type": "Integer",
+            "value": 120,
+            "step": 1
+          },
+          {
+            "name": "productivity",
+            "type": "Lookup",
+            "value": [[0, 0.4], [0.25, 0.444], [0.5, 0.506], [0.75, 0.594], [1, 1], [1.25, 1.119], [1.5, 1.1625], [1.75, 1.2125], [2, 1.2375], [2.25, 1.245], [2.5, 1.25] ]
+          }
+        ],
+        "agents": [
+          {
+            "name": "staffMember",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "task",
+            "count": 100,
+            "step": 1
+          }
+        ]
+      }
+    }
+  }
+}
