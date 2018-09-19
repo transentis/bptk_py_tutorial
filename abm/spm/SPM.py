@@ -2,6 +2,7 @@ from BPTK_Py import ABModel
 from .staffMember import StaffMember
 from .task import Task
 
+from BPTK_Py.widgets import WidgetLoader
 
 class SPM(ABModel):
 
@@ -47,3 +48,12 @@ class SPM(ABModel):
     def instantiate_model(self):
         self.register_agent_factory(StaffMember.TYPE, lambda agent_id, scenario: StaffMember(agent_id, scenario))
         self.register_agent_factory(Task.TYPE, lambda agent_id, scenario: Task(agent_id, scenario))
+
+
+    def build_widget(self):
+        widgetLoader = WidgetLoader()
+
+        widgetLoader.create_widget("AgentStatusWidget", states={1: Task.STATES["IN_PROGRESS"], 2: Task.STATES["CLOSED"]}, agents=[agent for agent in self.agents if isinstance(agent,Task)])
+
+        return widgetLoader
+
