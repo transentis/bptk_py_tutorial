@@ -52,8 +52,10 @@ class SPM(ABModel):
 
     def build_widget(self):
         widgetLoader = WidgetLoader()
-
-        widgetLoader.create_widget("AgentStatusWidget", states={1: Task.STATES["IN_PROGRESS"], 2: Task.STATES["CLOSED"]}, agents=[agent for agent in self.agents if isinstance(agent,Task)])
-
+        states = {1: Task.STATES["IN_PROGRESS"], 2: Task.STATES["CLOSED"]}
+        agents = [agent for agent in self.agents if isinstance(agent, Task)]
+        
+        widgetLoader.create_widget("AgentStatusWidget", states=states, agents=agents)
+        
         return widgetLoader
 
