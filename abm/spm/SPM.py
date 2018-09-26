@@ -1,10 +1,10 @@
-from BPTK_Py import ABModel
+from BPTK_Py import Model
 from .staffMember import StaffMember
 from .task import Task
 
 from BPTK_Py.widgets import WidgetLoader
 
-class SPM(ABModel):
+class SPM(Model):
 
     def effort_per_task(self):
         return self.get_property("effortPerTask")["value"]
