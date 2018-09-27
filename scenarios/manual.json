@@ -1,6 +1,6 @@
 {
   "smSimpleProjectManagement_Manual": {
-    "model": "simulation_models/simple_project_manual",
+    "model": "simulation_models.simple_project_manual.simulation",
     "base_constants": {
       "deadline": 100,
       "initialOpenTasks": 100

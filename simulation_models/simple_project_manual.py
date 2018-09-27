@@ -3,7 +3,7 @@
 from BPTK_Py import Model
 from BPTK_Py import sd_functions as sd
 
-class simulation_model(Model):
+class simulation(Model):
 
     def __init__(self):
 
