@@ -1,6 +1,6 @@
 {
-  "smSimpleProjectManagement_Manual": {
-    "model": "simulation_models.simple_project_manual.simulation",
+  "smSimpleProjectManagementDslClass": {
+    "model": "simulation_models.simple_project_dsl_class.simulation",
     "base_constants": {
       "deadline": 100,
       "initialOpenTasks": 100
