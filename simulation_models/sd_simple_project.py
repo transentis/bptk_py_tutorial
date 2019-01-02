@@ -61,8 +61,6 @@ class simulation_model():
   		'remainingTime': lambda t : max( self.memoize('deadline', t) - self.memoize('currentDate', t), 0 ),
 
   		'schedulePressure': lambda t : min( ( self.memoize('openTasks', t) * self.memoize('effortPerTask', t) / self.memoize('staff', t) ) / max( self.memoize('remainingTime', t), 1 ), 2.5 ),
-
-  		'totalTasks': lambda t : self.memoize('openTasks', t) + self.memoize('closedTasks', t),
     # gf 
   		'productivity': lambda t : LERP(self.memoize('schedulePressure', t),self.points['productivity']),
     #constants
@@ -89,7 +87,7 @@ class simulation_model():
 
     self.stocks = ['closedTasks','openTasks','staff']
     self.flows = ['completionRate']
-    self.converters = ['currentDate','remainingTime','schedulePressure','totalTasks']
+    self.converters = ['currentDate','remainingTime','schedulePressure']
     self.gf = ['productivity']
     self.constants= ['deadline','effortPerTask','initialOpenTasks','initialStaff']
     self.events = [
