@@ -9,7 +9,7 @@ class StaffMember(Agent):
         super().__init__(sim_id, sim)
 
         self.task = None
-        self.task_progress_in_this_step = 0
+        self.set_property("current_progress", {"type": "Double", "value": 0})
 
     def current_task(self):
         return self.task
@@ -18,9 +18,9 @@ class StaffMember(Agent):
 
         if self.state == "busy":
 
-            progress_made = min(self.task.remaining_effort, self.task_progress_in_this_step)
+            progress_made = min(self.task.remaining_effort, self.current_progress)
 
-            self.task_progress_in_this_step -= progress_made
+            self.current_progress -= progress_made
 
             self.task.receive_instantaneous_event(
                 Event(
@@ -37,7 +37,7 @@ class StaffMember(Agent):
 
                 self.task = None
             else:
-                self.task_progress_in_this_step += self.sim.productivity/self.sim.effort_per_task
+                self.current_progress += self.sim.productivity/self.sim.effort_per_task
 
         if self.state == "available":
 
@@ -49,7 +49,7 @@ class StaffMember(Agent):
 
                 self.state = "busy"
 
-                self.task_progress_in_this_step += self.sim.productivity * self.sim.effort_per_task
+                self.current_progress += self.sim.productivity / self.sim.effort_per_task
 
     def initialize(self):
 

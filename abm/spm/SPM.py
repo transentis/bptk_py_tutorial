@@ -6,14 +6,6 @@ from .task import Task
 class SPM(Model):
 
     @property
-    def effort_per_task(self):
-        return self.get_property("effortPerTask")["value"]
-
-    @property
-    def deadline(self):
-        return self.get_property("deadline")["value"]
-
-    @property
     def productivity(self):
 
         productivity_lookup = self.get_property("productivity")
@@ -54,11 +46,11 @@ class SPM(Model):
 
 
     def build_widget(self):
-        widgetLoader = WidgetLoader()
+        widget_loader = WidgetLoader()
         states = {1: "inProgress", 2: "closed"}
         agents = [agent for agent in self.agents if isinstance(agent, Task)]
         
-        widgetLoader.create_widget("AgentStatusWidget", states=states, agents=agents)
+        widget_loader.create_widget("AgentStatusWidget", states=states, agents=agents)
         
-        return widgetLoader
+        return widget_loader
 

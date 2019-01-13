@@ -13,7 +13,7 @@
         },
         "properties": [
           {
-            "name": "effortPerTask",
+            "name": "effort_per_task",
             "type": "Double",
             "value": 1
           },

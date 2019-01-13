@@ -8,13 +8,10 @@ class Task(Agent):
     def __init__(self, agent_id, sim):
         super().__init__(agent_id, sim)
 
-        self._remaining_effort = self.sim.effort_per_task
+        self.set_property("remaining_effort", {"type": "Double", "value": self.sim.effort_per_task})
+
         self.state = "open"
 
-    @property
-    def remaining_effort(self):
-
-        return self._remaining_effort
 
     def handle_started_event(self, event):
 
@@ -22,7 +19,7 @@ class Task(Agent):
 
     def handle_progress_event(self, event):
 
-        self._remaining_effort = max(self._remaining_effort-event.data["progress"], 0)
+        self.remaining_effort = max(self.remaining_effort-event.data["progress"], 0)
 
         log("TASK - remaining effort: {}".format(self.remaining_effort))
 
