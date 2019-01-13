@@ -1,24 +1,44 @@
 from BPTK_Py import Model
-
+from BPTK_Py.widgets import WidgetLoader
+from .company import Company
+from .customer import Customer
 
 class BassDiffusion(Model):
 
-    def __init__(self, model, data_collector, schedule):
-        super().__init__(model, data_collector, schedule)
+        @property
+        def wom_success(self):
+                return self.get_property("womSuccess")["value"]
 
-        self.WOM_SUCCESS = 0
-        self.WOM_CONTACT_RATE = 0
-        self.ADVERTISING_BUDGET = 0
-        self.PERSONS_REACHED_PER_EURO = 0
-        self.ADVERTISING_SUCCESS = 0
-        self.CUSTOMERS_REACHED = 0
+        @property
+        def wom_contact_rate(self):
+                return self.get_property("womContactRate")["value"]
 
-    def configure(self, config):
-        super().configure(config)
+        @property
+        def advertising_budget(self):
+                return self.get_property("advertisingBudget")["value"]
 
-        self.WOM_SUCCESS = self.get_property("womSuccess")["value"]
-        self.WOM_CONTACT_RATE = self.get_property("womContactRate")["value"]
-        self.ADVERTISING_BUDGET = self.get_property("advertisingBudget")["value"]
-        self.PERSONS_REACHED_PER_EURO = self.get_property("personsReachedPerEuro")["value"]
-        self.ADVERTISING_SUCCESS = self.get_property("advertisingSuccess")["value"]
-        self.CUSTOMERS_REACHED = self.PERSONS_REACHED_PER_EURO * self.ADVERTISING_BUDGET
+        @property
+        def persons_reached_per_euro(self):
+                return self.get_property("personsReachedPerEuro")["value"]
+
+        @property
+        def advertising_success(self):
+                return self.get_property("advertisingSuccess")["value"]
+
+        @property
+        def customers_reached(self):
+                return self.persons_reached_per_euro * self.advertising_budget
+
+        def instantiate_model(self):
+                self.register_agent_factory("company", lambda agent_id, scenario: Company(agent_id, scenario))
+                self.register_agent_factory("customer", lambda agent_id, scenario: Customer(agent_id, scenario))
+
+        def build_widget(self):
+            widgetLoader = WidgetLoader()
+
+            states = {1: "potentialCustomer", 2: "currentCustomer"}
+            agents = [agent for agent in self.agents if isinstance(agent, Customer)]
+
+            widgetLoader.create_widget("AgentStatusWidget", states=states, agents=agents)
+
+            return widgetLoader
