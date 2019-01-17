@@ -18,31 +18,36 @@ class SPM(Model):
 
     @property
     def schedule_pressure(self):
-
         remaining_time = self.deadline - self.scheduler.current_time
-        num_open_tasks = self.agent_count_per_state("task", "open")
-        effort_per_task = self.effort_per_task
         num_staff_members = self.agent_count("staffMember")
-        remaining_effort_tasks_in_progress = 0
+        remaining_effort = 0
 
-        agent_ids = self.agent_ids("staffMember")
+        # calculate the remaining effort for all open tasks
 
-        for agent_id in agent_ids:
+        task_ids = self.agent_ids("task")
 
-            task_in_progress = self.agent(agent_id).current_task()
+        for task_id in task_ids:
+            task = self.agent(task_id)
 
-            remaining_effort_tasks_in_progress += task_in_progress.remaining_effort
+            if task.state == "open":
+                remaining_effort += task.effort
 
-        remaining_effort = effort_per_task * num_open_tasks+remaining_effort_tasks_in_progress
+        # now add the remaining effort for the tasks currently being worked on
 
-        schedule_pressure = remaining_effort/(remaining_time*num_staff_members) if remaining_time > 0 else 2.5
+        staff_ids = self.agent_ids("staffMember")
+
+        for staff_id in staff_ids:
+            task_in_progress = self.agent(staff_id).task
+            remaining_effort += task_in_progress.remaining_effort
+
+        schedule_pressure = remaining_effort/(remaining_time * num_staff_members) if remaining_time > 0 else 2.5
 
         return schedule_pressure
 
 
     def instantiate_model(self):
-        self.register_agent_factory("staffMember", lambda agent_id, scenario: StaffMember(agent_id, scenario))
-        self.register_agent_factory("task", lambda agent_id, scenario: Task(agent_id, scenario))
+        self.register_agent_factory("staffMember", lambda agent_id, model, properties: StaffMember(agent_id, model, properties))
+        self.register_agent_factory("task", lambda agent_id, model, properties: Task(agent_id, model, properties))
 
 
     def build_widget(self):

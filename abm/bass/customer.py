@@ -5,11 +5,11 @@ from BPTK_Py import Event
 class Customer(Agent):
 
     def handle_advert_event(self, event):
-        if self.is_event_relevant(self.sim.advertising_success):
+        if self.is_event_relevant(self.model.advertising_success):
             self.state = "currentCustomer"
 
     def handle_wom_event(self, event):
-        if self.is_event_relevant(self.sim.wom_success):
+        if self.is_event_relevant(self.model.wom_success):
             self.state = "currentCustomer"
 
     def act(self, time, time_step, step_num):
@@ -17,9 +17,9 @@ class Customer(Agent):
         super().act(time, time_step, step_num)
 
         if self.state == "currentCustomer":
-            self.sim.random_events(
+            self.model.random_events(
                 "customer",
-                self.sim.wom_contact_rate,
+                self.model.wom_contact_rate,
                 lambda agent_id: Event("wordOfMouth", self.id, agent_id)
             )
 

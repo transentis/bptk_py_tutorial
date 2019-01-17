@@ -12,12 +12,7 @@
           "dt": 1.0
         },
         "properties": [
-          {
-            "name": "effort_per_task",
-            "type": "Double",
-            "value": 1
-          },
-          {
+         {
             "name": "deadline",
             "type": "Integer",
             "value": 120
@@ -32,10 +27,18 @@
           {
             "name": "staffMember",
             "count": 1
-          },
+         },
           {
             "name": "task",
-            "count": 100
+            "count": 100,
+            "properties":
+            {
+              "effort":
+              {
+                "type": "Double",
+                "value": 1
+              }
+            }
           }
         ]
       }

@@ -5,15 +5,6 @@ from BPTK_Py import Event
 class StaffMember(Agent):
 
 
-    def __init__(self, sim_id, sim):
-        super().__init__(sim_id, sim)
-
-        self.task = None
-        self.set_property("current_progress", {"type": "Double", "value": 0})
-
-    def current_task(self):
-        return self.task
-
     def act(self, time, round_no, step_no):
 
         if self.state == "busy":
@@ -37,11 +28,12 @@ class StaffMember(Agent):
 
                 self.task = None
             else:
-                self.current_progress += self.sim.productivity/self.sim.effort_per_task
+                self.productivity = self.model.productivity
+                self.current_progress += self.model.productivity/self.task.effort
 
         if self.state == "available":
 
-            self.task = self.sim.next_agent("task", "open")
+            self.task = self.model.next_agent("task", "open")
 
             if self.task is not None:
 
@@ -49,9 +41,14 @@ class StaffMember(Agent):
 
                 self.state = "busy"
 
-                self.current_progress += self.sim.productivity / self.sim.effort_per_task
+                self.productivity = self.model.productivity
+                self.current_progress += self.model.productivity / self.task.effort
 
     def initialize(self):
 
         self.agent_type = "staffMember"
         self.state = "available"
+        self.set_property("current_progress", {"type": "Double", "value": 0})
+        self.set_property("productivity", {"type": "Double", "value": 1})
+        self.set_property("task", {"type": "Agent", "value": None})
+

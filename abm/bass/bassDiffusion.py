@@ -10,8 +10,8 @@ class BassDiffusion(Model):
                  return self.persons_reached_per_euro * self.advertising_budget
 
         def instantiate_model(self):
-                self.register_agent_factory("company", lambda agent_id, scenario: Company(agent_id, scenario))
-                self.register_agent_factory("customer", lambda agent_id, scenario: Customer(agent_id, scenario))
+                self.register_agent_factory("company", lambda agent_id, model, properties: Company(agent_id, model, properties))
+                self.register_agent_factory("customer", lambda agent_id, model, properties: Customer(agent_id, model, properties))
 
         def build_widget(self):
             widget_loader = WidgetLoader()
