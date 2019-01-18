@@ -12,17 +12,10 @@
           "dt": 1.0
         },
         "properties": [
-          {
-            "name": "effortPerTask",
-            "type": "Double",
-            "value": 1,
-            "step": 0.5
-          },
-          {
+         {
             "name": "deadline",
             "type": "Integer",
-            "value": 120,
-            "step": 1
+            "value": 120
           },
           {
             "name": "productivity",
@@ -33,13 +26,19 @@
         "agents": [
           {
             "name": "staffMember",
-            "count": 1,
-            "step": 1
-          },
+            "count": 1
+         },
           {
             "name": "task",
             "count": 100,
-            "step": 1
+            "properties":
+            {
+              "effort":
+              {
+                "type": "Double",
+                "value": 1
+              }
+            }
           }
         ]
       }

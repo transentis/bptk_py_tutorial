@@ -1,19 +1,16 @@
 from BPTK_Py import Agent
 from BPTK_Py import Event
-from .events import Events
-from .customer import Customer
 
 
 class Company(Agent):
-    TYPE = "company"
 
     def act(self, time, time_step, step_num):
-        self.sim.random_events(
-            Customer.TYPE,
-            self.sim.CUSTOMERS_REACHED,
-            lambda agent_id: Event(Events.ADVERT, self.id, agent_id)
+        self.model.random_events(
+            "customer",
+            self.model.customers_reached,
+            lambda agent_id: Event("advert", self.id, agent_id)
         )
 
     def initialize(self):
-        self.agent_type = Company.TYPE
+        self.agent_type = "company"
         self.state = "company"

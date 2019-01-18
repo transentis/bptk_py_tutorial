@@ -1,62 +1,53 @@
 from BPTK_Py import Agent
 from BPTK_Py import Event
-from .events import Events
-from .task import Task
 
 
 class StaffMember(Agent):
 
-    TYPE = "staffMember"
+    def initialize(self):
 
-    STATES = {"BUSY": "busy", "AVAILABLE": "available"}
+        self.agent_type = "staffMember"
+        self.state = "available"
+        self.set_property("current_progress", {"type": "Double", "value": 0})
+        self.set_property("productivity", {"type": "Double", "value": 1})
+        self.set_property("task", {"type": "Agent", "value": None})
 
-    def __init__(self, sim_id, sim):
-        super().__init__(sim_id, sim)
-
-        self.task = None
-        self.task_progress_in_this_step = 0
-
-    def current_task(self):
-        return self.task
 
     def act(self, time, round_no, step_no):
 
-        if self.state == StaffMember.STATES["BUSY"]:
+        if self.state == "available":
 
-            progress_made = min(self.task.remaining_effort(), self.task_progress_in_this_step)
+            self.task = self.model.next_agent("task", "open")
 
-            self.task_progress_in_this_step -= progress_made
+            if self.task is not None:
+                self.task.receive_instantaneous_event(Event("taskStarted", self.id, self.task.id))
+
+                self.state = "busy"
+
+                self.productivity = self.model.productivity
+                self.current_progress += self.model.productivity / self.task.effort
+
+        if self.state == "busy":
+
+            progress_made = min(self.task.remaining_effort, self.current_progress)
+
+            self.current_progress -= progress_made
 
             self.task.receive_instantaneous_event(
                 Event(
-                    Events.TASK_PROGRESS,
+                    "taskProgress",
                     self.id,
                     self.task.id,
                     {"progress": progress_made}
                 )
             )
 
-            if self.task.state == Task.STATES["CLOSED"]:
-
-                self.state = StaffMember.STATES["AVAILABLE"]
-
+            if self.task.state == "closed":
+                self.state = "available"
                 self.task = None
             else:
-                self.task_progress_in_this_step += self.sim.productivity()/self.sim.effort_per_task()
+                self.productivity = self.model.productivity
+                self.current_progress += self.model.productivity/self.task.effort
 
-        if self.state == StaffMember.STATES["AVAILABLE"]:
 
-            self.task = self.sim.next_agent(Task.TYPE, Task.STATES["OPEN"])
 
-            if self.task is not None:
-
-                self.task.receive_instantaneous_event(Event(Events.TASK_STARTED, self.id, self.task.id))
-
-                self.state = StaffMember.STATES["BUSY"]
-
-                self.task_progress_in_this_step += self.sim.productivity() * self.sim.effort_per_task()
-
-    def initialize(self):
-
-        self.agent_type = StaffMember.TYPE
-        self.state = StaffMember.STATES["AVAILABLE"]
