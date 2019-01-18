@@ -5,6 +5,11 @@ from .task import Task
 
 class SPM(Model):
 
+
+    def instantiate_model(self):
+        self.register_agent_factory("staffMember", lambda agent_id, model, properties: StaffMember(agent_id, model, properties))
+        self.register_agent_factory("task", lambda agent_id, model, properties: Task(agent_id, model, properties))
+
     @property
     def productivity(self):
 
@@ -43,11 +48,6 @@ class SPM(Model):
         schedule_pressure = remaining_effort/(remaining_time * num_staff_members) if remaining_time > 0 else 2.5
 
         return schedule_pressure
-
-
-    def instantiate_model(self):
-        self.register_agent_factory("staffMember", lambda agent_id, model, properties: StaffMember(agent_id, model, properties))
-        self.register_agent_factory("task", lambda agent_id, model, properties: Task(agent_id, model, properties))
 
 
     def build_widget(self):

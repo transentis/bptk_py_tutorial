@@ -4,8 +4,28 @@ from BPTK_Py import Event
 
 class StaffMember(Agent):
 
+    def initialize(self):
+
+        self.agent_type = "staffMember"
+        self.state = "available"
+        self.set_property("current_progress", {"type": "Double", "value": 0})
+        self.set_property("productivity", {"type": "Double", "value": 1})
+        self.set_property("task", {"type": "Agent", "value": None})
+
 
     def act(self, time, round_no, step_no):
+
+        if self.state == "available":
+
+            self.task = self.model.next_agent("task", "open")
+
+            if self.task is not None:
+                self.task.receive_instantaneous_event(Event("taskStarted", self.id, self.task.id))
+
+                self.state = "busy"
+
+                self.productivity = self.model.productivity
+                self.current_progress += self.model.productivity / self.task.effort
 
         if self.state == "busy":
 
@@ -23,32 +43,11 @@ class StaffMember(Agent):
             )
 
             if self.task.state == "closed":
-
                 self.state = "available"
-
                 self.task = None
             else:
                 self.productivity = self.model.productivity
                 self.current_progress += self.model.productivity/self.task.effort
 
-        if self.state == "available":
 
-            self.task = self.model.next_agent("task", "open")
-
-            if self.task is not None:
-
-                self.task.receive_instantaneous_event(Event("taskStarted", self.id, self.task.id))
-
-                self.state = "busy"
-
-                self.productivity = self.model.productivity
-                self.current_progress += self.model.productivity / self.task.effort
-
-    def initialize(self):
-
-        self.agent_type = "staffMember"
-        self.state = "available"
-        self.set_property("current_progress", {"type": "Double", "value": 0})
-        self.set_property("productivity", {"type": "Double", "value": 1})
-        self.set_property("task", {"type": "Agent", "value": None})
 
