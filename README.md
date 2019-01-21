@@ -12,7 +12,7 @@ We illustrate the framework using a simple project management model and the Bass
 You can learn more about these models on our blog:
 
 * [Step-by-step introduction to System Dynamics](https://www.transentis.com/step-by-step-tutorials/introduction-to-system-dynamics/) using the simple project management model.
-* Introdcution to the [Bass Diffusion Model](https://www.transentis.com/causal-loop-diagramming/).
+* Introduction to the [Bass Diffusion Model](https://www.transentis.com/causal-loop-diagramming/).
 
 Here is an overview of the documents contained in this tutorial:
 
@@ -21,3 +21,8 @@ Here is an overview of the documents contained in this tutorial:
 * [Introduction to Agent Based Simulation Modeling with BPTK_PY](bptk_py_abm_intro.ipynb). This notebook illustrates how to create an agent-based implementation of a simple project management model.
 * [An Agent-based Implementation of the Bass Diffusion Model](bptk_py_bass_diffusion.ipynb). A simple notebook to run an agent-based implementation of the Bass Diffusion model.
 * [In Depth Discussion Of The Business Prototyping Toolkit for Pyth](bptk_py_in_depth.ipynb) A discussion of how the BPTK_PY framework works and some of the advanced API features not covered in the other notebooks.
+
+## Version
+
+These tutorials were tested against v0.5.2 of the BPTK_PY framework.
+
