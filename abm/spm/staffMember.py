@@ -4,50 +4,50 @@ from BPTK_Py import Event
 
 class StaffMember(Agent):
 
+
     def initialize(self):
 
-        self.agent_type = "staffMember"
+        self.agent_type = "staf_member"
         self.state = "available"
-        self.set_property("current_progress", {"type": "Double", "value": 0})
-        self.set_property("productivity", {"type": "Double", "value": 1})
         self.set_property("task", {"type": "Agent", "value": None})
-
 
     def act(self, time, round_no, step_no):
 
-        if self.state == "available":
+       work_capacity = self.model.dt * self.model.productivity
 
-            self.task = self.model.next_agent("task", "open")
+       while work_capacity > 0:
+            if self.state == "available":
 
-            if self.task is not None:
-                self.task.receive_instantaneous_event(Event("taskStarted", self.id, self.task.id))
+                self.task = self.model.next_agent("task", "open")
 
-                self.state = "busy"
+                if self.task is not None:
 
-                self.productivity = self.model.productivity
-                self.current_progress += self.model.productivity / self.task.effort
+                    self.state = "busy"
+                    self.task.receive_instantaneous_event(Event("task_started", self.id, self.task.id))
+                else:
+                    # no more open tasks
+                    work_capacity = 0
 
-        if self.state == "busy":
+            if self.state == "busy":
 
-            progress_made = min(self.task.remaining_effort, self.current_progress)
+                # the actual progress we make on a task depends on the remaining effort
 
-            self.current_progress -= progress_made
+                work_done = min(work_capacity, self.task.remaining_effort)
+                work_capacity -= work_done
 
-            self.task.receive_instantaneous_event(
-                Event(
-                    "taskProgress",
-                    self.id,
-                    self.task.id,
-                    {"progress": progress_made}
+                self.task.receive_instantaneous_event(
+                    Event(
+                         "task_progress",
+                        self.id,
+                        self.task.id,
+                        {"progress": work_done}
+                     )
                 )
-            )
 
-            if self.task.state == "closed":
-                self.state = "available"
-                self.task = None
-            else:
-                self.productivity = self.model.productivity
-                self.current_progress += self.model.productivity/self.task.effort
+                if self.task.state == "closed":
+                    self.state = "available"
+                    self.task = None
+
 
 
 

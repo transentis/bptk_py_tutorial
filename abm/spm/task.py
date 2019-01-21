@@ -8,18 +8,19 @@ class Task(Agent):
         self.agent_type = "task"
         self.state = "open"
 
-        self.set_property("remaining_effort", {"type": "Double", "value": self.effort})
+        self.set_property("remaining_effort", {"type": "Double", "value": 0})
 
-        self.register_event_handler(["open"], "taskStarted", self.handle_started_event)
-        self.register_event_handler(["inProgress"], "taskProgress", self.handle_progress_event)
+        self.register_event_handler(["open"], "task_started", self.handle_started_event)
+        self.register_event_handler(["in_progress"], "task_progress", self.handle_progress_event)
 
     def handle_started_event(self, event):
-        self.state = "inProgress"
+
+        self.remaining_effort = self.effort
+        self.state = "in_progress"
 
     def handle_progress_event(self, event):
-        self.remaining_effort = max(self.remaining_effort-event.data["progress"], 0)
 
-        log("TASK - remaining effort: {}".format(self.remaining_effort))
+        self.remaining_effort = max(self.remaining_effort-event.data["progress"], 0)
 
         if self.remaining_effort == 0:
             self.state = "closed"
