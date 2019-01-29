@@ -1,6 +1,6 @@
-# BPTK_Py tutorial
+# BPTK_Py Tutorial
 
-Welcome to the BPTK_PY tutorials. These tutorials contain sample agent-based and System Dynamics models created using the BPTK_PY framework.
+Welcome to the BPTK_PY tutorial. This tutorial contain sample agent-based and System Dynamics models created using the BPTK_PY framework. The tutorial is designed as a companion to the [BPTK_Py online documentation](http://bptk.transentis-labs.com).
 
 The objective of the tutorials is to illustrate how to use the BPTK_PY framework, not to introduce System Dynamics modeling or Agent-based modeling in general.
 
@@ -24,5 +24,5 @@ Here is an overview of the documents contained in this tutorial:
 
 ## Version
 
-These tutorials were tested against v0.5.2 of the BPTK_PY framework.
+These tutorials were tested against v0.5.3 of the BPTK_PY framework.
 
