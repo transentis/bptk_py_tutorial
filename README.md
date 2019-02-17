@@ -21,6 +21,7 @@ Here is an overview of the documents contained in this tutorial:
 * [Introduction to Agent Based Simulation Modeling with BPTK_PY](bptk_py_abm_intro.ipynb). This notebook illustrates how to create an agent-based implementation of a simple project management model.
 * [An Agent-based Implementation of the Bass Diffusion Model](bptk_py_bass_diffusion.ipynb). A simple notebook to run an agent-based implementation of the Bass Diffusion model.
 * [In Depth Discussion Of The Business Prototyping Toolkit for Pyth](bptk_py_in_depth.ipynb) A discussion of how the BPTK_PY framework works and some of the advanced API features not covered in the other notebooks.
+* [The Architecture of the BPTK_PY Framework](bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK_PY framework.
 
 ## Version
 
