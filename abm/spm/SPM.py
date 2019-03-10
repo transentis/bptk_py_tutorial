@@ -20,7 +20,7 @@ class SPM(Model):
         self._productivity=1
         self._schedule_pressure=1
 
-    def act(self, time, sim_round, step):
+    def begin_round(self, time, sim_round, step):
         # schedule pressure and productivity are updated once at the beginning of each round
         # this ensures that they are constant within each round
         # and thus the same for all staff members
