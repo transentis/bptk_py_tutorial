@@ -1,8 +1,8 @@
-# BPTK_Py Tutorial
+# BPTK-Py Tutorial
 
-Welcome to the BPTK_PY tutorial. This tutorial contain sample agent-based and System Dynamics models created using the BPTK_PY framework. The tutorial is designed as a companion to the [BPTK_Py online documentation](http://bptk.transentis-labs.com).
+Welcome to the BPTK-Py tutorial. This tutorial contain sample agent-based and System Dynamics models created using the BPTK-Py framework. The tutorial is designed as a companion to the [BPTK_Py online documentation](http://bptk.transentis-labs.com).
 
-The objective of the tutorials is to illustrate how to use the BPTK_PY framework, not to introduce System Dynamics modeling or Agent-based modeling in general.
+The objective of the tutorials is to illustrate how to use the BPTK-Py framework, not to introduce System Dynamics modeling or Agent-based modeling in general.
 
 We illustrate the framework using a simple project management model and the Bass Diffusion model:
 
@@ -16,15 +16,12 @@ You can learn more about these models on our blog:
 
 Here is an overview of the documents contained in this tutorial:
 
-* [Writing Computational Essays Using Simulation Models](bptk_py_introduction.ipynb). Introduction to using simulation models built with ®Stella in Jupyter Notebooks using the BPTK_PY framework.
-* [A Simple Python Library for System Dynamics](bptk_py_sd_dsl_intro.ipynb). Introduction to using the BPTK_PY framework to built SD models directly in Juptyer Notebooks.
-* [Introduction to Agent Based Simulation Modeling with BPTK_PY](bptk_py_abm_intro.ipynb). This notebook illustrates how to create an agent-based implementation of a simple project management model.
+* [Writing Computational Essays Using Simulation Models](bptk_py_introduction.ipynb). Introduction to using simulation models built with ®Stella in Jupyter Notebooks using the BPTK-Py framework.
+* [A Simple Python Library for System Dynamics](bptk_py_sd_dsl_intro.ipynb). Introduction to using the BPTK-Py framework to built SD models directly in Juptyer Notebooks.
+* [Introduction to Agent Based Simulation Modeling with BPTK-Py](bptk_py_abm_intro.ipynb). This notebook illustrates how to create an agent-based implementation of a simple project management model.
 * [An Agent-based Implementation of the Bass Diffusion Model](bptk_py_bass_diffusion.ipynb). A simple notebook to run an agent-based implementation of the Bass Diffusion model.
-* [In Depth Discussion Of The Business Prototyping Toolkit for Pyth](bptk_py_in_depth.ipynb) A discussion of how the BPTK_PY framework works and some of the advanced API features not covered in the other notebooks.
-* [The Architecture of the BPTK_PY Framework](bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK_PY framework.
+* [In Depth Discussion Of The Business Prototyping Toolkit for Python](bptk_py_in_depth.ipynb) A discussion of how the BPTK-Py framework works and some of the advanced API features not covered in the other notebooks.
+* [The Architecture of the BPTK-Py Framework](bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK-Py framework.
 * [How To: Creating User Defined Functions in SD Models](how_to_sd_user_defined_functions.ipynb) Explains how to create user defined functions in SD models.
-
-## Version
-
-These tutorials were tested against v0.5.3 of the BPTK_PY framework.
+* [How To: Developing Advanced User-Interfaces](how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advnaces user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
 
