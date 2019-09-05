@@ -23,5 +23,6 @@ Here is an overview of the documents contained in this tutorial:
 * [In Depth Discussion Of The Business Prototyping Toolkit for Python](bptk_py_in_depth.ipynb) A discussion of how the BPTK-Py framework works and some of the advanced API features not covered in the other notebooks.
 * [The Architecture of the BPTK-Py Framework](bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK-Py framework.
 * [How To: Creating User Defined Functions in SD Models](how_to_sd_user_defined_functions.ipynb) Explains how to create user defined functions in SD models.
-* [How To: Developing Advanced User-Interfaces](how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advnaces user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
+* [How To: Developing Advanced User-Interfaces](how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
+* [How To: Export Simulation Results](how_to_export_simulation_results.ipynb) Explains how to export simulation results into a spreadsheet.
 
