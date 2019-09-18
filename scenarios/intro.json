@@ -15,7 +15,9 @@
       "base": {
       },
       "scenario100": {
-        "initialOpenTasks" : 100
+          "constants":{  
+            "initialOpenTasks" : 100
+          }
      },
       "scenario80": {
         "constants": {
