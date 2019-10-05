@@ -1,28 +1,41 @@
-# BPTK-Py Tutorial
+# Overview Of The BPTK-Py Tutorial
 
-Welcome to the BPTK-Py tutorial. This tutorial contain sample agent-based and System Dynamics models created using the BPTK-Py framework. The tutorial is designed as a companion to the [BPTK_Py online documentation](http://bptk.transentis-labs.com).
+Welcome to the BPTK-PY tutorial. This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the [BPTK-Py online documentation](http://bptk.transentis-labs.com).
 
 The objective of the tutorials is to illustrate how to use the BPTK-Py framework, not to introduce System Dynamics modeling or Agent-based modeling in general.
 
-We illustrate the framework using a simple project management model and the Bass Diffusion model:
+We illustrate the framework using three simple models:
 
-* __Simple Project Management Model__. This model is an illustration of [Parkinson's law](https://en.wikipedia.org/wiki/Parkinson%27s_law), which states that work expands so as to fill the time available for its completion.
+* __Simple Project Management Model__. This model is an illustration of [Parkinson's law](https://en.wikipedia.org/wiki/Parkinson%27s_law), which states that work expands so as to fill the time available for its completion. 
 * __Bass Diffusion Model__. This model is an implementation of the [Bass diffusion model](https://en.wikipedia.org/wiki/Bass_diffusion_model) originally created by [Frank Bass](https://en.wikipedia.org/wiki/Frank_Bass) that describes the process of how new products get adopted in a population. The Bass model has been widely used in forecasting, especially new products' sales forecasting and technology forecasting.
+* __Customer Acquisition Model__. A small model about referal marketing that builds upon the Bass Diffusion Model.
 
-You can learn more about these models on our blog:
+The objective of this tutorial is to show you how to use the BPTK-Py framework and not to explain these models. If you want to learn more about the models themselves, please refer to our blog:
 
 * [Step-by-step introduction to System Dynamics](https://www.transentis.com/step-by-step-tutorials/introduction-to-system-dynamics/) using the simple project management model.
 * Introduction to the [Bass Diffusion Model](https://www.transentis.com/causal-loop-diagramming/).
+* The [Customer Acquisition Model](https://www.transentis.com/an-example-to-illustrate-the-business-prototyping-methodology) is discussed in our series of post introducing the Business Prototyping Methodology.
 
 Here is an overview of the documents contained in this tutorial:
 
-* [Writing Computational Essays Using Simulation Models](bptk_py_introduction.ipynb). Introduction to using simulation models built with ®Stella in Jupyter Notebooks using the BPTK-Py framework.
-* [A Simple Python Library for System Dynamics](bptk_py_sd_dsl_intro.ipynb). Introduction to using the BPTK-Py framework to built SD models directly in Juptyer Notebooks.
-* [Introduction to Agent Based Simulation Modeling with BPTK-Py](bptk_py_abm_intro.ipynb). This notebook illustrates how to create an agent-based implementation of a simple project management model.
-* [An Agent-based Implementation of the Bass Diffusion Model](bptk_py_bass_diffusion.ipynb). A simple notebook to run an agent-based implementation of the Bass Diffusion model.
-* [In Depth Discussion Of The Business Prototyping Toolkit for Python](bptk_py_in_depth.ipynb) A discussion of how the BPTK-Py framework works and some of the advanced API features not covered in the other notebooks.
-* [The Architecture of the BPTK-Py Framework](bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK-Py framework.
-* [How To: Creating User Defined Functions in SD Models](how_to_sd_user_defined_functions.ipynb) Explains how to create user defined functions in SD models.
-* [How To: Developing Advanced User-Interfaces](how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
-* [How To: Export Simulation Results](how_to_export_simulation_results.ipynb) Explains how to export simulation results into a spreadsheet.
+* __Introduction__
+    * [Writing Computational Essays Using Simulation Models](writing_computational_essays.ipynb). Introduction to writing Computational Essays around System Dynamics models created using the XMILE Standard (e.g. using  ®Stella or ®iThink).
+* __In Depth Discussions__
+    * [The Architecture of the BPTK-Py Framework](in_depth_bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK-Py framework.
+    * [A Simple Python Library for System Dynamics](in_depth_simple_python_library_sd_dsl.ipynb). Introduction to building System Dynamics models directly in Juptyer Notebooks, using SD DSL, a specially created domain specific language for System Dynamics, that is part of BPTK-Py.
+    * [Agent-based Modeling with BPTK-Py](in_depth_agent_based_modeling.ipynb) Illustrates how to create an agent-based implementation of a simple project management model.
+    * [Scenarios In Depth](in_depth_scenarios.ipynb) Explains the scenario definition format and how to add and manipulate scenarios at run-time.
+* __How To's__
+    * [How To: Working With XMILE System Dynamics Models](how_to_working_with_XMILE.ipynb) Illustrates the quickest route to importing a System Dynamics model stored in the XMILE format, such as those created with ®Stella (*.stmx) or ®iThink (*.itmx).
+    * [How To: Accessing Raw Simulation Results](how_to_accessing_raw_simulation_results.ipynb) Explains how to access raw simulation results with scenarios.
+    * [How To: Advanced Plotting Features](how_to_advanced_plotting_features.ipynb) Discusses some advanced features of the `bptk.plot_scenarios` method.
+    * [How To: Building Interactive Dashboards](how_to_interactive_dashboards.ipynb). Shows how do build simple interactive dashboards using the `bptk.dashboard` method.
+    * [How To: Developing Advanced User-Interfaces](how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
+    * [How To: Exporting Simulation Results](how_to_exporting_simulation_results.ipynb) Explains how to export simulation results into a spreadsheet.
+    * [How To: Creating User Defined Functions in SD Models](how_to_sd_user_defined_functions.ipynb) Explains how to create user defined functions in SD models.
+    * [How To: Writing Tests For Models](how_to_writing_tests_for_models.ipynb) Explains how to write model tests using the `bptk.model_check` method.
+    * [How To: Modifying Models At Runtime](how_to_modifying_models_at_runtime.ipynb) Explain how to modify models that have been transpiled from XMILE models at runtime.
+  
+
+Please let us know if you need help getting started, if you find a bug or are missing important functionality. You can best reach us per e-mail at [support@transentis.com](mailto:supprt@transentis.com)
 
