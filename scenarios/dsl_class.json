@@ -2,42 +2,42 @@
   "smSimpleProjectManagementDslClass": {
     "model": "simulation_models.simple_project_dsl_class.simulation",
     "base_constants": {
-      "deadline": 100,
-      "initialOpenTasks": 100
+      "deadline": 100.0,
+      "initialOpenTasks": 100.0
     },
     "base_points": {
-      "productivity": [ [0,0.4],[0.25,0.444],[0.5,0.506],[0.75,0.594],[1,1],[1.25,1.119],[1.5,1.1625],[1.75,1.2125],[2,1.2375],[2.25,1.245],[2.5,1.25] ]
+      "productivity": [ [0.0,0.4],[0.25,0.444],[0.5,0.506],[0.75,0.594],[1,1],[1.25,1.119],[1.5,1.1625],[1.75,1.2125],[2,1.2375],[2.25,1.245],[2.5,1.25] ]
     },
     "scenarios": {
       "scenario100_strategy": {
         "constants": {
-          "initialOpenTasks": 100
+          "initialOpenTasks": 100.0
         },
         "strategy": {
           "10": {
-            "deadline": 150
+            "deadline": 150.0
           },
           "20": {
-            "deadline": 200
+            "deadline": 200.0
           },
           "30": {
-            "deadline": 80
+            "deadline": 80.0
           }
         }
       },
       "scenario100": {
         "constants": {
-          "initialOpenTasks": 100
+          "initialOpenTasks": 100.0
         }
       },
       "scenario80": {
         "constants": {
-          "initialOpenTasks": 80
+          "initialOpenTasks": 80.0
         }
       },
       "scenario120": {
         "constants": {
-          "initialOpenTasks": 120
+          "initialOpenTasks": 120.0
         }
       }
     }

@@ -23,6 +23,7 @@ Here is an overview of the documents contained in this tutorial:
 * __In Depth Discussions__
     * [The Architecture of the BPTK-Py Framework](in_depth_bptk_py_architecture.ipynb) Explains the overall architecture of the BPTK-Py framework.
     * [A Simple Python Library for System Dynamics](in_depth_simple_python_library_sd_dsl.ipynb). Introduction to building System Dynamics models directly in Juptyer Notebooks, using SD DSL, a specially created domain specific language for System Dynamics, that is part of BPTK-Py.
+    * [SD DSL Functions](in_depth_sd_dsl_functions.ipynb) An overview of how to use the SD DSL operators such as MIN, MAX and DELAY.
     * [Agent-based Modeling with BPTK-Py](in_depth_agent_based_modeling.ipynb) Illustrates how to create an agent-based implementation of a simple project management model.
     * [Scenarios In Depth](in_depth_scenarios.ipynb) Explains the scenario definition format and how to add and manipulate scenarios at run-time.
 * __How To's__

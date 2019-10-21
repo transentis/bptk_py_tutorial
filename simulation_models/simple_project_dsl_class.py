@@ -36,16 +36,16 @@ class simulation(Model):
 
         # Actual Logic
 
-        openTasks.initial_value = 100
-        closedTasks.initial_value = 0  # not really necessary, but I like to be explicit
+        openTasks.initial_value = 100.0
+        closedTasks.initial_value = 0.0  # not really necessary, but I like to be explicit
 
         staff.initial_value = initialStaff  # I prefer using constants to initialize non-zero stocks
         openTasks.initial_value = initialOpenTasks
 
-        deadline.equation = 100
-        effortPerTask.equation = 1
-        initialStaff.equation = 1
-        initialOpenTasks.equation = 80
+        deadline.equation = 100.0
+        effortPerTask.equation = 1.0
+        initialStaff.equation = 1.0
+        initialOpenTasks.equation = 80.0
 
         currentTime.equation = sd.time()
 
@@ -54,10 +54,10 @@ class simulation(Model):
         openTasks.equation = -completionRate
         closedTasks.equation = completionRate
 
-        schedulePressure.equation = sd.min((openTasks * effortPerTask) / (staff * sd.max(remainingTime, 1)), 2.5)
+        schedulePressure.equation = sd.min((openTasks * effortPerTask) / (staff * sd.max(remainingTime, 1.0)), 2.5)
 
         # Graphical function
-        self.points["productivity"] = [[0, 0.4], [0.25, 0.444], [0.5, 0.506], [0.75, 0.594], [1, 1], [1.25, 1.119],
+        self.points["productivity"] = [[0.0, 0.4], [0.25, 0.444], [0.5, 0.506], [0.75, 0.594], [1, 1], [1.25, 1.119],
                                         [1.5, 1.1625], [1.75, 1.2125], [2, 1.2375], [2.25, 1.245], [2.5, 1.25]]
 
         productivity.equation = sd.lookup(schedulePressure, "productivity")
