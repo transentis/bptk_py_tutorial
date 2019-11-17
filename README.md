@@ -1,4 +1,4 @@
-# Overview Of The BPTK-Py Tutorial
+# BPTK-Py Tutorial
 
 This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the [BPTK-Py online documentation](http://bptk.transentis-labs.com).
 
@@ -8,7 +8,7 @@ This tutorial contain sample agent-based and System Dynamics models along with J
 
 If you have Docker installed (e.g. Docker Desktop on MacOS or on Windows), follow these steps:
 
-1. Create a local directory an move into it on the command line
+1. On the command line, move into a directory where you would like to store the BPTK-Py tutorial. 
 2. Clone this repository using git clone: ```git clone https://bitbucket.org/transentis/bptk_py_tutorial.git```
 3. Run ```docker-compose up```
 4. Point your browser at [http://localhost:8888](http://localhost:8888) – this will open JupyterLab showing the contents of your directory. 
@@ -21,7 +21,7 @@ First, make sure you have Python 3 installed on your machine.
 
 Then follow these steps:
 
-1. Create a local directory an move into it on the command line
+1. On the command line, move into a directory where you would like to store the BPTK-Py tutorial. 
 2. Clone this repository using git clone: ```git clone https://bitbucket.org/transentis/bptk_py_tutorial.git```
 3. Install a virtual environment in that directory: ```python3 -m venv venv```
 4. Activate the virtual environment: ```source venv/bin/activate``` (MacOS/Linux) or ``venv\scripts\activate.bat``` (Windows)
