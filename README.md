@@ -1,22 +1,52 @@
 # Overview Of The BPTK-Py Tutorial
 
-Welcome to the BPTK-PY tutorial. This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the [BPTK-Py online documentation](http://bptk.transentis-labs.com).
+This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the [BPTK-Py online documentation](http://bptk.transentis-labs.com).
 
-The objective of the tutorials is to illustrate how to use the BPTK-Py framework, not to introduce System Dynamics modeling or Agent-based modeling in general.
+## Installation
 
-We illustrate the framework using three simple models:
+### Using Docker
+
+If you have Docker installed (e.g. Docker Desktop on MacOS or on Windows), follow these steps:
+
+1. Create a local directory an move into it on the command line
+2. Clone this repository using git clone: ```git clone https://bitbucket.org/transentis/bptk_py_tutorial.git```
+3. Run ```docker-compose up```
+4. Point your browser at [http://localhost:8888](http://localhost:8888) – this will open JupyterLab showing the contents of your directory. 
+5. Open the notebook ```readme.ipynb``` from within JupyterLab.
+6. When you are finished, close your browser and call ```docker-compose down``` from within your directory. This will stop and remove your containers.
+
+### Using a virtual environment
+
+First, make sure you have Python 3 installed on your machine.
+
+Then follow these steps:
+
+1. Create a local directory an move into it on the command line
+2. Clone this repository using git clone: ```git clone https://bitbucket.org/transentis/bptk_py_tutorial.git```
+3. Install a virtual environment in that directory: ```python3 -m venv venv```
+4. Activate the virtual environment: ```source venv/bin/activate``` (MacOS/Linux) or ``venv\scripts\activate.bat``` (Windows)
+5. Install the necessary python modules: ```pip install -r requirements.txt```
+6. Start JupyerLab: ```jupyter lab```
+7. Your browser will open showing JupyterLab and your chosen directory
+8. Open the notebook ```readme.ipynb``` from within JupyterLab
+
+## Getting Started
+
+The tutorial contains quite a few noteboos and models. Which one to get started with depends on whether you are interested in System Dynamics using XMILE (e.g. Stella Architect or iThink), the System Dynamics DSL or Agent-based modeling:
+
+* _SD with XMILE_ – start with [How To: Working With XMILE System Dynamics Models](how_to_working_with_XMILE.ipynb)
+* _SD DSL_ – start with [A Simple Python Library for System Dynamics](in_depth_simple_python_library_sd_dsl.ipynb)
+* _Agent-based Modeling_ – start with [Agent-based Modeling with BPTK-Py](in_depth_agent_based_modeling.ipynb)
+
+## Contents
+
+We illustrate the BPTK-Py framework using three simple models:
 
 * __Simple Project Management Model__. This model is an illustration of [Parkinson's law](https://en.wikipedia.org/wiki/Parkinson%27s_law), which states that work expands so as to fill the time available for its completion. 
 * __Bass Diffusion Model__. This model is an implementation of the [Bass diffusion model](https://en.wikipedia.org/wiki/Bass_diffusion_model) originally created by [Frank Bass](https://en.wikipedia.org/wiki/Frank_Bass) that describes the process of how new products get adopted in a population. The Bass model has been widely used in forecasting, especially new products' sales forecasting and technology forecasting.
-* __Customer Acquisition Model__. A small model about referal marketing that builds upon the Bass Diffusion Model.
+* __Customer Acquisition Model__. A small model about referral marketing that builds upon the Bass Diffusion Model.
 
-The objective of this tutorial is to show you how to use the BPTK-Py framework and not to explain these models. If you want to learn more about the models themselves, please refer to our blog:
-
-* [Step-by-step introduction to System Dynamics](https://www.transentis.com/step-by-step-tutorials/introduction-to-system-dynamics/) using the simple project management model.
-* Introduction to the [Bass Diffusion Model](https://www.transentis.com/causal-loop-diagramming/).
-* The [Customer Acquisition Model](https://www.transentis.com/an-example-to-illustrate-the-business-prototyping-methodology) is discussed in our series of post introducing the Business Prototyping Methodology.
-
-Here is an overview of the documents contained in this tutorial:
+Here is an overview of the documents contained in this tutorial, they all use at least one of the models listed above.
 
 * __Introduction__
     * [Writing Computational Essays Using Simulation Models](writing_computational_essays.ipynb). Introduction to writing Computational Essays around System Dynamics models created using the XMILE Standard (e.g. using  ®Stella or ®iThink).
@@ -37,6 +67,19 @@ Here is an overview of the documents contained in this tutorial:
     * [How To: Writing Tests For Models](how_to_writing_tests_for_models.ipynb) Explains how to write model tests using the `bptk.model_check` method.
     * [How To: Modifying Models At Runtime](how_to_modifying_models_at_runtime.ipynb) Explain how to modify models that have been transpiled from XMILE models at runtime.
   
+## Learning More About System Dynamics and Agent-based Modeling
 
-Please let us know if you need help getting started, if you find a bug or are missing important functionality. You can best reach us per e-mail at [support@transentis.com](mailto:supprt@transentis.com)
+The objective of this tutorial is to show you how to use the BPTK-Py framework and not to explain these models. If you want to learn more about the models themselves, please refer to our blog:
+
+* [Step-by-step introduction to System Dynamics](https://www.transentis.com/step-by-step-tutorials/introduction-to-system-dynamics/) using the simple project management model.
+* Introduction to the [Bass Diffusion Model](https://www.transentis.com/causal-loop-diagramming/).
+* The [Customer Acquisition Model](https://www.transentis.com/an-example-to-illustrate-the-business-prototyping-methodology) is discussed in our series of post introducing the Business Prototyping Methodology.
+
+## Get in Touch
+
+Please let us know if you need help getting started, if you find a bug or are missing important functionality.
+
+We are keen to hear how you use BPTK-Py – your feedback is invaluable in helping us improve BPTK-Py.
+
+You can best reach us per e-mail at [support@transentis.com](mailto:support@transentis.com)
 
