@@ -3,8 +3,9 @@ version: '3.7'
 services:
   jupyter_bptk_py:
       container_name: bptk_py
-      image: transentis/bptk-py:0.9.0
+      image: transentis/bptk-py:latest
       ports:
         - 8888:8888
       volumes:
-          - .:/bptk-py
+          - .:/home/jovyan/work
+
