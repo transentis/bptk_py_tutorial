@@ -36,7 +36,7 @@ The tutorial contains a number of noteboos and models. Which one to get started 
 
 * _Agent-based Modeling_ – start with [Agent-based Modeling with BPTK-Py](notebooks/abm/in-depth/in_depth_agent_based_modeling.ipynb)
 * _SD with XMILE_ – start with [Working With XMILE System Dynamics Models](notebooks/xmile/how-to/how_to_working_with_XMILE.ipynb)
-* _SD DSL_ – start with [A Simple Python Library for System Dynamics](notebooks/sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl.ipynb)
+* _SD DSL_ – start with [A Simple Python Library for System Dynamics](notebooks/sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.ipynb)
 
 
 ## Contents
