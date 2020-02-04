@@ -1,0 +1,36 @@
+{
+  "anotherSimpleProjectManagement":{
+    "source":"simulation_models/sd_simple_project.itmx",
+    "model":"simulation_models/sd_simple_project",
+    "base_constants": {
+      "deadline" : 100,
+      "initialStaff" : 15
+    },
+    "scenarios":{
+      "scenario100": {
+          "constants": {
+              "deadline" : 100,
+              "initialStaff": 5
+          }
+      },
+      "scenario80":{
+        "constants": {
+            "deadline" : 80
+        }
+      },
+    "scenario120":{
+        "constants": {
+          "deadline": 120,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+        },
+    "strategy": {
+        "10": {
+        "deadline" : 110
+        }
+    }
+      }
+    }
+  }
+}

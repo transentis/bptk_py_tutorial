@@ -1,0 +1,11 @@
+{
+    "smWorkingWithXMILE":
+    {
+        "source":"simulation_models/sd_simple_project.itmx",
+        "model":"simulation_models/sd_simple_project",
+        "scenarios":
+        {
+          "base": { }
+        }
+    }
+}
