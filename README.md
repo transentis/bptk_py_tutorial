@@ -69,6 +69,8 @@ Here is an overview of the documents contained in this tutorial, they all use at
         * [How To: Working With XMILE System Dynamics Models](notebooks/xmile/how-to/how_to_working_with_XMILE.ipynb) Illustrates the quickest route to importing a System Dynamics model stored in the XMILE format, such as those created with ®Stella (*.stmx) or ®iThink (*.itmx).
         * [How To: Exporting Simulation Results](notebooks/xmile/how-to/how_to_exporting_simulation_results.ipynb) Explains how to export simulation results into a spreadsheet.
         * [How To: Modifying Models At Runtime](notebooks/xmile/how-to/how_to_modifying_models_at_runtime.ipynb) Explain how to modify models that have been transpiled from XMILE models at runtime.
+        * [How To: Working with Arrayed Variables in XMILE Models](notebooks/xmile/how-to/how_to_XMILE_arrays.ipynb) Explains how to use arrayed operators aund functions in BPTK_Py
+
 * __System Dynamics using SD DSL__
     * In Depth Discussions
         * [A Simple Python Library for System Dynamics](notebooks/sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.ipynb). Introduction to building System Dynamics models directly in Juptyer Notebooks, using SD DSL, a specially created domain specific language for System Dynamics, that is part of BPTK-Py.
