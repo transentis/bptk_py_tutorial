@@ -1,3 +1,4 @@
+*.ipynb
 tmp/
 .DS_Store
 *.pyc
