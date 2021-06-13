@@ -664,6 +664,21 @@ class simulation_model():
             return equation
         if "*" in equation or ":" in equation:
             return self.get_dimensions(equation,arg)
+            
+        if not equation in self.equations.keys():
+
+            # match array pattern and find non-arrayed var
+            import re
+            match = re.findall(r'\[[a-zA-Z1-9,_]*\]', equation)
+
+            if match:
+
+                equation_replaced = equation.replace(match[0], "")
+
+                if equation_replaced in self.equations:
+                    return self.memoize(equation=equation_replaced,arg=arg)
+            else:
+                logging.error("Equation '{}' not found!".format(equation))
 
         mymemo = self.memo[equation]
 
