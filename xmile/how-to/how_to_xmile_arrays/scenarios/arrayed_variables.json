@@ -1,0 +1,10 @@
+{
+"smArrayedVariables":{
+    "source":"simulation_models/sd_arrayed_variables.stmx",
+    "model":"simulation_models/sd_arrayed_variables",
+    "scenarios": {
+      "base": {
+       }
+      }
+    }
+}

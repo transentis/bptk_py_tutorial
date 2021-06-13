@@ -1,4 +1,3 @@
-*.ipynb
 tmp/
 .DS_Store
 *.pyc
@@ -11,7 +10,4 @@ venv
 dist/
 *.egg-info
 build/
-sd_simple_project.py.py
-sd_simple_project.isdb
 *.isdb
-sd_simple_project_v0.py.py
