@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee" uses_arrays="1"/>
+		<name>sd_simple_project</name>
+		<uuid>f68e3a2e-4535-45cd-9927-72c71ca297e7</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="1.7" isee:build_number="1552" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:simulation_delay="0" method="Euler" time_units="Days" isee:instantaneous_flows="false">
+		<start>0</start>
+		<stop>120</stop>
+		<dt>1</dt>
+	</sim_specs>
+	<dimensions>
+		<dim name="Dim_Name_1" size="1"/>
+	</dimensions>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" saved_runs="5" keep="false" rifp="false"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+		<isee:time_format name="Number Not Scaled With Precision of 1" precision="1" scale_by="1" type="number"/>
+	</isee:time_formats>
+	<default_format/>
+	<data>
+		<export enabled="false" frequency="on_demand" resource="/Users/olivergrasl/git/bptk_py_readme/results/stella_results.xlsx" type="Excel" worksheet="Scenario120" interval="DT" precomputed="false" isee:format="numbers">
+			<all/>
+		</export>
+	</data>
+	<isee:sensi_specs_list active_index="0">
+		<isee:sensi_specs name="Sensitivity Analysis 1" method="multivariate" runs="0"/>
+	</isee:sensi_specs_list>
+	<model_units/>
+	<model>
+		<variables>
+			<aux name="Schedule pressure">
+				<eqn>MIN((Open_tasks*Effort_per_Task/Staff)/MAX(Remaining_time,1),2.5)</eqn>
+			</aux>
+			<aux name="Deadline">
+				<eqn>100</eqn>
+			</aux>
+			<aux name="Current date">
+				<eqn>TIME</eqn>
+			</aux>
+			<flow name="Completion rate">
+				<eqn>MIN(Open_tasks,Staff*Productivity/Effort_per_Task)</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Open tasks">
+				<eqn>Initial_Open_Tasks</eqn>
+				<scale min="0" max="120"/>
+				<outflow>Completion_rate</outflow>
+			</stock>
+			<aux name="Remaining time">
+				<eqn>MAX(Deadline-Current_date,0)</eqn>
+			</aux>
+			<stock name="Staff">
+				<eqn>Initial_Staff</eqn>
+			</stock>
+			<aux name="Effort per Task">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Productivity">
+				<eqn>Schedule_pressure</eqn>
+				<gf>
+					<xscale min="0" max="2.5"/>
+					<yscale min="0" max="1.25"/>
+					<ypts>0.4,0.444,0.506,0.594,1,1.119,1.1625,1.2125,1.2375,1.245,1.25</ypts>
+				</gf>
+			</aux>
+			<stock name="Closed Tasks">
+				<eqn>0</eqn>
+				<inflow>Completion_rate</inflow>
+			</stock>
+			<aux name="Initial Open Tasks">
+				<eqn>120</eqn>
+			</aux>
+			<aux name="Initial Staff">
+				<eqn>1</eqn>
+			</aux>
+			<isee:dependencies>
+				<var name="Schedule_pressure">
+					<in>Open_tasks</in>
+					<in>Staff</in>
+					<in>Remaining_time</in>
+					<in>Effort_per_Task</in>
+				</var>
+				<var name="Completion_rate">
+					<in>Productivity</in>
+					<in>Staff</in>
+					<in>Open_tasks</in>
+					<in>Effort_per_Task</in>
+				</var>
+				<var name="Open_tasks">
+					<in>Initial_Open_Tasks</in>
+				</var>
+				<var name="Remaining_time">
+					<in>Deadline</in>
+					<in>Current_date</in>
+				</var>
+				<var name="Staff">
+					<in>Initial_Staff</in>
+				</var>
+				<var name="Productivity">
+					<in>Schedule_pressure</in>
+				</var>
+			</isee:dependencies>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_background_color="#FFFECF"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:always_show_hover_tip="false" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="black" background="white"/>
+				<isee:pie_input color="black" background="white" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white"/>
+				<isee:animation_object color="black" background="white"/>
+			</style>
+			<view isee:show_pages="true" page_width="571" page_height="818" isee:page_cols="3" isee:scroll_x="215.833" zoom="120" isee:popup_graphs_are_comparative="true" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="1" color="black" angle="69.444">
+					<from>Deadline</from>
+					<to>Remaining_time</to>
+				</connector>
+				<connector uid="2" color="black" angle="217.694">
+					<from>Open_tasks</from>
+					<to>Schedule_pressure</to>
+				</connector>
+				<connector uid="3" color="black" angle="234.782">
+					<from>Staff</from>
+					<to>Schedule_pressure</to>
+				</connector>
+				<connector uid="4" color="black" angle="110.556">
+					<from>Current_date</from>
+					<to>Remaining_time</to>
+				</connector>
+				<connector uid="5" color="black" angle="123.69">
+					<from>Productivity</from>
+					<to>Completion_rate</to>
+				</connector>
+				<connector uid="6" color="black" angle="90">
+					<from>Remaining_time</from>
+					<to>Schedule_pressure</to>
+				</connector>
+				<connector uid="7" color="black" angle="79.992">
+					<from>Staff</from>
+					<to>Completion_rate</to>
+				</connector>
+				<connector uid="8" color="black" angle="64.7989">
+					<from>Open_tasks</from>
+					<to>Completion_rate</to>
+				</connector>
+				<connector uid="9" color="black" angle="333.435">
+					<from>
+						<alias uid="10"/>
+					</from>
+					<to>Schedule_pressure</to>
+				</connector>
+				<connector uid="11" color="black" angle="71.5651">
+					<from>Effort_per_Task</from>
+					<to>Completion_rate</to>
+				</connector>
+				<connector uid="12" color="black" angle="341.565">
+					<from>Schedule_pressure</from>
+					<to>Productivity</to>
+				</connector>
+				<aux color="black" font_color="black" x="408" y="292" name="Schedule pressure"/>
+				<aux color="black" font_color="black" x="475" y="437" name="Deadline"/>
+				<aux color="black" font_color="black" x="393" y="442" name="Current date"/>
+				<flow color="black" font_color="black" x="442" y="128" name="Completion rate">
+					<pts>
+						<pt x="361.5" y="128"/>
+						<pt x="534.5" y="128"/>
+					</pts>
+				</flow>
+				<stock color="black" font_color="black" x="339" y="137" name="Open tasks"/>
+				<aux color="black" font_color="black" x="440" y="369" name="Remaining time"/>
+				<stock color="black" font_color="black" x="385" y="210" name="Staff"/>
+				<aux color="black" font_color="black" x="458" y="227" name="Effort per Task"/>
+				<aux color="black" font_color="black" x="557" y="220" name="Productivity"/>
+				<stock color="black" font_color="black" x="557" y="131" name="Closed Tasks"/>
+				<aux color="black" font_color="black" x="780" y="123" name="Initial Open Tasks"/>
+				<aux color="black" font_color="black" x="776" y="190" name="Initial Staff"/>
+				<alias color="black" font_style="italic" font_color="black" uid="10" x="260" y="311" width="18" height="18">
+					<of>Effort_per_Task</of>
+				</alias>
+			</view>
+			<view background="white" page_width="788" page_height="528" home_view="true" type="interface">
+				<style/>
+				<stacked_container uid="13" x="110" y="74" width="492" height="282">
+					<graph background="#FFFFC9" isee:graph_area_color="#FFFFC9" x="356" y="215" type="time_series" isee:points_only="false" isee:time_format_id="Number Not Scaled With Precision of 1" isee:time_precision="1" isee:time_scale_by="1" show_grid="true" include_units_in_legend="false" plot_numbers="true" isee:label_pie_slices="false" num_x_grid_lines="5" num_y_grid_lines="5" num_x_labels="5" num_y_labels="3" title="title" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="true" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<format precision="1" scale_by="1"/>
+							<entity name="Open_tasks"/>
+							<isee:data name="Run 1"/>
+						</plot>
+						<plot color="red" pen_width="1" index="1" show_y_axis="true">
+							<entity name="Open_tasks"/>
+							<isee:data name="Run 2"/>
+						</plot>
+						<plot color="fuchsia" pen_width="1" index="2" show_y_axis="true">
+							<entity name="Open_tasks"/>
+							<isee:data name="Run 3"/>
+						</plot>
+						<plot color="#008F44" pen_width="1" index="3" show_y_axis="true">
+							<entity name="Open_tasks"/>
+						</plot>
+						<plot color="#FF7F00" pen_width="1" index="4" show_y_axis="true">
+							<entity name="Open_tasks"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<lamp uid="14" x="454" y="414">
+					<entity name="Schedule_pressure"/>
+					<zones>
+						<zone type="normal" color="green" max="1.25"/>
+						<zone type="caution" color="yellow" min="1.25" max="1.25"/>
+						<zone type="panic" color="red" min="1.25"/>
+					</zones>
+				</lamp>
+				<graphical_input color="black" background="#FF007F" uid="15" x="302" y="396.5" width="100" height="103" isee:navigate_to="false" show_name="true">
+					<entity name="Productivity"/>
+					<reset_to after="never">0</reset_to>
+				</graphical_input>
+				<knob color="black" uid="16" x="104.5" y="406.5" width="83" height="91" increment="1" min="80" max="120" isee:navigate_to="false" show_name="true">
+					<format precision="1" scale_by="1"/>
+					<entity name="Initial_Open_Tasks"/>
+					<reset_to after="never">0</reset_to>
+				</knob>
+				<button color="white" corner_radius="0" label="Run" uid="17" x="604" y="431" width="65" height="34">
+					<actions>
+						<action>run_to_end</action>
+					</actions>
+				</button>
+			</view>
+			<view background="white" page_width="788" page_height="528" type="interface">
+				<style/>
+				<stacked_container uid="18" x="128" y="86" width="475" height="270">
+					<table background="#E0E0E0" font_size="9pt" orientation="vertical" column_width="59" interval="1" report_balances="ending" report_flows="summed" x="128" y="86" width="475" height="270" title="title">
+						<item type="time"/>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Open_tasks"/>
+							<isee:data name="Run 1"/>
+						</item>
+						<item>
+							<entity name="Open_tasks"/>
+							<isee:data name="Run 2"/>
+						</item>
+						<item>
+							<entity name="Open_tasks"/>
+							<isee:data name="Run 3"/>
+						</item>
+						<item>
+							<entity name="Open_tasks"/>
+						</item>
+						<item>
+							<entity name="Open_tasks"/>
+						</item>
+					</table>
+				</stacked_container>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+</xmile>
+

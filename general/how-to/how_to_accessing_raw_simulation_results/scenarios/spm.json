@@ -1,0 +1,45 @@
+{
+    "smSimpleProjectManagement":{
+    "source":"simulation_models/sd_simple_project.itmx",
+    "model":"simulation_models/sd_simple_project",
+    "base_constants": {
+          "deadline": 100,
+          "effortPerTask": 1,
+          "initialOpenTasks": 100,
+          "initialStaff": 1
+    },
+    "base_points":{
+            "productivity": [ [0,0.4],[0.25,0.444],[0.5,0.506],[0.75,0.594],[1,1],[1.25,1.119],[1.5,1.1625],[1.75,1.2125],[2,1.2375],[2.25,1.245],[2.5,1.25]]
+    },
+    "scenarios": {
+      "base": {
+      },
+      "scenario100": {
+          "constants":{  
+            "initialOpenTasks" : 100
+          }
+     },
+      "scenario80": {
+        "constants": {
+          "initialOpenTasks":80
+        }
+      },
+      "scenario120": {
+        "constants": {
+          "initialOpenTasks": 120
+        },
+        "strategy": {
+          "20": {
+            "deadline": 120
+          }
+        }
+      },
+        "scenario100WithPoints": {
+        "points" : {
+            "productivity": [ [0,0.4],[0.25,0.444],[0.5,0.506],[0.75,0.594],[1,1],[1.25,1.119],[1.5,1.1625],[1.75,1.2125],[2,1.2375],[2.25,1.245],[2.5,1.25] ]
+        }
+      }
+    }
+  }
+}
+    
