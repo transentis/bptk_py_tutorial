@@ -12,17 +12,6 @@
       "scenario100_strategy": {
         "constants": {
           "initialOpenTasks": 100.0
-        },
-        "strategy": {
-          "10": {
-            "deadline": 150.0
-          },
-          "20": {
-            "deadline": 200.0
-          },
-          "30": {
-            "deadline": 80.0
-          }
         }
       },
       "scenario100": {
