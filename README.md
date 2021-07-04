@@ -51,7 +51,6 @@ This tutorial contains a number of Jupyter notebooks that illustrate usage of th
         * [How To: Advanced Plotting Features](general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.ipynb) Discusses some advanced features of the `bptk.plot_scenarios` method.
         * [How To: Building Interactive Dashboards](general/how-to/how_to_interactive_dashboards/how_to_interactive_dashboards.ipynb). Shows how do build simple interactive dashboards using the `bptk.dashboard` method.
         * [How To: Developing Advanced User-Interfaces](general/how-to/how_to_developing_advanced_user_interfaces/how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
-        * [How To: Writing Tests For Models](general/how-to/how_to_writing_tests_for_models/how_to_writing_tests_for_models.ipynb) Explains how to write model tests using the `bptk.model_check` method.
 * __Agent-based Modeling__
     * In Depth Discussions
         * [Agent-based Modeling with BPTK-Py](abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.ipynb) Illustrates how to create an agent-based implementation of a simple project management model.
@@ -61,7 +60,6 @@ This tutorial contains a number of Jupyter notebooks that illustrate usage of th
     * HOW TOs
         * [How To: Working With XMILE System Dynamics Models](xmile/how-to/how_to_working_with_xmile/how_to_working_with_XMILE.ipynb) Illustrates the quickest route to importing a System Dynamics model stored in the XMILE format, such as those created with ®Stella (*.stmx) or ®iThink (*.itmx).
         * [How To: Exporting Simulation Results](xmile/how-to/how_to_exporting_simulation_results/how_to_exporting_simulation_results.ipynb) Explains how to export simulation results into a spreadsheet.
-        * [How To: Modifying Models At Runtime](xmile/how-to/how_to_modifying_models_at_runtime/how_to_modifying_models_at_runtime.ipynb) Explains how to modify models that have been transpiled from XMILE models at runtime.
         * [How To: Working with Arrayed Variables in XMILE Models](xmile/how-to/how_to_xmile_arrays/how_to_XMILE_arrays.ipynb) Explains how to use arrayed operators aund functions in BPTK_Py
         
 * __System Dynamics using SD DSL__
