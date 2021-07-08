@@ -27,11 +27,6 @@
       "scenario120": {
         "constants": {
           "initialOpenTasks": 120
-        },
-        "strategy": {
-          "20": {
-            "deadline": 120
-          }
         }
       },
         "scenario100WithPoints": {

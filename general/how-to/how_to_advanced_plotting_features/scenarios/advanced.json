@@ -24,12 +24,7 @@
           "effortPerTask": 1,
           "initialOpenTasks": 100,
           "initialStaff": 1
-        },
-    "strategy": {
-        "10": {
-        "deadline" : 110
         }
-    }
       }
     }
   }
