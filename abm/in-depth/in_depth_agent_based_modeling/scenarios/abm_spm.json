@@ -2,7 +2,7 @@
   "ABMsmSimpleProjectManagement": {
     "type": "abm",
     "name": "Simple Project Management Model",
-    "model" : "simulation_models.spm.SPM.SPM",
+    "model" : "simulation_models.spm.SPM",
 
     "scenarios": {
       "scenario80": {

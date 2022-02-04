@@ -58,7 +58,7 @@ class SPM(Model):
 
         productivity_lookup = self.get_property("productivity")
 
-        self._productivity = self.lookup(
+        self._productivity = self._lookup(
                 self._schedule_pressure,
                 productivity_lookup["value"])
 
