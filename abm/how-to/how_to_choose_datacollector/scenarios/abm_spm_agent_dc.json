@@ -2,7 +2,7 @@
   "ABMsmSimpleProjectManagementAgentDataCollector": {
     "type": "abm",
     "name": "Simple Project Management Model",
-    "model" : "simulation_models.spm.SPMAgentDataCollector.SPM",
+    "model" : "simulation_models.spmadc.SpmAdc",
 
     "scenarios": {
       "scenario80": {

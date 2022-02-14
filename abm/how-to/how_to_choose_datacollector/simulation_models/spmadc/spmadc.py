@@ -1,10 +1,11 @@
 from BPTK_Py import Model
 from BPTK_Py.widgets import WidgetLoader
+from BPTK_Py.modeling.datacollectors import AgentDataCollector
 from .staffMember import StaffMember
 from .task import Task
 from .controlling import Controlling
 
-class SPM(Model):
+class SpmAdc(Model):
 
 
     def instantiate_model(self):
@@ -19,6 +20,8 @@ class SPM(Model):
 
         self._productivity=1
         self._schedule_pressure=1
+        
+        self.data_collector=AgentDataCollector()
 
     def begin_round(self, time, sim_round, step):
         # schedule pressure and productivity are updated once at the beginning of each round
@@ -58,7 +61,7 @@ class SPM(Model):
 
         productivity_lookup = self.get_property("productivity")
 
-        self._productivity = self.lookup(
+        self._productivity = self._lookup(
                 self._schedule_pressure,
                 productivity_lookup["value"])
 
