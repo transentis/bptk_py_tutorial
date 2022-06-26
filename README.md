@@ -49,8 +49,9 @@ This tutorial contains a number of Jupyter notebooks that illustrate usage of th
     * HOW TOs
         * [How To: Accessing Raw Simulation Results](general/how-to/how_to_accessing_raw_simulation_results/how_to_accessing_raw_simulation_results.ipynb) Explains how to access raw simulation results with scenarios.
         * [How To: Advanced Plotting Features](general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.ipynb) Discusses some advanced features of the `bptk.plot_scenarios` method.
-        * [How To: Building Interactive Dashboards](general/how-to/how_to_interactive_dashboards/how_to_interactive_dashboards.ipynb). Shows how do build simple interactive dashboards using the `bptk.dashboard` method.
-        * [How To: Developing Advanced User-Interfaces](general/how-to/how_to_developing_advanced_user_interfaces/how_to_developing_advanced_user_interfaces.ipynb) Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
+        * [How To:  Develop Dashboards Using the SimpleDashboard Utility Class](general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_developing_dashboards_using_simpledashboard.ipynb). Shows how do build simple interactive dashboards using the `bptk.dashboard` method.
+        * [How To: Develop Dashboards Using Jupyter Widgets](general/how-to/how_to_develop_dashboards_using_jupyter_widgets/how_to_developing_dashboards_using_juypter_widgets.ipynb) Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.
+        * [How To: Persist BPTK-Server State](general/how-to/how_to_external_state/how_to_external_state.ipynb) Show how to persist the state of BptkServer using an ExternalStateAdapter.
 * __Agent-based Modeling__
     * In Depth Discussions
         * [Agent-based Modeling with BPTK-Py](abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.ipynb) Illustrates how to create an agent-based implementation of a simple project management model.
@@ -80,6 +81,7 @@ You can also find further introductions on our blog:
 * [Step-by-step introduction to System Dynamics](https://www.transentis.com/step-by-step-tutorials/introduction-to-system-dynamics/) using the simple project management model.
 * Introduction to the [Bass Diffusion Model](https://www.transentis.com/causal-loop-diagramming/).
 * The [Customer Acquisition Model](https://www.transentis.com/an-example-to-illustrate-the-business-prototyping-methodology) is discussed in our series of post introducing the Business Prototyping Methodology.
+* Our [Business Prototyping Toolkit Meetup Group](https://www.transentis.com/business-prototyping-toolkit-meetup/en/) gathers online regularly. This is a good place to see BPTK in action, ask questions and suggest new features. We record every session and you can _view past recordings_ on the [meetup homepage](https://www.transentis.com/resources/business-prototyping-toolkit-meetup).
 
 ## Advanced Examples on GitHub
 
@@ -88,6 +90,7 @@ You can find more advanced examples of models and dashboards build using BPTK on
 * [COVID Simulation](https://github.com/transentis/sim-covid-19). Jupyter notebooks and dashboards illustrating the SIR model.
 * [COVID Simulation Dashboard](https://github.com/transentis/sim-covid-dashboard). A web-based simulation dashboard for the COVID simulation built using our BPTK Widgets library for Javascript. View a [live version](http://www.covid-sim.com) of the dashboard online.
 * [Beer Distribution Game](https://github.com/transentis/beergame). In-depth analysis of the beergame using both System Dynamics and Agent-based simulation. Includes an illustration of how to use BPTK in conjunction with reinforcement learning to train agents to play the beergame autonomously. 
+* [Model Library Repository](https://github.com/transentis/bptk-model-library). A growing repository which contains a number of models that illustrate how to model socio-economic systems using Agent-based modeling, System Dynamics and BPTK.
 
 ## Get in Touch
 
