@@ -1,7 +1,10 @@
-# Quickstart
+---
+title: "Quickstart"
+description: "Quick introduction to using BPTK-Py business simulation framework."
+keywords: "agent-based modeling, abm, system dynamics, systemdynamics, bptk, bptk-py, python, business simulation"
+---
 
-::: {.meta description="Quick introduction to using BPTK-Py business simulation framework." keywords="agent-based modeling, abm, system dynamics, systemdynamics, bptk, bptk-py, python, business simulation"}
-:::
+# Quickstart
 
 The best way to get started with the *Business Prototyping Toolkit for
 Python* (BPTK-Py) is to download the BPTK-Py Tutorial. The tutorial

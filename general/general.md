@@ -1,3 +1,9 @@
+---
+title: "General Information"
+keywords: agent-based modeling, abm, bptk, bptk-py, python, business simulation
+description: "General overview of the BPTK-Py business simulation framework, as it applies to Agent-based modeling and System Dynamics."
+---
+
 General Information
 ===================
 

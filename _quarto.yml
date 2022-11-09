@@ -11,6 +11,7 @@ project:
 website:
   title: "BPTK_PY"
   page-navigation: true
+  open-graph: true
   page-footer: 
     center: "© Copyright 2022, transentis labs GmbH." 
   sidebar:
@@ -21,26 +22,20 @@ website:
     contents:
       - text: "Installation"
         file: usage/installation.md
-        keywords: agent-based modeling, abm, bptk, bptk-py, python, business simulation
-        description: "Explains how to install the BPTK-Py business simulation framework."
         
       - text: "Quickstart"
         file: usage/quickstart.md
-        keywords: agent-based modeling, abm, system dynamics, systemdynamics, bptk, bptk-py, python, business simulation
-        description: "Quick introduction to using BPTK-Py business simulation framework."
         
       - text: "Limitations"
         file: usage/limitations.md
-        keywords: agent-based modeling, abm, bptk, bptk-py, python, business simulation
-        description: "List the limitations of the BPTK-Py framework."
         
       - section: "General Information"
         file: general/general.md
-        keywords: agent-based modeling, abm, bptk, bptk-py, python, business simulation
-        description: "General overview of the BPTK-Py business simulation framework, as it applies to Agent-based modeling and System Dynamics."
+        
         contents:
           - text: "Architecture"
             file: general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html
+
           - text: "Scenarios in Depth"
             file: general/in-depth/in_depth_scenarios/in_depth_scenarios.html
           - text: "Accessing Raw Simulation Results"
@@ -57,19 +52,16 @@ website:
 
       - section: "Agent Based Modeling"
         file: abm/abm.md
-        keywords: agent-based modeling, abm, bptk, python
-        description: "In-depth explanation of agent-based modeling."
         contents:
           - text: "Agent Based Modeling"
             file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
           - text: "Data Collector"
             file: abm/how-to/how_to_choose_datacollector/how_to_choose_datacollector.html
-
-
+            
+            
       - section: "Introduction to XMILE"
         file: xmile/xmile.md
-        keywords: system dynamics, systemdynamics, xmile, bptk, bptk-py, python, business simulation
-        description: "Using XMILE System Dynamics models in the BPTK-Py business simulation framework."
+        
         contents:
           - text: "XMILE SD Models"
             file: xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html
@@ -79,14 +71,16 @@ website:
             file: xmile/how-to/how_to_xmile_arrays/how_to_xmile_arrays.html
           - text: "Use Standalone XMILE Compiler"
             file: xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html
+          - text: "Writing Computational Essays"
+            file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
 
 
 
       - section: "Introduction to SD DSL"
         file: sd-dsl/sddsl.md
-        keywords: system dynamics, systemdynamics, sd dsl, bptk, bptk-py, python, business simulation
-        description: "Introduction to building models using the domain specific language for System Dynamics (SD DSL) that is part of the BPTK-Py business simulation framework."
         contents:
+          - text: "Introduction to SD DSL"
+            file: step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.html
           - text: "BPTK for System Dynamics"
             file: sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.html
           - text: "SD DSL Functions"

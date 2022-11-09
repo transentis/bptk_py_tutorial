@@ -1,3 +1,9 @@
+---
+title: Using the XMILE Compiler Standalone
+description: In-depth explanation of how to use the XMILE Compiler Standalone.
+keywords: system dynamics, systemdynamics, xmile, bptk, bptk-py, python, business simulation, stella
+---
+
 # Using the XMILE Compiler Standalone
 
 The BPTK-Py package contains a compiler which compiles System Dynamics

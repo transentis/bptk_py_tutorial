@@ -1,7 +1,11 @@
+---
+title: "Limitations"
+description: "List the limitations of the BPTK-Py framework."
+keywords: "agent-based modeling, abm, bptk, bptk-py, python, business simulation"
+---
+
 # Limitations
 
-::: {.meta description="List the limitations of the BPTK-Py framework." keywords="agent-based modeling, abm, bptk, bptk-py, python, business simulation"}
-:::
 
 Currently the BPTK_Py framework is geared towards our own need and has a
 number of limitations. We are more than happy to extend the framework to

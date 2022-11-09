@@ -2,3 +2,7 @@
 .sidebar-item .sidebar-item-container {
     margin-bottom: 5px;
 }
+
+#title-block-header {
+    display: none;
+}
