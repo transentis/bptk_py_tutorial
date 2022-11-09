@@ -6,6 +6,7 @@ project:
     - "*.md"
     - "*.ipynb"
     - "!README.md"
+    - "!readme.ipynb"
 
 website:
   title: "BPTK_PY"
