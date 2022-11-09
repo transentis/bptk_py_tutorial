@@ -1,0 +1,7 @@
+- [The architecture of the BPTK Framework](/general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html)
+- [Scenarios in Depth](/general/in-depth/in_depth_scenarios/in_depth_scenarios.html)
+- [Accessing Raw Simulation Results](/general/how-to/how_to_accessing_raw_simulation_results/how_to_accessing_raw_simulation_results.html)
+- [Advanced Plotting Features](/general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.html)
+- [Developing Dashboards using Jupyter Widgets](/general/how-to/how_to_build_dashboards/how_to_build_dashboards.html)
+- [Developing Dashboards using the SimpleDashboard Utility Class](/general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_develop_dashboards_using_simpledashboard.html)
+- [Persisting the BPTK-Server State](/general/how-to/how_to_external_state/how_to_external_state.html)
