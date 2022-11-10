@@ -43,7 +43,7 @@ website:
           - text: "Advanced Plotting Features"
             file: general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.html
           - text: "Dashboards using Jupyter Widgets"
-            file: general/how-to/how_to_build_dashboards/how_to_build_dashboards.html
+            file: general/how-to/how_to_develop_dashboards_using_jupyter_widgets/how_to_developing_dashboards_using_juypter_widgets.html
           - text: "Dashboards using the SimpleDashboard"
             file: general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_develop_dashboards_using_simpledashboard.html
           - text: "Persistent BPTK-Server State"
