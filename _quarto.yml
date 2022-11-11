@@ -5,6 +5,7 @@ project:
   render:
     - "*.md"
     - "*.ipynb"
+    - "*.qmd"
     - "!README.md"
     - "!readme.ipynb"
 
