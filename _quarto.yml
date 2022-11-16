@@ -69,7 +69,7 @@ website:
           - text: "Exporting Simulation Results"
             file: xmile/how-to/how_to_exporting_simulation_results/how_to_exporting_simulation_results.html
           - text: "Arrayed Variables in XMILE Models"
-            file: xmile/how-to/how_to_xmile_arrays/how_to_xmile_arrays.html
+            file: xmile/how-to/how_to_xmile_arrays/how_to_XMILE_arrays.html
           - text: "Use Standalone XMILE Compiler"
             file: xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html
           - text: "Writing Computational Essays"
@@ -80,7 +80,7 @@ website:
       - section: "Introduction to SD DSL"
         file: sd-dsl/sddsl.md
         contents:
-          - text: "Introduction to SD DSL"
+          - text: "Introduction to SD DSL using Python"
             file: step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.html
           - text: "BPTK for System Dynamics"
             file: sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.html

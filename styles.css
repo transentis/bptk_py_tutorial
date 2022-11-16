@@ -6,3 +6,8 @@
 #title-block-header {
     display: none;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}

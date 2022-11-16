@@ -83,8 +83,8 @@ On the command line, move into a directory where you would like to store
 the BPTK-Py tutorial.
 
 Clone the BPTK-Py tutorial repository using `git clone`:
-```
-    git clone https://github.com/transentis/bptk_py_tutorial.git
+```python
+git clone https://github.com/transentis/bptk_py_tutorial.git
 ```
 ### Set up a virtual environment
 
@@ -94,24 +94,26 @@ packages.
 
 Following steps are required to set up a virtual environment in a folder
 called `venv`:
-```
-    python3 -m venv venv
+```python
+python3 -m venv venv
 ```
 Enter the virtual environment using one of the following commands
-appropriate::
-```
-    source venv/bin/activate  #  For UNIX/Linux/Mac OS X
-    venv\Scripts\activate.bat # For Windows
-```
+appropriate:
+
+| OS                 | Command                      |
+|--------------------|------------------------------|
+| `UNIX/Linux/MacOS` | source venv/bin/activate     |
+| `Windows`          | venv\Scripts\activate.bat    |
+
 Now you should see \"(venv)\" at the beginning of your command prompt.
 
 ### Install BPTK-Py and JupyterLab
 
 Now we have a virtual environment, we can install BPTK-Py and
 JupyterLab:
-```
-    pip install -r requirements.txt #installs BPTK-Py and JupyterLab
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager #installs some extensions for JupyterLab
+```python
+pip install -r requirements.txt
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
 ### Start JupyterLab
 
