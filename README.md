@@ -99,8 +99,3 @@ Please let us know if you need help getting started, if you find a bug or are mi
 We are keen to hear how you use BPTK-Py – your feedback is invaluable in helping us improve BPTK-Py.
 
 You can best reach us per e-mail at [support@transentis.com](mailto:support@transentis.com)
-
-
-```python
-
-```
