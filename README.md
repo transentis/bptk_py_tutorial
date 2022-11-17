@@ -1,4 +1,4 @@
--# Overview Of The BPTK-Py Tutorial
+# Overview Of The BPTK-Py Tutorial
 
 This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the [BPTK-Py online documentation](http://bptk.transentis.com).
 
