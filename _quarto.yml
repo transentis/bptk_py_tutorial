@@ -89,6 +89,46 @@ website:
           - text: "User-defined functions"
             file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
 
+
+
+      - section: "BPTK API"
+        file: api/api.md
+        contents:
+          - text: "Agent"
+            file: api/api_agent.html
+          - text: "bptk"
+            file: api/api_bptk.html
+          - text: "BptkServer"
+            file: api/api_bptk_server.html
+          - text: "Biflow"
+            file: api/api_biflow.html
+          - text: "Constant"
+            file: api/api_constant.html
+          - text: "Converter"
+            file: api/api_converter.html
+          - text: "DataCollector"
+            file: api/api_datacollector.html
+          - text: "Element"
+            file: api/api_element.html
+          - text: "Event"
+            file: api/api_event.html
+          - text: "Flow"
+            file: api/api_flow.html
+          - text: "Model"
+            file: api/api_model.html
+          - text: "Module"
+            file: api/api_module.html
+          - text: "Scheduler"
+            file: api/api_scheduler.html
+          - text: "SimpleDashboard"
+            file: api/api_simpledashboard.html
+          - text: "SimulationScenario"
+            file: api/api_simulation_scenario.html
+          - text: "Simultaneous Scheduler"
+            file: api/api_simultaneousScheduler.html
+          - text: "Stock"
+            file: api/api_stock.html
+
 format:
   html:
     theme: cosmo
