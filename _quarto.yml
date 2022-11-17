@@ -10,12 +10,14 @@ project:
     - "!readme.ipynb"
 
 website:
+  favicon: img/favicon.ico
   title: "BPTK_PY"
   page-navigation: true
   open-graph: true
   page-footer: 
     center: "© Copyright 2022, transentis labs GmbH." 
   sidebar:
+    logo: img/labs_icon.svg
     collapse-level: 1
     style: "floating"
     search: true
@@ -131,6 +133,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    # theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true

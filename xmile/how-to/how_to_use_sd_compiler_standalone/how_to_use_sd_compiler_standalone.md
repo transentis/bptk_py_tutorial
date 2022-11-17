@@ -184,6 +184,7 @@ df[2:5] # just showing an interesting subset of data here
 </table>
 </div>
 ```
+
 ```python
 df.plot()
 ```
