@@ -1,0 +1,2 @@
+- [Agent-based Modeling With BPTK-Py](/abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html)
+- [How to choose the Data Collector](/abm/how-to/how_to_choose_datacollector/how_to_choose_datacollector.html)
