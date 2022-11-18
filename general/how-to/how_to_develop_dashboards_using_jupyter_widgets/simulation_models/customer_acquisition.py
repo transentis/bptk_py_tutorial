@@ -55,10 +55,10 @@ def LERP(x,points):
 
 class simulation_model():
     def __init__(self):
-        # Simulation Buildins
+        # Simulation Settings
         self.dt = 1.0
-        self.starttime = 0
-        self.stoptime = 60
+        self.starttime = 0.0
+        self.stoptime = 60.0
         self.units = 'Months'
         self.method = 'Euler'
         self.equations = {
@@ -221,12 +221,12 @@ class simulation_model():
     
     def rank(self, lis, rank):
         rank = int(rank)
-        sorted_list = sorted(lis)
+        sorted_list = np.sort(lis)
         try:
             rankth_elem = sorted_list[rank-1]
         except IndexError as e:
             logging.error("RANK: Rank {} too high for array of size {}".format(rank,len(lis)))
-        return lis.index(rankth_elem)+1
+        return (lis==rankth_elem).nonzero()[0][0]+1
         
 
     def interpolate(self, variable, t, *args):
@@ -581,8 +581,8 @@ class simulation_model():
         for product in products:
             prod = str(product).replace("(", "").replace(")", "").replace("[", "").replace("]", "").replace("'", "").replace(" ", "")
             return_list += [self.memoize(equation_basic + "[{}]".format(prod), t)]
-
-        return return_list
+            
+        return np.array(return_list)
 
 
     #Access equations API

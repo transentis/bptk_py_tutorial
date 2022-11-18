@@ -1,0 +1,141 @@
+project:
+  type: website
+  title: "BPTK_PY"
+  output-dir: _output
+  render:
+    - "*.md"
+    - "*.ipynb"
+    - "*.qmd"
+    - "!README.md"
+    - "!readme.ipynb"
+
+website:
+  favicon: img/favicon.ico
+  title: "BPTK_PY"
+  page-navigation: true
+  open-graph: true
+  page-footer: 
+    center: "© Copyright 2022, transentis labs GmbH." 
+  sidebar:
+    logo: img/labs_icon.svg
+    collapse-level: 1
+    style: "floating"
+    search: true
+    align: left
+    contents:
+      - text: "Installation"
+        file: usage/installation.md
+        
+      - text: "Quickstart"
+        file: usage/quickstart.md
+        
+      - text: "Limitations"
+        file: usage/limitations.md
+        
+      - section: "General Information"
+        file: general/general.md
+        
+        contents:
+          - text: "Architecture"
+            file: general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html
+
+          - text: "Scenarios in Depth"
+            file: general/in-depth/in_depth_scenarios/in_depth_scenarios.html
+          - text: "Accessing Raw Simulation Results"
+            file: general/how-to/how_to_accessing_raw_simulation_results/how_to_accessing_raw_simulation_results.html
+          - text: "Advanced Plotting Features"
+            file: general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.html
+          - text: "Dashboards using Jupyter Widgets"
+            file: general/how-to/how_to_develop_dashboards_using_jupyter_widgets/how_to_developing_dashboards_using_juypter_widgets.html
+          - text: "Dashboards using the SimpleDashboard"
+            file: general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_develop_dashboards_using_simpledashboard.html
+          - text: "Persistent BPTK-Server State"
+            file: general/how-to/how_to_external_state/how_to_external_state.html
+
+
+      - section: "Agent Based Modeling"
+        file: abm/abm.md
+        contents:
+          - text: "Agent Based Modeling"
+            file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
+          - text: "Data Collector"
+            file: abm/how-to/how_to_choose_datacollector/how_to_choose_datacollector.html
+            
+            
+      - section: "Introduction to XMILE"
+        file: xmile/xmile.md
+        
+        contents:
+          - text: "XMILE SD Models"
+            file: xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html
+          - text: "Exporting Simulation Results"
+            file: xmile/how-to/how_to_exporting_simulation_results/how_to_exporting_simulation_results.html
+          - text: "Arrayed Variables in XMILE Models"
+            file: xmile/how-to/how_to_xmile_arrays/how_to_XMILE_arrays.html
+          - text: "Use Standalone XMILE Compiler"
+            file: xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html
+          - text: "Writing Computational Essays"
+            file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
+
+
+
+      - section: "Introduction to SD DSL"
+        file: sd-dsl/sddsl.md
+        contents:
+          - text: "Introduction to SD DSL using Python"
+            file: step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.html
+          - text: "BPTK for System Dynamics"
+            file: sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.html
+          - text: "SD DSL Functions"
+            file: sd-dsl/in-depth/in_depth_sd_dsl_functions/in_depth_sd_dsl_functions.html
+          - text: "User-defined functions"
+            file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
+
+
+
+      - section: "BPTK API"
+        file: api/api.md
+        contents:
+          - text: "Agent"
+            file: api/api_agent.html
+          - text: "bptk"
+            file: api/api_bptk.html
+          - text: "BptkServer"
+            file: api/api_bptk_server.html
+          - text: "Biflow"
+            file: api/api_biflow.html
+          - text: "Constant"
+            file: api/api_constant.html
+          - text: "Converter"
+            file: api/api_converter.html
+          - text: "DataCollector"
+            file: api/api_datacollector.html
+          - text: "Element"
+            file: api/api_element.html
+          - text: "Event"
+            file: api/api_event.html
+          - text: "Flow"
+            file: api/api_flow.html
+          - text: "Model"
+            file: api/api_model.html
+          - text: "Module"
+            file: api/api_module.html
+          - text: "Scheduler"
+            file: api/api_scheduler.html
+          - text: "SimpleDashboard"
+            file: api/api_simpledashboard.html
+          - text: "SimulationScenario"
+            file: api/api_simulation_scenario.html
+          - text: "Simultaneous Scheduler"
+            file: api/api_simultaneousScheduler.html
+          - text: "Stock"
+            file: api/api_stock.html
+
+format:
+  html:
+    # theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
