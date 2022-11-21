@@ -11,13 +11,15 @@ project:
 
 website:
   favicon: img/favicon.ico
-  title: "BPTK_PY"
+  title: "BPTK-Py: System Dynamics and Agent Based Modeling in Python"
+  description: "BPTK-Py is a Python framework for System Dynamics and Agent Based Modeling. It is fully compatible with Jupyter Notebooks and can easily be used to create interactive models."
   page-navigation: true
   open-graph: true
   page-footer: 
     center: "© Copyright 2022, transentis labs GmbH." 
   sidebar:
     logo: img/labs_icon.svg
+    logo-alt: "BPTK"
     collapse-level: 1
     style: "floating"
     search: true
