@@ -1,5 +1,5 @@
 from BPTK_Py import Agent
-
+from BPTK_Py import Event
 
 class Project(Agent):
 
@@ -14,6 +14,8 @@ class Project(Agent):
         self.register_event_handler(["started"], "project_joined", self.handle_joined_event)
         self.register_event_handler(["started"], "project_progress", self.handle_progress_event)
         self.register_event_handler(["fully_staffed"], "project_progress", self.handle_progress_event)
+
+        self._effort_spent=0
 
     def handle_started_event(self, event):
         self.remaining_effort = self.effort
@@ -32,11 +34,19 @@ class Project(Agent):
 
     def handle_progress_event(self, event):
         self.remaining_effort = max(self.remaining_effort-event.data["progress"], 0)
+        
+        self._effort_spent=self._effort_spent + event.data["progress"]
 
         if self.remaining_effort <= 0:
             self.state = "completed"
 
     def act(self, time, round_no, step_no):
+
+        controlling = self.model.next_agent("controlling", "active")
+        if controlling:
+            controlling.receive_instantaneous_event(Event("revenue", self.id, controlling.id,{"revenue":self._effort_spent*self.daily_rate}))
+        self._effort_spent=0
+    
         if self.state=="acquired" and time*1.0==self.start_time:
             self.state="ready"
 

@@ -13,9 +13,16 @@ class Consultant(Agent):
 
     def act(self, time, round_no, step_no):
 
-       work_capacity = self.model.dt # the amount of work a consultant could do in this time step
+        controlling = self.model.next_agent("controlling", "active")
+        
+        if controlling:
+            controlling.receive_instantaneous_event(Event("salary", self.id, controlling.id,{"salary":self.salary}))
 
-       while work_capacity > 0:
+        self._effort_spent=0
+  
+        work_capacity = self.model.dt # the amount of work a consultant could do in this time step
+
+        while work_capacity > 0:
             if self.state == "available":
 
                 self.project = self.model.next_agent("project", "ready")
@@ -53,6 +60,8 @@ class Consultant(Agent):
                         {"progress": work_done}
                      )
                 )
+
+   
 
               
 

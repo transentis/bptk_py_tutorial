@@ -17,7 +17,15 @@
         "agents": [
           {
             "name": "consultant",
-            "count": 10
+            "count": 10,
+            "properties":
+            {
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
          },
           {
             "name": "controlling",
@@ -43,6 +51,11 @@
               {
                 "type": "Double",
                 "value":5.0
+              },
+              "daily_rate":
+              {
+                "type": "Double",
+                "value":5000.0
               }
             }
           }
@@ -60,7 +73,15 @@
         "agents": [
           {
             "name": "consultant",
-            "count": 10
+            "count": 10,
+            "properties":
+            {
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
          },
           {
             "name": "controlling",
@@ -86,6 +107,11 @@
               {
                 "type": "Double",
                 "value":5.0
+              },
+              "daily_rate":
+              {
+                "type": "Double",
+                "value":5000.0
               }
             }
           }
@@ -103,7 +129,15 @@
         "agents": [
           {
             "name": "consultant",
-            "count": 10
+            "count": 10,
+            "properties":
+            {
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
          },
           {
             "name": "controlling",
@@ -129,6 +163,67 @@
               {
                 "type": "Double",
                 "value":5.0
+              },
+              "daily_rate":
+              {
+                "type":"Double",
+                "value":5000.0
+              }
+            }
+          }
+        ]
+      },
+"interactive": {
+        "runspecs": {
+          "starttime": 0,
+          "stoptime": 60,
+          "dt": 1.0
+        },
+        "properties": {
+        
+        },
+        "agents": [
+          {
+            "name": "consultant",
+            "count": 10,
+            "properties":
+            {
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
+         },
+          {
+            "name": "controlling",
+            "count": 1
+          }
+          ,
+          {
+            "name": "project",
+            "count": 5,
+            "properties":
+            {
+              "effort":
+              {
+                "type": "Double",
+                "value": 50.0
+              },
+              "consultants":
+              {
+                "type": "Double",
+                "value":3.0
+              },
+              "start_time":
+              {
+                "type": "Double",
+                "value":5.0
+              },
+              "daily_rate":
+              {
+                "type":"Double",
+                "value":5000.0
               }
             }
           }
