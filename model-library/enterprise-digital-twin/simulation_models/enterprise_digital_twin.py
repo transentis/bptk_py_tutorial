@@ -1,8 +1,9 @@
 from BPTK_Py import Model
-from .consultant import Consultant
-from .project import Project
-from .controlling import Controlling
-from .enterprise_digital_twin_sd import EnterpriseDigitalTwinSD
+from .abm.consultant import Consultant
+from .abm.project import Project
+from .abm.controlling import Controlling
+from .sd.enterprise_digital_twin_sd import EnterpriseDigitalTwinSD
+
 class EnterpriseDigitalTwin(Model):
 
     def instantiate_model(self):

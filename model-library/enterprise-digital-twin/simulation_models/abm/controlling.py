@@ -16,7 +16,7 @@ class Controlling(Agent):
         self.set_property("expenses", {"type": "Double", "value": 0.0})
         self.set_property("profit",{"type":"Double","value":0.0})
         self.set_property("cash",{"type":"Double","value":0.0})
-        self.set_property("accumulated_profit",{"type":"Double","value":0.0})
+        self.set_property("earnings",{"type":"Double","value":0.0})
 
     def handle_revenue_event(self,event):
         self._revenue = self._revenue + event.data["revenue"]
@@ -25,15 +25,15 @@ class Controlling(Agent):
         self._salaries = self._salaries + event.data["salary"]
 
     def act(self, time, round_no, step_no):
-        self.model.points["salaries"].append([time,self._salaries])
+        self.model.points["cost.salaries"].append([time,self._salaries])
         self._salaries=0
-        self.model.points["revenue"].append([time,self._revenue])
+        self.model.points["revenue.revenue"].append([time,self._revenue])
         self._revenue=0
-        self.revenue = self.model.sd_model.revenue(time)
-        self.expenses = self.model.sd_model.expenses(time)
-        self.profit = self.model.sd_model.profit(time)
-        self.accumulated_profit = self.model.sd_model.accumulated_profit(time)
-        self.cash = self.model.sd_model.cash(time)
+        self.revenue = self.model.evaluate_equation("revenue.revenue",time)
+        self.expenses = self.model.evaluate_equation("cost.expenses",time)
+        self.profit = self.model.evaluate_equation("earnings.profit",time)
+        self.earnings = self.model.evaluate_equation("earnings.earnings",time)
+        self.cash = self.model.evaluate_equation("cash.cash",time)
 
 
 
