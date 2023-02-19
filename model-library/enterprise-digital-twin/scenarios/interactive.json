@@ -7,8 +7,8 @@
     "scenarios": {
 "interactive": {
         "runspecs": {
-          "starttime": 0,
-          "stoptime": 60,
+          "starttime": 1,
+          "stoptime": 61,
           "dt": 1.0
         },
         "properties": {
@@ -32,7 +32,7 @@
               }
             }
          },
- {
+         {
             "name": "consultant",
             "count": 1,
             "properties":
@@ -45,15 +45,82 @@
               "salary":
               {
                 "type":"Double",
-                "value":1500.0
+                "value":1000.0
+              }
+            }
+         },
+          {
+            "name": "consultant",
+            "count": 1,
+            "properties":
+            {
+              "name":
+              {
+                "type":"String",
+                "value":"Consultant 3"
+              },
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
+         },
+         {
+            "name": "consultant",
+            "count": 1,
+            "properties":
+            {
+              "name":
+              {
+                "type":"String",
+                "value":"Consultant 4"
+              },
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
+         },
+         {
+            "name": "consultant",
+            "count": 1,
+            "properties":
+            {
+              "name":
+              {
+                "type":"String",
+                "value":"Consultant 5"
+              },
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
+              }
+            }
+         },
+         {
+            "name": "consultant",
+            "count": 1,
+            "properties":
+            {
+              "name":
+              {
+                "type":"String",
+                "value":"Consultant 6"
+              },
+              "salary":
+              {
+                "type":"Double",
+                "value":1000.0
               }
             }
          },
           {
             "name": "controlling",
             "count": 1
-          }
-          ,
+          },
           {
             "name": "project",
             "count": 1,
@@ -67,26 +134,26 @@
               "effort":
               {
                 "type": "Double",
-                "value": 50.0
+                "value": 120.0
               },
               "consultants":
               {
                 "type": "Double",
-                "value":3.0
+                "value":2.0
               },
               "start_time":
               {
                 "type": "Double",
-                "value":5.0
+                "value":1.0
               },
               "daily_rate":
               {
                 "type":"Double",
-                "value":5000.0
+                "value":1000.0
               }
             }
           },
-  {
+         {
             "name": "project",
             "count": 1,
             "properties":
@@ -99,23 +166,23 @@
               "effort":
               {
                 "type": "Double",
-                "value": 50.0
+                "value": 120.0
               },
 
               "consultants":
               {
                 "type": "Double",
-                "value":3.0
+                "value":2.0
               },
               "start_time":
               {
                 "type": "Double",
-                "value":5.0
+                "value":1.0
               },
               "daily_rate":
               {
                 "type":"Double",
-                "value":5000.0
+                "value":1000.0
               }
             }
           },
@@ -132,60 +199,27 @@
               "effort":
               {
                 "type": "Double",
-                "value": 50.0
+                "value": 120.0
               },
 
               "consultants":
               {
                 "type": "Double",
-                "value":3.0
+                "value":2.0
               },
               "start_time":
               {
                 "type": "Double",
-                "value":5.0
+                "value":1.0
               },
               "daily_rate":
               {
                 "type":"Double",
-                "value":5000.0
-              }
-            }
-          },
-{
-            "name": "project",
-            "count": 1,
-            "properties":
-            {
-              "name":
-              {
-                "type":"String",
-                "value":"Project 4"
-              },
-              "effort":
-              {
-                "type": "Double",
-                "value": 50.0
-              },
-
-              "consultants":
-              {
-                "type": "Double",
-                "value":3.0
-              },
-              "start_time":
-              {
-                "type": "Double",
-                "value":5.0
-              },
-              "daily_rate":
-              {
-                "type":"Double",
-                "value":5000.0
+                "value":1000.0
               }
             }
           }
-        ]
+       ]
       }
 
     }

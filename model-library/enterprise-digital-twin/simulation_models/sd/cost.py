@@ -17,8 +17,6 @@ class Cost(Module):
 
         #converters
         
-        self.points[self.fqn("salaries")]=[]
-        
-        self.salaries.equation=sd.lookup(sd.time(),self.fqn("salaries"))
+        self.salaries.equation=self.model.function("get_salaries",lambda model,t: model._exchange["salaries"][t] if t>0.0 else 0.0)()
         self.expenses.equation = self.salaries
 

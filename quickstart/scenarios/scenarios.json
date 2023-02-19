@@ -1,0 +1,22 @@
+{
+    "xmile_customer_acquisition":
+    {
+        "source":"simulation_models/customer_acquisition_xmile.stmx",
+        "model":"simulation_models/customer_acquisition_xmile",
+        "scenarios":
+        {
+          "base": { },
+          
+        "low_word_of_mouth":{
+            "constants":{
+                "wordOfMouthSuccess":0.001
+            }
+        },
+        "high_word_of_mouth":{
+            "constants":{
+                "wordOfMouthSuccess":0.1
+            }
+        }
+        }
+    }
+}

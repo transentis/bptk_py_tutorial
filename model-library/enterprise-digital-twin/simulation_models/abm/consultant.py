@@ -4,12 +4,21 @@ from BPTK_Py import Event
 
 class Consultant(Agent):
 
+    def __init__(self, agent_id, model, properties,agent_type="agent"):
+        super().__init__(agent_id,model,properties,agent_type)
+        self._effort_spent = 0
 
     def initialize(self):
 
+        self._effort_spent = 0
         self.agent_type = "consultant"
         self.state = "available"
         self.set_property("project", {"type": "Agent", "value": None})
+
+    def reset_cache(self):
+        self.state="available"
+        self.project = None
+        self._effort_spent = 0
 
     def act(self, time, round_no, step_no):
 

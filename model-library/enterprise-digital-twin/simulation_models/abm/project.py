@@ -17,6 +17,13 @@ class Project(Agent):
 
         self._effort_spent=0
 
+
+    def reset_cache(self):
+        self._effort_spent=0
+        self.state="acquired"
+        self.remaning_effort=0.0
+        self.staff=0.0
+
     def handle_started_event(self, event):
         self.remaining_effort = self.effort
         self.staff = self.staff+1.0
@@ -49,6 +56,9 @@ class Project(Agent):
     
         if self.state=="acquired" and time*1.0==self.start_time:
             self.state="ready"
+            if controlling:
+                controlling.receive_instantaneous_event(Event("consultant_demand", self.id, controlling.id,{"consultant_demand":self.consultants-self.staff}))
+
 
 
 
