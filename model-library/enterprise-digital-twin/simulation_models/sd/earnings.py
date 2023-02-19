@@ -10,17 +10,17 @@ class Earnings(Module):
     def initialize(self,revenue, cost):
 
         # stocks
-        earnings = self.stock("earnings")
+        accumulated_earnings = self.stock("accumulated_earnings")
 
         # flows
-        earnings_in = self.flow("earnings_in")
+        accumulated_earnings_in = self.biflow("accumulated_earnings_in")
 
         # converters
-        profit = self.converter("profit")
+        earnings = self.converter("earnings")
 
         # equations
-        profit.equation=revenue.revenue - cost.expenses
+        earnings.equation=revenue.revenue - cost.expenses
 
-        earnings.initial_value = 0.0
-        earnings_in.equation=profit        
-        earnings.equation = earnings_in
+        accumulated_earnings.initial_value = 0.0
+        accumulated_earnings_in.equation=earnings       
+        accumulated_earnings.equation = accumulated_earnings_in
