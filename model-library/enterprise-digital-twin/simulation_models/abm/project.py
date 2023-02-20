@@ -51,7 +51,7 @@ class Project(Agent):
 
         controlling = self.model.next_agent("controlling", "active")
         if controlling:
-            controlling.receive_instantaneous_event(Event("revenue", self.id, controlling.id,{"revenue":self._effort_spent*self.daily_rate}))
+            controlling.receive_instantaneous_event(Event("revenue", self.id, controlling.id,{"revenue":self._effort_spent*self.billing_rate}))
         self._effort_spent=0
     
         if self.state=="acquired" and time*1.0==self.start_time:

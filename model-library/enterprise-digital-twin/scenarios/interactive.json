@@ -146,7 +146,7 @@
                 "type": "Double",
                 "value":1.0
               },
-              "daily_rate":
+              "billing_rate":
               {
                 "type":"Double",
                 "value":1000.0
@@ -179,7 +179,7 @@
                 "type": "Double",
                 "value":1.0
               },
-              "daily_rate":
+              "billing_rate":
               {
                 "type":"Double",
                 "value":1000.0
@@ -212,7 +212,7 @@
                 "type": "Double",
                 "value":1.0
               },
-              "daily_rate":
+              "billing_rate":
               {
                 "type":"Double",
                 "value":1000.0

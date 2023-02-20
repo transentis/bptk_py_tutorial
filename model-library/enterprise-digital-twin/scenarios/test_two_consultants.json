@@ -52,7 +52,7 @@
                 "type": "Double",
                 "value":5.0
               },
-              "daily_rate":
+              "billing_rate":
               {
                 "type": "Double",
                 "value":5000.0

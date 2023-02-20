@@ -1,0 +1,224 @@
+%matplotlib inline
+import matplotlib.pyplot as plt
+from ipywidgets import interact
+import ipywidgets as widgets
+
+def update_plots(scenario,timelineTab,capacityDemandTab,expensesTab,revenueTab,cashTab,earningsTab):
+    scenario.reset_cache()
+    with timelineTab:
+        plt.ioff
+        timelineTab.clear_output(wait=True)
+        project_names=[]
+        project_start_times=[]
+        project_durations=[]
+
+        for id in scenario.agent_ids(agent_type='project'):
+            project_names.append(scenario.agent(id).name)
+            project_start_times.append(scenario.agent(id).start_time)
+            project_durations.append(scenario.agent(id).effort/scenario.agent(id).consultants)
+
+        plt.barh(y=project_names,width=project_durations,left=project_start_times)
+        plt.show()
+        plt.ion()
+        
+    with capacityDemandTab:
+        plt.ioff()
+        capacityDemandTab.clear_output(wait=True)
+        bptk.plot_scenarios(
+            scenario_managers=["smEDT"],
+            kind="area",
+            scenarios=["interactive"],
+            title="Consultant Capacity Demand",
+            agents=["controlling"],
+            agent_states=["active"],
+            agent_properties=["consultant_demand"],
+            agent_property_types=["total"]
+        )
+        plt.show()
+        plt.ion()
+
+    with expensesTab:
+        plt.ioff()
+        expensesTab.clear_output()
+        bptk.plot_scenarios(
+            scenario_managers=["smEDT"],
+            kind="area",
+            scenarios=["interactive"],
+            title="Expenses",
+            agents=["controlling"],
+            agent_states=["active"],
+            agent_properties=["expenses"],
+            agent_property_types=["total"]
+        )
+        plt.show()
+        plt.ion()
+
+    with revenueTab:
+        plt.ioff()
+        revenueTab.clear_output()
+        bptk.plot_scenarios(
+            scenario_managers=["smEDT"],
+            kind="area",
+            scenarios=["interactive"],
+            title="Revenue",
+            agents=["controlling"],
+            agent_states=["active"],
+            agent_properties=["revenue"],
+            agent_property_types=["total"]
+        )
+        plt.show()
+        plt.ion()
+
+    with cashTab:
+        plt.ioff()
+        cashTab.clear_output()
+        bptk.plot_scenarios(
+            scenario_managers=["smEDT"],
+            kind="area",
+            scenarios=["interactive"],
+            title="Cash",
+            agents=["controlling"],
+            agent_states=["active"],
+            agent_properties=["cash"],
+            agent_property_types=["total"]
+        )
+        plt.show()
+        plt.ion()
+
+    with earningsTab:
+        plt.ioff()
+        earningsTab.clear_output()
+        bptk.plot_scenarios(
+            scenario_managers=["smEDT"],
+            kind="area",
+            scenarios=["interactive"],
+            title="Earnings",
+            agents=["controlling"],
+            agent_states=["active"],
+            agent_properties=["earnings"],
+            agent_property_types=["total"]
+        )
+        plt.show()
+        plt.ion()
+
+interactive_scenario= bptk.get_scenario("smEDT","interactive")
+
+# projects
+
+project_ids=interactive_scenario.agent_ids(agent_type="project")
+project_tuples=[]
+
+for id in project_ids:
+    project_tuples.append((interactive_scenario.agent(id).name,id))
+
+project_dropdown=widgets.Dropdown(
+    options=project_tuples,
+    value=project_ids[0],
+    description='Project',
+    disabled=False
+)
+
+# project variables
+
+project_name_text=widgets.Text(value=project_tuples[0][0],description="Name")
+project_consultants_slider=widgets.FloatSlider(value=interactive_scenario.agent(project_tuples[0][1]).consultants,description="Consultants",min=1.0,max=10.0,step=1.0,continuous_update=False)
+project_effort_slider=widgets.FloatSlider(value=interactive_scenario.agent(project_tuples[0][1]).effort,description="Effort",min=10.0, max=1000.0,step=1.0,continuous_update=False)
+project_start_time_slider=widgets.FloatSlider(value=interactive_scenario.agent(project_tuples[0][1]).start_time,description="Start Time",min=1.0, max=50.0,step=1.0,continuous_update=False)
+project_billing_rate_slider=widgets.FloatSlider(value=interactive_scenario.agent(project_tuples[0][1]).billing_rate,description="Billing Rate",min=1000.0, max=10000.0,step=1000.0,continuous_update=False)
+
+# project event handlers
+def on_project_dropdown_select(change):
+    # change["new"] is the agent_id
+    id=change["new"]
+    project_name_text.value=interactive_scenario.agent(id).name
+    project_consultants_slider.value=interactive_scenario.agent(id).consultants
+    project_effort_slider.value=interactive_scenario.agent(id).effort
+    project_start_time_slider.value=interactive_scenario.agent(id).start_time
+    project_billing_rate_slider.value=interactive_scenario.agent(id).billing_rate
+
+def on_project_name_change(change):
+    interactive_scenario.agent(project_dropdown.value).name=change["new"]
+
+def on_project_start_time_change(change):
+    interactive_scenario.agent(project_dropdown.value).start_time=change["new"]
+
+def on_project_billing_rate_change(change):
+    interactive_scenario.agent(project_dropdown.value).billing_rate=change["new"]
+
+def on_project_consultants_change(change):
+    interactive_scenario.agent(project_dropdown.value).consultants=change["new"]
+
+def on_project_effort_change(change):
+    interactive_scenario.agent(project_dropdown.value).effort=change["new"]
+
+project_dropdown.observe(on_project_dropdown_select,names="value")
+project_name_text.observe(on_project_name_change,names="value")
+project_start_time_slider.observe(on_project_start_time_change,names="value")
+project_billing_rate_slider.observe(on_project_billing_rate_change,names="value")
+project_effort_slider.observe(on_project_effort_change,names="value")
+project_consultants_slider.observe(on_project_consultants_change,names="value")
+
+# consultants
+
+consultant_ids=interactive_scenario.agent_ids(agent_type="consultant")
+consultant_tuples=[]
+
+for id in consultant_ids:
+    consultant_tuples.append((interactive_scenario.agent(id).name,id))
+
+consultant_dropdown=widgets.Dropdown(
+    options=consultant_tuples,
+    value=consultant_ids[0],
+    description='Consultant',
+    disabled=False
+)
+
+consultant_name_text=widgets.Text(value=consultant_tuples[0][0],description="Name")
+consultant_salary_slider=widgets.FloatSlider(value=interactive_scenario.agent(consultant_tuples[0][1]).salary,description="Salary",min=1.0,max=10000.0,step=1.0,continuous_update=False)
+
+# consultant event handlers
+def on_consultant_dropdown_select(change):
+    # change["new"] is the agent_id
+    id=change["new"]
+    consultant_name_text.value=interactive_scenario.agent(id).name
+    consultant_salary_slider.value=interactive_scenario.agent(id).salary
+
+def on_consultant_name_change(change):
+    interactive_scenario.agent(consultant_dropdown.value).name=change["new"]
+
+def on_consultant_salary_change(change):
+    interactive_scenario.agent(consultant_dropdown.value).salary=change["new"]
+
+consultant_dropdown.observe(on_consultant_dropdown_select,names="value")
+consultant_name_text.observe(on_consultant_name_change,names="value")
+consultant_salary_slider.observe(on_consultant_salary_change,names="value")
+
+projectsTab = widgets.VBox(children=[project_dropdown, project_name_text,project_consultants_slider,project_effort_slider,project_start_time_slider,project_billing_rate_slider])
+consultantsTab = widgets.VBox(children=[consultant_dropdown,consultant_name_text,consultant_salary_slider])
+timelineTab = widgets.Output()
+capacityDemandTab=widgets.Output()
+expensesTab=widgets.Output()
+revenueTab=widgets.Output()
+cashTab=widgets.Output()
+earningsTab=widgets.Output()
+
+tabs = widgets.Tab(children = [projectsTab,consultantsTab,timelineTab,capacityDemandTab,expensesTab,revenueTab,cashTab,earningsTab])
+tabs.set_title(0, 'Project')
+tabs.set_title(1, 'Consultant')
+tabs.set_title(2, 'Timeline')
+tabs.set_title(3, 'Capacity Demand')
+tabs.set_title(4, 'Expenses')
+tabs.set_title(5, 'Revenue')
+tabs.set_title(6,'Cash')
+tabs.set_title(7, 'Earnings')
+
+run_button = widgets.Button(description='Run')
+def on_run_clicked(b):
+    update_plots(interactive_scenario,timelineTab,capacityDemandTab,expensesTab,revenueTab,cashTab,earningsTab)
+
+run_button.on_click(on_run_clicked)
+
+display(tabs)
+display(run_button)
+
+update_plots(interactive_scenario,timelineTab,capacityDemandTab,expensesTab,revenueTab,cashTab,earningsTab)
