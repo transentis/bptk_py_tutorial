@@ -1,0 +1,60 @@
+{
+  "ABMsmBass": {
+    "type": "abm",
+    "name": "Bass Diffusion Model",
+    "model" : "simulation_models.bassDiffusion.BassDiffusion",
+
+    "scenarios": {
+      "scenarioBassBase": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 60,
+          "dt": 1.0
+        },
+        "properties": {
+          "advertising_success":
+          {
+            "type": "Double",
+            "value": 0.001,
+            "min": 0,
+            "max": 0.01,
+            "step": 0.001
+          },
+          "wom_success":
+          {
+              "type": "Double",
+              "value": 0.1,
+              "min": 0,
+              "max": 1,
+              "step": 0.1
+          },
+          "wom_contact_rate":
+          {
+              "type": "Integer",
+              "value": 3
+          },
+          "advertising_budget":
+          {
+              "type": "Integer",
+              "value": 1000
+          },
+          "persons_reached_per_euro":
+          {
+              "type": "Integer",
+              "value": 100
+          }
+      },
+        "agents": [
+          {
+            "name": "company",
+            "count": 1
+          },
+          {
+            "name": "customer",
+            "count": 10000
+          }
+        ]
+      }
+    }
+  }
+}

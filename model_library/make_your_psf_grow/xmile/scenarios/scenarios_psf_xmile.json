@@ -1,0 +1,10 @@
+{
+    "psf":{
+        "source":"simulation_models/make_your_psf_grow.stmx",
+        "model":"simulation_models/make_your_psf_grow",
+         "scenarios":{
+            "base":{}
+         }
+    }
+    
+}

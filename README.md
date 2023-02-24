@@ -1,4 +1,4 @@
-# Overview Of The BPTK-Py Tutorial
+# Overview Of The BPTK Tutorial
 
 This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the [BPTK-Py online documentation](http://bptk.transentis.com).
 
@@ -69,6 +69,11 @@ This tutorial contains a number of Jupyter notebooks that illustrate usage of th
         * [SD DSL Functions](sd-dsl/in-depth/in_depth_sd_dsl_functions/in_depth_sd_dsl_functions.ipynb) An overview of how to use the SD DSL operators such as MIN, MAX and DELAY.
     * HOW TOs
         * [How To: Creating User Defined Functions in SD Models](sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.ipynb) Explains how to create user defined functions in SD models.  
+* Model Library
+    * [Bass Diffusion Model](./model_library/bass_diffusion/bptk_py_bass_diffusion.ipynb).__ The classic [Bass Diffusion Model](https://en.wikipedia.org/wiki/Bass_diffusion_model) that is used to explain the dynamics of introductiong a new product or service into a market.
+    * [Competitive Pricing](./model_libary/competitive_pricing/competitive_pricing_dynamics_sd_dsl.ipynb) A neat little model that can be used to understand pricing dynamics.
+    * [Customer Acquisition](.model_library/customer_acquisition/customer_acquisition.ipynb). A model that analyses the effects of referral marketing on customer acquisition.
+    * [Make Your Professional Service Firm Grow](./model_library/make_your_psf_grow/sddsl/make_your_psf_grow_part_1_sddsl.ipynb). A model that analyses growth strategies in professional service firms.
     
 ## Learning More About System Dynamics and Agent-based Modeling
 
@@ -83,14 +88,13 @@ You can also find further introductions on our blog:
 * The [Customer Acquisition Model](https://www.transentis.com/an-example-to-illustrate-the-business-prototyping-methodology) is discussed in our series of post introducing the Business Prototyping Methodology.
 * Our [Business Prototyping Toolkit Meetup Group](https://www.transentis.com/business-prototyping-toolkit-meetup/en/) gathers online regularly. This is a good place to see BPTK in action, ask questions and suggest new features. We record every session and you can _view past recordings_ on the [meetup homepage](https://www.transentis.com/resources/business-prototyping-toolkit-meetup).
 
-## Advanced Examples on GitHub
+## Further GitHub Repositories
 
-You can find more advanced examples of models and dashboards build using BPTK on GitHub:
+You can find more examples of models and dashboards build using BPTK in the following GitHub repositories:
 
 * [COVID Simulation](https://github.com/transentis/sim-covid-19). Jupyter notebooks and dashboards illustrating the SIR model.
 * [COVID Simulation Dashboard](https://github.com/transentis/sim-covid-dashboard). A web-based simulation dashboard for the COVID simulation built using our BPTK Widgets library for Javascript. View a [live version](http://www.covid-sim.com) of the dashboard online.
 * [Beer Distribution Game](https://github.com/transentis/beergame). In-depth analysis of the beergame using both System Dynamics and Agent-based simulation. Includes an illustration of how to use BPTK in conjunction with reinforcement learning to train agents to play the beergame autonomously. 
-* [Model Library Repository](https://github.com/transentis/bptk-model-library). A growing repository which contains a number of models that illustrate how to model socio-economic systems using Agent-based modeling, System Dynamics and BPTK.
 
 ## Get in Touch
 

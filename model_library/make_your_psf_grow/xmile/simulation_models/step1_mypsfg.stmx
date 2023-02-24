@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>step1_mypg</name>
+		<uuid>ba8403aa-5209-40d7-a92b-d5ed63101fcf</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="1.1" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:simulation_delay="0.056" method="Euler" time_units="months" isee:pause_after_rates="false" isee:instantaneous_flows="true">
+		<start>0</start>
+		<stop>24</stop>
+		<dt reciprocal="true">1</dt>
+	</sim_specs>
+	<isee:prefs show_module_prefix="true" layer="model"/>
+	<model_units/>
+	<isee:sensi_specs run="false" method="multivariate" runs="0"/>
+	<model>
+		<variables>
+			<stock name="Cash">
+				<eqn>1000</eqn>
+				<inflow>cash_in</inflow>
+				<outflow>cash_out</outflow>
+			</stock>
+			<flow name="cash in">
+				<eqn>collecting_revenue</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="cash out">
+				<eqn>cost</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="cash flow">
+				<eqn>cash_in-cash_out</eqn>
+			</aux>
+			<aux name="collecting revenue">
+				<eqn>160*17.6</eqn>
+			</aux>
+			<aux name="cost">
+				<eqn>200*(80/12+1)+306</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" legend_position="bottom" isee:transparent="false" axis_label_font_size="9pt"/>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" blank_column_width="80" column_width="160" isee:report_month_names="false" interval="1" report_balances="ending" report_flows="summed" header_text_align="center"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" transparent="false" corner_radius="0" icon_side="top"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" transparent="false" corner_radius="0" icon_side="top" popup_background_color="#FFFECF" popup_text_align="left" popup_vertical_text_align="top"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+			</style>
+			<view isee:show_pages="false" page_width="818" page_height="571" isee:page_cols="2" isee:scroll_x="176" isee:popup_graphs_are_comparative="true" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="12pt" label_side="top" label_angle="0">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="12pt" label_side="bottom" label_angle="0"/>
+					<module color="blue" background="white" font_color="blue" font_size="12pt" label_side="top" label_angle="0">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="12pt" label_side="bottom" label_angle="0">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="12pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="12pt" isee:thickness="1"/>
+					<text_box color="blue" background="white" text_align="left" vertical_text_align="top" font_size="9pt"/>
+					<numeric_display color="blue" background="white" text_align="left" vertical_text_align="top" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" legend_position="right" isee:transparent="false" axis_label_font_size="9pt"/>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" blank_column_width="80" column_width="160" isee:report_month_names="false" interval="1" report_balances="ending" report_flows="summed" header_text_align="center"/>
+				</style>
+				<connector uid="1" angle="299.665">
+					<from>cash_in</from>
+					<to>cash_flow</to>
+				</connector>
+				<connector uid="2" angle="263.316">
+					<from>cash_out</from>
+					<to>cash_flow</to>
+				</connector>
+				<connector uid="3" angle="284.424">
+					<from>collecting_revenue</from>
+					<to>cash_in</to>
+				</connector>
+				<connector uid="4" angle="241.399">
+					<from>cost</from>
+					<to>cash_out</to>
+				</connector>
+				<stacked_container uid="5" x="505" y="291" width="387" height="253" visible_index="1">
+					<graph axis_label_font_size="9pt" x="505" y="291" width="387" height="253" type="time_series" show_grid="false" include_units_in_legend="false" plot_numbers="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Cash" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Cash"/>
+						</plot>
+						<plot color="red" pen_style="dot_dashed" pen_width="1" index="1" show_y_axis="true">
+							<entity name="cash_flow"/>
+						</plot>
+					</graph>
+					<graph axis_label_font_size="9pt" x="505" y="291" width="387" height="253" type="time_series" show_grid="false" include_units_in_legend="false" plot_numbers="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Cost" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="cost"/>
+						</plot>
+						<plot color="red" pen_style="dot_dashed" pen_width="1" index="1" show_y_axis="true">
+							<entity name="collecting_revenue"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stock x="313" y="221" name="Cash"/>
+				<flow x="243.75" y="225" name="cash in">
+					<pts>
+						<pt x="197" y="225"/>
+						<pt x="290.5" y="225"/>
+					</pts>
+				</flow>
+				<flow x="378.75" y="221" name="cash out">
+					<pts>
+						<pt x="335.5" y="221"/>
+						<pt x="446" y="221"/>
+					</pts>
+				</flow>
+				<aux x="299" y="322" name="cash flow"/>
+				<aux x="217" y="121" name="collecting revenue"/>
+				<aux x="436" y="116" name="cost"/>
+			</view>
+			<view isee:show_pages="false" page_width="812" page_height="672" home_view="true" type="interface">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+</xmile>
+

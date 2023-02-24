@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>customer_acquisition</name>
+		<uuid>1af024e0-b6ad-45e7-a36e-aafb56520a13</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="2.1" isee:build_number="2324" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="1.27869" isee:simulation_delay="0.0213115" isee:restore_on_start="false" method="Euler" time_units="Months" isee:instantaneous_flows="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>0</start>
+		<stop>60</stop>
+		<dt reciprocal="true">1</dt>
+	</sim_specs>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="false" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="false"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<default_format/>
+	<isee:sensi_specs_list active_index="0">
+		<isee:sensi_specs name="Sensitivity Analysis 1" method="multivariate" runs="0"/>
+	</isee:sensi_specs_list>
+	<model_units/>
+	<model>
+		<isee:extra_collection_variables>
+			<isee:extra_collection_variable name="Customers"/>
+			<isee:extra_collection_variable name="Profit"/>
+		</isee:extra_collection_variables>
+		<variables>
+			<stock name="Customers" access="output">
+				<eqn>Initial_Customers</eqn>
+				<inflow>Customer_Acquisition</inflow>
+			</stock>
+			<flow name="Customer Acquisition">
+				<eqn>Acquisition_through_Advertising+Acquisition_through_Referrals</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Acquisition through Advertising">
+				<eqn>Potential_Customers_reached_through_Advertising*&quot;Advertising_Success_%&quot;/100</eqn>
+			</aux>
+			<aux name="Potential Customers\nreached through Advertising">
+				<eqn>Persons_reached_per_Euro*Classical_Advertising_Cost*&quot;Target_Customer_Dilution_%&quot;/100*(1-&quot;Market_Saturation_%&quot;/100)</eqn>
+			</aux>
+			<aux name="Advertising Success %">
+				<eqn>0.1</eqn>
+			</aux>
+			<aux name="Persons reached per Euro">
+				<eqn>100</eqn>
+			</aux>
+			<aux name="Classical Advertising Cost" access="output">
+				<eqn>10000</eqn>
+			</aux>
+			<aux name="Market Saturation %">
+				<eqn>100*Customers/Target_Market</eqn>
+			</aux>
+			<aux name="Target Customer Dilution %">
+				<eqn>80</eqn>
+			</aux>
+			<aux name="Target Market">
+				<eqn>6000000</eqn>
+			</aux>
+			<stock name="Advertising Customers">
+				<eqn>0</eqn>
+				<inflow>adv_cust_in</inflow>
+			</stock>
+			<stock name="Referral Customers">
+				<eqn>0</eqn>
+				<inflow>referral_cust_in</inflow>
+			</stock>
+			<flow name="adv cust in">
+				<eqn>Acquisition_through_Advertising</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="referral cust in">
+				<eqn>Acquisition_through_Referrals</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Initial Customers">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Initial Investment in Service">
+				<eqn>1000000</eqn>
+			</aux>
+			<aux name="Service Margin">
+				<eqn>0.5</eqn>
+			</aux>
+			<aux name="Referral Free Months">
+				<eqn>3</eqn>
+			</aux>
+			<stock name="Profit">
+				<eqn>-Initial_Investment_in_Service</eqn>
+				<inflow>Earnings</inflow>
+				<outflow>Spending</outflow>
+			</stock>
+			<flow name="Earnings">
+				<eqn>Service_Margin*service_fee*Customers</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Spending">
+				<eqn>IF Referrals&gt;0 THEN Acquisition_through_Referrals*(Referral_Free_Months*service_fee/Referrals)+Referral_Advertising_Cost+Classical_Advertising_Cost ELSE Classical_Advertising_Cost</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="service fee">
+				<eqn>10</eqn>
+			</aux>
+			<aux name="Referrals">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Referral Program Adoption %">
+				<eqn>30</eqn>
+			</aux>
+			<aux name="Acquisition through Referrals">
+				<eqn>Referrals*Customers*(1-&quot;Market_Saturation_%&quot;/100)*&quot;Referral_Program_Adoption_%&quot;/100</eqn>
+			</aux>
+			<aux name="Referral Advertising Cost">
+				<eqn>10000</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="black" background="white"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="white" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="818" page_height="571" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="1" angle="57.9946">
+					<from>&quot;Target_Customer_Dilution_%&quot;</from>
+					<to>Potential_Customers_reached_through_Advertising</to>
+				</connector>
+				<connector uid="2" angle="104.036">
+					<from>&quot;Advertising_Success_%&quot;</from>
+					<to>Acquisition_through_Advertising</to>
+				</connector>
+				<connector uid="3" angle="90">
+					<from>Acquisition_through_Advertising</from>
+					<to>Customer_Acquisition</to>
+				</connector>
+				<connector uid="4" angle="0">
+					<from>Persons_reached_per_Euro</from>
+					<to>Potential_Customers_reached_through_Advertising</to>
+				</connector>
+				<connector uid="5" angle="102.529">
+					<from>Potential_Customers_reached_through_Advertising</from>
+					<to>Acquisition_through_Advertising</to>
+				</connector>
+				<connector uid="6" angle="75.2564">
+					<from>Target_Market</from>
+					<to>&quot;Market_Saturation_%&quot;</to>
+				</connector>
+				<connector uid="7" angle="90">
+					<from>&quot;Market_Saturation_%&quot;</from>
+					<to>Potential_Customers_reached_through_Advertising</to>
+				</connector>
+				<connector uid="8" angle="321.009">
+					<from>Customers</from>
+					<to>&quot;Market_Saturation_%&quot;</to>
+				</connector>
+				<connector uid="9" angle="77.4712">
+					<from>Classical_Advertising_Cost</from>
+					<to>Potential_Customers_reached_through_Advertising</to>
+				</connector>
+				<connector uid="10" angle="102.529">
+					<from>
+						<alias uid="11"/>
+					</from>
+					<to>adv_cust_in</to>
+				</connector>
+				<stock x="476" y="102" name="Customers"/>
+				<flow x="375.5" y="108" name="Customer Acquisition">
+					<pts>
+						<pt x="297.5" y="108"/>
+						<pt x="453.5" y="108"/>
+					</pts>
+				</flow>
+				<aux x="310" y="188" name="Acquisition through Advertising"/>
+				<aux x="209" y="272" name="Potential Customers\nreached through Advertising"/>
+				<aux x="396" y="293" name="Advertising Success %"/>
+				<aux x="126" y="355" name="Persons reached per Euro"/>
+				<aux x="265" y="369" name="Classical Advertising Cost"/>
+				<aux x="358" y="405" name="Market Saturation %"/>
+				<aux x="62" y="301" name="Target Customer Dilution %"/>
+				<aux x="200" y="545" name="Target Market"/>
+				<stock x="931" y="424" name="Advertising Customers"/>
+				<stock x="1107" y="426" name="Referral Customers"/>
+				<flow x="858.25" y="429" name="adv cust in">
+					<pts>
+						<pt x="808" y="429"/>
+						<pt x="908.5" y="429"/>
+					</pts>
+				</flow>
+				<flow x="1050.25" y="421" name="referral cust in">
+					<pts>
+						<pt x="1016" y="421"/>
+						<pt x="1084.5" y="421"/>
+					</pts>
+				</flow>
+				<aux x="619" y="51.5" name="Initial Customers"/>
+				<aux x="1014" y="232" name="Initial Investment in Service"/>
+				<aux x="956" y="51.5" name="Service Margin"/>
+				<connector uid="12" angle="257.471">
+					<from>Service_Margin</from>
+					<to>Earnings</to>
+				</connector>
+				<aux x="754" y="184" name="Referral Free Months"/>
+				<stock x="1044" y="168.5" name="Profit"/>
+				<flow x="970.25" y="180" name="Earnings">
+					<pts>
+						<pt x="919" y="180"/>
+						<pt x="1021.5" y="180"/>
+					</pts>
+				</flow>
+				<flow label_side="bottom" x="1111.75" y="173" name="Spending">
+					<pts>
+						<pt x="1066.5" y="173"/>
+						<pt x="1181" y="173"/>
+					</pts>
+				</flow>
+				<connector uid="13" angle="170.538">
+					<from>
+						<alias uid="14"/>
+					</from>
+					<to>Spending</to>
+				</connector>
+				<connector uid="15" angle="84.8056">
+					<from>
+						<alias uid="16"/>
+					</from>
+					<to>Spending</to>
+				</connector>
+				<connector uid="17" angle="319.538">
+					<from>
+						<alias uid="18"/>
+					</from>
+					<to>Earnings</to>
+				</connector>
+				<aux x="1032.25" y="67" name="service fee"/>
+				<connector uid="19" angle="212.714">
+					<from>service_fee</from>
+					<to>Earnings</to>
+				</connector>
+				<aux x="696" y="142" name="Referrals"/>
+				<connector uid="20" angle="82.1467">
+					<from>
+						<alias uid="21"/>
+					</from>
+					<to>Spending</to>
+				</connector>
+				<aux x="644" y="102" name="Referral Program Adoption %"/>
+				<aux x="637" y="219" name="Acquisition through Referrals"/>
+				<connector uid="22" angle="0">
+					<from>Customers</from>
+					<to>Acquisition_through_Referrals</to>
+				</connector>
+				<connector uid="23" angle="310.601">
+					<from>&quot;Market_Saturation_%&quot;</from>
+					<to>Acquisition_through_Referrals</to>
+				</connector>
+				<connector uid="24" angle="210.964">
+					<from>Referrals</from>
+					<to>Acquisition_through_Referrals</to>
+				</connector>
+				<connector uid="25" angle="266.576">
+					<from>&quot;Referral_Program_Adoption_%&quot;</from>
+					<to>Acquisition_through_Referrals</to>
+				</connector>
+				<connector uid="26" angle="113.806">
+					<from>
+						<alias uid="27"/>
+					</from>
+					<to>Spending</to>
+				</connector>
+				<connector uid="28" angle="176.82">
+					<from>Acquisition_through_Referrals</from>
+					<to>Customer_Acquisition</to>
+				</connector>
+				<connector uid="29" angle="85.1009">
+					<from>
+						<alias uid="30"/>
+					</from>
+					<to>referral_cust_in</to>
+				</connector>
+				<aux x="1179" y="84" name="Referral Advertising Cost"/>
+				<connector uid="31" angle="201.251">
+					<from>Referral_Advertising_Cost</from>
+					<to>Spending</to>
+				</connector>
+				<connector uid="32" angle="138.576">
+					<from>
+						<alias uid="33"/>
+					</from>
+					<to>Spending</to>
+				</connector>
+				<stacked_container uid="34" x="616" y="664">
+					<graph width="350" height="250" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Customers"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<alias font_style="italic" uid="11" x="822" y="488" width="18" height="18">
+					<of>Acquisition_through_Advertising</of>
+				</alias>
+				<alias font_style="italic" uid="14" x="1148" y="205" width="18" height="18">
+					<of>Classical_Advertising_Cost</of>
+				</alias>
+				<alias font_style="italic" uid="16" x="1088" y="280" width="18" height="18">
+					<of>Referral_Free_Months</of>
+				</alias>
+				<alias font_style="italic" uid="18" x="831.5" y="49.5" width="45" height="35">
+					<of>Customers</of>
+				</alias>
+				<alias font_style="italic" uid="21" x="1039" y="308" width="18" height="18">
+					<of>Referrals</of>
+				</alias>
+				<alias font_style="italic" uid="27" x="1143" y="336" width="18" height="18">
+					<of>Acquisition_through_Referrals</of>
+				</alias>
+				<alias font_style="italic" uid="30" x="1014" y="500" width="18" height="18">
+					<of>Acquisition_through_Referrals</of>
+				</alias>
+				<alias font_style="italic" uid="33" x="1154" y="269" width="18" height="18">
+					<of>service_fee</of>
+				</alias>
+			</view>
+			<view background="white" page_width="800" page_height="600" home_view="true" type="interface">
+				<style/>
+				<stacked_container x="62" y="50" width="664" height="250" visible_index="1">
+					<graph isee:graph_area_color="white" width="664" height="250" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Profit" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot isee:immediately_update_on_user_input="true" color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Profit"/>
+						</plot>
+					</graph>
+					<graph isee:graph_area_color="white" width="664" height="250" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" title="Customers" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot isee:immediately_update_on_user_input="true" color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Customers"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<slider x="170" y="354" increment="1" min="0" max="5" isee:navigate_to="false" show_name="true">
+					<entity name="Referrals"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider x="401" y="354" increment="10" min="0" max="100" isee:navigate_to="false" show_name="true">
+					<entity name='"Referral_Program_Adoption_%"'/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider x="609" y="354" increment="1" min="1" max="12" isee:navigate_to="false" show_name="true">
+					<entity name="Referral_Free_Months"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<button label="" x="91" y="430">
+					<actions>
+						<action>start</action>
+					</actions>
+				</button>
+			</view>
+			<isee:templates>
+				<view background="white" page_width="800" page_height="600" type="template">
+					<style/>
+				</view>
+			</isee:templates>
+			<isee:stories/>
+		</views>
+	</model>
+	<isee:controls>
+		<isee:control priority="interactive" name='"Referral_Program_Adoption_%"' value="10"/>
+		<isee:control priority="interactive" name="Referral_Free_Months" value="3"/>
+		<isee:control priority="interactive" name="Referrals" value="4"/>
+	</isee:controls>
+</xmile>
+

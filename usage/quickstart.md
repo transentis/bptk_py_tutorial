@@ -7,10 +7,9 @@ keywords: "agent-based modeling, abm, system dynamics, systemdynamics, bptk, bpt
 # Quickstart
 
 The best way to get started with the *Business Prototyping Toolkit for
-Python* (BPTK-Py) is to download the BPTK-Py Tutorial. The tutorial
-contains Jupyter notebooks and example models that illustrate how to use
-the BPTK_Py framework to build models in Python System Dynamics,
-agent-based modeling and how to transpile models in XMILE format.
+Python* (BPTK-Py) is to download the BPTK-Py Tutorial.
+
+The tutorial contains the Jupyter notebooks and example models that we use to generate the [BPTK documentation](https://bptk.transentis.com)
 
 You can clone or download the tutorial from our [git
 repository](https://github.com/transentis/bptk_py_tutorial/) on Github.

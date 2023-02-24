@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="overview-of-the-bptk-py-tutorial" class="level1">
+<h1>Overview Of The BPTK-Py Tutorial</h1>
+<p>This tutorial contain sample agent-based and System Dynamics models along with Jupyter notebooks that illustrate the features of the BPTK-Py framework. This tutorial is designed as a companion to the <a href="http://bptk.transentis.com">BPTK-Py online documentation</a>.</p>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<section id="using-docker" class="level3">
+<h3 class="anchored" data-anchor-id="using-docker">Using Docker</h3>
+<p>If you have Docker installed (e.g.&nbsp;Docker Desktop on MacOS or on Windows), follow these steps:</p>
+<ol type="1">
+<li>On the command line, move into a directory where you would like to store the BPTK-Py tutorial.</li>
+<li>Clone this repository: <code>git clone https://github.com/transentis/bptk_py_tutorial.git</code></li>
+<li>Run <code>docker-compose up</code></li>
+<li>Point your browser at <a href="http://localhost:8888">http://localhost:8888</a> – this will open JupyterLab showing the contents of your directory.</li>
+<li>Open the notebook <code>readme.ipynb</code> from within JupyterLab.</li>
+<li>When you are finished, close your browser and call <code>docker-compose down</code> from within your directory. This will stop and remove the container.</li>
+</ol>
+</section>
+<section id="using-a-virtual-environment" class="level3">
+<h3 class="anchored" data-anchor-id="using-a-virtual-environment">Using a virtual environment</h3>
+<p>First, make sure you have Python 3 installed on your machine.</p>
+<p>Then follow these steps:</p>
+<ol type="1">
+<li>On the command line, move into a directory where you would like to store the BPTK-Py tutorial.</li>
+<li>Clone this repository: <code>git clone https://github.com/transentis/bptk_py_tutorial.git</code></li>
+<li>Install a virtual environment in that directory: <code>python3 -m venv venv</code></li>
+<li>Activate the virtual environment: <code>source venv/bin/activate</code> (MacOS/Linux) or <code>venv\scripts\activate.bat</code> (Windows)</li>
+<li>Install the necessary python modules: <code>pip install -r requirements.txt</code></li>
+<li>Start JupyerLab: <code>jupyter lab</code></li>
+<li>Your browser will open showing JupyterLab and your chosen directory</li>
+<li>Open the notebook <code>readme.ipynb</code> from within JupyterLab</li>
+</ol>
+</section>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>This tutorial contains a number of Jupyter notebooks that illustrate usage of the BPTK-Py framework. Which one to get started with depends on whether you are interested in Agent-based modeling, in System Dynamics using XMILE (e.g.&nbsp;using Stella Architect or iThink) or in our domain-specific language for System Dynamics (SD DSL):</p>
+<ul>
+<li><em>Agent-based Modeling</em> – start with <a href="abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.ipynb">Agent-based Modeling with BPTK-Py</a></li>
+<li><em>SD with XMILE</em> – start with <a href="xmile/how-to/how_to_working_with_xmile/how_to_working_with_XMILE.ipynb">Working With XMILE System Dynamics Models</a></li>
+<li><em>SD DSL</em> – start with <a href="sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.ipynb">A Simple Python Library for System Dynamics</a></li>
+</ul>
+</section>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<ul>
+<li><strong>Step by Step Guides</strong>
+<ul>
+<li><a href="step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.ipynb">Introduction to System Dynamics with Python</a>. Introduction to System Dynamics using the SD DSL, for those new to dynamic modeling.</li>
+</ul></li>
+<li><strong>General Information on The Framework</strong>
+<ul>
+<li>In Depth Discussions
+<ul>
+<li><a href="general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.ipynb">The Architecture of the BPTK-Py Framework</a> Explains the overall architecture of the BPTK-Py framework.</li>
+<li><a href="general/in-depth/in_depth_scenarios/in_depth_scenarios.ipynb">Scenarios In Depth</a> Explains the scenario definition format and how to add and manipulate scenarios at run-time.</li>
+</ul></li>
+<li>HOW TOs
+<ul>
+<li><a href="general/how-to/how_to_accessing_raw_simulation_results/how_to_accessing_raw_simulation_results.ipynb">How To: Accessing Raw Simulation Results</a> Explains how to access raw simulation results with scenarios.</li>
+<li><a href="general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.ipynb">How To: Advanced Plotting Features</a> Discusses some advanced features of the <code>bptk.plot_scenarios</code> method.</li>
+<li><a href="general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_developing_dashboards_using_simpledashboard.ipynb">How To: Develop Dashboards Using the SimpleDashboard Utility Class</a>. Shows how do build simple interactive dashboards using the <code>bptk.dashboard</code> method.</li>
+<li><a href="general/how-to/how_to_develop_dashboards_using_jupyter_widgets/how_to_developing_dashboards_using_juypter_widgets.ipynb">How To: Develop Dashboards Using Jupyter Widgets</a> Explains how to develop more advanced user interfaces using Jupyter Widgets, Pandas dataframes and Matplotlib.</li>
+<li><a href="general/how-to/how_to_external_state/how_to_external_state.ipynb">How To: Persist BPTK-Server State</a> Show how to persist the state of BptkServer using an ExternalStateAdapter.</li>
+</ul></li>
+</ul></li>
+<li><strong>Agent-based Modeling</strong>
+<ul>
+<li>In Depth Discussions
+<ul>
+<li><a href="abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.ipynb">Agent-based Modeling with BPTK-Py</a> Illustrates how to create an agent-based implementation of a simple project management model.</li>
+</ul></li>
+</ul></li>
+<li><strong>System Dynamics using XMILE</strong>
+<ul>
+<li>In Depth Discussions
+<ul>
+<li><a href="xmile/in-depth/writing_computational_essays/writing_computational_essays.ipynb">Writing Computational Essays Using Simulation Models</a>. Introduction to writing Computational Essays around System Dynamics models created using the XMILE Standard (e.g.&nbsp;using ®Stella or ®iThink).</li>
+</ul></li>
+<li>HOW TOs
+<ul>
+<li><a href="xmile/how-to/how_to_working_with_xmile/how_to_working_with_XMILE.ipynb">How To: Working With XMILE System Dynamics Models</a> Illustrates the quickest route to importing a System Dynamics model stored in the XMILE format, such as those created with ®Stella (<em>.stmx) or ®iThink (</em>.itmx).</li>
+<li><a href="xmile/how-to/how_to_exporting_simulation_results/how_to_exporting_simulation_results.ipynb">How To: Exporting Simulation Results</a> Explains how to export simulation results into a spreadsheet.</li>
+<li><a href="xmile/how-to/how_to_xmile_arrays/how_to_XMILE_arrays.ipynb">How To: Working with Arrayed Variables in XMILE Models</a> Explains how to use arrayed operators aund functions in BPTK_Py</li>
+</ul></li>
+</ul></li>
+<li><strong>System Dynamics using SD DSL</strong>
+<ul>
+<li>In Depth Discussions
+<ul>
+<li><a href="sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.ipynb">A Simple Python Library for System Dynamics</a>. Introduction to building System Dynamics models directly in Juptyer Notebooks, using SD DSL, a specially created domain specific language for System Dynamics, that is part of BPTK-Py.</li>
+<li><a href="sd-dsl/in-depth/in_depth_sd_dsl_functions/in_depth_sd_dsl_functions.ipynb">SD DSL Functions</a> An overview of how to use the SD DSL operators such as MIN, MAX and DELAY.</li>
+</ul></li>
+<li>HOW TOs
+<ul>
+<li><a href="sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.ipynb">How To: Creating User Defined Functions in SD Models</a> Explains how to create user defined functions in SD models.<br>
+</li>
+</ul></li>
+<li>Model Library
+<ul>
+<li><strong><a href="./model_library/bptk_intro/intro_to_bptk.ipynb">Introduction to BPTK</a>.</strong> An overview of the BPTK framework that illustrates how to built System Dynamics models, Agent-based models and hybrid SD-ABM models.</li>
+<li><strong><a href="./model_library/bass_diffusion/bptk_py_bass_diffusion.ipynb">Bass Diffusion Model</a>.</strong> The classic <a href="https://en.wikipedia.org/wiki/Bass_diffusion_model">Bass Diffusion Model</a> that is used to explain the dynamics of introductiong a new product or service into a market.</li>
+<li><strong><a href="./model_libary/competitive_pricing/competitive_pricing_dynamics_sd_dsl.ipynb">Competitive Pricing</a></strong> A neat little model that can be used to understand pricing dynamics.</li>
+<li><strong><a href=".model_library/customer_acquisition/customer_acquisition.ipynb">Customer Acquisition</a>.</strong> A model that analyses the effects of referral marketing on customer acquisition.</li>
+<li><strong><a href="./model_library/make_your_psf_grow/sddsl/make_your_psf_grow_part_1_sddsl.ipynb">Make Your Professional Service Firm Grow</a>.</strong> A model that analyses growth strategies in professional service firms.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="learning-more-about-system-dynamics-and-agent-based-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="learning-more-about-system-dynamics-and-agent-based-modeling">Learning More About System Dynamics and Agent-based Modeling</h2>
+<p>The main objective of this tutorial is to show you how to use the BPTK-Py framework and not to explain System Dynamics or Agent-based modeling.</p>
+<p>For those new to dynamic modeling, we have included a small step-by-step <a href="step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.ipynb">Introduction to System Dynamics with Python</a>.</p>
+<p>You can also find further introductions on our blog:</p>
+<ul>
+<li><a href="https://www.transentis.com/step-by-step-tutorials/introduction-to-system-dynamics/">Step-by-step introduction to System Dynamics</a> using the simple project management model.</li>
+<li>Introduction to the <a href="https://www.transentis.com/causal-loop-diagramming/">Bass Diffusion Model</a>.</li>
+<li>The <a href="https://www.transentis.com/an-example-to-illustrate-the-business-prototyping-methodology">Customer Acquisition Model</a> is discussed in our series of post introducing the Business Prototyping Methodology.</li>
+<li>Our <a href="https://www.transentis.com/business-prototyping-toolkit-meetup/en/">Business Prototyping Toolkit Meetup Group</a> gathers online regularly. This is a good place to see BPTK in action, ask questions and suggest new features. We record every session and you can <em>view past recordings</em> on the <a href="https://www.transentis.com/resources/business-prototyping-toolkit-meetup">meetup homepage</a>.</li>
+</ul>
+</section>
+<section id="further-github-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="further-github-repositories">Further GitHub Repositories</h2>
+<p>You can find more examples of models and dashboards build using BPTK in the following GitHub repositories:</p>
+<ul>
+<li><a href="https://github.com/transentis/sim-covid-19">COVID Simulation</a>. Jupyter notebooks and dashboards illustrating the SIR model.</li>
+<li><a href="https://github.com/transentis/sim-covid-dashboard">COVID Simulation Dashboard</a>. A web-based simulation dashboard for the COVID simulation built using our BPTK Widgets library for Javascript. View a <a href="http://www.covid-sim.com">live version</a> of the dashboard online.</li>
+<li><a href="https://github.com/transentis/beergame">Beer Distribution Game</a>. In-depth analysis of the beergame using both System Dynamics and Agent-based simulation. Includes an illustration of how to use BPTK in conjunction with reinforcement learning to train agents to play the beergame autonomously.</li>
+</ul>
+</section>
+<section id="get-in-touch" class="level2">
+<h2 class="anchored" data-anchor-id="get-in-touch">Get in Touch</h2>
+<p>Please let us know if you need help getting started, if you find a bug or are missing important functionality.</p>
+<p>We are keen to hear how you use BPTK-Py – your feedback is invaluable in helping us improve BPTK-Py.</p>
+<p>You can best reach us per e-mail at <a href="mailto:support@transentis.com">support@transentis.com</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

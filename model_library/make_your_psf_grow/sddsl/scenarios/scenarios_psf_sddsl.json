@@ -1,0 +1,10 @@
+{
+    "psf":{
+        "type":"sd",
+        "model":"src.mypsfg.Mypsfg",
+         "scenarios":{
+            "base":{}
+         }
+    }
+    
+}
