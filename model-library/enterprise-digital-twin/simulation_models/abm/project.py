@@ -56,6 +56,8 @@ class Project(Agent):
     
         if self.state=="acquired" and time*1.0==self.start_time:
             self.state="ready"
+
+        if self.state=="ready" or self.state=="started":
             if controlling:
                 controlling.receive_instantaneous_event(Event("consultant_demand", self.id, controlling.id,{"consultant_demand":self.consultants-self.staff}))
 

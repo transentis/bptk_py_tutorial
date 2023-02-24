@@ -206,7 +206,7 @@ tabs = widgets.Tab(children = [projectsTab,consultantsTab,timelineTab,capacityDe
 tabs.set_title(0, 'Project')
 tabs.set_title(1, 'Consultant')
 tabs.set_title(2, 'Timeline')
-tabs.set_title(3, 'Capacity Demand')
+tabs.set_title(3, 'Demand')
 tabs.set_title(4, 'Expenses')
 tabs.set_title(5, 'Revenue')
 tabs.set_title(6,'Cash')

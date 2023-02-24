@@ -1,2 +1,2 @@
-BPTK-Py==1.6.4
+BPTK-Py==1.7.1
 jupyterlab
