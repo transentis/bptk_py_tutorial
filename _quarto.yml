@@ -19,7 +19,7 @@ website:
   page-navigation: true
   open-graph: true
   page-footer: 
-    center: "© Copyright 2023, transentis labs GmbH." 
+    center: "©2023, transentis labs GmbH." 
   sidebar:
     logo: img/labs_icon.svg
     logo-alt: "BPTK"
