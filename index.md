@@ -78,11 +78,11 @@ always happy to help.
 
 [Quickstart](quickstart/quickstart.ipynb)
 
-[Limitations](usage/limitations.md)
+[Tutorials](tutorials/tutorials.md)
 
-[General Information](general/general.md)
+[Concepts](concepts/concepts.md)
 
-{{< include general/_general_content.md >}}
+{{< include concepts/_concepts_content.md >}}
 
 [Agent Based Modeling](abm/abm.md)
 
@@ -103,3 +103,5 @@ always happy to help.
 [BPTK API](api/api.md)
 
 {{< include api/_api_content.md >}}
+
+[Limitations](usage/limitations.md)
