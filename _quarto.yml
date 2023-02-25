@@ -2,12 +2,16 @@ project:
   type: website
   title: "BPTK_PY"
   output-dir: _output
+  execute-dir: _output
   render:
     - "*.md"
     - "*.ipynb"
     - "*.qmd"
     - "!README.md"
     - "!readme.ipynb"
+  preview:
+    port: 5000
+    browser: true
 
 website:
   favicon: img/favicon.ico
