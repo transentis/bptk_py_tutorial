@@ -1,12 +1,12 @@
 # DataCollector
 
 
-### _class_ DataCollector()
+## _class_ DataCollector()
 A datacollector for the agent based simulation.
 Collects the output data of each agent/event and makes it available to external resources such as BPTK-Py to plot the data
 
 
-#### collect_agent_statistics(time, agents)
+### collect_agent_statistics(time, agents)
 Collect agent statistics from agent(s).
 
 
@@ -22,7 +22,7 @@ Collect agent statistics from agent(s).
 
 
 
-#### record_event(time, event)
+### record_event(time, event)
 Record an event
 
 
@@ -38,7 +38,7 @@ Record an event
 
 
 
-#### statistics()
+### statistics()
 Get the statistics collected.
 
 

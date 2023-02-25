@@ -1,11 +1,11 @@
 # Simultaneous Scheduler
 
 
-### _class_ SimultaneousScheduler()
+## _class_ SimultaneousScheduler()
 Implementation of a scheduler. Runs steps synchronously
 
 
-#### run(model, progress_widget=None, collect_data=True)
+### run(model, progress_widget=None, collect_data=True)
 Run method
 
 
@@ -19,9 +19,7 @@ Run method
     * **progress_widget** – FloatBarProgress instance.
     Used to display progress of the scheduler.
 
-
-
-#### run_step(model, sim_round, step, progress_widget=None, collect_data=True)
+### run_step(model, sim_round, step, progress_widget=None, collect_data=True)
 Run one step.
 
 

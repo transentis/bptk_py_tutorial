@@ -1,11 +1,11 @@
 # Scheduler
 
 
-### _class_ Scheduler()
+## _class_ Scheduler()
 Scheduler for agent based modelling
 
 
-#### handle_delayed_event(event, dt)
+### handle_delayed_event(event, dt)
 This method checks to see whether the event is a DelayedEvent.
 
 If not, it simply returns the event.
@@ -29,7 +29,7 @@ Returns
     The event if this is not a DelayedEvent or the delay<=0 , otherwise None
 
 
-#### run(model, progress_widget=None, collect_data=True)
+### run(model, progress_widget=None, collect_data=True)
 Run the simulation.
 Override this in a subclass.
 
@@ -45,7 +45,7 @@ Override this in a subclass.
 
 
 
-#### run_step(model, sim_round, dt, progress_widget=None, collect_data=True)
+### run_step(model, sim_round, dt, progress_widget=None, collect_data=True)
 Run a simulation step.
 
 Override this in a subclass.

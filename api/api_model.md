@@ -1,7 +1,7 @@
 # Model
 
 
-### _class_ Model(starttime=0, stoptime=0, dt=1, name='', scheduler=None, data_collector=None)
+## _class_ Model(starttime=0, stoptime=0, dt=1, name='', scheduler=None, data_collector=None)
 This is the main agent base / System dynamics / Hybrid model class
 
 It can run manually generated SD models, AB Models or define hybrid models.
@@ -23,7 +23,7 @@ It can run manually generated SD models, AB Models or define hybrid models.
 
 
 
-#### agent(agent_id)
+### agent(agent_id)
 Get an agent by ID.
 
 Retrieve one agent by its ID
@@ -42,7 +42,7 @@ Retrieve one agent by its ID
 
 
 
-#### agent_count(agent_type)
+### agent_count(agent_type)
 Get count of agents of a given type.
 
 
@@ -59,7 +59,7 @@ Get count of agents of a given type.
 
 
 
-#### agent_count_per_state(agent_type, state)
+### agent_count_per_state(agent_type, state)
 Get number of agents in a specific state
 
 
@@ -81,7 +81,7 @@ Get number of agents in a specific state
 
 
 
-#### agent_ids(agent_type)
+### agent_ids(agent_type)
 Get agent IDs.
 
 Retrieve agent IDs for all agents of type agent_type.
@@ -98,9 +98,7 @@ Retrieve agent IDs for all agents of type agent_type.
 
     List of IDs
 
-
-
-#### begin_episode(episode_no)
+### begin_episode(episode_no)
 Called at beginning of an episode.
 
 When running a simulation repeatedly in episodes (e.g. because you are training the model using reinforcement learning), this method is called by the framework to allow tidy up at the beginning of an episode, e.g. a “soft” reset of the simulation.
@@ -115,7 +113,7 @@ The default implementation calls begin_episode on each agent.
 
 
 
-#### begin_round(time, sim_round, step)
+### begin_round(time, sim_round, step)
 Called at the beginning of a simulation round.
 
 Should be called by the Scheduler at the beginning of each round, before the agents act methods are called. Add any logic here that is needed to update dynamic properties.
@@ -137,7 +135,7 @@ Should be called by the Scheduler at the beginning of each round, before the age
 
 
 
-#### biflow(name)
+### biflow(name)
 Create a System Dynamics biflow
 
 
@@ -152,9 +150,7 @@ Create a System Dynamics biflow
 
     A Biflow object
 
-
-
-#### broadcast_event(agent_type, event_factory)
+### broadcast_event(agent_type, event_factory)
 Broadcast an event to all agents of a particular agent_type
 
 
@@ -174,7 +170,7 @@ Broadcast an event to all agents of a particular agent_type
 
 
 
-#### configure(config)
+### configure(config)
 Called to configure the model using a dictionary. This method is called by the framework if you instantiate models from scenario files. But you can also call the method directly.
 
 
@@ -185,7 +181,7 @@ Called to configure the model using a dictionary. This method is called by the f
 
 
 
-#### constant(name)
+### constant(name)
 Create a System Dynamics constant
 
 
@@ -200,7 +196,7 @@ Returns: Constant.
     A Constant object
 
 
-#### converter(name)
+### converter(name)
 Create a System Dynamics converter
 
 
@@ -215,9 +211,7 @@ Create a System Dynamics converter
 
     A Converter object
 
-
-
-#### create_agent(agent_type, agent_properties)
+### create_agent(agent_type, agent_properties)
 Create one agent of the given type and with the given properties.
 
 Internally this method then uses the registered agent factories to actually create an agent.
@@ -233,9 +227,7 @@ Internally this method then uses the registered agent factories to actually crea
     * **agent_properties** – Dict.
     The properties to initialize the agent with.
 
-
-
-#### create_agents(agent_spec)
+### create_agents(agent_spec)
 Create agents according to the agent specificaction.
 
 The agent specification is a dictionary containing the agent name and properties. Internally, this method then uses the registered agent factories to actually create the agents.
@@ -247,8 +239,7 @@ The agent specification is a dictionary containing the agent name and properties
     Specification of an agent using a dictionary with format {“name”:<agent name>, “count”: <initial count>}
 
 
-
-#### end_episode(episode_no)
+### end_episode(episode_no)
 Called at the end of an episode.
 
 When running a simulation repeatedly in episodes, this method is called by the framework to allow tidy up at the end of an episode.
@@ -263,7 +254,7 @@ The default implementation calls end_episode on each agent.
 
 
 
-#### end_round(time, sim_round, step)
+### end_round(time, sim_round, step)
 Called at end of a simulation round.
 
 Should be called by the Scheduler at the end of each round, before the agents act methods are called. Add any logic here that is needed to update dynamic properties.
@@ -285,7 +276,7 @@ Should be called by the Scheduler at the end of each round, before the agents ac
 
 
 
-#### enqueue_event(event)
+### enqueue_event(event)
 Called by the framework to enqueue events.
 
 In general you don’t need to override this method or call it directly.
@@ -298,7 +289,7 @@ In general you don’t need to override this method or call it directly.
 
 
 
-#### _property_ equation_prefix()
+### _property_ equation_prefix()
 An id that is unique within this model that can be used to generate unique equation names
 
 
@@ -308,7 +299,7 @@ An id that is unique within this model that can be used to generate unique equat
 
 
 
-#### evaluate_equation(name, t)
+### evaluate_equation(name, t)
 Evaluate an System Dynamics element’s equation at timestep t.
 
 
@@ -328,7 +319,7 @@ Return: Float
     The value of the equation at time t.
 
 
-#### flow(name)
+### flow(name)
 Create a System Dynamics flow
 
 
@@ -345,7 +336,7 @@ Create a System Dynamics flow
 
 
 
-#### function(name, fn)
+### function(name, fn)
 Create a user defined function for System Dynamics.
 
 
@@ -363,7 +354,7 @@ Returns:
 A function which wraps the user defined function for use within System Dynamics.
 
 
-#### get_property(name)
+### get_property(name)
 Get a property of the model by name.
 
 The value of the model properties can also be accessed directly as a model attribute, i.e. as self.<name of property>
@@ -382,7 +373,7 @@ The value of the model properties can also be accessed directly as a model attri
 
 
 
-#### get_property_value(name)
+### get_property_value(name)
 Get a property of the model by name.
 
 The value of the model properties can also be accessed directly as a model attribute, i.e. as self.<name of property>
@@ -401,7 +392,7 @@ The value of the model properties can also be accessed directly as a model attri
 
 
 
-#### _static_ get_random_integer(min_value, max_value)
+### _static_ get_random_integer(min_value, max_value)
 A random integer within bounds
 
 This method is useful for simulating random behaviour.
@@ -425,7 +416,7 @@ This method is useful for simulating random behaviour.
 
 
 
-#### instantiate_model()
+### instantiate_model()
 Set properties during model initialization.
 
 This method does nothing in the parent class and can be overriden in child classes. It is called by the frame directly after the model is instantiated.
@@ -433,7 +424,7 @@ This method does nothing in the parent class and can be overriden in child class
 Implement this method in your model to perform any kind of initialization you may need. Typically you would register your agent factories hier and set up model properties.
 
 
-#### next_agent(agent_type, state)
+### next_agent(agent_type, state)
 Get the next agent by type and state.
 
 Runs through the internal agent store and retrieves the first agent that matches in type and state.
@@ -457,7 +448,7 @@ Runs through the internal agent store and retrieves the first agent that matches
 
 
 
-#### plot_lookup(lookup_names, config=None)
+### plot_lookup(lookup_names, config=None)
 Plots lookup functions for the given list of lookup names
 
 
@@ -468,7 +459,7 @@ Plots lookup functions for the given list of lookup names
 
 
 
-#### random_agents(agent_type, num_agents)
+### random_agents(agent_type, num_agents)
 Retreive a number of random agents
 
 
@@ -489,7 +480,7 @@ Retreive a number of random agents
 
 
 
-#### random_events(agent_type, num_agents, event_factory)
+### random_events(agent_type, num_agents, event_factory)
 Distribute events to a number of random agents
 
 
@@ -509,7 +500,7 @@ Distribute events to a number of random agents
 
 
 
-#### register_agent_factory(agent_type, agent_factory)
+### register_agent_factory(agent_type, agent_factory)
 Register an agent factory.
 
 Agent factories are used at run-time to populate the model with agents. This method is used to register an agent factory, which is typically just a lambda function which returns an agent.
@@ -527,16 +518,16 @@ Agent factories are used at run-time to populate the model with agents. This met
 
 
 
-#### reset()
+### reset()
 Reset the model.
 Cleara out all agents, agent and event statistics and resets the cache of SD equations. Keeps the agent factories though, so you could directly reconfigure the model using the configure method.
 
 
-#### reset_cache()
-Reset cache of all System Dynamics equations.
+### reset_cache()
+Reset cache of all System Dynamics equations and call the reset_cache method on all agents. Clear the agent statistics.
 
 
-#### run(show_progress_widget=False, collect_data=True)
+### run(show_progress_widget=False, collect_data=True)
 Run the simulation.
 
 This esssentially just calls the run method of the models scheduler.
@@ -554,7 +545,7 @@ This esssentially just calls the run method of the models scheduler.
 
 
 
-#### run_specs(starttime, stoptime, dt)
+### run_specs(starttime, stoptime, dt)
 Configure the runspecs of the model.
 
 
@@ -573,7 +564,7 @@ Configure the runspecs of the model.
 
 
 
-#### run_step(step, show_progress_widget=False, collect_data=True)
+### run_step(step, show_progress_widget=False, collect_data=True)
 Run a simulation step.
 
 This esssentially just calls the run method of the models scheduler.
@@ -595,7 +586,7 @@ This esssentially just calls the run method of the models scheduler.
 
 
 
-#### set_property(name, property_spec)
+### set_property(name, property_spec)
 Configure a property of the model itself, as opposed to the properties of individual agents.
 
 Properties set via this mechanism are stored internally in a dictionary of properties, the value of the property directly can be access directly as an object attribute, i.e. as self.<name of property>.
@@ -615,7 +606,7 @@ The key point about keeping properties in this way is that they can then easily 
 
 
 
-#### set_property_value(name, value)
+### set_property_value(name, value)
 Set the value of a model property by name.
 
 Model properties can also be set directly via the model attributes, i.e. as self.<nname of property>=<value of property>
@@ -633,7 +624,7 @@ Model properties can also be set directly via the model attributes, i.e. as self
 
 
 
-#### set_scenario_manager(scenario_manager)
+### set_scenario_manager(scenario_manager)
 Set the name of the scenario manager that is handling this model. Used by bptk during scenario registration.
 
 
@@ -644,7 +635,7 @@ Set the name of the scenario manager that is handling this model. Used by bptk d
 
 
 
-#### statistics()
+### statistics()
 Get statistics from DataCollector
 
 
@@ -654,7 +645,7 @@ Get statistics from DataCollector
 
 
 
-#### stock(name)
+### stock(name)
 Create a System Dynamics stock
 
 

@@ -1,4 +1,4 @@
-- [The architecture of the BPTK Framework](/general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html)
+- [Architecture of the BPTK Framework](/general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html)
 - [Scenarios in Depth](/general/in-depth/in_depth_scenarios/in_depth_scenarios.html)
 - [Accessing Raw Simulation Results](/general/how-to/how_to_accessing_raw_simulation_results/how_to_accessing_raw_simulation_results.html)
 - [Advanced Plotting Features](/general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.html)

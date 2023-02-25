@@ -1,11 +1,11 @@
 # Stock
 
 
-### _class_ Stock(model, name)
+## _class_ Stock(model, name)
 Stock in a SD DSL model.
 
 
-#### _property_ equation()
+### _property_ equation()
 Returns the equation as originally set.
 
 

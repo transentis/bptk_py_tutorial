@@ -33,17 +33,18 @@ website:
         
       - text: "Quickstart"
         file: quickstart/quickstart.ipynb
-        
       - text: "Limitations"
         file: usage/limitations.md
-        
+      - text: "Tutorials"
+        file: tutorials/tutorials.md
+        contents:
+          - text: "System Dynamics Tutorial"
+            file: tutorials/system_dynamics/sd_tutorial.ipynb
       - section: "General Information"
         file: general/general.md
-        
         contents:
-          - text: "Architecture"
+          - text: "BPTK Architecture"
             file: general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html
-
           - text: "Scenarios in Depth"
             file: general/in-depth/in_depth_scenarios/in_depth_scenarios.html
           - text: "Accessing Raw Simulation Results"
@@ -52,11 +53,10 @@ website:
             file: general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.html
           - text: "Dashboards using Jupyter Widgets"
             file: general/how-to/how_to_develop_dashboards_using_jupyter_widgets/how_to_developing_dashboards_using_juypter_widgets.html
-          - text: "Dashboards using the SimpleDashboard"
+          - text: "Dashboards using the SimpleDashboard Class"
             file: general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_develop_dashboards_using_simpledashboard.html
-          - text: "Persistent BPTK-Server State"
+          - text: "Persisting the BPTK-Server State"
             file: general/how-to/how_to_external_state/how_to_external_state.html
-
 
       - section: "Agent Based Modeling"
         file: abm/abm.md
@@ -65,11 +65,19 @@ website:
             file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
           - text: "Data Collector"
             file: abm/how-to/how_to_choose_datacollector/how_to_choose_datacollector.html
-            
-            
-      - section: "Introduction to XMILE"
-        file: xmile/xmile.md
-        
+      - section: "System Dynamics"
+        file: sd-dsl/sddsl.md
+        contents:
+          - text: "Introduction to the SD DSL"
+            file: step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.html
+          - text: "BPTK for System Dynamics"
+            file: sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.html
+          - text: "SD DSL Functions"
+            file: sd-dsl/in-depth/in_depth_sd_dsl_functions/in_depth_sd_dsl_functions.html
+          - text: "User-defined functions"
+            file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
+      - section: "XMILE Models"
+        file: xmile/xmile.md    
         contents:
           - text: "XMILE SD Models"
             file: xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html
@@ -81,21 +89,6 @@ website:
             file: xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html
           - text: "Writing Computational Essays"
             file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
-
-
-
-      - section: "Introduction to SD DSL"
-        file: sd-dsl/sddsl.md
-        contents:
-          - text: "Introduction to SD DSL using Python"
-            file: step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.html
-          - text: "BPTK for System Dynamics"
-            file: sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.html
-          - text: "SD DSL Functions"
-            file: sd-dsl/in-depth/in_depth_sd_dsl_functions/in_depth_sd_dsl_functions.html
-          - text: "User-defined functions"
-            file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
-
       - section: "Model Library"
         file: model_library/model_library.md
         contents:
@@ -109,7 +102,7 @@ website:
             file: model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb
           - text: "Make Your PSF Grow"
             file: model_library/make_your_psf_grow/make_your_psf_grow.md
-      - section: "BPTK API"
+      - section: "API Documentation"
         file: api/api.md
         contents:
           - text: "Agent"

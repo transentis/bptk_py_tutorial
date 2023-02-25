@@ -31,7 +31,7 @@ The server is now available on port 5000 and you can call the endpoints document
 Our  [Introduction to BPTK](https://github.com/transentis/bptk_intro) repository on GitHub contains an [introductory notebook](https://github.com/transentis/bptk_intro/blob/master/rest-api/api_usage.ipynb) that illustrates how to use the BPTK Rest API.
 
 
-### _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
+## _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
 This class provides a Flask-based server that provides a REST-API for running bptk scenarios. The class inherts the properties and methods of Flask and doesn’t expose any further public methods.
 
 
