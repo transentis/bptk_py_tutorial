@@ -2,7 +2,6 @@ project:
   type: website
   title: "BPTK_PY"
   output-dir: _output
-  execute-dir: _output
   render:
     - "*.md"
     - "*.ipynb"
