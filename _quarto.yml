@@ -97,7 +97,18 @@ website:
             file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
 
       - section: "Model Library"
-        file: model:library/model_library.md
+        file: model_library/model_library.md
+        contents:
+          - text: "Bass Diffusion Model"
+            file: model_library/bass_diffusion/bass_diffusion.ipynb
+          - text: "Competitive Pricing"
+            file: model_library/competitive_pricing/competitive_pricing_dynamics.ipynb
+          - text: "Customer Acquisition"
+            file: model_library/customer_acquisition/customer_acquisition.ipynb
+          - text: "Enterprise Digital Twin"
+            file: model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb
+          - text: "Make Your PSF Grow"
+            file: model_library/make_your_psf_grow/make_your_psf_grow.md
       - section: "BPTK API"
         file: api/api.md
         contents:
@@ -138,8 +149,6 @@ website:
 
 format:
   html:
-    theme:
-      light: sandstone
-      dark: sandstone
+    theme: sandstone
     css: styles.css
     toc: true

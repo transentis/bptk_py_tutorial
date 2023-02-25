@@ -17,8 +17,7 @@ Python code.
 
 This means you can build models in a XMILE-compatible visual modeling
 environment (such as [iseesystems Stella](http://www.iseesystems.com))
-and then use them *independently* in a Python environment such as
-[JupyterLabs](https://jupyter.org).
+and then use them *independently* in a Python.
 
 ## Main Features
 
@@ -61,9 +60,9 @@ DSL and Agent-based versions of the Beergame.
 BPTK-Py is developed and maintained by [transentis
 labs](https://www.transentis.com/business-prototyping-toolkit/en/).
 Currently the main developers are [Dr. Oliver
-Grasl](https://linkedin.com/in/olivergrasl) and [David
-Granzin](https://linkedin.com/in/makisuo), former contributors include Jeremy Funk,
-Dominik Schröck and Ahmed Eldably.
+Grasl](https://linkedin.com/in/olivergrasl), [David
+Granzin](https://linkedin.com/in/makisuo) and Dionysios Basdanis, former contributors include Ahmed Eldably, Jeremy Funk and
+Dominik Schröck.
 
 The best place to ask questions about the framework is our [Business
 Prototyping Toolkit
@@ -73,7 +72,7 @@ which meets online regularly.
 You can also contact us any time at <support@transentis.com>, we are
 always happy to help.
 
-## Content
+## Contents
 
 [Installation](usage/installation.md)
 
@@ -96,3 +95,11 @@ always happy to help.
 [Introduction to SD DSL](sd-dsl/sddsl.md)
 
 {{< include sd-dsl/_sddsl_content.md >}}
+
+[Model Library](model_library/model_library.md)
+
+{{< include model_library/_model_library_content.md >}}
+
+[BPTK API](api/api.md)
+
+{{< include api/_api_content.md >}}

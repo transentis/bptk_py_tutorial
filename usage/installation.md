@@ -6,25 +6,14 @@ keywords: "agent-based modeling, abm, bptk, bptk-py, python, business simulation
 
 # Installation
 
-
-Like every piece of software, BPTK-Py and its dependencies have to be
-installed correctly.
-
-## For Advanced Users
-
-Once you know what you are doing and yo already have a running Python
-environment, you only need to call `pip install BPTK-Py` or
-`pip3 install BPTK-Py`.
-
-If you are not an advanced user, it is best to start with our BPTK-Py
-tutorial, which you can clone or download from our [git
-repository](https://github.com/transentis/bptk_py_tutorial/) on Github.
+Installing BPTK within your Python enviroment is simple, all you need to call is `pip install BPTK-Py`.
 
 ## Keeping BPTK-Py up-to-date
 
 Software evolves. We regularly release new versions to add
-functionality, improve the code and fix bugs. Since version 1.1.2, we
-offer a seamless way for checking for updates and installing new ones.
+functionality, improve the code and fix bugs.
+
+We offer a seamless way for checking for updates and installing new ones.
 
 In your favorite Python environment (we suggest Jupyter Notebook),
 simply run the following code:
@@ -42,23 +31,6 @@ To check for the currently installed version, simple run these commands:
     bptk = bptk()
     print(bptk.version)
 ```
-## Installing the BPTK-Py Tutorial Using Docker
-
-If you have Docker installed (e.g. Docker Desktop on MacOS or on
-Windows), follow these steps:
-
-1.  On the command line, move into a directory where you would like to
-    store the BPTK-Py tutorial.
-2.  Clone the BPTK-Py tutorial repository using git clone:
-    `git clone https://github.com/transentis/bptk_py_tutorial.git`
-3.  Run `docker-compose up`
-4.  Point your browser at <http://localhost:8888> -- this will open
-    JupyterLab showing the contents of your directory.
-5.  Open the notebook `readme.ipynb` from within JupyterLab.
-6.  When you are finished, close your browser and call
-    `docker-compose down` from within your directory. This will stop and
-    remove the container.
-
 ## Installing The BPTK-Py Tutorial Starting From Scratch
 
 Assuming you are starting from scratch, you need to perform the
