@@ -50,12 +50,6 @@ Meetup](https://www.transentis.com/business-prototyping-toolkit-meetup/en/)
 meets online regularly. All meetups are recorded and the recordings are
 available on the meetup page.
 
-You might also like to clone our [model library
-repository](https://github.com/transentis/bptk-model-library/) , which
-contains a number of models that illustrate how to model business models
-and market strategies using Agent-based modeling, System Dynamics and
-BPTK.
-
 BPTK was also used to build our implementation of the infamous [Beer
 Distribution Game](https://beergame.transentis.com). Our [beergame
 repository](https://github.com/transentis/beergame) contains Jupyter
@@ -67,9 +61,8 @@ DSL and Agent-based versions of the Beergame.
 BPTK-Py is developed and maintained by [transentis
 labs](https://www.transentis.com/business-prototyping-toolkit/en/).
 Currently the main developers are [Dr. Oliver
-Grasl](https://linkedin.com/in/olivergrasl), [Jeremy
-Funk](https://linkedin.com/in/nathan-jeremy-funk-344617216) and [David
-Granzin](https://linkedin.com/in/makisuo), former contributors include
+Grasl](https://linkedin.com/in/olivergrasl) and [David
+Granzin](https://linkedin.com/in/makisuo), former contributors include Jeremy Funk,
 Dominik Schröck and Ahmed Eldably.
 
 The best place to ask questions about the framework is our [Business
@@ -84,7 +77,7 @@ always happy to help.
 
 [Installation](usage/installation.md)
 
-[Quickstart](usage/quickstart.md)
+[Quickstart](quickstart/quickstart.ipynb)
 
 [Limitations](usage/limitations.md)
 

@@ -16,7 +16,7 @@ website:
   page-navigation: true
   open-graph: true
   page-footer: 
-    center: "© Copyright 2022, transentis labs GmbH." 
+    center: "© Copyright 2023, transentis labs GmbH." 
   sidebar:
     logo: img/labs_icon.svg
     logo-alt: "BPTK"
@@ -29,7 +29,7 @@ website:
         file: usage/installation.md
         
       - text: "Quickstart"
-        file: usage/quickstart.md
+        file: quickstart/quickstart.ipynb
         
       - text: "Limitations"
         file: usage/limitations.md
@@ -93,8 +93,8 @@ website:
           - text: "User-defined functions"
             file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
 
-
-
+      - section: "Model Library"
+        file: model:library/model_library.md
       - section: "BPTK API"
         file: api/api.md
         contents:
@@ -135,9 +135,8 @@ website:
 
 format:
   html:
-    # theme: cosmo
     theme:
-      light: flatly
-      dark: darkly
+      light: sandstone
+      dark: sandstone
     css: styles.css
     toc: true
