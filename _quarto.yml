@@ -10,6 +10,9 @@ project:
     - "!readme.ipynb"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
   preview:
@@ -28,6 +31,7 @@ website:
     logo: img/labs_icon.svg
     logo-alt: "BPTK"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 website:
@@ -42,6 +46,8 @@ website:
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 =======
 >>>>>>> master
+=======
+>>>>>>> master
     collapse-level: 1
     style: "floating"
     search: true
@@ -51,6 +57,9 @@ website:
         file: usage/installation.md
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
       - text: "Quickstart"
@@ -77,6 +86,7 @@ website:
             file: concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.html
           - text: "Persisting the BPTK-Server State"
             file: concepts/external_state/external_state.html
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         
@@ -110,12 +120,17 @@ website:
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 =======
 >>>>>>> master
+=======
+>>>>>>> master
       - section: "Agent Based Modeling"
         file: abm/abm.md
         contents:
           - text: "Agent Based Modeling"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
             file: abm/agent_based_modeling/agent_based_modeling.ipynb
@@ -133,6 +148,7 @@ website:
       - section: "XMILE Models"
         file: xmile/xmile.md    
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
           - text: "Data Collector"
@@ -143,6 +159,8 @@ website:
         file: xmile/xmile.md
         
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
         contents:
@@ -158,6 +176,9 @@ website:
             file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
       - section: "Model Library"
@@ -174,6 +195,7 @@ website:
           - text: "Make Your PSF Grow"
             file: model_library/make_your_psf_grow/make_your_psf_grow.md
       - section: "API Documentation"
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -195,6 +217,8 @@ website:
 
       - section: "BPTK API"
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
         file: api/api.md
@@ -235,6 +259,9 @@ website:
             file: api/api_stock.html
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
       - text: "Limitations"
@@ -242,6 +269,7 @@ website:
 format:
   html:
     theme: sandstone
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -252,6 +280,8 @@ format:
       light: flatly
       dark: darkly
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
     css: styles.css

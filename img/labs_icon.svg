@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 <svg width="404" height="133" viewBox="0 0 404 133" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,6 +18,7 @@
 </clipPath>
 </defs>
 </svg>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="utf-8"?>
@@ -33,5 +37,7 @@
   <text style="fill: rgba(125, 125, 125, 0.81); font-family: Consolas; font-size: 92.4px; font-weight: lighter; white-space: pre;" x="16.773" y="210.495">BPTK-Py</text>
 </svg>
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master

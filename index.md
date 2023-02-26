@@ -2,12 +2,18 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ::: {.meta description="In-depth explanation of agent-based modeling"
 title="BPTK Py" 
 keywords="agent-based modeling, system dynamics, python, bptk, sddsl, xmile, smile, stella, ithink"}
 =======
 ::: {.meta description="In-depth explanation of agent-based modeling" keywords="agent-based modeling, system dynamics, python, bptk, sddsl, xmile, smile, stella, ithink"}
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+::: {.meta description="In-depth explanation of agent-based modeling"
+title="BPTK Py" 
+keywords="agent-based modeling, system dynamics, python, bptk, sddsl, xmile, smile, stella, ithink"}
+>>>>>>> master
 =======
 ::: {.meta description="In-depth explanation of agent-based modeling"
 title="BPTK Py" 
@@ -29,11 +35,15 @@ This means you can build models in a XMILE-compatible visual modeling
 environment (such as [iseesystems Stella](http://www.iseesystems.com))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 and then use them *independently* in a Python.
 =======
 and then use them *independently* in a Python environment such as
 [JupyterLabs](https://jupyter.org).
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+and then use them *independently* in a Python.
+>>>>>>> master
 =======
 and then use them *independently* in a Python.
 >>>>>>> master
@@ -70,6 +80,7 @@ available on the meetup page.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 You might also like to clone our [model library
 repository](https://github.com/transentis/bptk-model-library/) , which
@@ -78,6 +89,8 @@ and market strategies using Agent-based modeling, System Dynamics and
 BPTK.
 
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 BPTK was also used to build our implementation of the infamous [Beer
@@ -91,6 +104,7 @@ DSL and Agent-based versions of the Beergame.
 BPTK-Py is developed and maintained by [transentis
 labs](https://www.transentis.com/business-prototyping-toolkit/en/).
 Currently the main developers are [Dr. Oliver
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Grasl](https://linkedin.com/in/olivergrasl), [David
@@ -107,6 +121,11 @@ Grasl](https://linkedin.com/in/olivergrasl), [David
 Granzin](https://linkedin.com/in/makisuo) and Dionysios Basdanis, former contributors include Ahmed Eldably, Jeremy Funk and
 Dominik Schröck.
 >>>>>>> master
+=======
+Grasl](https://linkedin.com/in/olivergrasl), [David
+Granzin](https://linkedin.com/in/makisuo) and Dionysios Basdanis, former contributors include Ahmed Eldably, Jeremy Funk and
+Dominik Schröck.
+>>>>>>> master
 
 The best place to ask questions about the framework is our [Business
 Prototyping Toolkit
@@ -118,6 +137,9 @@ always happy to help.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 ## Contents
@@ -131,6 +153,7 @@ always happy to help.
 [Concepts](concepts/concepts.md)
 
 {{< include concepts/_concepts_content.md >}}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 ## Content
@@ -147,6 +170,8 @@ always happy to help.
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 
 [Agent Based Modeling](abm/abm.md)
 
@@ -161,6 +186,9 @@ always happy to help.
 {{< include sd-dsl/_sddsl_content.md >}}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
@@ -173,9 +201,13 @@ always happy to help.
 {{< include api/_api_content.md >}}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [Limitations](usage/limitations.md)
 =======
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+[Limitations](usage/limitations.md)
+>>>>>>> master
 =======
 [Limitations](usage/limitations.md)
 >>>>>>> master

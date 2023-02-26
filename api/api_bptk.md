@@ -14,10 +14,14 @@ This automatically starts a background process that scans your `scenario` direct
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ bptk(loglevel='WARN', configuration=None)
 =======
 ### _class_ bptk(loglevel='WARN', configuration=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ bptk(loglevel='WARN', configuration=None)
+>>>>>>> master
 =======
 ## _class_ bptk(loglevel='WARN', configuration=None)
 >>>>>>> master
@@ -44,10 +48,14 @@ Once all scenarios are set up, you can run them and plot the results.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
 =======
 #### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
+>>>>>>> master
 =======
 ### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
 >>>>>>> master
@@ -100,10 +108,14 @@ The stop time is set internally to be the minimum of all the scenario stop times
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### destroy()
 =======
 #### destroy()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### destroy()
+>>>>>>> master
 =======
 ### destroy()
 >>>>>>> master
@@ -114,6 +126,9 @@ Kills all the file monitors and makes sure the Python process can die happily.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 ### end_session()
@@ -122,6 +137,7 @@ Ends a session, resets the cache of all relevant scenarios and deletes the sessi
 
 ### export_scenarios(scenario_manager, scenarios=None, equations=None, interactive_scenario=None, interactive_equations=None, interactive_settings=None, time_column_name='time', scenario_df_name='scenario', scenario_column_name='scenario', indicator_df_name='indicator', interactive_df_name='interactive', filename=None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #### end_session()
 Ends a session, resets the cache of all relevant scenarios and deletes the session state.
@@ -129,6 +145,8 @@ Ends a session, resets the cache of all relevant scenarios and deletes the sessi
 
 #### export_scenarios(scenario_manager, scenarios=None, equations=None, interactive_scenario=None, interactive_equations=None, interactive_settings=None, time_column_name='time', scenario_df_name='scenario', scenario_column_name='scenario', indicator_df_name='indicator', interactive_df_name='interactive', filename=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 Export scenario data into a spreadsheet.
@@ -160,10 +178,14 @@ Export data for the given scenarios in a structure that is amenable to analysis 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_scenario(scenario_manager, scenario)
 =======
 #### get_scenario(scenario_manager, scenario)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_scenario(scenario_manager, scenario)
+>>>>>>> master
 =======
 ### get_scenario(scenario_manager, scenario)
 >>>>>>> master
@@ -190,10 +212,14 @@ Get a scenario object from a scenario manager
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_scenario_names(scenario_managers=[], format='list')
 =======
 #### get_scenario_names(scenario_managers=[], format='list')
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_scenario_names(scenario_managers=[], format='list')
+>>>>>>> master
 =======
 ### get_scenario_names(scenario_managers=[], format='list')
 >>>>>>> master
@@ -220,10 +246,14 @@ Returns a concatenated list of all the scenario names from a list of scenario ma
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
 =======
 #### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
+>>>>>>> master
 =======
 ### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
 >>>>>>> master
@@ -256,10 +286,14 @@ The keys of the dictionary are the scenario names, unless more than one scenario
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### list_equations(scenario_managers=[], scenarios=[])
 =======
 #### list_equations(scenario_managers=[], scenarios=[])
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### list_equations(scenario_managers=[], scenarios=[])
+>>>>>>> master
 =======
 ### list_equations(scenario_managers=[], scenarios=[])
 >>>>>>> master
@@ -286,10 +320,14 @@ Prints all available equations for the given scenario manager(s) and scenario(s)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### list_scenarios(scenario_managers=[], scenario_manager_type='')
 =======
 #### list_scenarios(scenario_managers=[], scenario_manager_type='')
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### list_scenarios(scenario_managers=[], scenario_manager_type='')
+>>>>>>> master
 =======
 ### list_scenarios(scenario_managers=[], scenario_manager_type='')
 >>>>>>> master
@@ -312,10 +350,14 @@ List all scenarios or scenarios from selected scenario managers
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
 =======
 #### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
+>>>>>>> master
 =======
 ### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
 >>>>>>> master
@@ -396,10 +438,14 @@ If they come with  very different indices, do not be surprised that the plot loo
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
 =======
 #### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
+>>>>>>> master
 =======
 ### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
 >>>>>>> master
@@ -498,6 +544,9 @@ Plot scenarios for SD, ABM and hybrid models.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 ### progress()
@@ -506,6 +555,7 @@ Returns the progress of a simulation as float.
 
 ### register_model(model, scenario_manager=None, scenario=None)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #### progress()
 Returns the progress of a simulation as float.
@@ -513,6 +563,8 @@ Returns the progress of a simulation as float.
 
 #### register_model(model, scenario_manager=None, scenario=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 Registers the given model with bptk.
@@ -538,10 +590,14 @@ Automatically creates both a scenario manager and an initial scenario. If no sce
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### register_scenario_manager(scenario_manager)
 =======
 #### register_scenario_manager(scenario_manager)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### register_scenario_manager(scenario_manager)
+>>>>>>> master
 =======
 ### register_scenario_manager(scenario_manager)
 >>>>>>> master
@@ -559,10 +615,14 @@ Register a manually defined Scenario manager using the common dictionary notatio
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### register_scenarios(scenarios, scenario_manager)
 =======
 #### register_scenarios(scenarios, scenario_manager)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### register_scenarios(scenarios, scenario_manager)
+>>>>>>> master
 =======
 ### register_scenarios(scenarios, scenario_manager)
 >>>>>>> master
@@ -583,6 +643,7 @@ Uses the usual dictionary format to configure the scenario.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### reset_all_scenarios()
 =======
 
@@ -592,10 +653,14 @@ Uses the usual dictionary format to configure the scenario.
 =======
 ### reset_all_scenarios()
 >>>>>>> master
+=======
+### reset_all_scenarios()
+>>>>>>> master
 Reload all scenarios
 
 Reload all scenarios from the scenario definition files. If scenarios where not created via a scenario definition file but dynamically, these are lost and must be reconfigured.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 ### reset_scenario(scenario_manager, scenario)
@@ -603,6 +668,9 @@ Reload all scenarios from the scenario definition files. If scenarios where not 
 
 #### reset_scenario(scenario_manager, scenario)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### reset_scenario(scenario_manager, scenario)
+>>>>>>> master
 =======
 ### reset_scenario(scenario_manager, scenario)
 >>>>>>> master
@@ -625,6 +693,7 @@ Reload a scenario from its file. All scenarios for the relevant file are reloade
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### reset_scenario_cache(scenario_manager='', scenario='')
 Resets only the interal cache (equation results) of a scenario, does not re-read from storage
 
@@ -634,6 +703,11 @@ Resets only the interal cache (equation results) of a scenario, does not re-read
 
 
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### reset_scenario_cache(scenario_manager='', scenario='')
+Resets only the interal cache (equation results) of a scenario, does not re-read from storage
+
+>>>>>>> master
 =======
 ### reset_scenario_cache(scenario_manager='', scenario='')
 Resets only the interal cache (equation results) of a scenario, does not re-read from storage
@@ -653,10 +727,14 @@ Resets only the interal cache (equation results) of a scenario, does not re-read
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
 =======
 #### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
+>>>>>>> master
 =======
 ### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
 >>>>>>> master
@@ -711,12 +789,16 @@ Return the results either as dictionaries or as a dataframe.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### run_step(settings=None, flat=False)
 =======
 
 
 #### run_step(settings=None, flat=False)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### run_step(settings=None, flat=False)
+>>>>>>> master
 =======
 ### run_step(settings=None, flat=False)
 >>>>>>> master
@@ -730,12 +812,16 @@ Run the next step of a session.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### session_results(index_by_time=True, flat=False)
 =======
 
 
 #### session_results(index_by_time=True, flat=False)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### session_results(index_by_time=True, flat=False)
+>>>>>>> master
 =======
 ### session_results(index_by_time=True, flat=False)
 >>>>>>> master
@@ -757,10 +843,14 @@ Return the results collected so far within a session
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
 =======
 #### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
+>>>>>>> master
 =======
 ### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
 >>>>>>> master
@@ -833,10 +923,14 @@ This method only works for agent-based and hybrid models.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### _classmethod_ update()
 =======
 #### _classmethod_ update()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### _classmethod_ update()
+>>>>>>> master
 =======
 ### _classmethod_ update()
 >>>>>>> master

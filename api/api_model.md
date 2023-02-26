@@ -3,10 +3,14 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ Model(starttime=0, stoptime=0, dt=1, name='', scheduler=None, data_collector=None)
 =======
 ### _class_ Model(starttime=0, stoptime=0, dt=1, name='', scheduler=None, data_collector=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ Model(starttime=0, stoptime=0, dt=1, name='', scheduler=None, data_collector=None)
+>>>>>>> master
 =======
 ## _class_ Model(starttime=0, stoptime=0, dt=1, name='', scheduler=None, data_collector=None)
 >>>>>>> master
@@ -33,10 +37,14 @@ It can run manually generated SD models, AB Models or define hybrid models.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### agent(agent_id)
 =======
 #### agent(agent_id)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### agent(agent_id)
+>>>>>>> master
 =======
 ### agent(agent_id)
 >>>>>>> master
@@ -60,10 +68,14 @@ Retrieve one agent by its ID
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### agent_count(agent_type)
 =======
 #### agent_count(agent_type)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### agent_count(agent_type)
+>>>>>>> master
 =======
 ### agent_count(agent_type)
 >>>>>>> master
@@ -85,10 +97,14 @@ Get count of agents of a given type.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### agent_count_per_state(agent_type, state)
 =======
 #### agent_count_per_state(agent_type, state)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### agent_count_per_state(agent_type, state)
+>>>>>>> master
 =======
 ### agent_count_per_state(agent_type, state)
 >>>>>>> master
@@ -115,10 +131,14 @@ Get number of agents in a specific state
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### agent_ids(agent_type)
 =======
 #### agent_ids(agent_type)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### agent_ids(agent_type)
+>>>>>>> master
 =======
 ### agent_ids(agent_type)
 >>>>>>> master
@@ -140,12 +160,16 @@ Retrieve agent IDs for all agents of type agent_type.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### begin_episode(episode_no)
 =======
 
 
 #### begin_episode(episode_no)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### begin_episode(episode_no)
+>>>>>>> master
 =======
 ### begin_episode(episode_no)
 >>>>>>> master
@@ -165,10 +189,14 @@ The default implementation calls begin_episode on each agent.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### begin_round(time, sim_round, step)
 =======
 #### begin_round(time, sim_round, step)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### begin_round(time, sim_round, step)
+>>>>>>> master
 =======
 ### begin_round(time, sim_round, step)
 >>>>>>> master
@@ -195,10 +223,14 @@ Should be called by the Scheduler at the beginning of each round, before the age
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### biflow(name)
 =======
 #### biflow(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### biflow(name)
+>>>>>>> master
 =======
 ### biflow(name)
 >>>>>>> master
@@ -218,12 +250,16 @@ Create a System Dynamics biflow
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### broadcast_event(agent_type, event_factory)
 =======
 
 
 #### broadcast_event(agent_type, event_factory)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### broadcast_event(agent_type, event_factory)
+>>>>>>> master
 =======
 ### broadcast_event(agent_type, event_factory)
 >>>>>>> master
@@ -248,10 +284,14 @@ Broadcast an event to all agents of a particular agent_type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### configure(config)
 =======
 #### configure(config)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### configure(config)
+>>>>>>> master
 =======
 ### configure(config)
 >>>>>>> master
@@ -267,10 +307,14 @@ Called to configure the model using a dictionary. This method is called by the f
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### constant(name)
 =======
 #### constant(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### constant(name)
+>>>>>>> master
 =======
 ### constant(name)
 >>>>>>> master
@@ -290,10 +334,14 @@ Returns: Constant.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### converter(name)
 =======
 #### converter(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### converter(name)
+>>>>>>> master
 =======
 ### converter(name)
 >>>>>>> master
@@ -313,12 +361,16 @@ Create a System Dynamics converter
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### create_agent(agent_type, agent_properties)
 =======
 
 
 #### create_agent(agent_type, agent_properties)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### create_agent(agent_type, agent_properties)
+>>>>>>> master
 =======
 ### create_agent(agent_type, agent_properties)
 >>>>>>> master
@@ -339,12 +391,16 @@ Internally this method then uses the registered agent factories to actually crea
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### create_agents(agent_spec)
 =======
 
 
 #### create_agents(agent_spec)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### create_agents(agent_spec)
+>>>>>>> master
 =======
 ### create_agents(agent_spec)
 >>>>>>> master
@@ -361,11 +417,15 @@ The agent specification is a dictionary containing the agent name and properties
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### end_episode(episode_no)
 =======
 
 #### end_episode(episode_no)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### end_episode(episode_no)
+>>>>>>> master
 =======
 ### end_episode(episode_no)
 >>>>>>> master
@@ -385,10 +445,14 @@ The default implementation calls end_episode on each agent.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### end_round(time, sim_round, step)
 =======
 #### end_round(time, sim_round, step)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### end_round(time, sim_round, step)
+>>>>>>> master
 =======
 ### end_round(time, sim_round, step)
 >>>>>>> master
@@ -415,10 +479,14 @@ Should be called by the Scheduler at the end of each round, before the agents ac
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### enqueue_event(event)
 =======
 #### enqueue_event(event)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### enqueue_event(event)
+>>>>>>> master
 =======
 ### enqueue_event(event)
 >>>>>>> master
@@ -436,10 +504,14 @@ In general you don’t need to override this method or call it directly.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### _property_ equation_prefix()
 =======
 #### _property_ equation_prefix()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### _property_ equation_prefix()
+>>>>>>> master
 =======
 ### _property_ equation_prefix()
 >>>>>>> master
@@ -454,10 +526,14 @@ An id that is unique within this model that can be used to generate unique equat
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### evaluate_equation(name, t)
 =======
 #### evaluate_equation(name, t)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### evaluate_equation(name, t)
+>>>>>>> master
 =======
 ### evaluate_equation(name, t)
 >>>>>>> master
@@ -482,10 +558,14 @@ Return: Float
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### flow(name)
 =======
 #### flow(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### flow(name)
+>>>>>>> master
 =======
 ### flow(name)
 >>>>>>> master
@@ -507,10 +587,14 @@ Create a System Dynamics flow
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### function(name, fn)
 =======
 #### function(name, fn)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### function(name, fn)
+>>>>>>> master
 =======
 ### function(name, fn)
 >>>>>>> master
@@ -533,10 +617,14 @@ A function which wraps the user defined function for use within System Dynamics.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_property(name)
 =======
 #### get_property(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_property(name)
+>>>>>>> master
 =======
 ### get_property(name)
 >>>>>>> master
@@ -560,10 +648,14 @@ The value of the model properties can also be accessed directly as a model attri
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_property_value(name)
 =======
 #### get_property_value(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_property_value(name)
+>>>>>>> master
 =======
 ### get_property_value(name)
 >>>>>>> master
@@ -587,10 +679,14 @@ The value of the model properties can also be accessed directly as a model attri
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### _static_ get_random_integer(min_value, max_value)
 =======
 #### _static_ get_random_integer(min_value, max_value)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### _static_ get_random_integer(min_value, max_value)
+>>>>>>> master
 =======
 ### _static_ get_random_integer(min_value, max_value)
 >>>>>>> master
@@ -619,10 +715,14 @@ This method is useful for simulating random behaviour.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### instantiate_model()
 =======
 #### instantiate_model()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### instantiate_model()
+>>>>>>> master
 =======
 ### instantiate_model()
 >>>>>>> master
@@ -635,10 +735,14 @@ Implement this method in your model to perform any kind of initialization you ma
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### next_agent(agent_type, state)
 =======
 #### next_agent(agent_type, state)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### next_agent(agent_type, state)
+>>>>>>> master
 =======
 ### next_agent(agent_type, state)
 >>>>>>> master
@@ -667,10 +771,14 @@ Runs through the internal agent store and retrieves the first agent that matches
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### plot_lookup(lookup_names, config=None)
 =======
 #### plot_lookup(lookup_names, config=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### plot_lookup(lookup_names, config=None)
+>>>>>>> master
 =======
 ### plot_lookup(lookup_names, config=None)
 >>>>>>> master
@@ -686,10 +794,14 @@ Plots lookup functions for the given list of lookup names
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### random_agents(agent_type, num_agents)
 =======
 #### random_agents(agent_type, num_agents)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### random_agents(agent_type, num_agents)
+>>>>>>> master
 =======
 ### random_agents(agent_type, num_agents)
 >>>>>>> master
@@ -715,10 +827,14 @@ Retreive a number of random agents
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### random_events(agent_type, num_agents, event_factory)
 =======
 #### random_events(agent_type, num_agents, event_factory)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### random_events(agent_type, num_agents, event_factory)
+>>>>>>> master
 =======
 ### random_events(agent_type, num_agents, event_factory)
 >>>>>>> master
@@ -743,10 +859,14 @@ Distribute events to a number of random agents
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### register_agent_factory(agent_type, agent_factory)
 =======
 #### register_agent_factory(agent_type, agent_factory)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### register_agent_factory(agent_type, agent_factory)
+>>>>>>> master
 =======
 ### register_agent_factory(agent_type, agent_factory)
 >>>>>>> master
@@ -769,10 +889,14 @@ Agent factories are used at run-time to populate the model with agents. This met
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### reset()
 =======
 #### reset()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### reset()
+>>>>>>> master
 =======
 ### reset()
 >>>>>>> master
@@ -782,6 +906,9 @@ Cleara out all agents, agent and event statistics and resets the cache of SD equ
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 ### reset_cache()
@@ -790,6 +917,7 @@ Reset cache of all System Dynamics equations and call the reset_cache method on 
 
 ### run(show_progress_widget=False, collect_data=True)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #### reset_cache()
 Reset cache of all System Dynamics equations.
@@ -797,6 +925,8 @@ Reset cache of all System Dynamics equations.
 
 #### run(show_progress_widget=False, collect_data=True)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 Run the simulation.
@@ -818,10 +948,14 @@ This esssentially just calls the run method of the models scheduler.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### run_specs(starttime, stoptime, dt)
 =======
 #### run_specs(starttime, stoptime, dt)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### run_specs(starttime, stoptime, dt)
+>>>>>>> master
 =======
 ### run_specs(starttime, stoptime, dt)
 >>>>>>> master
@@ -845,10 +979,14 @@ Configure the runspecs of the model.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### run_step(step, show_progress_widget=False, collect_data=True)
 =======
 #### run_step(step, show_progress_widget=False, collect_data=True)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### run_step(step, show_progress_widget=False, collect_data=True)
+>>>>>>> master
 =======
 ### run_step(step, show_progress_widget=False, collect_data=True)
 >>>>>>> master
@@ -875,10 +1013,14 @@ This esssentially just calls the run method of the models scheduler.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### set_property(name, property_spec)
 =======
 #### set_property(name, property_spec)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### set_property(name, property_spec)
+>>>>>>> master
 =======
 ### set_property(name, property_spec)
 >>>>>>> master
@@ -903,10 +1045,14 @@ The key point about keeping properties in this way is that they can then easily 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### set_property_value(name, value)
 =======
 #### set_property_value(name, value)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### set_property_value(name, value)
+>>>>>>> master
 =======
 ### set_property_value(name, value)
 >>>>>>> master
@@ -929,10 +1075,14 @@ Model properties can also be set directly via the model attributes, i.e. as self
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### set_scenario_manager(scenario_manager)
 =======
 #### set_scenario_manager(scenario_manager)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### set_scenario_manager(scenario_manager)
+>>>>>>> master
 =======
 ### set_scenario_manager(scenario_manager)
 >>>>>>> master
@@ -948,10 +1098,14 @@ Set the name of the scenario manager that is handling this model. Used by bptk d
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### statistics()
 =======
 #### statistics()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### statistics()
+>>>>>>> master
 =======
 ### statistics()
 >>>>>>> master
@@ -966,10 +1120,14 @@ Get statistics from DataCollector
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### stock(name)
 =======
 #### stock(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### stock(name)
+>>>>>>> master
 =======
 ### stock(name)
 >>>>>>> master

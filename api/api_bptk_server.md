@@ -33,10 +33,14 @@ Our  [Introduction to BPTK](https://github.com/transentis/bptk_intro) repository
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
 =======
 ### _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
+>>>>>>> master
 =======
 ## _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
 >>>>>>> master
