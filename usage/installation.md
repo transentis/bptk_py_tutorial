@@ -6,31 +6,18 @@ keywords: "agent-based modeling, abm, bptk, bptk-py, python, business simulation
 
 # Installation
 
-Installing BPTK within your Python enviroment is simple, all you need to call is `pip install BPTK-Py`.
+Installing BPTK within your Python enviroment is simple, all you need to call is
 
-## Keeping BPTK-Py up-to-date
-
-Software evolves. We regularly release new versions to add
-functionality, improve the code and fix bugs.
-
-We offer a seamless way for checking for updates and installing new ones.
-
-In your favorite Python environment (we suggest Jupyter Notebook),
-simply run the following code:
-```python
-    from BPTK_Py import bptk
-    bptk = bptk()
-    bptk.update()
+```bash
+pip install BPTK-Py
 ```
-The update mechanism automatically checks for a newer version and (if
-necessary) downloads and installs it.
+If you are new to BPTK-Py and maybe even Python, you should install the entire BPTK-Py tutorial – the tutorial contains a number of Juypter notebooks and both System Dynamics and Agent-based Models built with BPTK.
 
-To check for the currently installed version, simple run these commands:
-```python
-    from BPTK_Py import bptk
-    bptk = bptk()
-    print(bptk.version)
-```
+It is the best place to see BPTK in action.
+
+If you are reading this documentation online at [bptk.transentis.com](https://bptk.transentis.com/usage/installation.html): This documentation was generated from the BPTK-Py Tutorial using [quarto](https://www.quarto.org).
+
+
 ## Installing The BPTK-Py Tutorial Starting From Scratch
 
 Assuming you are starting from scratch, you need to perform the
@@ -47,7 +34,7 @@ following steps:
 First of all, you need [Python](https://www.python.org/). Download the
 latest version for your operating system.
 
-BPTK-Py was tested with Python 3.9.
+BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
 
 ### Clone the BPTK-Py tutorial
 
@@ -85,7 +72,6 @@ Now we have a virtual environment, we can install BPTK-Py and
 JupyterLab:
 ```python
 pip install -r requirements.txt
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
 ### Start JupyterLab
 
@@ -100,6 +86,33 @@ Open the notebook `readme.ipynb` from within JupyterLab.
 
 Once you are finished, close your browser and kill the JupyterLab
 process in your terminal.
+
+## Keeping BPTK-Py up-to-date
+
+Software evolves. We regularly release new versions to add
+functionality, improve the code and fix bugs.
+
+If you are on the command line using pip, you can update BPTK-Py as follows:
+
+```bash
+pip install --upgrade BPTK-Py
+```
+
+We also offer a seamless way for checking for updates and installing new ones from within a notebook environment such as Jupyter Lab, simply run the following code:
+```python
+    from BPTK_Py import bptk
+    bptk = bptk()
+    bptk.update()
+```
+The update mechanism automatically checks for a newer version and (if
+necessary) downloads and installs it.
+
+To check for the currently installed version, simple run these commands:
+```python
+    from BPTK_Py import bptk
+    bptk = bptk()
+    print(bptk.version)
+```
 
 ## Package dependencies
 
