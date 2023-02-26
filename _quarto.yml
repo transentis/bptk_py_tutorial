@@ -12,6 +12,9 @@ project:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -36,6 +39,7 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 website:
@@ -54,6 +58,8 @@ website:
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
     collapse-level: 1
     style: "floating"
     search: true
@@ -65,6 +71,9 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -95,6 +104,7 @@ website:
             file: concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.html
           - text: "Persisting the BPTK-Server State"
             file: concepts/external_state/external_state.html
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,6 +144,8 @@ website:
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
       - section: "Agent Based Modeling"
         file: abm/abm.md
         contents:
@@ -142,6 +154,9 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -165,6 +180,7 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
           - text: "Data Collector"
@@ -175,6 +191,8 @@ website:
         file: xmile/xmile.md
         
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -196,6 +214,9 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -219,6 +240,7 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -239,6 +261,8 @@ website:
 
       - section: "BPTK API"
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -285,6 +309,9 @@ website:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -299,6 +326,7 @@ format:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 format:
@@ -308,6 +336,8 @@ format:
       light: flatly
       dark: darkly
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======

@@ -10,6 +10,9 @@ keywords: "agent-based modeling, abm, bptk, bptk-py, python, business simulation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -27,6 +30,7 @@ It is the best place to see BPTK in action.
 
 If you are reading this documentation online at [bptk.transentis.com](https://bptk.transentis.com/usage/installation.html): This documentation was generated from the BPTK-Py Tutorial using [quarto](https://www.quarto.org).
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +94,8 @@ Windows), follow these steps:
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 
 ## Installing The BPTK-Py Tutorial Starting From Scratch
 
@@ -111,10 +117,14 @@ latest version for your operating system.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
 =======
 BPTK-Py was tested with Python 3.9.
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
+>>>>>>> master
 =======
 BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
 >>>>>>> master
@@ -165,9 +175,12 @@ pip install -r requirements.txt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -193,6 +206,9 @@ process in your terminal.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -229,8 +245,11 @@ To check for the currently installed version, simple run these commands:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======

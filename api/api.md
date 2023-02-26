@@ -6,6 +6,7 @@ This document contains documentation for the BPTK API.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {{< include _api_content.md >}}
 =======
 ## Content
@@ -28,6 +29,9 @@ This document contains documentation for the BPTK API.
 * [Simultaneous Scheduler](/api/api_simultaneousScheduler.md)
 * [Stock](/api/api_stock.md)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+{{< include _api_content.md >}}
+>>>>>>> master
 =======
 {{< include _api_content.md >}}
 >>>>>>> master

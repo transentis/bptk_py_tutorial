@@ -5,11 +5,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ Module(model, name, parent=None)
 
 =======
 ### _class_ Module(model, name, parent=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ Module(model, name, parent=None)
+
+>>>>>>> master
 =======
 ## _class_ Module(model, name, parent=None)
 
@@ -34,6 +39,9 @@ bptk.plot_scenario.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -44,6 +52,7 @@ Check our [Enterprise Digital Twin](../model_library/enterprise_digital_twin/ent
 
 
 ### biflow(name)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -59,6 +68,8 @@ Check our [Beer Distribution Game](https://github.com/transentis/beergame/blob/m
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 Add a biflow to the model. The name of the biflow will be a fully qualified name
 consisting of all nested module names plus the actual element name using dot
 notation, i.e. namespace.name
@@ -68,10 +79,14 @@ notation, i.e. namespace.name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### constant(name)
 =======
 #### constant(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### constant(name)
+>>>>>>> master
 =======
 ### constant(name)
 >>>>>>> master
@@ -90,10 +105,14 @@ notation, i.e. namespace.name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### converter(name)
 =======
 #### converter(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### converter(name)
+>>>>>>> master
 =======
 ### converter(name)
 >>>>>>> master
@@ -112,10 +131,14 @@ notation, i.e. namespace.name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### flow(name)
 =======
 #### flow(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### flow(name)
+>>>>>>> master
 =======
 ### flow(name)
 >>>>>>> master
@@ -134,10 +157,14 @@ notation, i.e. namespace.name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### fqn(name)
 =======
 #### fqn(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### fqn(name)
+>>>>>>> master
 =======
 ### fqn(name)
 >>>>>>> master
@@ -165,10 +192,14 @@ by the names of all the parent modules, e.g. parent_module_name.module_name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### initialize()
 =======
 #### initialize()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### initialize()
+>>>>>>> master
 =======
 ### initialize()
 >>>>>>> master
@@ -188,10 +219,14 @@ be defined here.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### stock(name)
 =======
 #### stock(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### stock(name)
+>>>>>>> master
 =======
 ### stock(name)
 >>>>>>> master

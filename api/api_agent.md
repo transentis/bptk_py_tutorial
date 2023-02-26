@@ -5,10 +5,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ Agent(agent_id, model, properties, agent_type='agent')
 =======
 ### _class_ Agent(agent_id, model, properties, agent_type='agent')
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ Agent(agent_id, model, properties, agent_type='agent')
+>>>>>>> master
 =======
 ## _class_ Agent(agent_id, model, properties, agent_type='agent')
 >>>>>>> master
@@ -41,10 +45,14 @@ Your agents must inherit from this class if they are to be part of an agent-base
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### act(time, round_no, step_no)
 =======
 #### act(time, round_no, step_no)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### act(time, round_no, step_no)
+>>>>>>> master
 =======
 ### act(time, round_no, step_no)
 >>>>>>> master
@@ -79,10 +87,14 @@ Does nothing in the base class, typically agents will implement most of their ac
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### begin_episode(episode_no)
 =======
 #### begin_episode(episode_no)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### begin_episode(episode_no)
+>>>>>>> master
 =======
 ### begin_episode(episode_no)
 >>>>>>> master
@@ -110,10 +122,14 @@ The default implementation does nothing.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### end_episode(episode_no)
 =======
 #### end_episode(episode_no)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### end_episode(episode_no)
+>>>>>>> master
 =======
 ### end_episode(episode_no)
 >>>>>>> master
@@ -137,10 +153,14 @@ Called by the framework at the end of each epsiode, to allow tidy up if necessar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_property(name)
 =======
 #### get_property(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_property(name)
+>>>>>>> master
 =======
 ### get_property(name)
 >>>>>>> master
@@ -170,10 +190,14 @@ Get the settings of a property.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_property_value(name)
 =======
 #### get_property_value(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_property_value(name)
+>>>>>>> master
 =======
 ### get_property_value(name)
 >>>>>>> master
@@ -203,10 +227,14 @@ Retrieves the value of a property.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### handle_events(time, sim_round, step)
 =======
 #### handle_events(time, sim_round, step)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### handle_events(time, sim_round, step)
+>>>>>>> master
 =======
 ### handle_events(time, sim_round, step)
 >>>>>>> master
@@ -241,10 +269,14 @@ This method then calls the registered event handlers.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### initialize()
 =======
 #### initialize()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### initialize()
+>>>>>>> master
 =======
 ### initialize()
 >>>>>>> master
@@ -263,10 +295,14 @@ Called by the framework directly after the agent is instantiated, useful for any
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### _static_ is_event_relevant(threshold)
 =======
 #### _static_ is_event_relevant(threshold)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### _static_ is_event_relevant(threshold)
+>>>>>>> master
 =======
 ### _static_ is_event_relevant(threshold)
 >>>>>>> master
@@ -298,10 +334,14 @@ The function generates a random number in the range [0.0, 1.0) using Pythons ran
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### receive_event(event)
 =======
 #### receive_event(event)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### receive_event(event)
+>>>>>>> master
 =======
 ### receive_event(event)
 >>>>>>> master
@@ -325,10 +365,14 @@ Receive an event.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### receive_instantaneous_event(event)
 =======
 #### receive_instantaneous_event(event)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### receive_instantaneous_event(event)
+>>>>>>> master
 =======
 ### receive_instantaneous_event(event)
 >>>>>>> master
@@ -352,10 +396,14 @@ Handle an event immediately, do not wait for the next round.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### register_event_handler(states, event, handler)
 =======
 #### register_event_handler(states, event, handler)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### register_event_handler(states, event, handler)
+>>>>>>> master
 =======
 ### register_event_handler(states, event, handler)
 >>>>>>> master
@@ -390,10 +438,14 @@ The event handler is called by the framework if a relevant event occurs. The eve
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### serialize()
 =======
 #### serialize()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### serialize()
+>>>>>>> master
 =======
 ### serialize()
 >>>>>>> master
@@ -422,10 +474,14 @@ Serialize the agent.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### set_property(name, data)
 =======
 #### set_property(name, data)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### set_property(name, data)
+>>>>>>> master
 =======
 ### set_property(name, data)
 >>>>>>> master
@@ -454,10 +510,14 @@ Configure an agent property by passing a dictionary specifying the property.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### set_property_value(name, value)
 =======
 #### set_property_value(name, value)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### set_property_value(name, value)
+>>>>>>> master
 =======
 ### set_property_value(name, value)
 >>>>>>> master

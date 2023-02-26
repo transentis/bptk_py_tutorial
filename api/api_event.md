@@ -5,10 +5,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ Event(name, sender_id, receiver_id, data=None)
 =======
 ### _class_ Event(name, sender_id, receiver_id, data=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ Event(name, sender_id, receiver_id, data=None)
+>>>>>>> master
 =======
 ## _class_ Event(name, sender_id, receiver_id, data=None)
 >>>>>>> master

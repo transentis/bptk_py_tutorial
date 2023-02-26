@@ -54,9 +54,12 @@ You can best reach us per e-mail at [support@transentis.com](mailto:support@tran
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 You can best reach us per e-mail at [support@transentis.com](mailto:support@transentis.com)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======

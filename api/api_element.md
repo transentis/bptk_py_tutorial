@@ -5,10 +5,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ Element(model, name, function_string=None)
 =======
 ### _class_ Element(model, name, function_string=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ Element(model, name, function_string=None)
+>>>>>>> master
 =======
 ## _class_ Element(model, name, function_string=None)
 >>>>>>> master
@@ -45,10 +49,14 @@ In general elements are created via an instance of the Model class, using the ap
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### _property_ equation()
 =======
 #### _property_ equation()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### _property_ equation()
+>>>>>>> master
 =======
 ### _property_ equation()
 >>>>>>> master
@@ -69,6 +77,9 @@ Returns the equation as originally set.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -83,6 +94,7 @@ Returns a string representation of the underlying function.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -92,6 +104,8 @@ Returns a string representation of the underlying function.
 
 #### plot(starttime=None, stoptime=None, dt=None, return_df=False)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======

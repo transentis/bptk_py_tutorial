@@ -5,10 +5,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ DataCollector()
 =======
 ### _class_ DataCollector()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ DataCollector()
+>>>>>>> master
 =======
 ## _class_ DataCollector()
 >>>>>>> master
@@ -26,10 +30,14 @@ Collects the output data of each agent/event and makes it available to external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### collect_agent_statistics(time, agents)
 =======
 #### collect_agent_statistics(time, agents)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### collect_agent_statistics(time, agents)
+>>>>>>> master
 =======
 ### collect_agent_statistics(time, agents)
 >>>>>>> master
@@ -58,10 +66,14 @@ Collect agent statistics from agent(s).
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### record_event(time, event)
 =======
 #### record_event(time, event)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### record_event(time, event)
+>>>>>>> master
 =======
 ### record_event(time, event)
 >>>>>>> master
@@ -90,10 +102,14 @@ Record an event
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### statistics()
 =======
 #### statistics()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### statistics()
+>>>>>>> master
 =======
 ### statistics()
 >>>>>>> master
