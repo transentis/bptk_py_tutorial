@@ -1,8 +1,12 @@
 # BPTK-Py: System Dynamics and Agent-based Modeling In Python
 
+<<<<<<< HEAD
 ::: {.meta description="In-depth explanation of agent-based modeling"
 title="BPTK Py" 
 keywords="agent-based modeling, system dynamics, python, bptk, sddsl, xmile, smile, stella, ithink"}
+=======
+::: {.meta description="In-depth explanation of agent-based modeling" keywords="agent-based modeling, system dynamics, python, bptk, sddsl, xmile, smile, stella, ithink"}
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 :::
 
 The Business Prototyping Toolkit for Python (BPTK-Py) is a computational
@@ -17,7 +21,12 @@ Python code.
 
 This means you can build models in a XMILE-compatible visual modeling
 environment (such as [iseesystems Stella](http://www.iseesystems.com))
+<<<<<<< HEAD
 and then use them *independently* in a Python.
+=======
+and then use them *independently* in a Python environment such as
+[JupyterLabs](https://jupyter.org).
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 
 ## Main Features
 
@@ -49,6 +58,15 @@ Meetup](https://www.transentis.com/business-prototyping-toolkit-meetup/en/)
 meets online regularly. All meetups are recorded and the recordings are
 available on the meetup page.
 
+<<<<<<< HEAD
+=======
+You might also like to clone our [model library
+repository](https://github.com/transentis/bptk-model-library/) , which
+contains a number of models that illustrate how to model business models
+and market strategies using Agent-based modeling, System Dynamics and
+BPTK.
+
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 BPTK was also used to build our implementation of the infamous [Beer
 Distribution Game](https://beergame.transentis.com). Our [beergame
 repository](https://github.com/transentis/beergame) contains Jupyter
@@ -60,9 +78,16 @@ DSL and Agent-based versions of the Beergame.
 BPTK-Py is developed and maintained by [transentis
 labs](https://www.transentis.com/business-prototyping-toolkit/en/).
 Currently the main developers are [Dr. Oliver
+<<<<<<< HEAD
 Grasl](https://linkedin.com/in/olivergrasl), [David
 Granzin](https://linkedin.com/in/makisuo) and Dionysios Basdanis, former contributors include Ahmed Eldably, Jeremy Funk and
 Dominik Schröck.
+=======
+Grasl](https://linkedin.com/in/olivergrasl), [Jeremy
+Funk](https://linkedin.com/in/nathan-jeremy-funk-344617216) and [David
+Granzin](https://linkedin.com/in/makisuo), former contributors include
+Dominik Schröck and Ahmed Eldably.
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 
 The best place to ask questions about the framework is our [Business
 Prototyping Toolkit
@@ -72,6 +97,7 @@ which meets online regularly.
 You can also contact us any time at <support@transentis.com>, we are
 always happy to help.
 
+<<<<<<< HEAD
 ## Contents
 
 [Installation](usage/installation.md)
@@ -83,6 +109,19 @@ always happy to help.
 [Concepts](concepts/concepts.md)
 
 {{< include concepts/_concepts_content.md >}}
+=======
+## Content
+
+[Installation](usage/installation.md)
+
+[Quickstart](usage/quickstart.md)
+
+[Limitations](usage/limitations.md)
+
+[General Information](general/general.md)
+
+{{< include general/_general_content.md >}}
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 
 [Agent Based Modeling](abm/abm.md)
 
@@ -95,6 +134,7 @@ always happy to help.
 [Introduction to SD DSL](sd-dsl/sddsl.md)
 
 {{< include sd-dsl/_sddsl_content.md >}}
+<<<<<<< HEAD
 
 [Model Library](model_library/model_library.md)
 
@@ -105,3 +145,5 @@ always happy to help.
 {{< include api/_api_content.md >}}
 
 [Limitations](usage/limitations.md)
+=======
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f

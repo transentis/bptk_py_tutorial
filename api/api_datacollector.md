@@ -1,12 +1,20 @@
 # DataCollector
 
 
+<<<<<<< HEAD
 ## _class_ DataCollector()
+=======
+### _class_ DataCollector()
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 A datacollector for the agent based simulation.
 Collects the output data of each agent/event and makes it available to external resources such as BPTK-Py to plot the data
 
 
+<<<<<<< HEAD
 ### collect_agent_statistics(time, agents)
+=======
+#### collect_agent_statistics(time, agents)
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 Collect agent statistics from agent(s).
 
 
@@ -22,7 +30,11 @@ Collect agent statistics from agent(s).
 
 
 
+<<<<<<< HEAD
 ### record_event(time, event)
+=======
+#### record_event(time, event)
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 Record an event
 
 
@@ -38,7 +50,11 @@ Record an event
 
 
 
+<<<<<<< HEAD
 ### statistics()
+=======
+#### statistics()
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 Get the statistics collected.
 
 

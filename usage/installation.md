@@ -6,6 +6,7 @@ keywords: "agent-based modeling, abm, bptk, bptk-py, python, business simulation
 
 # Installation
 
+<<<<<<< HEAD
 Installing BPTK within your Python enviroment is simple, all you need to call is
 
 ```bash
@@ -17,6 +18,60 @@ It is the best place to see BPTK in action.
 
 If you are reading this documentation online at [bptk.transentis.com](https://bptk.transentis.com/usage/installation.html): This documentation was generated from the BPTK-Py Tutorial using [quarto](https://www.quarto.org).
 
+=======
+
+Like every piece of software, BPTK-Py and its dependencies have to be
+installed correctly.
+
+## For Advanced Users
+
+Once you know what you are doing and yo already have a running Python
+environment, you only need to call `pip install BPTK-Py` or
+`pip3 install BPTK-Py`.
+
+If you are not an advanced user, it is best to start with our BPTK-Py
+tutorial, which you can clone or download from our [git
+repository](https://github.com/transentis/bptk_py_tutorial/) on Github.
+
+## Keeping BPTK-Py up-to-date
+
+Software evolves. We regularly release new versions to add
+functionality, improve the code and fix bugs. Since version 1.1.2, we
+offer a seamless way for checking for updates and installing new ones.
+
+In your favorite Python environment (we suggest Jupyter Notebook),
+simply run the following code:
+```python
+    from BPTK_Py import bptk
+    bptk = bptk()
+    bptk.update()
+```
+The update mechanism automatically checks for a newer version and (if
+necessary) downloads and installs it.
+
+To check for the currently installed version, simple run these commands:
+```python
+    from BPTK_Py import bptk
+    bptk = bptk()
+    print(bptk.version)
+```
+## Installing the BPTK-Py Tutorial Using Docker
+
+If you have Docker installed (e.g. Docker Desktop on MacOS or on
+Windows), follow these steps:
+
+1.  On the command line, move into a directory where you would like to
+    store the BPTK-Py tutorial.
+2.  Clone the BPTK-Py tutorial repository using git clone:
+    `git clone https://github.com/transentis/bptk_py_tutorial.git`
+3.  Run `docker-compose up`
+4.  Point your browser at <http://localhost:8888> -- this will open
+    JupyterLab showing the contents of your directory.
+5.  Open the notebook `readme.ipynb` from within JupyterLab.
+6.  When you are finished, close your browser and call
+    `docker-compose down` from within your directory. This will stop and
+    remove the container.
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 
 ## Installing The BPTK-Py Tutorial Starting From Scratch
 
@@ -34,7 +89,11 @@ following steps:
 First of all, you need [Python](https://www.python.org/). Download the
 latest version for your operating system.
 
+<<<<<<< HEAD
 BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
+=======
+BPTK-Py was tested with Python 3.9.
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 
 ### Clone the BPTK-Py tutorial
 
@@ -72,6 +131,10 @@ Now we have a virtual environment, we can install BPTK-Py and
 JupyterLab:
 ```python
 pip install -r requirements.txt
+<<<<<<< HEAD
+=======
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 ```
 ### Start JupyterLab
 
@@ -87,6 +150,7 @@ Open the notebook `readme.ipynb` from within JupyterLab.
 Once you are finished, close your browser and kill the JupyterLab
 process in your terminal.
 
+<<<<<<< HEAD
 ## Keeping BPTK-Py up-to-date
 
 Software evolves. We regularly release new versions to add
@@ -114,6 +178,8 @@ To check for the currently installed version, simple run these commands:
     print(bptk.version)
 ```
 
+=======
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 ## Package dependencies
 
 If for any reason, you want to install the requirements manually or need

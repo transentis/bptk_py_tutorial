@@ -1,11 +1,19 @@
 # Flow
 
 
+<<<<<<< HEAD
 ## _class_ Flow(model, name, function_string=None)
 Flow in a SD DSL model.
 
 
 ### _property_ equation()
+=======
+### _class_ Flow(model, name, function_string=None)
+Flow in a SD DSL model.
+
+
+#### _property_ equation()
+>>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
 Returns the equation as originally set.
 
 
