@@ -51,20 +51,4 @@ Please let us know if you need help getting started, if you find a bug or are mi
 
 We are keen to hear how you use BPTK-Py – your feedback is invaluable in helping us improve BPTK-Py.
 
-<<<<<<< HEAD
 You can best reach us per e-mail at [support@transentis.com](mailto:support@transentis.com)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-You can best reach us per e-mail at [support@transentis.com](mailto:support@transentis.com)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master

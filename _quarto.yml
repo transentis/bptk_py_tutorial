@@ -8,19 +8,6 @@ project:
     - "*.qmd"
     - "!README.md"
     - "!readme.ipynb"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
   preview:
     port: 5000
     browser: true
@@ -36,30 +23,6 @@ website:
   sidebar:
     logo: img/labs_icon.svg
     logo-alt: "BPTK"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-website:
-  favicon: img/favicon.ico
-  title: "BPTK_PY"
-  page-navigation: true
-  open-graph: true
-  page-footer: 
-    center: "© Copyright 2022, transentis labs GmbH." 
-  sidebar:
-    logo: img/labs_icon.svg
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
     collapse-level: 1
     style: "floating"
     search: true
@@ -67,19 +30,6 @@ website:
     contents:
       - text: "Installation"
         file: usage/installation.md
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
       - text: "Quickstart"
         file: quickstart/quickstart.ipynb
       - text: "Tutorials"
@@ -104,65 +54,10 @@ website:
             file: concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.html
           - text: "Persisting the BPTK-Server State"
             file: concepts/external_state/external_state.html
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        
-      - text: "Quickstart"
-        file: usage/quickstart.md
-        
-      - text: "Limitations"
-        file: usage/limitations.md
-        
-      - section: "General Information"
-        file: general/general.md
-        
-        contents:
-          - text: "Architecture"
-            file: general/in-depth/in_depth_bptk_py_architecture/in_depth_bptk_py_architecture.html
-
-          - text: "Scenarios in Depth"
-            file: general/in-depth/in_depth_scenarios/in_depth_scenarios.html
-          - text: "Accessing Raw Simulation Results"
-            file: general/how-to/how_to_accessing_raw_simulation_results/how_to_accessing_raw_simulation_results.html
-          - text: "Advanced Plotting Features"
-            file: general/how-to/how_to_advanced_plotting_features/how_to_advanced_plotting_features.html
-          - text: "Dashboards using Jupyter Widgets"
-            file: general/how-to/how_to_develop_dashboards_using_jupyter_widgets/how_to_developing_dashboards_using_juypter_widgets.html
-          - text: "Dashboards using the SimpleDashboard"
-            file: general/how-to/how_to_develop_dashboards_using_simpledashboard/how_to_develop_dashboards_using_simpledashboard.html
-          - text: "Persistent BPTK-Server State"
-            file: general/how-to/how_to_external_state/how_to_external_state.html
-
-
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
       - section: "Agent Based Modeling"
         file: abm/abm.md
         contents:
           - text: "Agent Based Modeling"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
             file: abm/agent_based_modeling/agent_based_modeling.ipynb
           - text: "Data Collector"
             file: abm/custom_datacollectors/custom_datacollectors.ipynb
@@ -177,28 +72,6 @@ website:
             file: sd-dsl/sd_user_defined_functions/sd_user_defined_functions.html
       - section: "XMILE Models"
         file: xmile/xmile.md    
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
-          - text: "Data Collector"
-            file: abm/how-to/how_to_choose_datacollector/how_to_choose_datacollector.html
-            
-            
-      - section: "Introduction to XMILE"
-        file: xmile/xmile.md
-        
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
         contents:
           - text: "XMILE SD Models"
             file: xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html
@@ -210,19 +83,6 @@ website:
             file: xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html
           - text: "Writing Computational Essays"
             file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
       - section: "Model Library"
         file: model_library/model_library.md
         contents:
@@ -237,38 +97,6 @@ website:
           - text: "Make Your PSF Grow"
             file: model_library/make_your_psf_grow/make_your_psf_grow.md
       - section: "API Documentation"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-
-      - section: "Introduction to SD DSL"
-        file: sd-dsl/sddsl.md
-        contents:
-          - text: "Introduction to SD DSL using Python"
-            file: step-by-step-guides/introduction_sd_dsl/introduction_sd_dsl.html
-          - text: "BPTK for System Dynamics"
-            file: sd-dsl/in-depth/in_depth_simple_python_library_sd_dsl/in_depth_simple_python_library_sd_dsl.html
-          - text: "SD DSL Functions"
-            file: sd-dsl/in-depth/in_depth_sd_dsl_functions/in_depth_sd_dsl_functions.html
-          - text: "User-defined functions"
-            file: sd-dsl/how-to/how_to_sd_user_defined_functions/how_to_sd_user_defined_functions.html
-
-
-
-      - section: "BPTK API"
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
         file: api/api.md
         contents:
           - text: "Agent"
@@ -305,44 +133,10 @@ website:
             file: api/api_simultaneousScheduler.html
           - text: "Stock"
             file: api/api_stock.html
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
       - text: "Limitations"
         file: usage/limitations.md
 format:
   html:
     theme: sandstone
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-format:
-  html:
-    # theme: cosmo
-    theme:
-      light: flatly
-      dark: darkly
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
     css: styles.css
     toc: true

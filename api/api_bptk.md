@@ -12,27 +12,7 @@ bptk=bptk()
 This automatically starts a background process that scans your `scenario` directory and imports all scenarios.
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## _class_ bptk(loglevel='WARN', configuration=None)
-=======
-### _class_ bptk(loglevel='WARN', configuration=None)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-## _class_ bptk(loglevel='WARN', configuration=None)
->>>>>>> master
-=======
-## _class_ bptk(loglevel='WARN', configuration=None)
->>>>>>> master
-=======
-## _class_ bptk(loglevel='WARN', configuration=None)
->>>>>>> master
-=======
-## _class_ bptk(loglevel='WARN', configuration=None)
->>>>>>> master
 The Main entry point for managing simulation scenarios for Agent-based models, hybrid models, SD-DSL models and XMILE models.
 
 Upon instantiation, the class automatically reads all scenario files located in the scenarios folder and instantiates the scenarios defined there. The location of the scenarios folder can be set via the configuration passed to the initializer, default is “./scenarios”.
@@ -54,27 +34,7 @@ Once all scenarios are set up, you can run them and plot the results.
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
-=======
-#### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
->>>>>>> master
-=======
-### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
->>>>>>> master
-=======
-### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
->>>>>>> master
-=======
-### begin_session(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], individual_agent_properties=[], equations=[], starttime=0.0, dt=1.0)
->>>>>>> master
 Begins a session to allow stepwise simulation.
 
 This resets the internal session cache, there can only be one session at any time.
@@ -122,69 +82,17 @@ The stop time is set internally to be the minimum of all the scenario stop times
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### destroy()
-=======
-#### destroy()
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### destroy()
->>>>>>> master
-=======
-### destroy()
->>>>>>> master
-=======
-### destroy()
->>>>>>> master
-=======
-### destroy()
->>>>>>> master
 Destroy the BPTK object without stopping the Python Kernel.
 
 Kills all the file monitors and makes sure the Python process can die happily.
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 ### end_session()
 Ends a session, resets the cache of all relevant scenarios and deletes the session state.
 
 
 ### export_scenarios(scenario_manager, scenarios=None, equations=None, interactive_scenario=None, interactive_equations=None, interactive_settings=None, time_column_name='time', scenario_df_name='scenario', scenario_column_name='scenario', indicator_df_name='indicator', interactive_df_name='interactive', filename=None)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-#### end_session()
-Ends a session, resets the cache of all relevant scenarios and deletes the session state.
-
-
-#### export_scenarios(scenario_manager, scenarios=None, equations=None, interactive_scenario=None, interactive_equations=None, interactive_settings=None, time_column_name='time', scenario_df_name='scenario', scenario_column_name='scenario', indicator_df_name='indicator', interactive_df_name='interactive', filename=None)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 Export scenario data into a spreadsheet.
 
 Export data for the given scenarios in a structure that is amenable to analysis in BI tools. By default, the data is returned in a dictionary of dataframes. The first dataframe named scenario_df_name will contain all the data for all the scenarios, indexed by the scenario name. The second dataframe named interactive_df_name will contain all the data for the interactive scenarios. The interactive scenarios are generated by the export function according to the interactive settings. If you provide a filename, the data will not be returned in a dictionary but will be writen directly to an Excel (.xlsx) file. The data will be split into two tabs, one named <scenario_df_name> for the scenario data and one named <interactive_df_name> for the interactive data. Currently the export function only works for System Dynamics models (both XMILE and SD DSL).
@@ -212,27 +120,7 @@ Export data for the given scenarios in a structure that is amenable to analysis 
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### get_scenario(scenario_manager, scenario)
-=======
-#### get_scenario(scenario_manager, scenario)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### get_scenario(scenario_manager, scenario)
->>>>>>> master
-=======
-### get_scenario(scenario_manager, scenario)
->>>>>>> master
-=======
-### get_scenario(scenario_manager, scenario)
->>>>>>> master
-=======
-### get_scenario(scenario_manager, scenario)
->>>>>>> master
 Get a scenario object from a scenario manager
 
 
@@ -254,27 +142,7 @@ Get a scenario object from a scenario manager
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### get_scenario_names(scenario_managers=[], format='list')
-=======
-#### get_scenario_names(scenario_managers=[], format='list')
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### get_scenario_names(scenario_managers=[], format='list')
->>>>>>> master
-=======
-### get_scenario_names(scenario_managers=[], format='list')
->>>>>>> master
-=======
-### get_scenario_names(scenario_managers=[], format='list')
->>>>>>> master
-=======
-### get_scenario_names(scenario_managers=[], format='list')
->>>>>>> master
 Returns a concatenated list of all the scenario names from a list of scenario managers
 
 
@@ -296,27 +164,7 @@ Returns a concatenated list of all the scenario names from a list of scenario ma
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
-=======
-#### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
->>>>>>> master
-=======
-### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
->>>>>>> master
-=======
-### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
->>>>>>> master
-=======
-### get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')
->>>>>>> master
 Get a dictionary of scenario objects.
 
 The keys of the dictionary are the scenario names, unless more than one scenario manager is passed, in which case the name of the scenario manager is used to prefixes the scenario name (i.e. <scenario_manager>_<scenario>).
@@ -344,27 +192,7 @@ The keys of the dictionary are the scenario names, unless more than one scenario
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### list_equations(scenario_managers=[], scenarios=[])
-=======
-#### list_equations(scenario_managers=[], scenarios=[])
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### list_equations(scenario_managers=[], scenarios=[])
->>>>>>> master
-=======
-### list_equations(scenario_managers=[], scenarios=[])
->>>>>>> master
-=======
-### list_equations(scenario_managers=[], scenarios=[])
->>>>>>> master
-=======
-### list_equations(scenario_managers=[], scenarios=[])
->>>>>>> master
 Prints all available equations for the given scenario manager(s) and scenario(s)
 
 
@@ -386,27 +214,7 @@ Prints all available equations for the given scenario manager(s) and scenario(s)
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### list_scenarios(scenario_managers=[], scenario_manager_type='')
-=======
-#### list_scenarios(scenario_managers=[], scenario_manager_type='')
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### list_scenarios(scenario_managers=[], scenario_manager_type='')
->>>>>>> master
-=======
-### list_scenarios(scenario_managers=[], scenario_manager_type='')
->>>>>>> master
-=======
-### list_scenarios(scenario_managers=[], scenario_manager_type='')
->>>>>>> master
-=======
-### list_scenarios(scenario_managers=[], scenario_manager_type='')
->>>>>>> master
 List scenarios for selected scenario managers.
 
 List all scenarios or scenarios from selected scenario managers
@@ -424,27 +232,7 @@ List all scenarios or scenarios from selected scenario managers
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
-=======
-#### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
->>>>>>> master
-=======
-### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
->>>>>>> master
-=======
-### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
->>>>>>> master
-=======
-### plot_lookup(scenarios, scenario_managers, lookup_names, return_df=False, visualize_from_period=0, visualize_to_period=0, stacked=None, title='', alpha=None, x_label='', y_label='', start_date='', freq='D', series_names={}, kind=None)
->>>>>>> master
 Plot lookup functions.
 
 If they come with  very different indices, do not be surprised that the plot looks weird as I greedily try to plot everything
@@ -520,27 +308,7 @@ If they come with  very different indices, do not be surprised that the plot loo
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
-=======
-#### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
->>>>>>> master
-=======
-### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
->>>>>>> master
-=======
-### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
->>>>>>> master
-=======
-### plot_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], kind=None, alpha=None, stacked=None, freq='D', start_date='', title='', visualize_from_period=0, visualize_to_period=0, x_label='', y_label='', series_names={}, progress_bar=False, return_df=False)
->>>>>>> master
 Plot scenarios for SD, ABM and hybrid models.
 
 
@@ -634,43 +402,11 @@ Plot scenarios for SD, ABM and hybrid models.
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 ### progress()
 Returns the progress of a simulation as float.
 
 
 ### register_model(model, scenario_manager=None, scenario=None)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-#### progress()
-Returns the progress of a simulation as float.
-
-
-#### register_model(model, scenario_manager=None, scenario=None)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
-=======
->>>>>>> master
 Registers the given model with bptk.
 
 Automatically creates both a scenario manager and an initial scenario. If no scenario manager or scenario is passed, a scenario manager is created whose name is “sm<Model.name>” along with a scenario named “base”. Internally, this method calls register_scenario_manager and then register_scenarios.
@@ -692,27 +428,7 @@ Automatically creates both a scenario manager and an initial scenario. If no sce
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### register_scenario_manager(scenario_manager)
-=======
-#### register_scenario_manager(scenario_manager)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### register_scenario_manager(scenario_manager)
->>>>>>> master
-=======
-### register_scenario_manager(scenario_manager)
->>>>>>> master
-=======
-### register_scenario_manager(scenario_manager)
->>>>>>> master
-=======
-### register_scenario_manager(scenario_manager)
->>>>>>> master
 Manually register a scenario manager.
 
 Register a manually defined Scenario manager using the common dictionary notation. Keep in mind that it HAS TO contain a reference to a live model instance.
@@ -725,27 +441,7 @@ Register a manually defined Scenario manager using the common dictionary notatio
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### register_scenarios(scenarios, scenario_manager)
-=======
-#### register_scenarios(scenarios, scenario_manager)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### register_scenarios(scenarios, scenario_manager)
->>>>>>> master
-=======
-### register_scenarios(scenarios, scenario_manager)
->>>>>>> master
-=======
-### register_scenarios(scenarios, scenario_manager)
->>>>>>> master
-=======
-### register_scenarios(scenarios, scenario_manager)
->>>>>>> master
 Register a new scenario with an existing scenario manage.
 
 Uses the usual dictionary format to configure the scenario.
@@ -761,55 +457,12 @@ Uses the usual dictionary format to configure the scenario.
     * **scenario_manager** – String.
     Name of scenario manager to add the scenario to.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### reset_all_scenarios()
-=======
-
-
-#### reset_all_scenarios()
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### reset_all_scenarios()
->>>>>>> master
-=======
-### reset_all_scenarios()
->>>>>>> master
-=======
-### reset_all_scenarios()
->>>>>>> master
-=======
-### reset_all_scenarios()
->>>>>>> master
 Reload all scenarios
 
 Reload all scenarios from the scenario definition files. If scenarios where not created via a scenario definition file but dynamically, these are lost and must be reconfigured.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### reset_scenario(scenario_manager, scenario)
-=======
-
-#### reset_scenario(scenario_manager, scenario)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### reset_scenario(scenario_manager, scenario)
->>>>>>> master
-=======
-### reset_scenario(scenario_manager, scenario)
->>>>>>> master
-=======
-### reset_scenario(scenario_manager, scenario)
->>>>>>> master
-=======
-### reset_scenario(scenario_manager, scenario)
->>>>>>> master
 Reset a scenario
 
 Reload a scenario from its file. All scenarios for the relevant file are reloaded. NOTE: If the scenario wasn’t defined via a file, this removes the scenario from the scenario manager. If you just want to reset the scenario memory, call reset_senario_cache.
@@ -827,40 +480,9 @@ Reload a scenario from its file. All scenarios for the relevant file are reloade
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### reset_scenario_cache(scenario_manager='', scenario='')
 Resets only the interal cache (equation results) of a scenario, does not re-read from storage
 
-=======
-#### reset_scenario_cache(scenario_manager='', scenario='')
-Resets only the interal cache (equation results) of a scenario, does not re-read from storage
-
-
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### reset_scenario_cache(scenario_manager='', scenario='')
-Resets only the interal cache (equation results) of a scenario, does not re-read from storage
-
->>>>>>> master
-=======
-### reset_scenario_cache(scenario_manager='', scenario='')
-Resets only the interal cache (equation results) of a scenario, does not re-read from storage
-
->>>>>>> master
-=======
-### reset_scenario_cache(scenario_manager='', scenario='')
-Resets only the interal cache (equation results) of a scenario, does not re-read from storage
-
->>>>>>> master
-=======
-### reset_scenario_cache(scenario_manager='', scenario='')
-Resets only the interal cache (equation results) of a scenario, does not re-read from storage
-
->>>>>>> master
 * **Parameters**
 
     
@@ -873,27 +495,7 @@ Resets only the interal cache (equation results) of a scenario, does not re-read
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
-=======
-#### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
->>>>>>> master
-=======
-### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
->>>>>>> master
-=======
-### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
->>>>>>> master
-=======
-### run_scenarios(scenarios, scenario_managers, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], equations=[], series_names={}, progress_bar=False, return_format='df')
->>>>>>> master
 Run a set of scenarios.
 
 Return the results either as dictionaries or as a dataframe.
@@ -943,29 +545,7 @@ Return the results either as dictionaries or as a dataframe.
 
     Based on the return_format value, results are returned as df, dict, or a json string
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### run_step(settings=None, flat=False)
-=======
-
-
-#### run_step(settings=None, flat=False)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### run_step(settings=None, flat=False)
->>>>>>> master
-=======
-### run_step(settings=None, flat=False)
->>>>>>> master
-=======
-### run_step(settings=None, flat=False)
->>>>>>> master
-=======
-### run_step(settings=None, flat=False)
->>>>>>> master
 Run the next step of a session.
 
 
@@ -974,29 +554,7 @@ Run the next step of a session.
     **settings** – Dictionary (Default=None)
     The settings to apply to this step.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### session_results(index_by_time=True, flat=False)
-=======
-
-
-#### session_results(index_by_time=True, flat=False)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### session_results(index_by_time=True, flat=False)
->>>>>>> master
-=======
-### session_results(index_by_time=True, flat=False)
->>>>>>> master
-=======
-### session_results(index_by_time=True, flat=False)
->>>>>>> master
-=======
-### session_results(index_by_time=True, flat=False)
->>>>>>> master
 Return the results collected so far within a session
 
 
@@ -1013,27 +571,7 @@ Return the results collected so far within a session
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
-=======
-#### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
->>>>>>> master
-=======
-### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
->>>>>>> master
-=======
-### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
->>>>>>> master
-=======
-### train_scenarios(scenarios, scenario_managers, episodes=1, agents=[], agent_states=[], agent_properties=[], agent_property_types=[], series_names={}, return_df=False, progress_bar=False)
->>>>>>> master
 Used to run a scenario repeatedly in episodes.
 
 Ensures that the begin_epsiode and end_epsisode methods are called on the underlying model.
@@ -1101,27 +639,7 @@ This method only works for agent-based and hybrid models.
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### _classmethod_ update()
-=======
-#### _classmethod_ update()
->>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
-=======
-### _classmethod_ update()
->>>>>>> master
-=======
-### _classmethod_ update()
->>>>>>> master
-=======
-### _classmethod_ update()
->>>>>>> master
-=======
-### _classmethod_ update()
->>>>>>> master
 Update BPTK to latest version
 
 This method updates BPTK to the newest version that’s available on PyPi.
