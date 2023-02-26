@@ -2,11 +2,15 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 ## _class_ Scheduler()
 Scheduler for agent based modelling
 
 
 ### handle_delayed_event(event, dt)
+<<<<<<< HEAD
 =======
 ### _class_ Scheduler()
 Scheduler for agent based modelling
@@ -14,6 +18,8 @@ Scheduler for agent based modelling
 
 #### handle_delayed_event(event, dt)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 This method checks to see whether the event is a DelayedEvent.
 
 If not, it simply returns the event.
@@ -38,10 +44,14 @@ Returns
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### run(model, progress_widget=None, collect_data=True)
 =======
 #### run(model, progress_widget=None, collect_data=True)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### run(model, progress_widget=None, collect_data=True)
+>>>>>>> master
 Run the simulation.
 Override this in a subclass.
 
@@ -58,10 +68,14 @@ Override this in a subclass.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### run_step(model, sim_round, dt, progress_widget=None, collect_data=True)
 =======
 #### run_step(model, sim_round, dt, progress_widget=None, collect_data=True)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### run_step(model, sim_round, dt, progress_widget=None, collect_data=True)
+>>>>>>> master
 Run a simulation step.
 
 Override this in a subclass.

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 <svg width="404" height="133" viewBox="0 0 404 133" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_4_28)">
 <path d="M327.68 85.58H310.67V102.59H327.68V85.58Z" fill="#1D1D1B"/>
@@ -12,6 +15,7 @@
 </clipPath>
 </defs>
 </svg>
+<<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 395 231" xmlns="http://www.w3.org/2000/svg">
@@ -29,3 +33,5 @@
   <text style="fill: rgba(125, 125, 125, 0.81); font-family: Consolas; font-size: 92.4px; font-weight: lighter; white-space: pre;" x="16.773" y="210.495">BPTK-Py</text>
 </svg>
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master

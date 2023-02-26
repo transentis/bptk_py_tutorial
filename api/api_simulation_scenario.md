@@ -2,10 +2,14 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ SimulationScenario(dictionary, name, model, scenario_manager_name)
 =======
 ### _class_ SimulationScenario(dictionary, name, model, scenario_manager_name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ SimulationScenario(dictionary, name, model, scenario_manager_name)
+>>>>>>> master
 This class stores the settings for each scenario for pure SD models (SD DSL and XMILE)
 
 
@@ -24,12 +28,16 @@ This class stores the settings for each scenario for pure SD models (SD DSL and 
     * **scenario_manager_name** – Name of scenario manager
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### get_property_value(name)
 =======
 
 
 #### get_property_value(name)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### get_property_value(name)
+>>>>>>> master
 Retrieve the current value of a property.
 
     
@@ -56,12 +64,16 @@ Retrieve the current value of a property.
         A numerical value
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### set_property_value(name, value)
 =======
 
 
 #### set_property_value(name, value)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### set_property_value(name, value)
+>>>>>>> master
 Set the property with given name to given value
 
     
@@ -89,19 +101,27 @@ Set the property with given name to given value
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### setup_constants()
 =======
 
 #### setup_constants()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### setup_constants()
+>>>>>>> master
 Sets up the constants of the simulation model upon scenario manager initialization
 :return: None
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### setup_points()
 =======
 #### setup_points()
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### setup_points()
+>>>>>>> master
 Sets up the points of the simulation model upon scenario manager initialization
 :return: None

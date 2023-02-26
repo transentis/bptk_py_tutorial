@@ -2,6 +2,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ SimpleDashboard(bptk, scenario_manager, scenario, style={}, layout={})
 
 ### add_custom_plot(plot: Callable)
@@ -10,6 +11,11 @@
 
 #### add_custom_plot(plot: Callable)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ SimpleDashboard(bptk, scenario_manager, scenario, style={}, layout={})
+
+### add_custom_plot(plot: Callable)
+>>>>>>> master
 Adds custom plot. Plotting must be handeled in the function.
 :param equations: Callable
 
@@ -29,10 +35,14 @@ Adds custom plot. Plotting must be handeled in the function.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### add_plot(equations: List[str], title: str, names: List[str], x_label='', y_label='', start_date='', kind: Optional[str] = None, visualize_from_period=0, visualize_to_period=0, freq='D', agents: List[str] = [], agent_states: List[str] = [], agent_properties: List[str] = [], agent_property_types: List[str] = [])
 =======
 #### add_plot(equations: List[str], title: str, names: List[str], x_label='', y_label='', start_date='', kind: Optional[str] = None, visualize_from_period=0, visualize_to_period=0, freq='D', agents: List[str] = [], agent_states: List[str] = [], agent_properties: List[str] = [], agent_property_types: List[str] = [])
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### add_plot(equations: List[str], title: str, names: List[str], x_label='', y_label='', start_date='', kind: Optional[str] = None, visualize_from_period=0, visualize_to_period=0, freq='D', agents: List[str] = [], agent_states: List[str] = [], agent_properties: List[str] = [], agent_property_types: List[str] = [])
+>>>>>>> master
 Wrapper function for bptk.plot_scenarios.
 :param equations: List.
 
@@ -100,12 +110,16 @@ Wrapper function for bptk.plot_scenarios.
     Plot id (used for identification when plot data is updated).
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### add_widget(widget, model_connection: Optional[Union[str, ModelConnection, Callable]] = None)
 =======
 
 
 #### add_widget(widget, model_connection: Optional[Union[str, ModelConnection, Callable]] = None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+### add_widget(widget, model_connection: Optional[Union[str, ModelConnection, Callable]] = None)
+>>>>>>> master
 Add any custom widget to the dashboard
 
 
@@ -120,11 +134,15 @@ Add any custom widget to the dashboard
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 ### start()
 Starts the dashboard. Call this at the end of the script.
 
 
 ### update_plot_data(attribute: str, value: str, plot: int)
+<<<<<<< HEAD
 =======
 
 #### start()
@@ -133,6 +151,8 @@ Starts the dashboard. Call this at the end of the script.
 
 #### update_plot_data(attribute: str, value: str, plot: int)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 
 * **Parameters**
 

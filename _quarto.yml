@@ -9,6 +9,9 @@ project:
     - "!README.md"
     - "!readme.ipynb"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
   preview:
     port: 5000
     browser: true
@@ -24,6 +27,7 @@ website:
   sidebar:
     logo: img/labs_icon.svg
     logo-alt: "BPTK"
+<<<<<<< HEAD
 =======
 
 website:
@@ -36,6 +40,8 @@ website:
   sidebar:
     logo: img/labs_icon.svg
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
     collapse-level: 1
     style: "floating"
     search: true
@@ -44,6 +50,9 @@ website:
       - text: "Installation"
         file: usage/installation.md
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
       - text: "Quickstart"
         file: quickstart/quickstart.ipynb
       - text: "Tutorials"
@@ -68,6 +77,7 @@ website:
             file: concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.html
           - text: "Persisting the BPTK-Server State"
             file: concepts/external_state/external_state.html
+<<<<<<< HEAD
 =======
         
       - text: "Quickstart"
@@ -98,11 +108,16 @@ website:
 
 
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
       - section: "Agent Based Modeling"
         file: abm/abm.md
         contents:
           - text: "Agent Based Modeling"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
             file: abm/agent_based_modeling/agent_based_modeling.ipynb
           - text: "Data Collector"
             file: abm/custom_datacollectors/custom_datacollectors.ipynb
@@ -117,6 +132,7 @@ website:
             file: sd-dsl/sd_user_defined_functions/sd_user_defined_functions.html
       - section: "XMILE Models"
         file: xmile/xmile.md    
+<<<<<<< HEAD
 =======
             file: abm/in-depth/in_depth_agent_based_modeling/in_depth_agent_based_modeling.html
           - text: "Data Collector"
@@ -127,6 +143,8 @@ website:
         file: xmile/xmile.md
         
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
         contents:
           - text: "XMILE SD Models"
             file: xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html
@@ -139,6 +157,9 @@ website:
           - text: "Writing Computational Essays"
             file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
       - section: "Model Library"
         file: model_library/model_library.md
         contents:
@@ -153,6 +174,7 @@ website:
           - text: "Make Your PSF Grow"
             file: model_library/make_your_psf_grow/make_your_psf_grow.md
       - section: "API Documentation"
+<<<<<<< HEAD
 =======
 
 
@@ -173,6 +195,8 @@ website:
 
       - section: "BPTK API"
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
         file: api/api.md
         contents:
           - text: "Agent"
@@ -210,11 +234,15 @@ website:
           - text: "Stock"
             file: api/api_stock.html
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
       - text: "Limitations"
         file: usage/limitations.md
 format:
   html:
     theme: sandstone
+<<<<<<< HEAD
 =======
 
 format:
@@ -224,5 +252,7 @@ format:
       light: flatly
       dark: darkly
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
     css: styles.css
     toc: true

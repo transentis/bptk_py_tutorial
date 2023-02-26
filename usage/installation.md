@@ -7,6 +7,9 @@ keywords: "agent-based modeling, abm, bptk, bptk-py, python, business simulation
 # Installation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 Installing BPTK within your Python enviroment is simple, all you need to call is
 
 ```bash
@@ -18,6 +21,7 @@ It is the best place to see BPTK in action.
 
 If you are reading this documentation online at [bptk.transentis.com](https://bptk.transentis.com/usage/installation.html): This documentation was generated from the BPTK-Py Tutorial using [quarto](https://www.quarto.org).
 
+<<<<<<< HEAD
 =======
 
 Like every piece of software, BPTK-Py and its dependencies have to be
@@ -72,6 +76,8 @@ Windows), follow these steps:
     `docker-compose down` from within your directory. This will stop and
     remove the container.
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 
 ## Installing The BPTK-Py Tutorial Starting From Scratch
 
@@ -90,10 +96,14 @@ First of all, you need [Python](https://www.python.org/). Download the
 latest version for your operating system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
 =======
 BPTK-Py was tested with Python 3.9.
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+BPTK-Py was tested with Python 3.10, but should also run fine with Python 3.9
+>>>>>>> master
 
 ### Clone the BPTK-Py tutorial
 
@@ -132,9 +142,12 @@ JupyterLab:
 ```python
 pip install -r requirements.txt
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 ```
 ### Start JupyterLab
 
@@ -151,6 +164,9 @@ Once you are finished, close your browser and kill the JupyterLab
 process in your terminal.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 ## Keeping BPTK-Py up-to-date
 
 Software evolves. We regularly release new versions to add
@@ -178,8 +194,11 @@ To check for the currently installed version, simple run these commands:
     print(bptk.version)
 ```
 
+<<<<<<< HEAD
 =======
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+>>>>>>> master
 ## Package dependencies
 
 If for any reason, you want to install the requirements manually or need

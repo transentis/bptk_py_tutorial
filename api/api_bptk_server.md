@@ -32,10 +32,14 @@ Our  [Introduction to BPTK](https://github.com/transentis/bptk_intro) repository
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
 =======
 ### _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
 >>>>>>> c4b007f0983e9b9f720f83627e97c51e2fe58b6f
+=======
+## _class_ BptkServer(import_name, bptk_factory=None, external_state_adapter=None)
+>>>>>>> master
 This class provides a Flask-based server that provides a REST-API for running bptk scenarios. The class inherts the properties and methods of Flask and doesn’t expose any further public methods.
 
 
