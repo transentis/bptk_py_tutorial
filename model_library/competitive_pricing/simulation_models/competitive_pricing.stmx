@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>competitive_pricing</name>
+		<uuid>4de2823f-83f4-47ef-8b65-504045889ae1</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="2.1" isee:build_number="2324" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="0" isee:simulation_delay="0" isee:restore_on_start="false" method="Euler" time_units="months" isee:instantaneous_flows="true" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>1</start>
+		<stop>61</stop>
+		<dt>0.25</dt>
+	</sim_specs>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="true"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<default_format/>
+	<model_units/>
+	<model>
+		<isee:extra_collection_variables>
+			<isee:extra_collection_variable name="Price"/>
+			<isee:extra_collection_variable name="Expected_Price"/>
+			<isee:extra_collection_variable name="Perceived_Inventory_Coverage"/>
+			<isee:extra_collection_variable name="Consumption_Rate"/>
+			<isee:extra_collection_variable name="Expected_Profitability"/>
+			<isee:extra_collection_variable name="Inventory_Coverage"/>
+			<isee:extra_collection_variable name="Capacity_utilization"/>
+			<isee:extra_collection_variable name="Demand"/>
+			<isee:extra_collection_variable name="Relative_Value_of_Product"/>
+			<isee:extra_collection_variable name="profit"/>
+			<isee:extra_collection_variable name="Normalized_Perceied_Inventory_Coverage"/>
+		</isee:extra_collection_variables>
+		<variables>
+			<stock name="Production Capacity">
+				<eqn>200</eqn>
+			</stock>
+			<stock name="Production">
+				<eqn>300</eqn>
+				<inflow>Production_Start_Rate</inflow>
+				<outflow>Production_Rate</outflow>
+			</stock>
+			<stock name="Inventory">
+				<eqn>300</eqn>
+				<inflow>Production_Rate</inflow>
+				<outflow>Consumption_Rate</outflow>
+			</stock>
+			<stock name="Expected Price">
+				<eqn>3</eqn>
+				<inflow>Change_in_Expected_Price</inflow>
+			</stock>
+			<flow name="Production Start Rate">
+				<eqn>Capacity_utilization*Production_Capacity</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Production Rate">
+				<eqn>MIN(Production, DELAY(Production_Start_Rate, Production_Time, 100))</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Consumption Rate">
+				<eqn>MIN(Inventory, Demand)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Production Time">
+				<eqn>3</eqn>
+			</aux>
+			<aux name="Inventory Coverage">
+				<eqn>Inventory/Consumption_Rate</eqn>
+			</aux>
+			<flow name="Change in Expected Price">
+				<eqn>(Indicated_Price-Expected_Price)/Price_Adjustment_Time</eqn>
+			</flow>
+			<aux name="cost">
+				<eqn>Variable_Cost+Capacity_Cost</eqn>
+			</aux>
+			<aux name="Price">
+				<eqn>Expected_Price*Effect_of_inventory_coverage_on_price</eqn>
+			</aux>
+			<aux name="Indicated Price">
+				<eqn>MAX(Price, minimum_price)</eqn>
+			</aux>
+			<aux name="minimum price">
+				<eqn>Unit_Variable_Cost+capacity_cost_per_unit</eqn>
+			</aux>
+			<aux name="Effect of inventory coverage on price">
+				<eqn>Normalized_Perceied_Inventory_Coverage</eqn>
+				<gf>
+					<xscale min="0" max="2"/>
+					<yscale min="0" max="2"/>
+					<ypts>1.404,1.415,1.404,1.372,1.351,1.277,1,0.787,0.55,0.4,0.34,0.298,0.298</ypts>
+				</gf>
+			</aux>
+			<aux name="profit">
+				<eqn>revenue-cost</eqn>
+			</aux>
+			<aux name="Capacity utilization">
+				<eqn>Effect_of_Profitability_on_Capacity_Utilization</eqn>
+			</aux>
+			<aux name="Variable Cost">
+				<eqn>Unit_Variable_Cost*Production_Rate</eqn>
+			</aux>
+			<aux name="Capacity Cost">
+				<eqn>Unit_Capacity_Cost*Production_Capacity</eqn>
+			</aux>
+			<aux name="Price of Substitutes">
+				<eqn>3</eqn>
+			</aux>
+			<aux name="Relative Value of Product">
+				<eqn>Price_of_Substitutes/Price</eqn>
+			</aux>
+			<aux name="Demand">
+				<eqn>Effect_of_relative_value_on_demand*Reference_Demand</eqn>
+			</aux>
+			<aux name="Unit Capacity Cost">
+				<eqn>0.5</eqn>
+			</aux>
+			<aux name="revenue">
+				<eqn>Consumption_Rate*Price</eqn>
+			</aux>
+			<aux name="Effect of Profitability on Capacity Utilization">
+				<eqn>Normalized_Expected_Profitability</eqn>
+				<gf>
+					<xscale min="0" max="2"/>
+					<yscale min="0" max="1"/>
+					<ypts>0.324,0.33,0.372,0.394,0.41,0.42,0.5,0.745,0.80075,0.8565,0.91225,0.968,0.968</ypts>
+				</gf>
+			</aux>
+			<aux name="Effect of relative\nvalue on demand">
+				<eqn>Relative_Value_of_Product</eqn>
+				<gf>
+					<xscale min="0" max="2"/>
+					<yscale min="0" max="2"/>
+					<ypts>0.17,0.191,0.213,0.277,0.351,0.479,1,1.362,1.479,1.574,1.638,1.66,1.66</ypts>
+				</gf>
+			</aux>
+			<aux name="Reference Demand">
+				<eqn>100+Market_Shock_ON*STEP(Size_of_Shock, 10)</eqn>
+			</aux>
+			<aux name="Normalized Perceied Inventory Coverage">
+				<eqn>Perceived_Inventory_Coverage/Reference_Inventory_Coverage</eqn>
+			</aux>
+			<aux name="Reference Inventory Coverage">
+				<eqn>3</eqn>
+			</aux>
+			<aux name="Inventory coverage perception time">
+				<eqn>3</eqn>
+			</aux>
+			<stock name="Perceived Inventory Coverage">
+				<eqn>3</eqn>
+				<inflow>Change_in_Perceived_Inventory_Coverage</inflow>
+			</stock>
+			<flow name="Change in Perceived Inventory Coverage">
+				<eqn>(Inventory_Coverage-Perceived_Inventory_Coverage)/Inventory_coverage_perception_time</eqn>
+			</flow>
+			<aux name="Price Adjustment Time">
+				<eqn>3</eqn>
+			</aux>
+			<aux name="Unit Variable Cost">
+				<eqn>1</eqn>
+			</aux>
+			<stock name="Expected Profitability">
+				<eqn>100</eqn>
+				<inflow>Change_in_Expected_Profitability</inflow>
+			</stock>
+			<flow name="Change in Expected Profitability">
+				<eqn>(profit-Expected_Profitability)/Profit_Adjustment_Time</eqn>
+			</flow>
+			<aux name="Profit Adjustment Time">
+				<eqn>12</eqn>
+			</aux>
+			<aux name="Market Shock ON">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Reference Expected\nProfitability">
+				<eqn>100</eqn>
+			</aux>
+			<aux name="Normalized Expected Profitability">
+				<eqn>Expected_Profitability/Reference_Expected_Profitability</eqn>
+			</aux>
+			<aux name="Size of Shock">
+				<eqn>50</eqn>
+			</aux>
+			<aux name="capacity cost per unit">
+				<eqn>Capacity_Cost/Production_Rate</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="white" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="2" isee:scroll_y="3" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="7pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="7pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="7pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="7pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stock x="140.476" y="189.286" name="Production Capacity"/>
+				<stock x="336.429" y="101.667" name="Production"/>
+				<stock x="507.698" y="101.667" name="Inventory"/>
+				<stock x="1168.5" y="110.238" name="Expected Price"/>
+				<flow x="268.75" y="95" name="Production Start Rate">
+					<pts>
+						<pt x="223.571" y="95"/>
+						<pt x="313.929" y="95"/>
+					</pts>
+				</flow>
+				<flow x="416.063" y="101.667" name="Production Rate">
+					<pts>
+						<pt x="358.929" y="101.667"/>
+						<pt x="485.198" y="101.667"/>
+					</pts>
+				</flow>
+				<flow x="581.67" y="97.8571" name="Consumption Rate">
+					<pts>
+						<pt x="530.198" y="97.8571"/>
+						<pt x="657.143" y="97.8571"/>
+					</pts>
+				</flow>
+				<connector uid="1" angle="75.551">
+					<from>Production</from>
+					<to>Production_Rate</to>
+				</connector>
+				<connector uid="2" angle="267.248">
+					<from>Production_Start_Rate</from>
+					<to>Production_Rate</to>
+				</connector>
+				<aux x="434.063" y="175" name="Production Time"/>
+				<connector uid="3" angle="57.5018">
+					<from>Production_Time</from>
+					<to>Production_Rate</to>
+				</connector>
+				<aux x="547.143" y="175" name="Inventory Coverage"/>
+				<connector uid="4" angle="274.498">
+					<from>Inventory</from>
+					<to>Inventory_Coverage</to>
+				</connector>
+				<flow x="1102.22" y="116.429" name="Change in Expected Price">
+					<pts>
+						<pt x="1046.43" y="116.429"/>
+						<pt x="1146" y="116.429"/>
+					</pts>
+				</flow>
+				<aux x="1991.87" y="849.095" name="cost"/>
+				<aux x="1157.62" y="238" name="Price"/>
+				<connector uid="5" angle="292.574">
+					<from>Expected_Price</from>
+					<to>Price</to>
+				</connector>
+				<aux x="1001.43" y="232.857" name="Indicated Price"/>
+				<connector uid="6" angle="222.789">
+					<from>Price</from>
+					<to>Indicated_Price</to>
+				</connector>
+				<connector uid="7" angle="92.2906">
+					<from>Indicated_Price</from>
+					<to>Change_in_Expected_Price</to>
+				</connector>
+				<connector uid="8" angle="274.228">
+					<from>Expected_Price</from>
+					<to>Change_in_Expected_Price</to>
+				</connector>
+				<aux x="401.809" y="1357.26" name="minimum price"/>
+				<aux x="1184.91" y="281.571" name="Effect of inventory coverage on price"/>
+				<connector uid="9" angle="121.784">
+					<from>Effect_of_inventory_coverage_on_price</from>
+					<to>Price</to>
+				</connector>
+				<aux x="2125.87" y="788.69" name="profit"/>
+				<aux x="250.75" y="157" name="Capacity utilization"/>
+				<connector uid="10" angle="73.8108">
+					<from>Capacity_utilization</from>
+					<to>Production_Start_Rate</to>
+				</connector>
+				<aux label_side="bottom" x="2099.58" y="912.047" name="Variable Cost"/>
+				<connector uid="11" angle="149.696">
+					<from>Variable_Cost</from>
+					<to>cost</to>
+				</connector>
+				<aux x="1945.15" y="906.214" name="Capacity Cost"/>
+				<connector uid="12" angle="46.7543">
+					<from>Capacity_Cost</from>
+					<to>cost</to>
+				</connector>
+				<aux x="311.429" y="790.857" name="Price of Substitutes"/>
+				<aux x="287.857" y="732.143" name="Relative Value of Product"/>
+				<connector uid="13" angle="55.5054">
+					<from>
+						<alias uid="14"/>
+					</from>
+					<to>Relative_Value_of_Product</to>
+				</connector>
+				<connector uid="15" angle="121.065">
+					<from>Price_of_Substitutes</from>
+					<to>Relative_Value_of_Product</to>
+				</connector>
+				<aux x="375.714" y="649.357" name="Demand"/>
+				<connector uid="16" angle="71.7843">
+					<from>Inventory</from>
+					<to>Consumption_Rate</to>
+				</connector>
+				<aux x="1967.99" y="999.786" name="Unit Capacity Cost"/>
+				<connector uid="17" angle="67.3214">
+					<from>Unit_Capacity_Cost</from>
+					<to>Capacity_Cost</to>
+				</connector>
+				<aux x="2255" y="830.524" width="22.2857" height="22.2857" name="revenue"/>
+				<connector uid="18" angle="75.704">
+					<from>
+						<alias uid="19"/>
+					</from>
+					<to>revenue</to>
+				</connector>
+				<connector uid="20" angle="137.899">
+					<from>
+						<alias uid="21"/>
+					</from>
+					<to>revenue</to>
+				</connector>
+				<connector uid="22" angle="159.31">
+					<from>revenue</from>
+					<to>profit</to>
+				</connector>
+				<connector uid="23" angle="36.3173">
+					<from>Production_Capacity</from>
+					<to>Production_Start_Rate</to>
+				</connector>
+				<aux x="268.75" y="215.786" name="Effect of Profitability on Capacity Utilization"/>
+				<connector uid="24" angle="64.5834">
+					<from>Effect_of_Profitability_on_Capacity_Utilization</from>
+					<to>Capacity_utilization</to>
+				</connector>
+				<aux x="329.429" y="689.286" name="Effect of relative\nvalue on demand"/>
+				<connector uid="25" angle="45.872">
+					<from>Relative_Value_of_Product</from>
+					<to>Effect_of_relative_value_on_demand</to>
+				</connector>
+				<connector uid="26" angle="40.7837">
+					<from>Effect_of_relative_value_on_demand</from>
+					<to>Demand</to>
+				</connector>
+				<aux x="451.429" y="707.286" name="Reference Demand"/>
+				<connector uid="27" angle="142.581">
+					<from>Reference_Demand</from>
+					<to>Demand</to>
+				</connector>
+				<aux x="2018.1" y="233.81" name="Normalized Perceied Inventory Coverage"/>
+				<aux x="1931" y="291" name="Reference Inventory Coverage"/>
+				<aux x="1963" y="410.714" name="Inventory coverage perception time"/>
+				<connector uid="28" angle="33.2903">
+					<from>Reference_Inventory_Coverage</from>
+					<to>Normalized_Perceied_Inventory_Coverage</to>
+				</connector>
+				<stock x="2080.07" y="339.286" name="Perceived Inventory Coverage"/>
+				<connector uid="29" angle="292.412">
+					<from>Consumption_Rate</from>
+					<to>Inventory_Coverage</to>
+				</connector>
+				<flow x="2023" y="335.714" name="Change in Perceived Inventory Coverage">
+					<pts>
+						<pt x="1976.43" y="335.714"/>
+						<pt x="2057.57" y="335.714"/>
+					</pts>
+				</flow>
+				<connector uid="30" angle="48.4452">
+					<from>Inventory_coverage_perception_time</from>
+					<to>Change_in_Perceived_Inventory_Coverage</to>
+				</connector>
+				<connector uid="31" angle="90">
+					<from>
+						<alias uid="32"/>
+					</from>
+					<to>Change_in_Perceived_Inventory_Coverage</to>
+				</connector>
+				<connector uid="33" angle="260.346">
+					<from>Perceived_Inventory_Coverage</from>
+					<to>Change_in_Perceived_Inventory_Coverage</to>
+				</connector>
+				<aux x="1060" y="177.714" name="Price Adjustment Time"/>
+				<connector uid="34" angle="55.4366">
+					<from>Price_Adjustment_Time</from>
+					<to>Change_in_Expected_Price</to>
+				</connector>
+				<aux x="2147.98" y="981.786" name="Unit Variable Cost"/>
+				<stock label_side="top" x="1365.64" y="809.047" name="Expected Profitability"/>
+				<flow x="1300.43" y="809.047" name="Change in Expected Profitability">
+					<pts>
+						<pt x="1245.71" y="809.047"/>
+						<pt x="1343.14" y="809.047"/>
+					</pts>
+				</flow>
+				<connector uid="35" angle="243.523">
+					<from>Expected_Profitability</from>
+					<to>Change_in_Expected_Profitability</to>
+				</connector>
+				<aux x="1253.49" y="896.024" name="Profit Adjustment Time"/>
+				<connector uid="36" angle="61.6476">
+					<from>Profit_Adjustment_Time</from>
+					<to>Change_in_Expected_Profitability</to>
+				</connector>
+				<connector uid="37" angle="73.9709">
+					<from>
+						<alias uid="38"/>
+					</from>
+					<to>Variable_Cost</to>
+				</connector>
+				<connector uid="39" angle="124.757">
+					<from>Unit_Variable_Cost</from>
+					<to>Variable_Cost</to>
+				</connector>
+				<connector uid="40" angle="49.3045">
+					<from>
+						<alias uid="41"/>
+					</from>
+					<to>minimum_price</to>
+				</connector>
+				<connector uid="42" angle="24.2651">
+					<from>cost</from>
+					<to>profit</to>
+				</connector>
+				<aux x="499.857" y="781.857" width="18" height="18" name="Market Shock ON"/>
+				<aux x="1199.5" y="732.857" name="Reference Expected\nProfitability"/>
+				<aux x="1277.67" y="670.666" name="Normalized Expected Profitability"/>
+				<connector uid="43" angle="122.446">
+					<from>Expected_Profitability</from>
+					<to>Normalized_Expected_Profitability</to>
+				</connector>
+				<connector uid="44" angle="38.5062">
+					<from>Reference_Expected_Profitability</from>
+					<to>Normalized_Expected_Profitability</to>
+				</connector>
+				<connector uid="45" angle="124.496">
+					<from>Market_Shock_ON</from>
+					<to>Reference_Demand</to>
+				</connector>
+				<aux x="421.857" y="796.072" name="Size of Shock"/>
+				<connector uid="46" angle="53.7443">
+					<from>Size_of_Shock</from>
+					<to>Reference_Demand</to>
+				</connector>
+				<connector uid="47" angle="31.4296">
+					<from>
+						<alias uid="48"/>
+					</from>
+					<to>Consumption_Rate</to>
+				</connector>
+				<connector uid="49" angle="90">
+					<from>
+						<alias uid="50"/>
+					</from>
+					<to>Capacity_Cost</to>
+				</connector>
+				<connector uid="51" angle="71.856">
+					<from>
+						<alias uid="52"/>
+					</from>
+					<to>Effect_of_Profitability_on_Capacity_Utilization</to>
+				</connector>
+				<connector uid="53" angle="109.46">
+					<from>
+						<alias uid="54"/>
+					</from>
+					<to>Effect_of_inventory_coverage_on_price</to>
+				</connector>
+				<connector uid="55" angle="124.747">
+					<from>
+						<alias uid="56"/>
+					</from>
+					<to>Change_in_Expected_Profitability</to>
+				</connector>
+				<connector uid="57" angle="110.987">
+					<from>Perceived_Inventory_Coverage</from>
+					<to>Normalized_Perceied_Inventory_Coverage</to>
+				</connector>
+				<connector uid="59" angle="101.634">
+					<from>
+						<alias uid="58"/>
+					</from>
+					<to>Indicated_Price</to>
+				</connector>
+				<aux x="441" y="1414.4" name="capacity cost per unit"/>
+				<connector uid="61" angle="96.8292">
+					<from>capacity_cost_per_unit</from>
+					<to>minimum_price</to>
+				</connector>
+				<connector uid="62" angle="112.38">
+					<from>
+						<alias uid="60"/>
+					</from>
+					<to>capacity_cost_per_unit</to>
+				</connector>
+				<connector uid="64" angle="96.5198">
+					<from>
+						<alias uid="63"/>
+					</from>
+					<to>capacity_cost_per_unit</to>
+				</connector>
+				<alias font_style="italic" uid="32" x="2021.71" y="411" width="18" height="18">
+					<of>Inventory_Coverage</of>
+				</alias>
+				<alias font_style="italic" uid="21" x="2230.79" y="906.476" width="18" height="18">
+					<of>Price</of>
+				</alias>
+				<alias font_style="italic" uid="14" x="235.286" y="787.429" width="17.2857" height="17.2857">
+					<of>Price</of>
+				</alias>
+				<alias font_style="italic" uid="19" x="2302.31" y="897.214" width="18" height="18">
+					<of>Consumption_Rate</of>
+				</alias>
+				<alias font_style="italic" uid="38" x="2042.98" y="977.643" width="18" height="18">
+					<of>Production_Rate</of>
+				</alias>
+				<alias color="blue" background="white" font_style="italic" uid="41" x="350.667" y="1405.4" width="18" height="18">
+					<shape type="circle" radius="18"/>
+					<of>Unit_Variable_Cost</of>
+				</alias>
+				<alias font_style="italic" uid="48" x="569.571" y="212.429" width="18" height="18">
+					<of>Demand</of>
+				</alias>
+				<alias font_style="italic" uid="50" x="1858.95" y="975.786" width="45" height="35">
+					<of>Production_Capacity</of>
+				</alias>
+				<alias font_style="italic" uid="52" x="241.75" y="261.714" width="18" height="18">
+					<of>Normalized_Expected_Profitability</of>
+				</alias>
+				<alias font_style="italic" uid="54" x="1200.29" y="341.571" width="18" height="18">
+					<of>Normalized_Perceied_Inventory_Coverage</of>
+				</alias>
+				<alias font_style="italic" uid="56" x="1325.14" y="893.5" width="18" height="18">
+					<of>profit</of>
+				</alias>
+				<alias font_style="italic" uid="58" x="965" y="313" width="18" height="18">
+					<of>minimum_price</of>
+				</alias>
+				<alias font_style="italic" uid="60" x="424" y="1465" width="18" height="18">
+					<of>Capacity_Cost</of>
+				</alias>
+				<alias font_style="italic" uid="63" x="484" y="1459" width="18" height="18">
+					<of>Production_Rate</of>
+				</alias>
+			</view>
+			<view background="white" page_width="1066" page_height="600" home_view="true" type="interface">
+				<style/>
+				<text_box font_weight="bold" font_size="72pt" x="91" y="246" width="923" height="204">Commodity Pricing Model</text_box>
+			</view>
+			<view background="white" page_width="1066" page_height="600" type="interface">
+				<style/>
+				<graphics_frame fill="none" x="763" y="261" width="100" height="100">
+					<image width="0" height="0" size_to_parent="false" isee:fixed_aspect_ratio="true"/>
+				</graphics_frame>
+				<stacked_container x="116" y="148" width="379" height="276">
+					<graph width="379" height="276" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Reference_Demand"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<slider x="414.5" y="441" width="193" height="78" min="0" max="20" isee:navigate_to="false" show_name="true">
+					<entity name="Market_Shock_ON"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<text_box font_weight="bold" text_decoration="underline" font_size="24pt" x="374" y="48" width="322" height="58">Market impact on demand</text_box>
+				<stacked_container x="567" y="145" width="391" height="282">
+					<graph width="391" height="282" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Demand"/>
+						</plot>
+					</graph>
+				</stacked_container>
+			</view>
+			<view background="white" page_width="1066" page_height="600" isee:scroll_x="4" isee:scroll_y="3" type="interface">
+				<style/>
+				<text_box font_weight="bold" text_decoration="underline" font_size="24pt" x="277" y="48" width="563" height="58">Relative value of product impact on demand</text_box>
+				<stacked_container x="567" y="145" width="391" height="282">
+					<graph width="391" height="282" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Demand"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container x="104" y="148" width="379" height="276">
+					<graph width="379" height="276" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Relative_Value_of_Product"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<text_box font_size="14pt" x="109" y="456" width="351" height="58">Relative value of product is influenced by the price of the product and the price of substitutes</text_box>
+			</view>
+			<view background="white" page_width="1066" page_height="600" isee:scroll_y="4" type="interface">
+				<style/>
+				<text_box font_weight="bold" text_decoration="underline" font_size="24pt" x="446" y="50" width="322" height="58">Price Model</text_box>
+				<text_box font_size="14pt" x="87" y="110" width="436" height="19">price is a composition of expected price and inventory coverage</text_box>
+				<stacked_container x="562" y="163" width="379" height="276">
+					<graph width="379" height="276" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Price"/>
+						</plot>
+						<plot isee:immediately_update_on_user_input="true" color="red" pen_style="dot_dashed" isee:keep_zero_visible="true" pen_width="1" index="1" show_y_axis="true">
+							<entity name="Expected_Price"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container x="108" y="164.5" width="378" height="273">
+					<graph width="378" height="273" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Normalized_Perceied_Inventory_Coverage"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<slider x="548.5" y="472" width="193" height="78" isee:navigate_to="false" show_name="true">
+					<entity name="Unit_Capacity_Cost"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider x="752.5" y="472" width="193" height="78" isee:navigate_to="false" show_name="true">
+					<entity name="Unit_Variable_Cost"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider x="97.5" y="472" width="193" height="78" isee:navigate_to="false" show_name="true">
+					<entity name="Reference_Inventory_Coverage"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+				<slider x="301.5" y="472" width="193" height="78" isee:navigate_to="false" show_name="true">
+					<entity name="Inventory_Coverage"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+			</view>
+			<view background="white" page_width="1066" page_height="600" isee:scroll_x="4" isee:scroll_y="3" type="interface">
+				<style/>
+				<text_box font_weight="bold" text_decoration="underline" font_size="24pt" x="277" y="48" width="563" height="58">Relative value of product impact on demand</text_box>
+				<stacked_container x="567" y="145" width="391" height="282">
+					<graph width="391" height="282" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Demand"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container x="104" y="148" width="379" height="276">
+					<graph width="379" height="276" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="true" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Relative_Value_of_Product"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<text_box font_size="14pt" x="109" y="456" width="351" height="58">Relative value of product is influenced by the price of the product and the price of substitutes</text_box>
+			</view>
+			<view background="white" page_width="1066" page_height="600" type="interface">
+				<style/>
+			</view>
+			<isee:templates>
+				<view background="white" page_width="1066" page_height="600" type="template">
+					<style/>
+				</view>
+			</isee:templates>
+			<isee:stories/>
+		</views>
+	</model>
+</xmile>
+

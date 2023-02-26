@@ -1,0 +1,5 @@
+- [Bass Diffusion Model](./bass_diffusion/bass_diffusion.html). The classic [Bass Diffusion Model](https://en.wikipedia.org/wiki/Bass_diffusion_model) that is used to explain the dynamics of introductiong a new product or service into a market.
+- [Competitive Pricing Dynamics](./competitive_pricing/competitive_pricing_dynamics.html) A neat little model that can be used to understand pricing dynamics.
+- [Customer Acquisition](./customer_acquisition/customer_acquisition.html). A model that analyses the effects of referral marketing on customer acquisition.
+- [Enterprise Digital Twin](./enterprise_digital_twin/enterprise_digital_twin.html). A simulation of a professional service firm that forms part of the transentis Enterprise Digital Twin. This is work in progress that accompanies our current [meetup series](https://www.transentis.com/resources/business-prototyping-toolkit-meetup)
+- [Make Your Professional Service Firm Grow](./make_your_psf_grow/make_your_psf_grow.html). A model that analyses growth strategies in professional service firms.

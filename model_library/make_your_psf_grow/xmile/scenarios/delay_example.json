@@ -1,0 +1,9 @@
+{
+    "delay":{
+        "source":"simulation_models/delay_example.stmx",
+        "model":"simulation_models/delay_example",
+         "scenarios":{
+            "base":{}
+               }
+    }
+}

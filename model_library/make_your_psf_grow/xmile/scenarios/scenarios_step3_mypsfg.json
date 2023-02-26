@@ -1,0 +1,9 @@
+{
+    "step3":{
+        "source":"simulation_models/step3_mypsfg.stmx",
+        "model":"simulation_models/step3_mypsfg",
+         "scenarios":{
+            "base":{}
+         }
+    }
+}

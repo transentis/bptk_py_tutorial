@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>step7_mypsfg</name>
+		<uuid>ba8403aa-5209-40d7-a92b-d5ed63101fcf</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="2.1" isee:build_number="2324" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="1.344" isee:simulation_delay="0.056" isee:restore_on_start="false" method="Euler" time_units="months" isee:instantaneous_flows="true" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>0</start>
+		<stop>24</stop>
+		<dt reciprocal="true">1</dt>
+	</sim_specs>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="false" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="false"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<default_format/>
+	<isee:sensi_specs_list active_index="0">
+		<isee:sensi_specs name="Sensitivity Analysis 2" method="multivariate" runs="0"/>
+	</isee:sensi_specs_list>
+	<model_units/>
+	<model>
+		<isee:extra_collection_variables>
+			<isee:extra_collection_variable name="Receivables"/>
+			<isee:extra_collection_variable name="making_revenue"/>
+			<isee:extra_collection_variable name="collecting_revenue"/>
+			<isee:extra_collection_variable name="Projects"/>
+			<isee:extra_collection_variable name="Proposals"/>
+			<isee:extra_collection_variable name="Cash"/>
+		</isee:extra_collection_variables>
+		<variables>
+			<stock name="Cash">
+				<eqn>1000</eqn>
+				<inflow>cash_in</inflow>
+				<outflow>cash_out</outflow>
+			</stock>
+			<flow name="cash in">
+				<eqn>collecting_revenue</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="cash out">
+				<eqn>cost</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="cash flow">
+				<eqn>cash_in-cash_out</eqn>
+			</aux>
+			<aux name="cost">
+				<eqn>overhead_cost+staff_cost</eqn>
+			</aux>
+			<stock name="Professional Staff">
+				<eqn>200</eqn>
+				<inflow>staff_arriving</inflow>
+			</stock>
+			<aux name="overhead cost">
+				<eqn>306</eqn>
+			</aux>
+			<aux name="staff cost">
+				<eqn>(staff_salary+workplace_cost)*Professional_Staff</eqn>
+			</aux>
+			<aux name="staff salary">
+				<eqn>80/12</eqn>
+			</aux>
+			<flow name="making revenue">
+				<eqn>revenue</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="collecting revenue">
+				<eqn>DELAY(making_revenue, Collection_Time, 17.6*160)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="revenue">
+				<eqn>project_delivery_fee*project_delivery_rate</eqn>
+			</aux>
+			<aux name="project delivery fee">
+				<eqn>17.6</eqn>
+			</aux>
+			<aux name="Collection Time">
+				<eqn>2</eqn>
+			</aux>
+			<stock name="Receivables">
+				<eqn>17.6*160*2</eqn>
+				<inflow>making_revenue</inflow>
+				<outflow>collecting_revenue</outflow>
+			</stock>
+			<stock name="Projects">
+				<eqn>320</eqn>
+				<inflow>winning_projects</inflow>
+				<outflow>delivering_projects</outflow>
+			</stock>
+			<flow name="delivering projects">
+				<eqn>project_delivery_rate</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="project delivery capacity">
+				<eqn>work_capacity-business_development_capacity</eqn>
+			</aux>
+			<aux name="work capacity">
+				<eqn>work_month*Professional_Staff</eqn>
+			</aux>
+			<aux name="work month">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="business development allocation %">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="0" max="24"/>
+					<yscale min="0" max="20"/>
+					<ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</ypts>
+				</gf>
+			</aux>
+			<aux name="business development capacity">
+				<eqn>work_capacity*&quot;business_development_allocation_%&quot;/100</eqn>
+			</aux>
+			<stock name="Proposals">
+				<eqn>320</eqn>
+				<inflow>prospecting_projects</inflow>
+				<outflow>winning_projects</outflow>
+			</stock>
+			<flow name="winning projects">
+				<eqn>DELAY(prospecting_projects,project_acquisition_duration,160)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="project acquisition duration">
+				<eqn>6</eqn>
+			</aux>
+			<flow name="prospecting projects">
+				<eqn>project_proposal_rate</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="project proposal rate">
+				<eqn>project_volume*(business_development_capacity/prospecting_effort)</eqn>
+			</aux>
+			<aux name="project delivery rate">
+				<eqn>MIN(Projects, project_delivery_capacity)</eqn>
+			</aux>
+			<aux name="prospecting effort">
+				<eqn>4</eqn>
+			</aux>
+			<aux name="project volume">
+				<eqn>16</eqn>
+			</aux>
+			<stock name="Staff in Recruitment">
+				<eqn>0</eqn>
+				<inflow>hiring_staff</inflow>
+				<outflow>staff_arriving</outflow>
+			</stock>
+			<flow name="hiring staff">
+				<eqn>hiring_rate</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="staff arriving">
+				<eqn>DELAY(hiring_staff,hiring_duration,0)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="hiring duration">
+				<eqn>3</eqn>
+			</aux>
+			<aux name="hiring rate">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="0" max="24"/>
+					<yscale min="0" max="100"/>
+					<ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</ypts>
+				</gf>
+			</aux>
+			<aux name="workplace cost">
+				<eqn>1</eqn>
+			</aux>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="black" background="white"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="white" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="615" isee:scroll_y="39" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="12pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="12pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="12pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="12pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="12pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="12pt" isee:thickness="1"/>
+					<text_box color="blue" background="white" text_align="left" vertical_text_align="top" font_size="9pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" text_align="left" vertical_text_align="top" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="right" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="1" angle="299.888">
+					<from>cash_in</from>
+					<to>cash_flow</to>
+				</connector>
+				<connector uid="2" angle="263.316">
+					<from>cash_out</from>
+					<to>cash_flow</to>
+				</connector>
+				<connector uid="3" angle="266.186">
+					<from>overhead_cost</from>
+					<to>cost</to>
+				</connector>
+				<connector uid="4" angle="266.424">
+					<from>staff_salary</from>
+					<to>staff_cost</to>
+				</connector>
+				<connector uid="5" angle="249.851">
+					<from>Professional_Staff</from>
+					<to>staff_cost</to>
+				</connector>
+				<connector uid="6" angle="221.186">
+					<from>staff_cost</from>
+					<to>cost</to>
+				</connector>
+				<connector uid="7" angle="98.9725">
+					<from>revenue</from>
+					<to>making_revenue</to>
+				</connector>
+				<connector uid="8" angle="69.0755">
+					<from>project_delivery_fee</from>
+					<to>revenue</to>
+				</connector>
+				<connector uid="9" angle="94.5943">
+					<from>making_revenue</from>
+					<to>collecting_revenue</to>
+				</connector>
+				<connector uid="10" angle="306.87">
+					<from>Collection_Time</from>
+					<to>collecting_revenue</to>
+				</connector>
+				<connector uid="12" angle="201.801">
+					<from>
+						<alias uid="13"/>
+					</from>
+					<to>cash_out</to>
+				</connector>
+				<connector uid="14" angle="265.236">
+					<from>
+						<alias uid="15"/>
+					</from>
+					<to>cash_in</to>
+				</connector>
+				<connector uid="16" angle="290.071">
+					<from>Professional_Staff</from>
+					<to>work_capacity</to>
+				</connector>
+				<connector uid="17" angle="214.875">
+					<from>work_month</from>
+					<to>work_capacity</to>
+				</connector>
+				<connector uid="18" angle="257.677">
+					<from>work_capacity</from>
+					<to>project_delivery_capacity</to>
+				</connector>
+				<connector uid="19" angle="351.502">
+					<from>&quot;business_development_allocation_%&quot;</from>
+					<to>business_development_capacity</to>
+				</connector>
+				<connector uid="20" angle="333.23">
+					<from>work_capacity</from>
+					<to>business_development_capacity</to>
+				</connector>
+				<connector uid="21" angle="184.764">
+					<from>business_development_capacity</from>
+					<to>project_delivery_capacity</to>
+				</connector>
+				<connector uid="23" angle="283.241">
+					<from>project_acquisition_duration</from>
+					<to>winning_projects</to>
+				</connector>
+				<connector uid="24" angle="129.806">
+					<from>project_proposal_rate</from>
+					<to>prospecting_projects</to>
+				</connector>
+				<connector uid="25" angle="223.264">
+					<from>Projects</from>
+					<to>project_delivery_rate</to>
+				</connector>
+				<connector uid="26" angle="165.964">
+					<from>
+						<alias uid="27"/>
+					</from>
+					<to>project_delivery_rate</to>
+				</connector>
+				<connector uid="28" angle="3.46823">
+					<from>project_delivery_rate</from>
+					<to>delivering_projects</to>
+				</connector>
+				<connector uid="29" angle="104.826">
+					<from>
+						<alias uid="30"/>
+					</from>
+					<to>revenue</to>
+				</connector>
+				<connector uid="31" angle="305.266">
+					<from>prospecting_projects</from>
+					<to>winning_projects</to>
+				</connector>
+				<connector uid="32" angle="84.9575">
+					<from>prospecting_effort</from>
+					<to>project_proposal_rate</to>
+				</connector>
+				<connector uid="33" angle="70.641">
+					<from>project_volume</from>
+					<to>project_proposal_rate</to>
+				</connector>
+				<connector uid="34" angle="66.3706">
+					<from>
+						<alias uid="35"/>
+					</from>
+					<to>project_proposal_rate</to>
+				</connector>
+				<connector uid="37" angle="284.949">
+					<from>hiring_duration</from>
+					<to>staff_arriving</to>
+				</connector>
+				<connector uid="38" angle="62.4328">
+					<from>hiring_staff</from>
+					<to>staff_arriving</to>
+				</connector>
+				<connector uid="39" angle="99.4623">
+					<from>hiring_rate</from>
+					<to>hiring_staff</to>
+				</connector>
+				<connector uid="40" angle="276.009">
+					<from>workplace_cost</from>
+					<to>staff_cost</to>
+				</connector>
+				<stock x="310.833" y="880" name="Cash"/>
+				<flow x="242.083" y="884" name="cash in">
+					<pts>
+						<pt x="195.833" y="884"/>
+						<pt x="288.333" y="884"/>
+					</pts>
+				</flow>
+				<flow x="377.083" y="880" name="cash out">
+					<pts>
+						<pt x="333.333" y="880"/>
+						<pt x="444.833" y="880"/>
+					</pts>
+				</flow>
+				<aux x="297.833" y="981" name="cash flow"/>
+				<aux x="995.833" y="457" name="cost"/>
+				<stock x="1144.67" y="168.333" name="Professional Staff"/>
+				<aux x="943.666" y="373.667" name="overhead cost"/>
+				<aux x="1069.33" y="373.667" name="staff cost"/>
+				<aux x="981" y="276" name="staff salary"/>
+				<flow x="292.583" y="259" name="making revenue">
+					<pts>
+						<pt x="253.333" y="259"/>
+						<pt x="331.833" y="259"/>
+					</pts>
+				</flow>
+				<flow x="422.583" y="260" name="collecting revenue">
+					<pts>
+						<pt x="376.833" y="260"/>
+						<pt x="492.333" y="260"/>
+					</pts>
+				</flow>
+				<aux x="260.333" y="356.667" name="revenue"/>
+				<aux x="168.333" y="416" name="project delivery fee"/>
+				<aux x="457.083" y="127" name="Collection Time"/>
+				<stock x="354.333" y="263.333" name="Receivables"/>
+				<stock x="1352" y="804" name="Projects"/>
+				<flow x="1419.75" y="801" name="delivering projects">
+					<pts>
+						<pt x="1374.5" y="801"/>
+						<pt x="1489" y="801"/>
+					</pts>
+				</flow>
+				<aux x="1333" y="483" name="project delivery capacity"/>
+				<aux x="1217.5" y="367.667" name="work capacity"/>
+				<aux x="1266" y="284" name="work month"/>
+				<aux x="1374" y="363.667" name="business development allocation %"/>
+				<aux x="1486" y="465" name="business development capacity"/>
+				<stock x="1151" y="801" name="Proposals"/>
+				<flow x="1245.5" y="802.5" name="winning projects">
+					<pts>
+						<pt x="1173.5" y="802.5"/>
+						<pt x="1329.5" y="802.5"/>
+					</pts>
+				</flow>
+				<aux x="1249" y="664" name="project acquisition duration"/>
+				<flow x="1051.25" y="796" name="prospecting projects">
+					<pts>
+						<pt x="974" y="796"/>
+						<pt x="1128.5" y="796"/>
+					</pts>
+				</flow>
+				<aux x="1001" y="910" name="project proposal rate"/>
+				<aux x="1301" y="953" name="project delivery rate"/>
+				<aux x="877" y="993" name="prospecting effort"/>
+				<aux x="956.833" y="1085" name="project volume"/>
+				<stock x="981" y="168.333" name="Staff in Recruitment"/>
+				<flow x="919.25" y="162" name="hiring staff">
+					<pts>
+						<pt x="880" y="162"/>
+						<pt x="958.5" y="162"/>
+					</pts>
+				</flow>
+				<flow x="1056.84" y="168.333" name="staff arriving">
+					<pts>
+						<pt x="1003.5" y="168.333"/>
+						<pt x="1122.17" y="168.333"/>
+					</pts>
+				</flow>
+				<aux x="1066.33" y="46" name="hiring duration"/>
+				<aux x="885" y="258" name="hiring rate"/>
+				<aux x="1042" y="255" name="workplace cost"/>
+				<alias font_style="italic" uid="13" x="456" y="754.333" width="18" height="18">
+					<of>cost</of>
+				</alias>
+				<alias font_style="italic" uid="15" x="172.667" y="757.667" width="18" height="18">
+					<of>collecting_revenue</of>
+				</alias>
+				<alias font_style="italic" uid="27" x="1418" y="1016" width="18" height="18">
+					<of>project_delivery_capacity</of>
+				</alias>
+				<alias font_style="italic" uid="30" x="314" y="443" width="18" height="18">
+					<of>project_delivery_rate</of>
+				</alias>
+				<alias font_style="italic" uid="35" x="1084" y="1046" width="18" height="18">
+					<of>business_development_capacity</of>
+				</alias>
+			</view>
+			<view background="white" page_width="812" page_height="672" home_view="true" type="interface">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+</xmile>
+

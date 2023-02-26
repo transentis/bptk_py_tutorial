@@ -1,0 +1,142 @@
+project:
+  type: website
+  title: "BPTK_PY"
+  output-dir: _output
+  render:
+    - "*.md"
+    - "*.ipynb"
+    - "*.qmd"
+    - "!README.md"
+    - "!readme.ipynb"
+  preview:
+    port: 5000
+    browser: true
+
+website:
+  favicon: img/favicon.ico
+  title: "BPTK-Py: System Dynamics and Agent Based Modeling in Python"
+  description: "BPTK-Py is a Python framework for System Dynamics and Agent Based Modeling. It is fully compatible with Jupyter Notebooks and can easily be used to create interactive models."
+  page-navigation: true
+  open-graph: true
+  page-footer: 
+    center: "©2023, transentis labs GmbH." 
+  sidebar:
+    logo: img/labs_icon.svg
+    logo-alt: "BPTK"
+    collapse-level: 1
+    style: "floating"
+    search: true
+    align: left
+    contents:
+      - text: "Installation"
+        file: usage/installation.md
+      - text: "Quickstart"
+        file: quickstart/quickstart.ipynb
+      - text: "Tutorials"
+        file: tutorials/tutorials.md
+        contents:
+          - text: "System Dynamics Tutorial"
+            file: tutorials/system_dynamics/sd_tutorial.ipynb
+      - section: "Core Concepts"
+        file: concepts/concepts.md
+        contents:
+          - text: "BPTK Architecture"
+            file: concepts/bptk_architecture/bptk_architecture.html
+          - text: "Scenarios"
+            file: concepts/scenarios/scenarios.html
+          - text: "Accessing Raw Simulation Results"
+            file: concepts/accessing_raw_simulation_results/accessing_raw_simulation_results.html
+          - text: "Advanced Plotting Features"
+            file: concepts/advanced_plotting_features/advanced_plotting_features.html
+          - text: "Dashboards using Jupyter Widgets"
+            file: concepts/develop_dashboards_using_jupyter_widgets/developing_dashboards_using_juypter_widgets.html
+          - text: "Dashboards using the SimpleDashboard Class"
+            file: concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.html
+          - text: "Persisting the BPTK-Server State"
+            file: concepts/external_state/external_state.html
+      - section: "Agent Based Modeling"
+        file: abm/abm.md
+        contents:
+          - text: "Agent Based Modeling"
+            file: abm/agent_based_modeling/agent_based_modeling.ipynb
+          - text: "Data Collector"
+            file: abm/custom_datacollectors/custom_datacollectors.ipynb
+      - section: "System Dynamics"
+        file: sd-dsl/sddsl.md
+        contents:
+          - text: "System Dynamics Library"
+            file: sd-dsl/simple_python_library_sd_dsl/simple_python_library_sd_dsl.html
+          - text: "SD DSL Functions"
+            file: sd-dsl/sd_dsl_functions/sd_dsl_functions.html
+          - text: "User-defined functions"
+            file: sd-dsl/sd_user_defined_functions/sd_user_defined_functions.html
+      - section: "XMILE Models"
+        file: xmile/xmile.md    
+        contents:
+          - text: "XMILE SD Models"
+            file: xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html
+          - text: "Exporting Simulation Results"
+            file: xmile/how-to/how_to_exporting_simulation_results/how_to_exporting_simulation_results.html
+          - text: "Arrayed Variables in XMILE Models"
+            file: xmile/how-to/how_to_xmile_arrays/how_to_XMILE_arrays.html
+          - text: "Use Standalone XMILE Compiler"
+            file: xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html
+          - text: "Writing Computational Essays"
+            file: xmile/in-depth/writing_computational_essays/writing_computational_essays.html
+      - section: "Model Library"
+        file: model_library/model_library.md
+        contents:
+          - text: "Bass Diffusion Model"
+            file: model_library/bass_diffusion/bass_diffusion.ipynb
+          - text: "Competitive Pricing"
+            file: model_library/competitive_pricing/competitive_pricing_dynamics.ipynb
+          - text: "Customer Acquisition"
+            file: model_library/customer_acquisition/customer_acquisition.ipynb
+          - text: "Enterprise Digital Twin"
+            file: model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb
+          - text: "Make Your PSF Grow"
+            file: model_library/make_your_psf_grow/make_your_psf_grow.md
+      - section: "API Documentation"
+        file: api/api.md
+        contents:
+          - text: "Agent"
+            file: api/api_agent.html
+          - text: "bptk"
+            file: api/api_bptk.html
+          - text: "BptkServer"
+            file: api/api_bptk_server.html
+          - text: "Biflow"
+            file: api/api_biflow.html
+          - text: "Constant"
+            file: api/api_constant.html
+          - text: "Converter"
+            file: api/api_converter.html
+          - text: "DataCollector"
+            file: api/api_datacollector.html
+          - text: "Element"
+            file: api/api_element.html
+          - text: "Event"
+            file: api/api_event.html
+          - text: "Flow"
+            file: api/api_flow.html
+          - text: "Model"
+            file: api/api_model.html
+          - text: "Module"
+            file: api/api_module.html
+          - text: "Scheduler"
+            file: api/api_scheduler.html
+          - text: "SimpleDashboard"
+            file: api/api_simpledashboard.html
+          - text: "SimulationScenario"
+            file: api/api_simulation_scenario.html
+          - text: "Simultaneous Scheduler"
+            file: api/api_simultaneousScheduler.html
+          - text: "Stock"
+            file: api/api_stock.html
+      - text: "Limitations"
+        file: usage/limitations.md
+format:
+  html:
+    theme: sandstone
+    css: styles.css
+    toc: true
