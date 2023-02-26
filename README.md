@@ -21,7 +21,9 @@ Then follow these steps:
 
 This tutorial contains a number of Jupyter notebooks that illustrate usage of the BPTK-Py framework. Which one to get started with depends on whether you are interested in Agent-based modeling, in System Dynamics using XMILE (e.g. using Stella Architect or iThink) or in our domain-specific language for System Dynamics (SD DSL).
 
-The best place to get started is the [Quickstart](./quickstart/quickstart.ipynb). You might also like the [System Dynamics Tutorial](./tutorials/system_dynamics/sd_tutorial.ipynb).
+The best place to get started is the [Quickstart](./quickstart/quickstart.ipynb), which illustrates System Dynamics and Agent-based Modeling using a simple customer acquisition model.
+
+You might also like the [System Dynamics Tutorial](./tutorials/system_dynamics/sd_tutorial.ipynb).
 
 Our model library contains some interesting models that you can use as a starting point for understanding System Dynamics, Agent-based Modeling and the BPTK-Framework:
 
