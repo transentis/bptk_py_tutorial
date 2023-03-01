@@ -1,0 +1,58 @@
+{
+  "smBeergameSD": {
+    "source": "simulation_models/beer_game.stmx",
+    "model" : "simulation_models/beer_game",
+    "base_constants":{
+        "policySettings.steadyStateOn":0,
+        "policySettings.sophisticatedOrderDecisionOn":0,
+        "policySettings.weightingOpenOrders":0,
+        "policySettings.weightingBackOrders":1,
+        "policySettings.stockAdjustmentTime":1
+    },
+    "scenarios": {
+        "typical":{
+      
+        },
+        "ignoreBackorders":{
+            "constants":{
+                "policySettings.sophisticatedOrderDecisionOn":1
+            }
+        },
+        "includeSupplyLine":{
+            "constants":{
+                "policySettings.sophisticatedOrderDecisionOn":1,
+                "policySettings.weightingOpenOrders":1               
+            }
+        },
+        "inventoryAdjustmentTime8":{
+            "constants":{
+                "policySettings.sophisticatedOrderDecisionOn":1,
+                "policySettings.weightingOpenOrders":1,
+                "policySettings.stockAdjustmentTime":8               
+            }
+        },
+         "inventoryAdjustmentTime2":{
+            "constants":{
+                "policySettings.sophisticatedOrderDecisionOn":1,
+                "policySettings.weightingOpenOrders":1,
+                "policySettings.stockAdjustmentTime":2               
+            }
+        },
+         "inventoryAdjustmentTime16":{
+            "constants":{
+                "policySettings.sophisticatedOrderDecisionOn":1,
+                "policySettings.weightingOpenOrders":1,
+                "policySettings.stockAdjustmentTime":16               
+            }
+        },
+         "interactiveScenario":{
+            "constants":{
+                "policySettings.sophisticatedOrderDecisionOn":0,
+                "policySettings.weightingOpenOrders":0,
+                "policySettings.stockAdjustmentTime":8               
+            }
+        }
+    }
+  }
+}
+

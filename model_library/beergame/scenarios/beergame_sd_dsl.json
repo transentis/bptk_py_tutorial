@@ -1,0 +1,70 @@
+{
+  "sd_dsl_beergame": {
+    "type":"sd",
+    "model": "src.sd_dsl.beergame.Beergame",
+    "base_constants":{
+            "policy_settings.steady_state_on":1.0,
+            "policy_settings.sophisticated_order_decision_on":0.0,
+            "policy_settings.include_supply_line_on":0.0,
+            "policy_settings.inventory_adjustment_time":1.0
+        },
+  "scenarios": {
+        "steady_state":{
+    
+        },
+
+       "typical":{
+           "constants":{
+                "policy_settings.steady_state_on":0.0
+           }
+
+        },
+        "ignore_backorders":{
+            "constants":{
+                "policy_settings.steady_state_on":0.0,
+                "policy_settings.sophisticated_order_decision_on":1.0
+            }
+        },
+        "include_supply_line":{
+            "constants":{
+                "policy_settings.steady_state_on":0.0,
+                "policy_settings.sophisticated_order_decision_on":1.0,
+                "policy_settings.include_supply_line_on":1.0
+            }
+        },
+        "inventory_adjustment_time_8":{
+            "constants":{
+                "policy_settings.steady_state_on":0.0,
+                "policy_settings.sophisticated_order_decision_on":1.0,
+                "policy_settings.include_supply_line_on":1.0,
+                "policy_settings.inventory_adjustment_time":8.0
+            }
+        },
+         "inventory_adjustment_time_2":{
+            "constants":{
+                "policy_settings.steady_state_on":0.0,
+                "policy_settings.sophisticated_order_decision_on":1.0,
+                "policy_settings.include_supply_line_on":1.0,
+                "policy_settings.inventory_adjustment_time":2.0
+            }
+        },
+         "inventory_adjustment_time_16":{
+            "constants":{
+                "policy_settings.steady_state_on":0.0,
+                "policy_settings.sophisticated_order_decision_on":1.0,
+                "policy_settings.include_supply_line_on":1.0,
+                "policy_settings.inventory_adjustment_time":16.0
+            }
+        },
+          "interactive_scenario":{
+            "constants":{
+                "policy_settings.steady_state_on":0.0,
+                "policy_settings.sophisticated_order_decision_on":0.0,
+                "policy_settings.include_supply_line_on":1.0,
+                "policy_settings.inventory_adjustment_time":8               
+            }
+        }
+
+    }
+}
+}

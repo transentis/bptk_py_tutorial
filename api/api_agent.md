@@ -1,10 +1,14 @@
 # Agent
 
+The agent class is the base class for all agents used in an agent-based simulation.
 
-## _class_ Agent(agent_id, model, properties, agent_type='agent')
-Agent for agent based simulation.
 Your agents must inherit from this class if they are to be part of an agent-based simulation.
 
+## Agent.__init__
+
+**Agent(agent_id, model, properties, agent_type='agent')**
+
+Construct an agent.
 
 * **Parameters**
 
@@ -21,7 +25,10 @@ Your agents must inherit from this class if they are to be part of an agent-base
 
 
 
-### act(time, round_no, step_no)
+## Agent.act
+
+**act(time, round_no, step_no)**
+
 Called by the scheduler every timestep.
 
 Does nothing in the base class, typically agents will implement most of their action logic in this method (and in the event handlers).
@@ -42,8 +49,10 @@ Does nothing in the base class, typically agents will implement most of their ac
     The current step (within the round)
 
 
+## Agent.begin_episode
 
-### begin_episode(episode_no)
+**begin_episode(episode_no)**
+
 Called by the framework at the beginning of each episode.
 
 Useful to allow a soft reset of the agent, e.g. when training a model for reinforcement learning.
@@ -58,7 +67,10 @@ The default implementation does nothing.
 
 
 
-### end_episode(episode_no)
+## Agent.end_episode
+
+**end_episode(episode_no)**
+
 Called by the framework at the end of each epsiode, to allow tidy up if necessary. The default implementation does nothing.
 
 
@@ -67,9 +79,10 @@ Called by the framework at the end of each epsiode, to allow tidy up if necessar
     **episode_no** – Integer.
     The number of the episode
 
+## Agent.get_property
 
+**get_property(name)**
 
-### get_property(name)
 Get the settings of a property.
 
 
@@ -86,7 +99,10 @@ Get the settings of a property.
 
 
 
-### get_property_value(name)
+## Agent.get_property_value 
+
+**get_property_value(name)**
+
 Retrieves the value of a property.
 
 
@@ -103,7 +119,10 @@ Retrieves the value of a property.
 
 
 
-### handle_events(time, sim_round, step)
+## Agent.handle_events
+
+**handle_events(time, sim_round, step)**
+
 Called by the framework to handle events.
 
 This method then calls the registered event handlers.
@@ -125,13 +144,19 @@ This method then calls the registered event handlers.
 
 
 
-### initialize()
+## Agent.initialize
+
+**initialize()**
+
 Initialize the agent.
 
 Called by the framework directly after the agent is instantiated, useful for any kind of initialization code such as setting the agent type, current state and registering event handlers.
 
 
-### _static_ is_event_relevant(threshold)
+## Agent.is_event_relevant
+
+**_static_ is_event_relevant(threshold)**
+
 Helper function used to differentiate relevant and irrelevant events.
 
 The function generates a random number in the range [0.0, 1.0) using Pythons random.random(). If this is smaller than the threshold, the event is deemed relevant.
@@ -150,7 +175,10 @@ The function generates a random number in the range [0.0, 1.0) using Pythons ran
 
 
 
-### receive_event(event)
+## Agent.receive_event
+
+**receive_event(event)**
+
 Receive an event.
 
 
@@ -161,7 +189,10 @@ Receive an event.
 
 
 
-### receive_instantaneous_event(event)
+## Agent.receive_instantaneous_event
+
+** receive_instantaneous_event(event) **
+
 Handle an event immediately, do not wait for the next round.
 
 
@@ -172,7 +203,10 @@ Handle an event immediately, do not wait for the next round.
 
 
 
-### register_event_handler(states, event, handler)
+## Agent.register_event_handler
+
+**register_event_handler(states, event, handler)**
+
 Register an event handler.
 
 The event handler is called by the framework if a relevant event occurs. The event handler is registered for all relevant state.
@@ -194,7 +228,10 @@ The event handler is called by the framework if a relevant event occurs. The eve
 
 
 
-### serialize()
+## Agent.serialize
+
+** serialize() **
+
 Serialize the agent.
 
 
@@ -210,7 +247,10 @@ Serialize the agent.
 
 
 
-### set_property(name, data)
+## Agent.set_property
+
+**set_property(name, data)**
+
 Configure an agent property by passing a dictionary specifying the property.
 
 
@@ -224,9 +264,10 @@ Configure an agent property by passing a dictionary specifying the property.
     * **data** – Dictionary.
     Specification of property in dictionary with keys type and values. Currently the types Double, String, Integer, Lookup, Dictionary, Boolean and Agent are supported.
 
+## Agent.set_property_value 
 
+**set_property_value(name, value)**
 
-### set_property_value(name, value)
 Sets the value of a property.
 
 

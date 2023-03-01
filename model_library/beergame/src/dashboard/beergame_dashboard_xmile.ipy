@@ -1,0 +1,188 @@
+%matplotlib inline
+import matplotlib.pyplot as plt
+from ipywidgets import interact
+import ipywidgets as widgets
+    
+out1 = widgets.Output()
+out2 = widgets.Output()
+out3 = widgets.Output()
+out4 = widgets.Output()
+
+wdg_ignore_backorders=widgets.Checkbox(
+        value=False,
+        description='Ignore Backorders',
+        disabled=False,
+        indent=False
+    )
+
+wdg_include_supply_line=widgets.Checkbox(
+        value=False,
+        description='Include Supply Line',
+        disabled=False,
+        indent=False
+    )
+
+wdg_style_inventory_adjustment_time = {'description_width': 'initial'}
+wdg_inventory_adjustment_time=widgets.FloatSlider(
+        value=8,
+        min=1,
+        max=16,
+        step=1,
+        continuous_update=False,
+        description='Inventory Adjustment Time',
+        style=wdg_style_inventory_adjustment_time
+    )
+wdg_inventory_adjustment_time.layout.width='400px'
+
+
+
+
+def event_handler_ignore_backorders(change):
+    update_graphs(change.new,wdg_include_supply_line.value,wdg_inventory_adjustment_time.value)
+    
+def event_handler_include_supply_line(change):
+    update_graphs(wdg_ignore_backorders.value, change.new,wdg_inventory_adjustment_time.value)
+
+def event_handler_inventory_adjustment_time(change):
+    update_graphs(wdg_ignore_backorders.value, wdg_include_supply_line.value, change.new)
+    
+def update_graphs(ignore_backorders, include_supply_line, inventory_adjustment_time):
+    scenario= bptk.get_scenario("smBeergameSD","interactiveScenario")
+
+    scenario.constants["policySettings.sophisticatedOrderDecisionOn"] = 1 if ignore_backorders else 0
+    scenario.constants["policySettings.weightingOpenOrders"] = 1 if include_supply_line else 0
+    scenario.constants["policySettings.stockAdjustmentTime"]=inventory_adjustment_time
+   
+
+
+    wdg_include_supply_line.layout.visibility = 'visible' if ignore_backorders else 'hidden'
+    wdg_inventory_adjustment_time.layout.visibility = 'visible' if ignore_backorders else 'hidden'
+    
+    bptk.reset_scenario_cache(scenario_manager="smBeergameSD", scenario="interactiveScenario")
+
+    out1.clear_output(wait=True)
+    out2.clear_output(wait=True)
+    out3.clear_output(wait=True)
+    out4.clear_output(wait=True)
+    
+    with out1:
+        # turn of pyplot's interactive mode to ensure the plot is not created directly
+        plt.ioff()
+        # clear the widgets output ... otherwise we will end up with a long list of plots, one for each change of settings
+        
+        # create the plot, but don't show it yet
+        plot1=bptk.plot_scenarios(
+            scenario_managers=["smBeergameSD"],
+            scenarios=["interactiveScenario"],
+            title="Order Behaviour",
+            x_label="Weeks",
+            y_label="Beer Ordered",
+            equations=[
+                "brewery.actualProduction",
+                "distributor.actualOrder",
+                "wholesaler.actualOrder",
+                "retailer.actualOrder", 
+                "retailer.incomingOrder"
+            ],
+             series_names={
+                "smBeergameSD_interactiveScenario_brewery.actualProduction" : "Brewery",
+                "smBeergameSD_interactiveScenario_distributor.actualOrder" : "Distributor",
+                "smBeergameSD_interactiveScenario_wholesaler.actualOrder": "Wholesaler",
+                "smBeergameSD_interactiveScenario_retailer.actualOrder": "Retailer",
+                "smBeergameSD_interactiveScenario_retailer.incomingOrder": "Consumer"
+            }
+        )
+        # show the plot
+        plt.show(plot1)
+        # turn interactive mode on again
+        plt.ion()  
+              
+    with out2:
+        plt.ioff()
+        plot2=bptk.plot_scenarios(
+            scenario_managers=["smBeergameSD"],
+            scenarios=["interactiveScenario"],
+            title="Surplus",
+            x_label="Weeks",
+            y_label="Beer Ordered",
+            equations=[
+                "brewery.surplus",
+                "distributor.surplus",
+                "wholesaler.surplus",
+                "retailer.surplus"
+            ],
+            series_names={
+                "smBeergameSD_interactiveScenario_brewery.surplus" : "Brewery",
+                "smBeergameSD_interactiveScenario_distributor.surplus" : "Distributor",
+                "smBeergameSD_interactiveScenario_wholesaler.surplus": "Wholesaler",
+                "smBeergameSD_interactiveScenario_retailer.surplus": "Retailer"
+            }
+        )
+        plt.show(plot2)
+        plt.ion()
+              
+    with out3:
+        plt.ioff()
+        plot3=bptk.plot_scenarios(
+            scenario_managers=["smBeergameSD"],
+            kind="area",
+            scenarios=["interactiveScenario"],
+            title="Retailer Cost",
+            x_label="Weeks",
+            y_label="USD",
+            equations=[
+                "performanceControlling.retailerCostAcc",
+                "policySettings.targetRetailerCost"
+            ],
+            series_names={
+                "smBeergameSD_interactiveScenario_performanceControlling.retailerCostAcc" : "Accumlated Retailer Cost",
+                "smBeergameSD_interactiveScenario_policySettings.targetRetailerCost" : "Target Retailer Cost"
+            }
+            
+        )
+        plt.show(plot3)
+        plt.ion()
+        
+    with out4:
+        plt.ioff()
+        plot4=bptk.plot_scenarios(
+            scenario_managers=["smBeergameSD"],
+            kind="area",
+            scenarios=["interactiveScenario"],
+            title="Total Cost",
+            x_label="Weeks",
+            y_label="USD",
+            equations=[
+                "performanceControlling.supplyChainCostAcc",
+                "policySettings.targetSupplyChainCost"
+            ],
+            series_names={
+                "smBeergameSD_interactiveScenario_performanceControlling.supplyChainCostAcc" : "Accumlated Supply Chain Cost",
+                "smBeergameSD_interactiveScenario_policySettings.targetSupplyChainCost" : "Target Supply Chain Cost"
+            }
+        )
+        plt.show(plot4)
+        plt.ion()
+
+        
+
+wdg_ignore_backorders.observe(event_handler_ignore_backorders, names="value")
+wdg_include_supply_line.observe(event_handler_include_supply_line, names="value")
+wdg_inventory_adjustment_time.observe(event_handler_inventory_adjustment_time, names="value")
+
+tabbed_graphs = widgets.Tab(children = [out1, out2, out3, out4])
+tabbed_graphs.set_title(0, 'Order Behaviour')
+tabbed_graphs.set_title(1, 'Surplus')
+tabbed_graphs.set_title(2, 'Retailer Cost')
+tabbed_graphs.set_title(3, 'Total Cost')
+
+display(tabbed_graphs)
+
+
+control_panel = widgets.HBox([wdg_ignore_backorders,wdg_include_supply_line,wdg_inventory_adjustment_time])
+display(control_panel)
+
+
+update_graphs(wdg_ignore_backorders.value,wdg_include_supply_line.value,wdg_inventory_adjustment_time.value)
+
+

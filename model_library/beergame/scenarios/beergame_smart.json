@@ -1,0 +1,333 @@
+{
+  "smSmartBeergame": {
+    "type": "abm",
+    "name": "beergame",
+    "model": "src.abm.smart.beergame.Beergame",
+    "scenarios": {
+     "ignore_backorder": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 24,
+          "dt": 1.0
+        },
+        "properties": {
+          "order_balance": {
+            "type": "Integer",
+            "value":0
+          },
+          "slow_inventory_adjustment": {
+            "type": "Integer",
+            "value": 0
+          },
+          "include_supply_line": {
+            "type": "Integer",
+            "value": 0
+          },
+          "ignore_backorder": {
+            "type": "Integer",
+            "value": 1
+          },
+          "backorder_item_cost": {
+            "type": "Integer",
+            "value": 1
+          },
+          "inventory_item_cost": {
+            "type": "Double",
+            "value": 0.5
+          },
+          "minimum_inventory_cost": {
+            "type": "Integer",
+            "value": 200
+          },
+          "target_inventory": {
+            "type": "Integer",
+            "value": 400
+          }
+        },
+        "agents": [
+          {
+            "name": "consumer",
+            "count": 1,
+            "step": 1,
+            "properties": {
+              "weekly_order": {
+                "type": "Integer",
+                "value": 400
+              }
+            }
+          },
+          {
+            "name": "retailer",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "wholesaler",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "distributor",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "brewery",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "controlling",
+            "count": 1,
+            "step": 1
+          }
+        ]
+      },
+      "include_supply_line": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 24,
+          "dt": 1.0
+        },
+        "properties": {
+          "order_balance": {
+            "type": "Integer",
+            "value":0
+          },
+          "slow_inventory_adjustment": {
+            "type": "Integer",
+            "value": 0
+          },
+          "include_supply_line": {
+            "type": "Integer",
+            "value": 1
+          },
+          "ignore_backorder": {
+            "type": "Integer",
+            "value": 0
+          },
+          "backorder_item_cost": {
+            "type": "Integer",
+            "value": 1
+          },
+          "inventory_item_cost": {
+            "type": "Double",
+            "value": 0.5
+          },
+          "minimum_inventory_cost": {
+            "type": "Integer",
+            "value": 200
+          },
+          "target_inventory": {
+            "type": "Integer",
+            "value": 400
+          }
+        },
+        "agents": [
+          {
+            "name": "consumer",
+            "count": 1,
+            "step": 1,
+            "properties": {
+              "weekly_order": {
+                "type": "Integer",
+                "value": 400
+              }
+            }
+          },
+          {
+            "name": "retailer",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "wholesaler",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "distributor",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "brewery",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "controlling",
+            "count": 1,
+            "step": 1
+          }
+        ]
+      },
+      "slow_inventory_adjustment": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 24,
+          "dt": 1.0
+        },
+        "properties": {
+          "order_balance": {
+            "type": "Integer",
+            "value":0
+          },
+          "slow_inventory_adjustment": {
+            "type": "Integer",
+            "value": 1
+          },
+          "include_supply_line": {
+            "type": "Integer",
+            "value": 0
+          },
+          "ignore_backorder": {
+            "type": "Integer",
+            "value": 0
+          },
+          "backorder_item_cost": {
+            "type": "Integer",
+            "value": 1
+          },
+          "inventory_item_cost": {
+            "type": "Double",
+            "value": 0.5
+          },
+          "minimum_inventory_cost": {
+            "type": "Integer",
+            "value": 200
+          },
+          "target_inventory": {
+            "type": "Integer",
+            "value": 400
+          },
+          "inventory_adjustment_time": {
+            "type": "Integer",
+            "value": 8
+          }
+        },
+        "agents": [
+          {
+            "name": "consumer",
+            "count": 1,
+            "step": 1,
+            "properties": {
+              "weekly_order": {
+                "type": "Integer",
+                "value": 400
+              }
+            }
+          },
+          {
+            "name": "retailer",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "wholesaler",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "distributor",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "brewery",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "controlling",
+            "count": 1,
+            "step": 1
+          }
+        ]
+      },
+              "order_balance": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 24,
+          "dt": 1.0
+        },
+        "properties": {
+          "order_balance": {
+            "type": "Integer",
+            "value": 1
+          },
+          "slow_inventory_adjustment": {
+            "type": "Integer",
+            "value": 0
+          },
+          "include_supply_line": {
+            "type": "Integer",
+            "value": 0
+          },
+          "ignore_backorder": {
+            "type": "Integer",
+            "value": 0
+          },
+          "backorder_item_cost": {
+            "type": "Integer",
+            "value": 1
+          },
+          "inventory_item_cost": {
+            "type": "Double",
+            "value": 0.5
+          },
+          "minimum_inventory_cost": {
+            "type": "Integer",
+            "value": 200
+          },
+          "target_inventory": {
+            "type": "Integer",
+            "value": 400
+          },
+          "inventory_adjustment_time": {
+            "type": "Integer",
+            "value": 8
+          }
+        },
+        "agents": [
+          {
+            "name": "consumer",
+            "count": 1,
+            "step": 1,
+            "properties": {
+              "weekly_order": {
+                "type": "Integer",
+                "value": 400
+              }
+            }
+          },
+          {
+            "name": "retailer",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "wholesaler",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "distributor",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "brewery",
+            "count": 1,
+            "step": 1
+          },
+          {
+            "name": "controlling",
+            "count": 1,
+            "step": 1
+          }
+        ]
+      }
+    }
+  }
+}

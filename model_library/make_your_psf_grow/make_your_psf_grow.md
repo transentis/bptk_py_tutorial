@@ -1,5 +1,5 @@
 ---
-title: "Make Your PSF Grow"
+title: "Make Your Professional Service Firm Grow"
 keywords: system dynamics, bptk, bptk-py, python, computational modeling, simulation, XMILE
 description: "Simulating the dynamics of professional service firms."
 ---

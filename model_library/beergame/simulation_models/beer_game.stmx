@@ -1,0 +1,3339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee" uses_submodels=""/>
+		<name>beer_game</name>
+		<uuid>8748d3d3-c18d-43fd-ba09-910472d1bbe2</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="2.1" isee:build_number="2324" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="0" isee:simulation_delay="0" isee:restore_on_start="false" method="Euler" time_units="Weeks" isee:instantaneous_flows="false" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>1</start>
+		<stop>24</stop>
+		<dt>1</dt>
+	</sim_specs>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" saved_runs="5" keep="false" rifp="false"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+		<isee:time_format name="Number Not Scaled With Precision of 1" precision="1" scale_by="1" type="number"/>
+	</isee:time_formats>
+	<default_format/>
+	<isee:sensi_specs_list active_index="0">
+		<isee:sensi_specs name="Sensitivity Analysis 1" method="multivariate" runs="0"/>
+	</isee:sensi_specs_list>
+	<model_units/>
+	<model>
+		<variables>
+			<module name="Retailer" isee:label="">
+				<connect to="Wholesaler.Converter_4" from="Retailer.Actual_Order"/>
+				<connect2 to="Wholesaler.Converter_4" from="Retailer.Actual_Order"/>
+				<connect to="Performance_Controlling.Retail_Backorder" from="Retailer.Backorder"/>
+				<connect2 to="Performance_Controlling.Retail_Backorder" from="Retailer.Backorder"/>
+				<connect to="Performance_Controlling.Retailer_Inventory" from="Retailer.Inventory"/>
+				<connect2 to="Performance_Controlling.Retailer_Inventory" from="Retailer.Inventory"/>
+				<connect to="Retailer.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Retailer.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Retailer.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Retailer.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Retailer.Delivery_Rate" from="Wholesaler.Outgoing_Delivery_Rate"/>
+				<connect2 to="Retailer.Delivery_Rate" from="Wholesaler.Outgoing_Delivery_Rate"/>
+				<connect to="Retailer.Dynamic_Customer_Behaviour_ON" from="Policy_Settings.Dynamic_Customer_Behaviour_ON"/>
+				<connect2 to="Retailer.Dynamic_Customer_Behaviour_ON" from="Policy_Settings.Dynamic_Customer_Behaviour_ON"/>
+				<connect to="Retailer.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Retailer.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Retailer.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Retailer.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Retailer.Rise_in_Order" from="Policy_Settings.Rise_in_Order"/>
+				<connect2 to="Retailer.Rise_in_Order" from="Policy_Settings.Rise_in_Order"/>
+				<connect to="Retailer.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Retailer.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Retailer.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Retailer.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Retailer.Steady_State_ON" from="Policy_Settings.Steady_State_ON"/>
+				<connect2 to="Retailer.Steady_State_ON" from="Policy_Settings.Steady_State_ON"/>
+				<connect to="Retailer.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Retailer.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Retailer.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Retailer.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Retailer.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Retailer.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Retailer.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Retailer.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Retailer.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Retailer.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+			</module>
+			<module name="Wholesaler" isee:label="">
+				<connect to="Distributor.Converter_4" from="Wholesaler.Actual_Order"/>
+				<connect2 to="Distributor.Converter_4" from="Wholesaler.Actual_Order"/>
+				<connect to="Performance_Controlling.Wholesaler_Backorder" from="Wholesaler.Backorder"/>
+				<connect2 to="Performance_Controlling.Wholesaler_Backorder" from="Wholesaler.Backorder"/>
+				<connect to="Performance_Controlling.Wholesaler_Inventory" from="Wholesaler.Inventory"/>
+				<connect2 to="Performance_Controlling.Wholesaler_Inventory" from="Wholesaler.Inventory"/>
+				<connect to="Retailer.Delivery_Rate" from="Wholesaler.Outgoing_Delivery_Rate"/>
+				<connect2 to="Retailer.Delivery_Rate" from="Wholesaler.Outgoing_Delivery_Rate"/>
+				<connect to="Wholesaler.Converter_2" from="Distributor.Outgoing_Delivery_Rate"/>
+				<connect2 to="Wholesaler.Converter_2" from="Distributor.Outgoing_Delivery_Rate"/>
+				<connect to="Wholesaler.Converter_3" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Wholesaler.Converter_3" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Wholesaler.Converter_4" from="Retailer.Actual_Order"/>
+				<connect2 to="Wholesaler.Converter_4" from="Retailer.Actual_Order"/>
+				<connect to="Wholesaler.Converter_5" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Wholesaler.Converter_5" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Wholesaler.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Wholesaler.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Wholesaler.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Wholesaler.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Wholesaler.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Wholesaler.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Wholesaler.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Wholesaler.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Wholesaler.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Wholesaler.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Wholesaler.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Wholesaler.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Wholesaler.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Wholesaler.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Wholesaler.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Wholesaler.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Wholesaler.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Wholesaler.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+			</module>
+			<module name="Brewery" isee:label="">
+				<connect to="Performance_Controlling.Brewery_Backorder" from="Brewery.Backorder"/>
+				<connect2 to="Performance_Controlling.Brewery_Backorder" from="Brewery.Backorder"/>
+				<connect to="Performance_Controlling.Brewery_Inventory" from="Brewery.Inventory"/>
+				<connect2 to="Performance_Controlling.Brewery_Inventory" from="Brewery.Inventory"/>
+				<connect to="Distributor.Converter_3" from="Brewery.Outgoing_Delivery_Rate"/>
+				<connect2 to="Distributor.Converter_3" from="Brewery.Outgoing_Delivery_Rate"/>
+				<connect to="Brewery.Actual_Order" from="Distributor.Actual_Order"/>
+				<connect2 to="Brewery.Actual_Order" from="Distributor.Actual_Order"/>
+				<connect to="Brewery.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Brewery.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Brewery.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Brewery.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Brewery.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Brewery.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Brewery.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Brewery.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Brewery.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Brewery.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Brewery.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Brewery.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Brewery.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Brewery.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Brewery.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Brewery.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Brewery.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Brewery.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Brewery.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Brewery.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Brewery.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Brewery.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+			</module>
+			<module name="Distributor" isee:label="">
+				<connect to="Brewery.Actual_Order" from="Distributor.Actual_Order"/>
+				<connect2 to="Brewery.Actual_Order" from="Distributor.Actual_Order"/>
+				<connect to="Performance_Controlling.Distributor_Delivery_Shortfall" from="Distributor.Backorder"/>
+				<connect2 to="Performance_Controlling.Distributor_Delivery_Shortfall" from="Distributor.Backorder"/>
+				<connect to="Performance_Controlling.Distributor_Inventory" from="Distributor.Inventory"/>
+				<connect2 to="Performance_Controlling.Distributor_Inventory" from="Distributor.Inventory"/>
+				<connect to="Wholesaler.Converter_2" from="Distributor.Outgoing_Delivery_Rate"/>
+				<connect2 to="Wholesaler.Converter_2" from="Distributor.Outgoing_Delivery_Rate"/>
+				<connect to="Distributor.Converter_3" from="Brewery.Outgoing_Delivery_Rate"/>
+				<connect2 to="Distributor.Converter_3" from="Brewery.Outgoing_Delivery_Rate"/>
+				<connect to="Distributor.Converter_4" from="Wholesaler.Actual_Order"/>
+				<connect2 to="Distributor.Converter_4" from="Wholesaler.Actual_Order"/>
+				<connect to="Distributor.Converter_5" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Distributor.Converter_5" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Distributor.Converter_6" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Distributor.Converter_6" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Distributor.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Distributor.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Distributor.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Distributor.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Distributor.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Distributor.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Distributor.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Distributor.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Distributor.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Distributor.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Distributor.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Distributor.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Distributor.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Distributor.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Distributor.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Distributor.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Distributor.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Distributor.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+			</module>
+			<module name="Performance\nControlling" isee:label="">
+				<connect to="Performance_Controlling.Brewery_Backorder" from="Brewery.Backorder"/>
+				<connect2 to="Performance_Controlling.Brewery_Backorder" from="Brewery.Backorder"/>
+				<connect to="Performance_Controlling.Brewery_Inventory" from="Brewery.Inventory"/>
+				<connect2 to="Performance_Controlling.Brewery_Inventory" from="Brewery.Inventory"/>
+				<connect to="Performance_Controlling.Distributor_Delivery_Shortfall" from="Distributor.Backorder"/>
+				<connect2 to="Performance_Controlling.Distributor_Delivery_Shortfall" from="Distributor.Backorder"/>
+				<connect to="Performance_Controlling.Distributor_Inventory" from="Distributor.Inventory"/>
+				<connect2 to="Performance_Controlling.Distributor_Inventory" from="Distributor.Inventory"/>
+				<connect to="Performance_Controlling.Retail_Backorder" from="Retailer.Backorder"/>
+				<connect2 to="Performance_Controlling.Retail_Backorder" from="Retailer.Backorder"/>
+				<connect to="Performance_Controlling.Retailer_Inventory" from="Retailer.Inventory"/>
+				<connect2 to="Performance_Controlling.Retailer_Inventory" from="Retailer.Inventory"/>
+				<connect to="Performance_Controlling.Target_Inventory" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Performance_Controlling.Target_Inventory" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Performance_Controlling.Wholesaler_Backorder" from="Wholesaler.Backorder"/>
+				<connect2 to="Performance_Controlling.Wholesaler_Backorder" from="Wholesaler.Backorder"/>
+				<connect to="Performance_Controlling.Wholesaler_Inventory" from="Wholesaler.Inventory"/>
+				<connect2 to="Performance_Controlling.Wholesaler_Inventory" from="Wholesaler.Inventory"/>
+			</module>
+			<module name="Policy\nSettings" isee:label="">
+				<connect to="Brewery.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Brewery.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Distributor.Converter_5" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Distributor.Converter_5" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Retailer.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Retailer.Delivery_Delay" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Wholesaler.Converter_3" from="Policy_Settings.Delivery_Delay"/>
+				<connect2 to="Wholesaler.Converter_3" from="Policy_Settings.Delivery_Delay"/>
+				<connect to="Retailer.Dynamic_Customer_Behaviour_ON" from="Policy_Settings.Dynamic_Customer_Behaviour_ON"/>
+				<connect2 to="Retailer.Dynamic_Customer_Behaviour_ON" from="Policy_Settings.Dynamic_Customer_Behaviour_ON"/>
+				<connect to="Brewery.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Brewery.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Distributor.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Distributor.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Retailer.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Retailer.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Wholesaler.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect2 to="Wholesaler.Single_Player_Simple_Policy_ON" from="Policy_Settings.Game_Mode_ON"/>
+				<connect to="Brewery.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Brewery.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Distributor.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Distributor.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Retailer.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Retailer.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Wholesaler.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect2 to="Wholesaler.Multiplayer_Mode_ON" from="Policy_Settings.Multiplayer_Mode_ON"/>
+				<connect to="Brewery.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Brewery.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Distributor.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Distributor.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Retailer.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Retailer.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Wholesaler.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect2 to="Wholesaler.Order_Delay" from="Policy_Settings.Order_Delay"/>
+				<connect to="Retailer.Rise_in_Order" from="Policy_Settings.Rise_in_Order"/>
+				<connect2 to="Retailer.Rise_in_Order" from="Policy_Settings.Rise_in_Order"/>
+				<connect to="Brewery.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Brewery.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Distributor.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Distributor.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Retailer.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Retailer.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Wholesaler.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect2 to="Wholesaler.Sophisticated_Order_Decision_ON" from="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+				<connect to="Retailer.Steady_State_ON" from="Policy_Settings.Steady_State_ON"/>
+				<connect2 to="Retailer.Steady_State_ON" from="Policy_Settings.Steady_State_ON"/>
+				<connect to="Brewery.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Brewery.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Distributor.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Distributor.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Retailer.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Retailer.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Wholesaler.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect2 to="Wholesaler.Stock_Adjustment_Time" from="Policy_Settings.Stock_Adjustment_Time"/>
+				<connect to="Brewery.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Brewery.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Distributor.Converter_6" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Distributor.Converter_6" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Performance_Controlling.Target_Inventory" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Performance_Controlling.Target_Inventory" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Retailer.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Retailer.Converter_1" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Wholesaler.Converter_5" from="Policy_Settings.Target_Inventory"/>
+				<connect2 to="Wholesaler.Converter_5" from="Policy_Settings.Target_Inventory"/>
+				<connect to="Brewery.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Brewery.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Distributor.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Distributor.Target_Supply_Line_Factor" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Retailer.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Retailer.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Wholesaler.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect2 to="Wholesaler.Transit_Averaging_Time" from="Policy_Settings.Target_Supply_Line_Factor"/>
+				<connect to="Brewery.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Brewery.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Distributor.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Distributor.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Retailer.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Retailer.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Wholesaler.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect2 to="Wholesaler.Weight_on_Backorder" from="Policy_Settings.Weighting_Backorder"/>
+				<connect to="Brewery.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Brewery.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Distributor.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Distributor.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Retailer.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Retailer.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Wholesaler.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect2 to="Wholesaler.Weight_on_Inventory" from="Policy_Settings.Weighting_Inventory"/>
+				<connect to="Brewery.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Brewery.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect to="Distributor.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Distributor.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect to="Retailer.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Retailer.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect to="Wholesaler.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+				<connect2 to="Wholesaler.Weighting_on_Supply_Line" from="Policy_Settings.Weighting_Open_Orders"/>
+			</module>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="black" background="white"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="white" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="1" isee:thickness="2" angle="278.13">
+					<from>Wholesaler</from>
+					<to>Performance_Controlling</to>
+				</connector>
+				<connector uid="2" isee:thickness="2" angle="186.843">
+					<from>Distributor</from>
+					<to>Brewery</to>
+				</connector>
+				<connector uid="3" isee:thickness="2" angle="255.964">
+					<from>Retailer</from>
+					<to>Performance_Controlling</to>
+				</connector>
+				<connector uid="4" isee:thickness="2" angle="0">
+					<from>Policy_Settings</from>
+					<to>Retailer</to>
+				</connector>
+				<connector uid="5" isee:thickness="2" angle="317.726">
+					<from>Distributor</from>
+					<to>Wholesaler</to>
+				</connector>
+				<connector uid="6" isee:thickness="2" angle="286.699">
+					<from>Distributor</from>
+					<to>Performance_Controlling</to>
+				</connector>
+				<connector uid="7" isee:thickness="2" angle="255.964">
+					<from>Policy_Settings</from>
+					<to>Distributor</to>
+				</connector>
+				<connector uid="8" isee:thickness="2" angle="222.274">
+					<from>Policy_Settings</from>
+					<to>Brewery</to>
+				</connector>
+				<connector uid="9" isee:thickness="2" angle="263.991">
+					<from>Brewery</from>
+					<to>Performance_Controlling</to>
+				</connector>
+				<connector uid="10" isee:thickness="2" angle="272.862">
+					<from>Policy_Settings</from>
+					<to>Performance_Controlling</to>
+				</connector>
+				<connector uid="11" isee:thickness="2" angle="162.255">
+					<from>Wholesaler</from>
+					<to>Distributor</to>
+				</connector>
+				<connector uid="12" isee:thickness="2" angle="159.444">
+					<from>Retailer</from>
+					<to>Wholesaler</to>
+				</connector>
+				<connector uid="13" isee:thickness="2" angle="340.201">
+					<from>Wholesaler</from>
+					<to>Retailer</to>
+				</connector>
+				<connector uid="14" isee:thickness="2" angle="296.565">
+					<from>Policy_Settings</from>
+					<to>Wholesaler</to>
+				</connector>
+				<connector uid="15" isee:thickness="2" angle="296.565">
+					<from>Brewery</from>
+					<to>Distributor</to>
+				</connector>
+				<module label_side="center" x="590" y="183" name="Retailer"/>
+				<module label_side="center" x="417" y="188" name="Wholesaler"/>
+				<module label_side="center" x="205" y="189" name="Brewery"/>
+				<module label_side="center" x="319" y="188" name="Distributor"/>
+				<module label_side="center" x="374" y="384" name="Performance\nControlling"/>
+				<module label_side="center" x="353" y="55" name="Policy\nSettings"/>
+			</view>
+			<view background="white" page_width="788" page_height="528" home_view="true" type="interface">
+				<style/>
+				<stacked_container x="284" y="19" width="476" height="296" visible_index="10">
+					<table background="#E0E0E0" font_size="9pt" orientation="vertical" column_width="194" interval="1" report_balances="beginning" report_flows="summed" width="476" height="296" title="title">
+						<item type="time"/>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Incoming_Delivery"/>
+						</item>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Incoming_Order"/>
+						</item>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Outgoing_Delivery_Rate"/>
+						</item>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Backorder"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Inventory"/>
+						</item>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Performance_Controlling.retailer_cost"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Open_Orders"/>
+						</item>
+						<item>
+							<format precision="0.01" scale_by="1" delimit_000s="true"/>
+							<entity name="Retailer.Order_Decision"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Incoming_Delivery"/>
+						</item>
+						<item>
+							<entity name="Brewery.Incoming_Delivery_Rate"/>
+						</item>
+						<item>
+							<entity name="Brewery.Order_Decision"/>
+						</item>
+					</table>
+					<table interval="1" report_balances="ending" report_flows="summed" width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Incoming_Order"/>
+						</item>
+						<item>
+							<entity name="Distributor.Incoming_Order"/>
+						</item>
+						<item>
+							<entity name="Wholesaler.Incoming_Order"/>
+						</item>
+						<item>
+							<entity name="Retailer.Incoming_Order"/>
+						</item>
+					</table>
+					<table interval="1" report_balances="ending" report_flows="summed" width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Backorder"/>
+						</item>
+						<item>
+							<entity name="Distributor.Backorder"/>
+						</item>
+						<item>
+							<entity name="Wholesaler.Backorder"/>
+						</item>
+						<item>
+							<entity name="Retailer.Backorder"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Brewery.Incoming_Orders"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Distributor.Incoming_Orders"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Wholesaler.Incoming_Orders"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Retailer.Incoming_Orders"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Brewery.Deliveries"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Distributor.Deliveries"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Wholesaler.Deliveries"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Retailer.Deliveries"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Outgoing_Delivery_Rate"/>
+						</item>
+						<item>
+							<entity name="Distributor.Outgoing_Delivery_Rate"/>
+						</item>
+						<item>
+							<entity name="Wholesaler.Outgoing_Delivery_Rate"/>
+						</item>
+						<item>
+							<entity name="Retailer.Outgoing_Delivery_Rate"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Order_Decision"/>
+						</item>
+						<item>
+							<entity name="Distributor.Order_Decision"/>
+						</item>
+						<item>
+							<entity name="Wholesaler.Order_Decision"/>
+						</item>
+						<item>
+							<entity name="Retailer.Order_Decision"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Brewery.Inventory"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Distributor.Inventory"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Wholesaler.Inventory"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Retailer.Inventory"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Surplus"/>
+						</item>
+						<item>
+							<entity name="Distributor.Surplus"/>
+						</item>
+						<item>
+							<entity name="Wholesaler.Surplus"/>
+						</item>
+						<item>
+							<entity name="Retailer.Surplus"/>
+						</item>
+					</table>
+					<table width="476" height="296">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Order_Decision"/>
+						</item>
+						<item>
+							<entity name="Brewery.Incoming_Delivery_Rate"/>
+						</item>
+					</table>
+				</stacked_container>
+				<numeric_display x="85.5" y="102" width="177" height="16" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<format precision="1" scale_by="1"/>
+					<entity name="Retailer.Incoming_Order"/>
+				</numeric_display>
+				<numeric_display x="89.5" y="68" width="177" height="16" isee:immediately_update_on_user_input="true" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<format precision="1" scale_by="1" delimit_000s="true"/>
+					<entity name="Retailer.Inventory"/>
+				</numeric_display>
+				<numeric_display x="84.5" y="129" width="177" height="16" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<format precision="1" scale_by="1" delimit_000s="true"/>
+					<entity name="Retailer.Backorder"/>
+				</numeric_display>
+				<numeric_display x="85.5" y="152" width="177" height="16" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<format precision="0.1" scale_by="1" delimit_000s="true"/>
+					<entity name="Performance_Controlling.retailer_cost"/>
+				</numeric_display>
+				<numeric_display x="81.5" y="42" width="177" height="16" retain_ending_value="true" isee:navigate_to="false" show_name="true">
+					<format precision="1" scale_by="1"/>
+					<entity name="Retailer.Incoming_Delivery"/>
+				</numeric_display>
+				<switch color="black" label_side="bottom" x="80" y="368" width="38" height="20" show_name="true">
+					<entity name="Policy_Settings.Steady_State_ON"/>
+					<reset_to after="never">0</reset_to>
+				</switch>
+				<switch color="black" label_side="bottom" x="89" y="263" width="38" height="20" show_name="true">
+					<entity name="Policy_Settings.Sophisticated_Order_Decision_ON"/>
+					<reset_to after="never">0</reset_to>
+				</switch>
+				<switch color="black" label_side="bottom" x="97" y="196" width="38" height="20" show_name="true">
+					<entity name="Policy_Settings.Dynamic_Customer_Behaviour_ON"/>
+					<reset_to after="never">0</reset_to>
+				</switch>
+				<slider x="39.5" y="443.5" width="197" height="43" increment="0.01" min="0" max="1" isee:navigate_to="false" show_name="true">
+					<entity name="Policy_Settings.Weighting_Backorder"/>
+					<reset_to after="never">0</reset_to>
+				</slider>
+			</view>
+			<view background="white" page_width="788" page_height="528" type="interface">
+				<style/>
+				<stacked_container x="124" y="74" width="575" height="364">
+					<table interval="1" report_balances="beginning" report_flows="summed" width="575" height="364">
+						<item type="time"/>
+						<item>
+							<entity name="Retailer.Order_Decision"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Retailer.Inventory"/>
+						</item>
+						<item>
+							<entity name="Retailer.Incoming_Order_Rate"/>
+						</item>
+						<item>
+							<entity name="Retailer.Incoming_Delivery"/>
+						</item>
+						<item>
+							<entity name="Retailer.Outgoing_Delivery"/>
+						</item>
+					</table>
+					<table interval="1" report_balances="beginning" report_flows="summed" width="575" height="364">
+						<item type="time"/>
+						<item>
+							<entity name="Brewery.Incoming_Order"/>
+						</item>
+						<item>
+							<entity name="Brewery.Order_Decision"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Brewery.Inventory"/>
+						</item>
+						<item>
+							<entity name="Brewery.Outgoing_Delivery"/>
+						</item>
+						<item>
+							<entity name="Brewery.Incoming_Delivery"/>
+						</item>
+					</table>
+				</stacked_container>
+			</view>
+			<view background="white" page_width="788" page_height="528" type="interface">
+				<style/>
+				<stacked_container x="50" y="34" width="707" height="447">
+					<table interval="1" report_balances="beginning" report_flows="summed" width="707" height="447">
+						<item type="time"/>
+						<item isee:immediately_update_on_user_input="true">
+							<entity name="Retailer.Inventory"/>
+						</item>
+						<item>
+							<entity name="Retailer.Backorder"/>
+						</item>
+						<item>
+							<entity name="Performance_Controlling.retailer_cost"/>
+						</item>
+						<item isee:immediately_update_on_user_input="true">
+							<format precision="full"/>
+							<entity name="Performance_Controlling.Retailer_Cost_Acc"/>
+						</item>
+					</table>
+				</stacked_container>
+			</view>
+			<isee:templates>
+				<view background="white" page_width="788" page_height="528" type="template">
+					<style/>
+				</view>
+			</isee:templates>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="Brewery">
+		<variables>
+			<stock name="Inventory" access="output">
+				<eqn>400</eqn>
+				<inflow>Incoming_Delivery_Rate</inflow>
+				<outflow>Outgoing_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Incoming Delivery Rate">
+				<eqn>Incoming_Delivery</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Outgoing Delivery Rate" access="output">
+				<eqn>MIN(Inventory+Incoming_Delivery_Rate,Outgoing_Delivery)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Production">
+				<eqn>100</eqn>
+			</aux>
+			<stock name="Deliveries">
+				<eqn>0</eqn>
+				<inflow>Outgoing_Delivery_Rate</inflow>
+			</stock>
+			<stock name="Incoming Orders">
+				<eqn>0</eqn>
+				<inflow>Incoming_Order_Rate</inflow>
+			</stock>
+			<flow name="Incoming Order Rate">
+				<eqn>Incoming_Order</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Backorder" access="output">
+				<eqn>MAX(Incoming_Orders-Deliveries,0)</eqn>
+			</aux>
+			<aux name="Incoming Delivery">
+				<eqn>DELAY(Actual_Production,Delivery_Delay,100)</eqn>
+			</aux>
+			<aux name="Surplus">
+				<eqn>Inventory-Backorder</eqn>
+			</aux>
+			<aux name="Incoming Order">
+				<eqn>Actual_Order</eqn>
+			</aux>
+			<aux name="Delivery Policy" flow_concept="true">
+				<eqn>MIN(Backorder+Incoming_Order,Inventory+Incoming_Delivery_Rate)</eqn>
+			</aux>
+			<aux name="Outgoing Delivery">
+				<eqn>Delivery_Policy</eqn>
+			</aux>
+			<aux name="Actual Production">
+				<eqn>Single_Player_Simple_Policy_ON*(Multiplayer_Mode_ON*Production+(1-Multiplayer_Mode_ON)*Order_from_Order_Line )+(1-Single_Player_Simple_Policy_ON)*Order_from_Order_Line</eqn>
+			</aux>
+			<aux name="Actual Order" access="input"/>
+			<aux name="Single Player Simple Policy ON" access="input"/>
+			<aux name="Delivery Delay" access="input"/>
+			<aux name="Sophisticated Order Decision">
+				<eqn>INT(MAX(Expected_Order+(Converter_1-Inventory+Weighting_on_Supply_Line*(Target_Supply_Line-Open_Orders))/Stock_Adjustment_Time,0))</eqn>
+			</aux>
+			<stock name="Open Orders">
+				<eqn>200</eqn>
+				<inflow>Order_Rate</inflow>
+				<outflow>Incoming_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Order Rate">
+				<eqn>Making_Orders</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Order Line">
+				<eqn>100</eqn>
+				<inflow>Making_Orders</inflow>
+				<outflow>Sending_Orders</outflow>
+			</stock>
+			<flow name="Making Orders">
+				<eqn>Order_Decision</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Sending Orders">
+				<eqn>DELAY(Making_Orders,Order_Delay,100)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Order Delay" access="input"/>
+			<aux name="Order from Order Line" flow_concept="true">
+				<eqn>Sending_Orders</eqn>
+			</aux>
+			<aux name="Target Supply Line">
+				<eqn>Target_Supply_Line_Factor*Expected_Order</eqn>
+			</aux>
+			<aux name="Expected Order">
+				<eqn>Incoming_Order</eqn>
+			</aux>
+			<aux name="Target Total Stock">
+				<eqn>Target_Supply_Line+Converter_1</eqn>
+			</aux>
+			<aux name="Weighting on Supply Line" access="input"/>
+			<aux name="Total Stock">
+				<eqn>Open_Orders+Inventory</eqn>
+			</aux>
+			<aux name="Stock Adjustment Time" access="input"/>
+			<aux name="Order Decision">
+				<eqn>Sophisticated_Order_Decision*Sophisticated_Order_Decision_ON+(1-Sophisticated_Order_Decision_ON)*Naive_Order_Decision</eqn>
+			</aux>
+			<aux name="Naive Order Decision">
+				<eqn>MAX(Weight_on_Inventory*(Converter_1-Inventory)+Weight_on_Backorder*Backorder+Expected_Order,0)</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision ON" access="input"/>
+			<aux name="Converter 1" access="input"/>
+			<aux name="Weight on Backorder" access="input"/>
+			<aux name="Weight on Inventory" access="input"/>
+			<aux name="Target Supply Line Factor" access="input"/>
+			<aux name="Multiplayer Mode ON" access="input"/>
+		</variables>
+		<views>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="28" angle="337.751">
+					<from>Incoming_Orders</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="29" angle="36.4692">
+					<from>
+						<alias uid="30"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="31" angle="83.2902">
+					<from>
+						<alias uid="32"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="33" angle="159.444">
+					<from>Incoming_Order</from>
+					<to>Incoming_Order_Rate</to>
+				</connector>
+				<connector uid="34" angle="135">
+					<from>Multiplayer_Mode_ON</from>
+					<to>Actual_Production</to>
+				</connector>
+				<connector uid="35" angle="200.556">
+					<from>Incoming_Order</from>
+					<to>Expected_Order</to>
+				</connector>
+				<connector uid="36" angle="319.399">
+					<from>Target_Supply_Line</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="37" angle="348.69">
+					<from>Naive_Order_Decision</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="38" angle="83.6598">
+					<from>Weight_on_Inventory</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="39" angle="0">
+					<from>Deliveries</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="40" angle="236.136">
+					<from>Order_Delay</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="41" angle="353.66">
+					<from>
+						<alias uid="42"/>
+					</from>
+					<to>Outgoing_Delivery</to>
+				</connector>
+				<connector uid="43" angle="106.699">
+					<from>Sophisticated_Order_Decision</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="44" angle="28.6105">
+					<from>
+						<alias uid="45"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="46" angle="180">
+					<from>Stock_Adjustment_Time</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="47" angle="116.565">
+					<from>
+						<alias uid="48"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="49" angle="115.201">
+					<from>Inventory</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="50" angle="198.435">
+					<from>Converter_1</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="51" angle="12.5288">
+					<from>
+						<alias uid="52"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="53" angle="45">
+					<from>Sophisticated_Order_Decision_ON</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="54" angle="54.4623">
+					<from>
+						<alias uid="55"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="56" angle="348.69">
+					<from>
+						<alias uid="57"/>
+					</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="58" angle="123.69">
+					<from>
+						<alias uid="59"/>
+					</from>
+					<to>Actual_Production</to>
+				</connector>
+				<connector uid="60" angle="71.5651">
+					<from>Weight_on_Backorder</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="61" angle="0">
+					<from>
+						<alias uid="62"/>
+					</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="63" angle="116.565">
+					<from>Making_Orders</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="64" angle="203.962">
+					<from>Actual_Order</from>
+					<to>Incoming_Order</to>
+				</connector>
+				<connector uid="65" angle="35.5377">
+					<from>
+						<alias uid="66"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="67" angle="357.357">
+					<from>Incoming_Delivery_Rate</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="68" angle="47.5607">
+					<from>
+						<alias uid="69"/>
+					</from>
+					<to>Making_Orders</to>
+				</connector>
+				<connector uid="70" angle="119.745">
+					<from>Single_Player_Simple_Policy_ON</from>
+					<to>Actual_Production</to>
+				</connector>
+				<connector uid="71" angle="83.6598">
+					<from>
+						<alias uid="72"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="73" angle="6.34019">
+					<from>Delivery_Delay</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="74" angle="96.3402">
+					<from>
+						<alias uid="75"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="76" angle="50.9061">
+					<from>Inventory</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="77" angle="73.6105">
+					<from>
+						<alias uid="78"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="79" angle="287.091">
+					<from>Sending_Orders</from>
+					<to>Order_from_Order_Line</to>
+				</connector>
+				<connector uid="80" angle="90">
+					<from>Outgoing_Delivery</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="81" angle="48.8141">
+					<from>Open_Orders</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="82" angle="78.6901">
+					<from>
+						<alias uid="83"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="84" angle="270">
+					<from>Target_Supply_Line_Factor</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="85" angle="24.7887">
+					<from>Incoming_Delivery</from>
+					<to>Incoming_Delivery_Rate</to>
+				</connector>
+				<connector uid="86" angle="144.462">
+					<from>Weighting_on_Supply_Line</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="87" angle="95.7106">
+					<from>Production</from>
+					<to>Actual_Production</to>
+				</connector>
+				<connector uid="88" angle="333.435">
+					<from>Inventory</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="89" angle="32.0054">
+					<from>Backorder</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="90" angle="90">
+					<from>
+						<alias uid="91"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="92" angle="102.529">
+					<from>
+						<alias uid="93"/>
+					</from>
+					<to>Order_Rate</to>
+				</connector>
+				<connector uid="94" angle="60.2551">
+					<from>
+						<alias uid="95"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<stock x="429.5" y="222.5" name="Inventory"/>
+				<flow x="367.25" y="213" name="Incoming Delivery Rate">
+					<pts>
+						<pt x="339.5" y="258"/>
+						<pt x="339.5" y="213"/>
+						<pt x="407" y="213"/>
+					</pts>
+				</flow>
+				<flow x="529.75" y="220.5" name="Outgoing Delivery Rate">
+					<pts>
+						<pt x="452" y="220.5"/>
+						<pt x="619.5" y="220.5"/>
+					</pts>
+				</flow>
+				<aux x="870" y="869" name="Production"/>
+				<stock x="642" y="218.5" name="Deliveries"/>
+				<stock x="600" y="386" name="Incoming Orders"/>
+				<flow x="499.25" y="389" name="Incoming Order Rate">
+					<pts>
+						<pt x="421" y="389"/>
+						<pt x="577.5" y="389"/>
+					</pts>
+				</flow>
+				<aux x="701" y="294" name="Backorder"/>
+				<aux x="233" y="275" name="Incoming Delivery"/>
+				<aux x="697" y="94" name="Surplus"/>
+				<aux x="509" y="475" name="Incoming Order"/>
+				<aux x="317" y="704" name="Delivery Policy"/>
+				<aux x="574" y="246" name="Outgoing Delivery"/>
+				<aux x="1026" y="688" name="Actual Production"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="636" y="514" name="Actual Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1155" y="811" name="Single Player Simple Policy ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="177" y="341" name="Delivery Delay"/>
+				<aux x="1311" y="288" name="Sophisticated Order Decision"/>
+				<stock label_side="bottom" x="339.5" y="275.5" name="Open Orders"/>
+				<flow x="194.25" y="150.25" name="Order Rate">
+					<pts>
+						<pt x="37" y="150.25"/>
+						<pt x="339.5" y="150.25"/>
+						<pt x="339.5" y="258"/>
+					</pts>
+				</flow>
+				<stock x="1363" y="958" name="Order Line"/>
+				<flow x="1310.75" y="954" name="Making Orders">
+					<pts>
+						<pt x="1281" y="954"/>
+						<pt x="1340.5" y="954"/>
+					</pts>
+				</flow>
+				<flow x="1415.25" y="956" name="Sending Orders">
+					<pts>
+						<pt x="1385.5" y="956"/>
+						<pt x="1469" y="956"/>
+					</pts>
+				</flow>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1479" y="861" name="Order Delay"/>
+				<aux x="1442" y="1043" name="Order from Order Line"/>
+				<aux x="1238" y="120" name="Target Supply Line"/>
+				<aux x="378" y="522" name="Expected Order"/>
+				<aux x="1309" y="192" name="Target Total Stock"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1437" y="356" name="Weighting on Supply Line"/>
+				<aux x="308" y="82" name="Total Stock"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1432" y="250" name="Stock Adjustment Time"/>
+				<aux x="1128" y="217" name="Order Decision"/>
+				<aux x="924" y="249" name="Naive Order Decision"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="906" y="187" name="Sophisticated Order Decision ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1450" y="118" name="Converter 1"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="845" y="483" name="Weight on Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="923" y="541" name="Weight on Inventory"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1216" y="50" name="Target Supply Line Factor"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1263" y="679" name="Multiplayer Mode ON"/>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="72" x="1309" y="435" width="18" height="18">
+					<of>Converter_1</of>
+				</alias>
+				<alias font_style="italic" uid="91" x="488" y="792" width="18" height="18">
+					<of>Incoming_Delivery_Rate</of>
+				</alias>
+				<alias font_style="italic" uid="52" x="1062" y="304" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="62" x="1128" y="104" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="66" x="1063" y="469" width="18" height="18">
+					<of>Target_Supply_Line</of>
+				</alias>
+				<alias font_style="italic" uid="57" x="67" y="294" width="18" height="18">
+					<of>Actual_Production</of>
+				</alias>
+				<alias font_style="italic" uid="78" x="804.5" y="321.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="75" x="931" y="379" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="95" x="319" y="808" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="45" x="1063.5" y="384.5" width="45" height="35">
+					<of>Open_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="30" x="1184.5" y="405.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="32" x="225.5" y="801.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="93" x="41" y="207" width="18" height="18">
+					<of>Making_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="59" x="993" y="893" width="18" height="18">
+					<of>Order_from_Order_Line</of>
+				</alias>
+				<alias font_style="italic" uid="55" x="389" y="807" width="18" height="18">
+					<of>Incoming_Order</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="48" x="838" y="396" width="18" height="18">
+					<of>Converter_1</of>
+				</alias>
+				<alias font_style="italic" uid="42" x="526" y="285" width="18" height="18">
+					<of>Delivery_Policy</of>
+				</alias>
+				<alias font_style="italic" uid="83" x="947" y="459" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="69" x="1235" y="1018" width="18" height="18">
+					<of>Order_Decision</of>
+				</alias>
+			</view>
+			<view page_height="528" page_width="788" home_view="true" type="interface" isee:show_pages="false">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="Distributor">
+		<variables>
+			<stock name="Inventory" access="output">
+				<eqn>400</eqn>
+				<inflow>Incoming_Delivery_Rate</inflow>
+				<outflow>Outgoing_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Incoming Delivery Rate">
+				<eqn>Incoming_Delivery</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Outgoing Delivery Rate" access="output">
+				<eqn>MIN(Inventory+Incoming_Delivery_Rate,Outgoing_Delivery)</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Deliveries">
+				<eqn>0</eqn>
+				<inflow>Outgoing_Delivery_Rate</inflow>
+			</stock>
+			<stock name="Incoming Orders">
+				<eqn>0</eqn>
+				<inflow>Incoming_Order_Rate</inflow>
+			</stock>
+			<flow name="Incoming Order Rate">
+				<eqn>Incoming_Order</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Backorder" access="output">
+				<eqn>MAX(Incoming_Orders-Deliveries,0)</eqn>
+			</aux>
+			<aux name="Converter 3" access="input"/>
+			<aux name="Order">
+				<eqn>100</eqn>
+			</aux>
+			<aux name="Incoming Delivery">
+				<eqn>DELAY(Converter_3,Converter_5,100)</eqn>
+			</aux>
+			<aux name="Surplus">
+				<eqn>Inventory-Backorder</eqn>
+			</aux>
+			<aux name="Incoming Order">
+				<eqn>Converter_4</eqn>
+			</aux>
+			<aux name="Delivery Policy" flow_concept="true">
+				<eqn>MIN(Backorder+Incoming_Order,Inventory+Incoming_Delivery_Rate)</eqn>
+			</aux>
+			<aux name="Outgoing Delivery">
+				<eqn>Delivery_Policy</eqn>
+			</aux>
+			<aux name="Actual Order" access="output">
+				<eqn>Single_Player_Simple_Policy_ON*(Multiplayer_Mode_ON*Order+(1-Multiplayer_Mode_ON)*Order_from_Order_Line )+(1-Single_Player_Simple_Policy_ON)*Order_from_Order_Line</eqn>
+			</aux>
+			<aux name="Converter 4" access="input"/>
+			<aux name="Single Player Simple Policy ON" access="input"/>
+			<aux name="Converter 5" access="input"/>
+			<stock name="Order Line">
+				<eqn>100</eqn>
+				<inflow>Making_Orders</inflow>
+				<outflow>Sending_Orders</outflow>
+			</stock>
+			<flow name="Making Orders">
+				<eqn>Order_Decision</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Sending Orders">
+				<eqn>DELAY(Making_Orders,Order_Delay,100)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Order Delay" access="input"/>
+			<aux name="Order from Order Line" flow_concept="true">
+				<eqn>Sending_Orders</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision">
+				<eqn>INT(MAX(Expected_Order+(Converter_6-Inventory+Weighting_on_Supply_Line*(Target_Supply_Line-Open_Orders))/Stock_Adjustment_Time,0))</eqn>
+			</aux>
+			<stock name="Open Orders">
+				<eqn>200</eqn>
+				<inflow>Order_Rate</inflow>
+				<outflow>Incoming_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Order Rate">
+				<eqn>Making_Orders</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Total Stock">
+				<eqn>Inventory+Open_Orders</eqn>
+			</aux>
+			<aux name="Weighting on Supply Line" access="input"/>
+			<aux name="Target Supply Line">
+				<eqn>Target_Supply_Line_Factor*Expected_Order</eqn>
+			</aux>
+			<aux name="Expected Order">
+				<eqn>Incoming_Order</eqn>
+			</aux>
+			<aux name="Stock Adjustment Time" access="input"/>
+			<aux name="Naive Order Decision">
+				<eqn>MAX(Weight_on_Inventory*(Converter_6-Inventory)+Weight_on_Backorder*Backorder+Expected_Order,0)</eqn>
+			</aux>
+			<aux name="Order Decision">
+				<eqn>Sophisticated_Order_Decision*Sophisticated_Order_Decision_ON+(1-Sophisticated_Order_Decision_ON)*Naive_Order_Decision</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision ON" access="input"/>
+			<aux name="Converter 6" access="input"/>
+			<aux name="Weight on Backorder" access="input"/>
+			<aux name="Weight on Inventory" access="input"/>
+			<aux name="Target Supply Line Factor" access="input"/>
+			<aux name="Multiplayer Mode ON" access="input"/>
+		</variables>
+		<views>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="3" isee:page_rows="2" isee:scroll_y="45.625" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="96" angle="331.39">
+					<from>Inventory</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="97" angle="64.0692">
+					<from>Converter_6</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="98" angle="153.435">
+					<from>Incoming_Order</from>
+					<to>Incoming_Order_Rate</to>
+				</connector>
+				<connector uid="99" angle="32.0054">
+					<from>
+						<alias uid="100"/>
+					</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="101" angle="97.125">
+					<from>Target_Supply_Line_Factor</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="103" angle="122.905">
+					<from>
+						<alias uid="104"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="105" angle="5.44033">
+					<from>
+						<alias uid="106"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="107" angle="32.0054">
+					<from>Backorder</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="109" angle="112.38">
+					<from>Inventory</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="110" angle="41.1859">
+					<from>
+						<alias uid="111"/>
+					</from>
+					<to>Outgoing_Delivery</to>
+				</connector>
+				<connector uid="112" angle="357.397">
+					<from>
+						<alias uid="113"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="114" angle="40.6013">
+					<from>Converter_5</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="115" angle="17.6501">
+					<from>Incoming_Orders</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="116" angle="90">
+					<from>
+						<alias uid="117"/>
+					</from>
+					<to>Making_Orders</to>
+				</connector>
+				<connector uid="118" angle="61.0736">
+					<from>Stock_Adjustment_Time</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="119" angle="105.584">
+					<from>Weight_on_Backorder</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="120" angle="354.148">
+					<from>
+						<alias uid="121"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="122" angle="137.842">
+					<from>
+						<alias uid="123"/>
+					</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="126" angle="90">
+					<from>
+						<alias uid="127"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="128" angle="200.556">
+					<from>Incoming_Order</from>
+					<to>Expected_Order</to>
+				</connector>
+				<connector uid="129" angle="90">
+					<from>Order</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="130" angle="40.6013">
+					<from>Converter_3</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="131" angle="92.7666">
+					<from>Sophisticated_Order_Decision_ON</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="132" angle="310.601">
+					<from>Sending_Orders</from>
+					<to>Order_from_Order_Line</to>
+				</connector>
+				<connector uid="133" angle="58.5704">
+					<from>Inventory</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="134" angle="84.2894">
+					<from>Weight_on_Inventory</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="135" angle="333.435">
+					<from>Deliveries</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="136" angle="135">
+					<from>Multiplayer_Mode_ON</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="137" angle="270">
+					<from>Making_Orders</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="138" angle="310.601">
+					<from>Incoming_Delivery_Rate</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="139" angle="49.3987">
+					<from>
+						<alias uid="140"/>
+					</from>
+					<to>Order_Rate</to>
+				</connector>
+				<connector uid="141" angle="63.4349">
+					<from>Outgoing_Delivery</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="142" angle="6.34019">
+					<from>
+						<alias uid="143"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="144" angle="231.509">
+					<from>
+						<alias uid="145"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="146" angle="180">
+					<from>Converter_4</from>
+					<to>Incoming_Order</to>
+				</connector>
+				<connector uid="147" angle="324.462">
+					<from>Order_Delay</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="149" angle="0">
+					<from>Incoming_Delivery</from>
+					<to>Incoming_Delivery_Rate</to>
+				</connector>
+				<connector uid="150" angle="63.4349">
+					<from>
+						<alias uid="151"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="152" angle="119.055">
+					<from>
+						<alias uid="153"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="154" angle="78.6901">
+					<from>
+						<alias uid="155"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="157" angle="66.8014">
+					<from>Single_Player_Simple_Policy_ON</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="158" angle="149.574">
+					<from>
+						<alias uid="159"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="160" angle="32.4712">
+					<from>Open_Orders</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="161" angle="240.068">
+					<from>
+						<alias uid="162"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<stock x="422" y="149" name="Inventory"/>
+				<flow label_side="right" x="313.5" y="146" name="Incoming Delivery Rate">
+					<pts>
+						<pt x="239.5" y="146"/>
+						<pt x="399.5" y="146"/>
+					</pts>
+				</flow>
+				<flow x="513" y="146" name="Outgoing Delivery Rate">
+					<pts>
+						<pt x="444.5" y="146"/>
+						<pt x="593.5" y="146"/>
+					</pts>
+				</flow>
+				<stock x="616" y="155" name="Deliveries"/>
+				<stock x="604" y="408" name="Incoming Orders"/>
+				<flow x="509.75" y="406" name="Incoming Order Rate">
+					<pts>
+						<pt x="438" y="406"/>
+						<pt x="581.5" y="406"/>
+					</pts>
+				</flow>
+				<aux x="681" y="271" name="Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="242" y="348" name="Converter 3"/>
+				<aux x="806" y="833" name="Order"/>
+				<aux x="209" y="261" name="Incoming Delivery"/>
+				<aux x="720" y="55" name="Surplus"/>
+				<aux x="560" y="478" name="Incoming Order"/>
+				<aux x="299" y="665" name="Delivery Policy"/>
+				<aux x="525" y="243" name="Outgoing Delivery"/>
+				<aux x="892" y="690" name="Actual Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="694" y="508" name="Converter 4"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1048" y="822" name="Single Player Simple Policy ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="135" y="319" name="Converter 5"/>
+				<stock x="1360" y="762" name="Order Line"/>
+				<flow x="1307.75" y="757" name="Making Orders">
+					<pts>
+						<pt x="1278" y="757"/>
+						<pt x="1337.5" y="757"/>
+					</pts>
+				</flow>
+				<flow x="1412.25" y="760" name="Sending Orders">
+					<pts>
+						<pt x="1382.5" y="760"/>
+						<pt x="1466" y="760"/>
+					</pts>
+				</flow>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1375" y="665" name="Order Delay"/>
+				<aux x="1432" y="858" name="Order from Order Line"/>
+				<aux x="2117" y="248" name="Sophisticated Order Decision"/>
+				<stock x="217" y="142" name="Open Orders"/>
+				<flow x="137.75" y="144" name="Order Rate">
+					<pts>
+						<pt x="81" y="144"/>
+						<pt x="194.5" y="144"/>
+					</pts>
+				</flow>
+				<aux x="361" y="25" name="Total Stock"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="2236" y="366" name="Weighting on Supply Line"/>
+				<aux x="1400" y="55" name="Target Supply Line"/>
+				<aux x="447" y="502" name="Expected Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1999.88" y="352.875" width="20" height="20" name="Stock Adjustment Time"/>
+				<aux x="1967" y="885" name="Naive Order Decision"/>
+				<aux x="1187" y="322.5" name="Order Decision"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1157.13" y="451.857" name="Sophisticated Order Decision ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1783.38" y="978" name="Converter 6"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="2052.63" y="968.625" width="24.875" height="24.875" name="Weight on Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1919" y="975" name="Weight on Inventory"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1339" y="128" name="Target Supply Line Factor"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1081" y="672" name="Multiplayer Mode ON"/>
+				<connector uid="102" angle="107.241">
+					<from>Weighting_on_Supply_Line</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="163" angle="86.1494">
+					<from>
+						<alias uid="164"/>
+					</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="165" angle="84.4661">
+					<from>
+						<alias uid="166"/>
+					</from>
+					<to>Order_Decision</to>
+				</connector>
+				<alias font_style="italic" uid="121" x="1914" y="212" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="127" x="2108" y="343.125" width="18" height="18">
+					<of>Converter_6</of>
+				</alias>
+				<alias font_style="italic" uid="153" x="460" y="749" width="18" height="18">
+					<of>Incoming_Delivery_Rate</of>
+				</alias>
+				<alias font_style="italic" uid="106" x="1881.5" y="731.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="100" x="890" y="829" width="18" height="18">
+					<of>Order_from_Order_Line</of>
+				</alias>
+				<alias font_style="italic" uid="143" x="1816.38" y="809.375" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="145" x="2136.75" y="760.625" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="113" x="1986.25" y="154.125" width="45" height="35">
+					<of>Open_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="151" x="291" y="752" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="159" x="2291.63" y="209.625" width="20" height="20">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="140" x="102" y="206" width="18" height="18">
+					<of>Making_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="111" x="460" y="320" width="18" height="18">
+					<of>Delivery_Policy</of>
+				</alias>
+				<alias font_style="italic" uid="117" x="1219" y="853" width="18" height="18">
+					<of>Order_Decision</of>
+				</alias>
+				<alias font_style="italic" uid="162" x="2165" y="140" width="18" height="18">
+					<of>Target_Supply_Line</of>
+				</alias>
+				<alias font_style="italic" uid="123" x="1465" y="113" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="104" x="205.5" y="754.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="155" x="364" y="755" width="18" height="18">
+					<of>Incoming_Order</of>
+				</alias>
+				<alias font_style="italic" uid="164" x="1039" y="442.857" width="18" height="18">
+					<of>Naive_Order_Decision</of>
+				</alias>
+				<alias font_style="italic" uid="166" x="1272.5" y="430.696" width="18" height="18">
+					<of>Sophisticated_Order_Decision</of>
+				</alias>
+			</view>
+			<view page_height="528" page_width="788" home_view="true" type="interface" isee:show_pages="false">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="Performance_Controlling">
+		<variables>
+			<aux name="cost per item in inventory">
+				<eqn>0.5</eqn>
+			</aux>
+			<aux name="cost per item in backorder">
+				<eqn>1</eqn>
+			</aux>
+			<stock name="Retailer Inventory" access="input"/>
+			<stock name="Wholesaler Inventory" access="input"/>
+			<stock name="Distributor Inventory" access="input"/>
+			<stock name="Brewery Inventory" access="input"/>
+			<aux name="Supply Chain Cost">
+				<eqn>brewery_cost+retailer_cost+distributor_cost+wholesaler_cost</eqn>
+			</aux>
+			<aux name="brewery backorder cost">
+				<eqn>cost_per_item_in_backorder*Brewery_Backorder</eqn>
+			</aux>
+			<aux name="brewery cost">
+				<eqn>brewery_inventory_cost+brewery_backorder_cost</eqn>
+			</aux>
+			<aux name="brewery inventory cost">
+				<eqn>cost_per_item_in_inventory*MAX(Brewery_Inventory,Target_Inventory)</eqn>
+			</aux>
+			<aux name="retailer backorder cost">
+				<eqn>cost_per_item_in_backorder*Retail_Backorder</eqn>
+			</aux>
+			<aux name="retailer inventory cost">
+				<eqn>cost_per_item_in_inventory*MAX(Retailer_Inventory,Target_Inventory)</eqn>
+			</aux>
+			<aux name="retailer cost">
+				<eqn>retailer_backorder_cost+retailer_inventory_cost</eqn>
+			</aux>
+			<aux name="wholesaler backorder cost">
+				<eqn>cost_per_item_in_backorder*Wholesaler_Backorder</eqn>
+			</aux>
+			<aux name="wholesaler inventory cost">
+				<eqn>cost_per_item_in_inventory*MAX(Wholesaler_Inventory,Target_Inventory)</eqn>
+			</aux>
+			<aux name="wholesaler cost">
+				<eqn>wholesaler_backorder_cost+wholesaler_inventory_cost</eqn>
+			</aux>
+			<aux name="distributor backorder cost">
+				<eqn>cost_per_item_in_backorder*Distributor_Delivery_Shortfall</eqn>
+			</aux>
+			<aux name="distributor inventory cost">
+				<eqn>cost_per_item_in_inventory*MAX(Distributor_Inventory,Target_Inventory)</eqn>
+			</aux>
+			<aux name="Retail Backorder" access="input"/>
+			<aux name="Brewery Backorder" access="input"/>
+			<aux name="Wholesaler Backorder" access="input"/>
+			<aux name="Distributor Delivery Shortfall" access="input"/>
+			<aux name="distributor cost">
+				<eqn>distributor_backorder_cost+distributor_inventory_cost</eqn>
+			</aux>
+			<stock name="Retailer Cost Acc">
+				<eqn>0</eqn>
+				<inflow>Monthly_Cost_IN</inflow>
+				<non_negative/>
+			</stock>
+			<flow name="Monthly Cost IN">
+				<eqn>retailer_cost</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Supply Chain Cost Acc">
+				<eqn>0</eqn>
+				<inflow>Acc_Supply_Chain_Cost</inflow>
+			</stock>
+			<flow name="Acc Supply Chain Cost">
+				<eqn>Supply_Chain_Cost</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Target Inventory" access="input"/>
+		</variables>
+		<views>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="3" isee:page_rows="3" isee:scroll_x="918.571" zoom="140" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="163" angle="257.471">
+					<from>retailer_backorder_cost</from>
+					<to>retailer_cost</to>
+				</connector>
+				<connector uid="164" angle="276.34">
+					<from>
+						<alias uid="165"/>
+					</from>
+					<to>Supply_Chain_Cost</to>
+				</connector>
+				<connector uid="166" angle="302.005">
+					<from>brewery_backorder_cost</from>
+					<to>brewery_cost</to>
+				</connector>
+				<connector uid="167" angle="296.565">
+					<from>wholesaler_backorder_cost</from>
+					<to>wholesaler_cost</to>
+				</connector>
+				<connector uid="168" angle="257.471">
+					<from>retailer_cost</from>
+					<to>Monthly_Cost_IN</to>
+				</connector>
+				<connector uid="169" angle="243.435">
+					<from>
+						<alias uid="170"/>
+					</from>
+					<to>Supply_Chain_Cost</to>
+				</connector>
+				<connector uid="171" angle="270">
+					<from>distributor_backorder_cost</from>
+					<to>distributor_cost</to>
+				</connector>
+				<connector uid="172" angle="298.179">
+					<from>cost_per_item_in_backorder</from>
+					<to>brewery_backorder_cost</to>
+				</connector>
+				<connector uid="173" angle="213.69">
+					<from>Target_Inventory</from>
+					<to>brewery_inventory_cost</to>
+				</connector>
+				<connector uid="174" angle="281.31">
+					<from>Brewery_Backorder</from>
+					<to>brewery_backorder_cost</to>
+				</connector>
+				<connector uid="175" angle="256.759">
+					<from>Distributor_Inventory</from>
+					<to>distributor_inventory_cost</to>
+				</connector>
+				<connector uid="176" angle="290.556">
+					<from>
+						<alias uid="177"/>
+					</from>
+					<to>retailer_inventory_cost</to>
+				</connector>
+				<connector uid="178" angle="225">
+					<from>
+						<alias uid="179"/>
+					</from>
+					<to>wholesaler_inventory_cost</to>
+				</connector>
+				<connector uid="180" angle="255.964">
+					<from>Wholesaler_Backorder</from>
+					<to>wholesaler_backorder_cost</to>
+				</connector>
+				<connector uid="181" angle="234.462">
+					<from>distributor_inventory_cost</from>
+					<to>distributor_cost</to>
+				</connector>
+				<connector uid="182" angle="270">
+					<from>cost_per_item_in_inventory</from>
+					<to>brewery_inventory_cost</to>
+				</connector>
+				<connector uid="183" angle="251.565">
+					<from>
+						<alias uid="184"/>
+					</from>
+					<to>distributor_inventory_cost</to>
+				</connector>
+				<connector uid="185" angle="290.556">
+					<from>
+						<alias uid="186"/>
+					</from>
+					<to>wholesaler_backorder_cost</to>
+				</connector>
+				<connector uid="187" angle="217.694">
+					<from>Wholesaler_Inventory</from>
+					<to>wholesaler_inventory_cost</to>
+				</connector>
+				<connector uid="188" angle="253.301">
+					<from>
+						<alias uid="189"/>
+					</from>
+					<to>distributor_backorder_cost</to>
+				</connector>
+				<connector uid="190" angle="229.399">
+					<from>brewery_inventory_cost</from>
+					<to>brewery_cost</to>
+				</connector>
+				<connector uid="191" angle="282.529">
+					<from>
+						<alias uid="192"/>
+					</from>
+					<to>Supply_Chain_Cost</to>
+				</connector>
+				<connector uid="193" angle="246.038">
+					<from>wholesaler_inventory_cost</from>
+					<to>wholesaler_cost</to>
+				</connector>
+				<connector uid="194" angle="257.471">
+					<from>
+						<alias uid="195"/>
+					</from>
+					<to>Supply_Chain_Cost</to>
+				</connector>
+				<connector uid="196" angle="225">
+					<from>retailer_inventory_cost</from>
+					<to>retailer_cost</to>
+				</connector>
+				<connector uid="197" angle="280.008">
+					<from>Retailer_Inventory</from>
+					<to>retailer_inventory_cost</to>
+				</connector>
+				<connector uid="198" angle="259.992">
+					<from>Brewery_Inventory</from>
+					<to>brewery_inventory_cost</to>
+				</connector>
+				<connector uid="199" angle="276.34">
+					<from>
+						<alias uid="200"/>
+					</from>
+					<to>retailer_backorder_cost</to>
+				</connector>
+				<connector uid="201" angle="296.565">
+					<from>
+						<alias uid="202"/>
+					</from>
+					<to>wholesaler_inventory_cost</to>
+				</connector>
+				<connector uid="203" angle="303.881">
+					<from>Supply_Chain_Cost</from>
+					<to>Acc_Supply_Chain_Cost</to>
+				</connector>
+				<connector uid="204" angle="212.005">
+					<from>
+						<alias uid="205"/>
+					</from>
+					<to>distributor_inventory_cost</to>
+				</connector>
+				<connector uid="206" angle="237.995">
+					<from>Distributor_Delivery_Shortfall</from>
+					<to>distributor_backorder_cost</to>
+				</connector>
+				<connector uid="207" angle="233.13">
+					<from>
+						<alias uid="208"/>
+					</from>
+					<to>retailer_inventory_cost</to>
+				</connector>
+				<connector uid="209" angle="257.471">
+					<from>Retail_Backorder</from>
+					<to>retailer_backorder_cost</to>
+				</connector>
+				<aux x="382" y="97" name="cost per item in inventory"/>
+				<aux x="85" y="111" name="cost per item in backorder"/>
+				<stock color="blue" font_style="italic" font_weight="bold" x="1442" y="101" name="Retailer Inventory"/>
+				<stock color="blue" font_style="italic" font_weight="bold" x="1397" y="680" name="Wholesaler Inventory"/>
+				<stock color="blue" font_style="italic" font_weight="bold" x="458" y="641" name="Distributor Inventory"/>
+				<stock color="blue" font_style="italic" font_weight="bold" x="510" y="99" name="Brewery Inventory"/>
+				<aux x="379" y="1395" name="Supply Chain Cost"/>
+				<aux x="220" y="216" name="brewery backorder cost"/>
+				<aux x="310" y="311" name="brewery cost"/>
+				<aux x="430" y="214" name="brewery inventory cost"/>
+				<aux x="1108" y="252" name="retailer backorder cost"/>
+				<aux x="1394" y="262" name="retailer inventory cost"/>
+				<aux x="1224" y="376" name="retailer cost"/>
+				<aux x="1025" y="760" name="wholesaler backorder cost"/>
+				<aux x="1315" y="762" name="wholesaler inventory cost"/>
+				<aux x="1149" y="884" name="wholesaler cost"/>
+				<aux x="124" y="730" name="distributor backorder cost"/>
+				<aux x="391" y="733" name="distributor inventory cost"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1193" y="131" name="Retail Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="241" y="92" name="Brewery Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1100" y="660" name="Wholesaler Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="213" y="625" name="Distributor Delivery Shortfall"/>
+				<aux x="278" y="852" name="distributor cost"/>
+				<stock x="1303" y="454" name="Retailer Cost Acc"/>
+				<flow x="1228.25" y="454" name="Monthly Cost IN">
+					<pts>
+						<pt x="1176" y="454"/>
+						<pt x="1280.5" y="454"/>
+					</pts>
+				</flow>
+				<stock x="545" y="1519" name="Supply Chain Cost Acc"/>
+				<flow x="460.25" y="1516" name="Acc Supply Chain Cost">
+					<pts>
+						<pt x="398" y="1516"/>
+						<pt x="522.5" y="1516"/>
+					</pts>
+				</flow>
+				<aux color="blue" font_style="italic" font_weight="bold" x="594" y="166" name="Target Inventory"/>
+				<alias font_style="italic" uid="184" x="333" y="619" width="18" height="18">
+					<of>cost_per_item_in_inventory</of>
+				</alias>
+				<alias font_style="italic" uid="192" x="179" y="1239" width="18" height="18">
+					<of>brewery_cost</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="179" x="1475" y="682" width="18" height="18">
+					<of>Target_Inventory</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="205" x="567" y="662" width="18" height="18">
+					<of>Target_Inventory</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="208" x="1480" y="181" width="18" height="18">
+					<of>Target_Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="177" x="1310" y="104" width="18" height="18">
+					<of>cost_per_item_in_inventory</of>
+				</alias>
+				<alias font_style="italic" uid="195" x="446" y="1240" width="18" height="18">
+					<of>distributor_cost</of>
+				</alias>
+				<alias font_style="italic" uid="170" x="579" y="1234" width="18" height="18">
+					<of>wholesaler_cost</of>
+				</alias>
+				<alias font_style="italic" uid="189" x="64" y="621" width="18" height="18">
+					<of>cost_per_item_in_backorder</of>
+				</alias>
+				<alias font_style="italic" uid="200" x="1019" y="134" width="18" height="18">
+					<of>cost_per_item_in_backorder</of>
+				</alias>
+				<alias font_style="italic" uid="202" x="1236" y="667" width="18" height="18">
+					<of>cost_per_item_in_inventory</of>
+				</alias>
+				<alias font_style="italic" uid="165" x="342" y="1230" width="18" height="18">
+					<of>retailer_cost</of>
+				</alias>
+				<alias font_style="italic" uid="186" x="947" y="667" width="18" height="18">
+					<of>cost_per_item_in_backorder</of>
+				</alias>
+			</view>
+			<view page_height="528" page_width="788" home_view="true" type="interface" isee:show_pages="false">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="Policy_Settings">
+		<variables>
+			<aux name="Game Mode ON" access="output">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Steady State ON" access="output">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Delivery Delay" access="output">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Order Delay" access="output">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Stock Adjustment Time" access="output">
+				<eqn>8</eqn>
+			</aux>
+			<aux name="Weighting Open Orders" access="output">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Target Inventory" access="output">
+				<eqn>400</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision ON" access="output">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Rise in Order" access="output">
+				<eqn>300</eqn>
+			</aux>
+			<aux name="Weighting Backorder" access="output">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Weighting Inventory" access="output">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Target Supply Line Factor" access="output">
+				<eqn>2</eqn>
+			</aux>
+			<aux name="Dynamic Customer Behaviour ON" access="output">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Multiplayer Mode ON" access="output">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Target Retailer Cost">
+				<eqn>8300</eqn>
+			</aux>
+			<aux name="Target Supply Chain Cost">
+				<eqn>29300</eqn>
+			</aux>
+			<aux name="Target Surplus">
+				<eqn>250</eqn>
+			</aux>
+		</variables>
+		<views>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:scroll_y="9.375" zoom="160" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<aux x="229" y="134" name="Game Mode ON"/>
+				<aux x="462" y="124" name="Steady State ON"/>
+				<aux x="371" y="268" name="Delivery Delay"/>
+				<aux x="545" y="209" name="Order Delay"/>
+				<aux x="502" y="353" name="Stock Adjustment Time"/>
+				<aux x="295" y="366" name="Weighting Open Orders"/>
+				<aux x="358" y="175" name="Target Inventory"/>
+				<aux x="181" y="271" name="Sophisticated Order Decision ON"/>
+				<aux x="260" y="474" name="Rise in Order"/>
+				<aux x="100" y="358" name="Weighting Backorder"/>
+				<aux x="113" y="450" name="Weighting Inventory"/>
+				<aux x="91" y="187" name="Target Supply Line Factor"/>
+				<aux x="72" y="61" name="Dynamic Customer Behaviour ON"/>
+				<aux x="282" y="51" name="Multiplayer Mode ON"/>
+				<aux x="579" y="125" name="Target Retailer Cost"/>
+				<aux x="673" y="198" name="Target Supply Chain Cost"/>
+				<aux x="648" y="291" name="Target Surplus"/>
+			</view>
+			<view page_height="528" page_width="788" home_view="true" type="interface" isee:show_pages="false">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="Retailer">
+		<variables>
+			<stock name="Inventory" access="output">
+				<eqn>400</eqn>
+				<inflow>Incoming_Delivery_Rate</inflow>
+				<outflow>Outgoing_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Incoming Delivery Rate">
+				<eqn>Incoming_Delivery</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Outgoing Delivery Rate">
+				<eqn>MIN(Inventory+Incoming_Delivery_Rate,Outgoing_Delivery)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Order">
+				<eqn>100</eqn>
+			</aux>
+			<aux name="Customer Order">
+				<eqn>(1-Dynamic_Customer_Behaviour_ON)*(100+(1-Steady_State_ON)*(Unexpected_Rise_in_Customer_Orders))+Dynamic_Customer_Behaviour_ON*Dynamic_Customer_Order</eqn>
+			</aux>
+			<aux name="Unexpected Rise in Customer Orders">
+				<eqn>STEP(Rise_in_Order,2)</eqn>
+			</aux>
+			<stock name="Deliveries">
+				<eqn>0</eqn>
+				<inflow>Outgoing_Delivery_Rate</inflow>
+			</stock>
+			<stock name="Incoming Orders">
+				<eqn>0</eqn>
+				<inflow>Incoming_Order_Rate</inflow>
+			</stock>
+			<flow name="Incoming Order Rate">
+				<eqn>Incoming_Order</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Outgoing Delivery">
+				<eqn>Delivery_Policy</eqn>
+			</aux>
+			<aux name="Backorder" access="output">
+				<eqn>MAX(Incoming_Orders-Deliveries,0)</eqn>
+			</aux>
+			<aux name="Delivery Rate" access="input"/>
+			<aux name="Incoming Delivery">
+				<eqn>DELAY(Delivery_Rate,Delivery_Delay,100)</eqn>
+			</aux>
+			<aux name="Incoming Order">
+				<eqn>Customer_Order</eqn>
+			</aux>
+			<aux name="Surplus">
+				<eqn>Inventory-Backorder</eqn>
+			</aux>
+			<aux name="Steady State ON" access="input"/>
+			<aux name="Delivery Policy" flow_concept="true">
+				<eqn>MIN(Backorder+Incoming_Order,Inventory+Incoming_Delivery_Rate)</eqn>
+			</aux>
+			<aux name="Delivery Delay" access="input"/>
+			<aux name="Actual Order" access="output">
+				<eqn>Single_Player_Simple_Policy_ON*Multiplayer_Mode_ON*Order+Single_Player_Simple_Policy_ON*(1-Multiplayer_Mode_ON)*Order_from_Order_Line+(1-Single_Player_Simple_Policy_ON)*Order_from_Order_Line</eqn>
+			</aux>
+			<aux name="Single Player Simple Policy ON" access="input"/>
+			<aux name="Order from Order Line" flow_concept="true">
+				<eqn>Sending_Orders</eqn>
+			</aux>
+			<stock name="Order Line">
+				<eqn>100</eqn>
+				<inflow>Making_Orders</inflow>
+				<outflow>Sending_Orders</outflow>
+			</stock>
+			<flow name="Making Orders">
+				<eqn>Single_Player_Simple_Policy_ON*(1-Multiplayer_Mode_ON)*Order+(1-Single_Player_Simple_Policy_ON)*Order_Decision</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Sending Orders">
+				<eqn>DELAY(Making_Orders,Order_Delay,100)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Order Delay" access="input"/>
+			<stock name="Open Orders">
+				<eqn>200</eqn>
+				<inflow>Orders</inflow>
+				<outflow>Incoming_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Orders">
+				<eqn>Order_Decision</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Total Stock">
+				<eqn>Weighting_on_Supply_Line*Open_Orders+Inventory</eqn>
+			</aux>
+			<aux name="Stock Adjustment Time" access="input"/>
+			<aux name="Weighting on Supply Line" access="input"/>
+			<aux name="Target Total Stock">
+				<eqn>Converter_1+Weighting_on_Supply_Line*Target_Supply_Line</eqn>
+			</aux>
+			<aux name="Target Supply Line">
+				<eqn>Transit_Averaging_Time*Expected_Order</eqn>
+			</aux>
+			<aux name="Expected Order">
+				<eqn>Incoming_Order</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision">
+				<eqn>INT(MAX(Expected_Order+(Converter_1-Inventory+Weighting_on_Supply_Line*(Target_Supply_Line-Open_Orders))/Stock_Adjustment_Time,0))</eqn>
+			</aux>
+			<aux name="Naive Order Decision">
+				<eqn>MAX(Weight_on_Inventory*(Converter_1-Inventory)+Weight_on_Backorder*Backorder+Expected_Order,0)</eqn>
+			</aux>
+			<aux name="Order Decision">
+				<eqn>Sophisticated_Order_Decision*Sophisticated_Order_Decision_ON+(1-Sophisticated_Order_Decision_ON)*Naive_Order_Decision</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision ON" access="input"/>
+			<aux name="Converter 1" access="input"/>
+			<aux name="Rise in Order" access="input"/>
+			<aux name="Weight on Backorder" access="input"/>
+			<aux name="Weight on Inventory" access="input"/>
+			<aux name="Dynamic Customer Behaviour ON" access="input"/>
+			<aux name="Dynamic Customer Order">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="1" max="40"/>
+					<yscale min="100" max="800"/>
+					<ypts>100,100,100,100,100,116.393442622951,162.295081967213,757.28813559322,800,800,800,800,800,800,800,527.118644067797,508.135593220339,512.881355932203,531.864406779661,553.220338983051,572.203389830509,593.559322033898,655.254237288136,724.067796610169,769.152542372881,764.406779661017,754.915254237288,740.677966101695,716.949152542373,695.593220338983,674.237288135593,624.406779661017,610.169491525424,553.220338983051,496.271186440678,489.152542372881,489.152542372881,486.779661016949,486.779661016949,486.779661016949</ypts>
+				</gf>
+			</aux>
+			<aux name="Transit Averaging Time" access="input"/>
+			<aux name="Multiplayer Mode ON" access="input"/>
+		</variables>
+		<views>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="483" isee:scroll_y="244" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="211" angle="192.529">
+					<from>Rise_in_Order</from>
+					<to>Unexpected_Rise_in_Customer_Orders</to>
+				</connector>
+				<connector uid="212" angle="135">
+					<from>
+						<alias uid="213"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="214" angle="57.549">
+					<from>
+						<alias uid="215"/>
+					</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="216" angle="263.66">
+					<from>Single_Player_Simple_Policy_ON</from>
+					<to>Making_Orders</to>
+				</connector>
+				<connector uid="217" angle="45">
+					<from>Incoming_Order</from>
+					<to>Expected_Order</to>
+				</connector>
+				<connector uid="218" angle="90">
+					<from>Steady_State_ON</from>
+					<to>Customer_Order</to>
+				</connector>
+				<connector uid="219" angle="225">
+					<from>
+						<alias uid="220"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="221" angle="45">
+					<from>Dynamic_Customer_Behaviour_ON</from>
+					<to>Customer_Order</to>
+				</connector>
+				<connector uid="222" angle="324.462">
+					<from>Delivery_Delay</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="223" angle="150.255">
+					<from>Multiplayer_Mode_ON</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="224" angle="39.8056">
+					<from>Converter_1</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="225" angle="331.39">
+					<from>Inventory</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="226" angle="282.529">
+					<from>Making_Orders</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="227" angle="45">
+					<from>
+						<alias uid="228"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="229" angle="330.255">
+					<from>
+						<alias uid="230"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="231" angle="288.435">
+					<from>
+						<alias uid="232"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="233" angle="116.565">
+					<from>Single_Player_Simple_Policy_ON</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="234" angle="324.462">
+					<from>
+						<alias uid="235"/>
+					</from>
+					<to>Making_Orders</to>
+				</connector>
+				<connector uid="236" angle="330.945">
+					<from>Weight_on_Inventory</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="237" angle="45">
+					<from>Customer_Order</from>
+					<to>Incoming_Order</to>
+				</connector>
+				<connector uid="238" angle="32.0054">
+					<from>Incoming_Delivery</from>
+					<to>Incoming_Delivery_Rate</to>
+				</connector>
+				<connector uid="239" angle="200.556">
+					<from>Transit_Averaging_Time</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="240" angle="0">
+					<from>Incoming_Order</from>
+					<to>Incoming_Order_Rate</to>
+				</connector>
+				<connector uid="241" angle="6.34019">
+					<from>Sophisticated_Order_Decision_ON</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="242" angle="45">
+					<from>Incoming_Delivery_Rate</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="243" angle="32.0054">
+					<from>
+						<alias uid="244"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="245" angle="45">
+					<from>Backorder</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="246" angle="46.2189">
+					<from>
+						<alias uid="247"/>
+					</from>
+					<to>Orders</to>
+				</connector>
+				<connector uid="248" angle="54.4623">
+					<from>
+						<alias uid="249"/>
+					</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="250" angle="75.9638">
+					<from>
+						<alias uid="251"/>
+					</from>
+					<to>Delivery_Policy</to>
+				</connector>
+				<connector uid="252" angle="29.9512">
+					<from>
+						<alias uid="253"/>
+					</from>
+					<to>Making_Orders</to>
+				</connector>
+				<connector uid="254" angle="229.399">
+					<from>Weight_on_Backorder</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="255" angle="52.5946">
+					<from>Inventory</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="256" angle="7.76517">
+					<from>
+						<alias uid="257"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="258" angle="253.301">
+					<from>Naive_Order_Decision</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="259" angle="0">
+					<from>
+						<alias uid="260"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="261" angle="349.695">
+					<from>
+						<alias uid="262"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="263" angle="186.34">
+					<from>Target_Supply_Line</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="264" angle="73.3856">
+					<from>Dynamic_Customer_Order</from>
+					<to>Customer_Order</to>
+				</connector>
+				<connector uid="265" angle="93.5763">
+					<from>Open_Orders</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="266" angle="280.008">
+					<from>Deliveries</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="267" angle="319.399">
+					<from>
+						<alias uid="268"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="269" angle="45">
+					<from>Delivery_Rate</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="270" angle="78.6901">
+					<from>Order</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="271" angle="270">
+					<from>Multiplayer_Mode_ON</from>
+					<to>Making_Orders</to>
+				</connector>
+				<connector uid="272" angle="0">
+					<from>
+						<alias uid="273"/>
+					</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="274" angle="135">
+					<from>Inventory</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="275" angle="167.471">
+					<from>
+						<alias uid="276"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="277" angle="71.5651">
+					<from>Unexpected_Rise_in_Customer_Orders</from>
+					<to>Customer_Order</to>
+				</connector>
+				<connector uid="278" angle="212.005">
+					<from>Stock_Adjustment_Time</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="279" angle="341.565">
+					<from>Sophisticated_Order_Decision</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="280" angle="102.529">
+					<from>Delivery_Policy</from>
+					<to>Outgoing_Delivery</to>
+				</connector>
+				<connector uid="281" angle="38.991">
+					<from>Incoming_Orders</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="282" angle="333.435">
+					<from>Order_Delay</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="283" angle="83.6598">
+					<from>
+						<alias uid="284"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="285" angle="273.87">
+					<from>Sending_Orders</from>
+					<to>Order_from_Order_Line</to>
+				</connector>
+				<connector uid="286" angle="288.435">
+					<from>
+						<alias uid="287"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="288" angle="18.4349">
+					<from>Weighting_on_Supply_Line</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="289" angle="167.471">
+					<from>
+						<alias uid="290"/>
+					</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<stock x="445" y="176" name="Inventory"/>
+				<flow x="327.5" y="171" name="Incoming Delivery Rate">
+					<pts>
+						<pt x="244.5" y="171"/>
+						<pt x="422.5" y="171"/>
+					</pts>
+				</flow>
+				<flow x="537.5" y="173" name="Outgoing Delivery Rate">
+					<pts>
+						<pt x="467.5" y="173"/>
+						<pt x="619.5" y="173"/>
+					</pts>
+				</flow>
+				<aux x="970" y="732" name="Order"/>
+				<aux x="296" y="353" name="Customer Order"/>
+				<aux x="341" y="441" name="Unexpected Rise in Customer Orders"/>
+				<stock x="642" y="169" name="Deliveries"/>
+				<stock x="565" y="417" name="Incoming Orders"/>
+				<flow x="492.75" y="412" name="Incoming Order Rate">
+					<pts>
+						<pt x="443" y="412"/>
+						<pt x="542.5" y="412"/>
+					</pts>
+				</flow>
+				<aux x="357" y="630" name="Outgoing Delivery"/>
+				<aux x="672" y="247" name="Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="157" y="318" name="Delivery Rate"/>
+				<aux x="253" y="264" name="Incoming Delivery"/>
+				<aux x="390" y="343" name="Incoming Order"/>
+				<aux x="648" y="68" name="Surplus"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="167" y="455" name="Steady State ON"/>
+				<aux x="324" y="732" name="Delivery Policy"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="204" y="234" name="Delivery Delay"/>
+				<aux x="1053" y="614" name="Actual Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1190" y="728" name="Single Player Simple Policy ON"/>
+				<aux x="1251" y="973" name="Order from Order Line"/>
+				<stock x="1200" y="893" name="Order Line"/>
+				<flow x="1141.25" y="887" name="Making Orders">
+					<pts>
+						<pt x="1105" y="887"/>
+						<pt x="1177.5" y="887"/>
+					</pts>
+				</flow>
+				<flow x="1245.25" y="888" name="Sending Orders">
+					<pts>
+						<pt x="1222.5" y="888"/>
+						<pt x="1292" y="888"/>
+					</pts>
+				</flow>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1198" y="816" name="Order Delay"/>
+				<stock x="222" y="174" name="Open Orders"/>
+				<flow x="132.75" y="157" name="Orders">
+					<pts>
+						<pt x="66" y="157"/>
+						<pt x="199.5" y="157"/>
+					</pts>
+				</flow>
+				<aux x="269" y="59" name="Total Stock"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1066" y="275" name="Stock Adjustment Time"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="145" y="61" name="Weighting on Supply Line"/>
+				<aux x="1185" y="76" name="Target Total Stock"/>
+				<aux x="1292" y="108" name="Target Supply Line"/>
+				<aux x="527" y="316" name="Expected Order"/>
+				<aux x="953" y="372" name="Sophisticated Order Decision"/>
+				<aux x="1376" y="396" name="Naive Order Decision"/>
+				<aux x="1189" y="500" name="Order Decision"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1079" y="473" name="Sophisticated Order Decision ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="957" y="110" name="Converter 1"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="407" y="502" name="Rise in Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1443" y="272" name="Weight on Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1262" y="222" name="Weight on Inventory"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="195" y="539" name="Dynamic Customer Behaviour ON"/>
+				<aux x="222" y="601" name="Dynamic Customer Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1396" y="51" name="Transit Averaging Time"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1288" y="637" name="Multiplayer Mode ON"/>
+				<alias font_style="italic" uid="287" x="1352.5" y="268.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="260" x="831" y="448" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="235" x="977" y="820" width="18" height="18">
+					<of>Order</of>
+				</alias>
+				<alias font_style="italic" uid="215" x="470" y="256" width="18" height="18">
+					<of>Outgoing_Delivery</of>
+				</alias>
+				<alias font_style="italic" uid="268" x="864" y="249" width="18" height="18">
+					<of>Target_Supply_Line</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="276" x="1085" y="359" width="18" height="18">
+					<of>Weighting_on_Supply_Line</of>
+				</alias>
+				<alias font_style="italic" uid="230" x="1299" y="297" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="273" x="1089" y="101" width="18" height="18">
+					<of>Weighting_on_Supply_Line</of>
+				</alias>
+				<alias font_style="italic" uid="249" x="1053" y="738" width="18" height="18">
+					<of>Order_from_Order_Line</of>
+				</alias>
+				<alias font_style="italic" uid="228" x="410" y="839" width="18" height="18">
+					<of>Incoming_Order</of>
+				</alias>
+				<alias font_style="italic" uid="290" x="1324" y="154" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="251" x="209.5" y="829.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="257" x="816.5" y="381.5" width="45" height="35">
+					<of>Open_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="244" x="312" y="816" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="253" x="983" y="964" width="18" height="18">
+					<of>Order_Decision</of>
+				</alias>
+				<alias font_style="italic" uid="213" x="558" y="814" width="18" height="18">
+					<of>Incoming_Delivery_Rate</of>
+				</alias>
+				<alias font_style="italic" uid="232" x="1239" y="345" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="284" x="911" y="476" width="18" height="18">
+					<of>Converter_1</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="220" x="1428" y="342" width="18" height="18">
+					<of>Converter_1</of>
+				</alias>
+				<alias font_style="italic" uid="262" x="830.5" y="324.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="247" x="72" y="202" width="18" height="18">
+					<of>Order_Decision</of>
+				</alias>
+			</view>
+			<view page_height="528" page_width="788" home_view="true" type="interface" isee:show_pages="false">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+	<model name="Wholesaler">
+		<variables>
+			<stock name="Inventory" access="output">
+				<eqn>400</eqn>
+				<inflow>Incoming_Delivery_Rate</inflow>
+				<outflow>Outgoing_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Incoming Delivery Rate">
+				<eqn>Incoming_Delivery</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Outgoing Delivery Rate" access="output">
+				<eqn>MIN(Inventory+Incoming_Delivery_Rate,Outgoing_Delivery)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Order">
+				<eqn>100</eqn>
+			</aux>
+			<stock name="Deliveries">
+				<eqn>0</eqn>
+				<inflow>Outgoing_Delivery_Rate</inflow>
+			</stock>
+			<stock name="Incoming Orders">
+				<eqn>0</eqn>
+				<inflow>Incoming_Order_Rate</inflow>
+			</stock>
+			<flow name="Incoming Order Rate">
+				<eqn>Incoming_Order</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Backorder" access="output">
+				<eqn>MAX(Incoming_Orders-Deliveries,0)</eqn>
+			</aux>
+			<aux name="Converter 2" access="input"/>
+			<aux name="Incoming Delivery">
+				<eqn>DELAY(Converter_2,Converter_3,100)</eqn>
+			</aux>
+			<aux name="Surplus">
+				<eqn>Inventory-Backorder</eqn>
+			</aux>
+			<aux name="Incoming Order">
+				<eqn>Converter_4</eqn>
+			</aux>
+			<aux name="Delivery Decision" flow_concept="true">
+				<eqn>MIN(Backorder+Incoming_Order,Inventory+Incoming_Delivery_Rate)</eqn>
+			</aux>
+			<aux name="Outgoing Delivery">
+				<eqn>Delivery_Decision</eqn>
+			</aux>
+			<aux name="Actual Order" access="output">
+				<eqn>Single_Player_Simple_Policy_ON*(Multiplayer_Mode_ON*Order+(1-Multiplayer_Mode_ON)*Order_from_Order_Line )+(1-Single_Player_Simple_Policy_ON)*Order_from_Order_Line</eqn>
+			</aux>
+			<aux name="Single Player Simple Policy ON" access="input"/>
+			<aux name="Converter 3" access="input"/>
+			<stock name="Order Line">
+				<eqn>100</eqn>
+				<inflow>Making_Orders</inflow>
+				<outflow>Sending_Orders</outflow>
+			</stock>
+			<flow name="Making Orders">
+				<eqn>Order_Decision</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="Sending Orders">
+				<eqn>DELAY(Making_Orders,Order_Delay,100)</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Order Delay" access="input"/>
+			<aux name="Order from Order Line" flow_concept="true">
+				<eqn>Sending_Orders</eqn>
+			</aux>
+			<aux name="Converter 4" access="input"/>
+			<stock name="Open Orders">
+				<eqn>200</eqn>
+				<inflow>Orders</inflow>
+				<outflow>Incoming_Delivery_Rate</outflow>
+			</stock>
+			<flow name="Orders">
+				<eqn>Making_Orders</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="Sophisticated Order Decision">
+				<eqn>INT(MAX(Expected_Order+(Converter_5-Inventory+Weighting_on_Supply_Line*(Target_Supply_Line-Open_Orders))/Stock_Adjustment_Time,0))</eqn>
+			</aux>
+			<aux name="Total Stock">
+				<eqn>Inventory+Open_Orders</eqn>
+			</aux>
+			<aux name="Weighting on Supply Line" access="input"/>
+			<aux name="Stock Adjustment Time" access="input"/>
+			<aux name="Target Total Stock">
+				<eqn>Target_Supply_Line+Converter_5</eqn>
+			</aux>
+			<aux name="Target Supply Line">
+				<eqn>Transit_Averaging_Time*Expected_Order</eqn>
+			</aux>
+			<aux name="Expected Order">
+				<eqn>Incoming_Order</eqn>
+			</aux>
+			<aux name="Naive Order Decision">
+				<eqn>MAX(Weight_on_Inventory*(Converter_5-Inventory)+Weight_on_Backorder*Backorder+Expected_Order,0)</eqn>
+			</aux>
+			<aux name="Order Decision">
+				<eqn>Sophisticated_Order_Decision*Sophisticated_Order_Decision_ON+(1-Sophisticated_Order_Decision_ON)*Naive_Order_Decision</eqn>
+			</aux>
+			<aux name="Sophisticated Order Decision ON" access="input"/>
+			<aux name="Converter 5" access="input"/>
+			<aux name="Weight on Backorder" access="input"/>
+			<aux name="Weight on Inventory" access="input"/>
+			<aux name="Transit Averaging Time" access="input"/>
+			<aux name="Multiplayer Mode ON" access="input"/>
+		</variables>
+		<views>
+			<view isee:show_pages="true" background="white" page_width="818" page_height="571" isee:page_cols="2" isee:page_rows="2" isee:scroll_x="64" isee:scroll_y="5" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_family="Geneva" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_family="Geneva" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="ending" report_flows="summed" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<connector uid="291" angle="12.5288">
+					<from>Converter_2</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="292" angle="333.435">
+					<from>Weighting_on_Supply_Line</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="293" angle="357.397">
+					<from>
+						<alias uid="294"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="295" angle="135">
+					<from>Order</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="296" angle="53.1301">
+					<from>Weight_on_Inventory</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="297" angle="347.471">
+					<from>
+						<alias uid="298"/>
+					</from>
+					<to>Outgoing_Delivery</to>
+				</connector>
+				<connector uid="299" angle="284.036">
+					<from>Weight_on_Backorder</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="300" angle="324.462">
+					<from>
+						<alias uid="301"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="302" angle="202.249">
+					<from>
+						<alias uid="303"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="304" angle="270">
+					<from>Making_Orders</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="305" angle="54.4623">
+					<from>Backorder</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="306" angle="52.5946">
+					<from>Open_Orders</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="307" angle="83.6598">
+					<from>
+						<alias uid="308"/>
+					</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="309" angle="96.3402">
+					<from>
+						<alias uid="310"/>
+					</from>
+					<to>Orders</to>
+				</connector>
+				<connector uid="311" angle="18.4349">
+					<from>Sophisticated_Order_Decision_ON</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="312" angle="280.199">
+					<from>Sending_Orders</from>
+					<to>Order_from_Order_Line</to>
+				</connector>
+				<connector uid="313" angle="270">
+					<from>Naive_Order_Decision</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="314" angle="168.69">
+					<from>Converter_4</from>
+					<to>Incoming_Order</to>
+				</connector>
+				<connector uid="315" angle="60.6422">
+					<from>Inventory</from>
+					<to>Surplus</to>
+				</connector>
+				<connector uid="316" angle="69.444">
+					<from>
+						<alias uid="317"/>
+					</from>
+					<to>Delivery_Decision</to>
+				</connector>
+				<connector uid="318" angle="54.4623">
+					<from>Incoming_Delivery</from>
+					<to>Incoming_Delivery_Rate</to>
+				</connector>
+				<connector uid="319" angle="237.095">
+					<from>
+						<alias uid="320"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="321" angle="303.69">
+					<from>Stock_Adjustment_Time</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="322" angle="206.565">
+					<from>
+						<alias uid="323"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="324" angle="257.471">
+					<from>
+						<alias uid="325"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="326" angle="331.39">
+					<from>Inventory</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="327" angle="79.992">
+					<from>
+						<alias uid="328"/>
+					</from>
+					<to>Delivery_Decision</to>
+				</connector>
+				<connector uid="329" angle="333.435">
+					<from>Deliveries</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="330" angle="127.405">
+					<from>Inventory</from>
+					<to>Total_Stock</to>
+				</connector>
+				<connector uid="331" angle="270">
+					<from>Sophisticated_Order_Decision</from>
+					<to>Order_Decision</to>
+				</connector>
+				<connector uid="332" angle="49.3987">
+					<from>
+						<alias uid="333"/>
+					</from>
+					<to>Delivery_Decision</to>
+				</connector>
+				<connector uid="334" angle="225">
+					<from>Converter_5</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="335" angle="167.471">
+					<from>Single_Player_Simple_Policy_ON</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="336" angle="116.565">
+					<from>
+						<alias uid="337"/>
+					</from>
+					<to>Expected_Order</to>
+				</connector>
+				<connector uid="338" angle="49.3987">
+					<from>Transit_Averaging_Time</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="339" angle="257.471">
+					<from>
+						<alias uid="340"/>
+					</from>
+					<to>Sophisticated_Order_Decision</to>
+				</connector>
+				<connector uid="341" angle="327.995">
+					<from>Target_Supply_Line</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="342" angle="73.3008">
+					<from>
+						<alias uid="343"/>
+					</from>
+					<to>Delivery_Decision</to>
+				</connector>
+				<connector uid="344" angle="139.399">
+					<from>
+						<alias uid="345"/>
+					</from>
+					<to>Target_Total_Stock</to>
+				</connector>
+				<connector uid="346" angle="45">
+					<from>Incoming_Delivery_Rate</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="347" angle="319.399">
+					<from>Order_Delay</from>
+					<to>Sending_Orders</to>
+				</connector>
+				<connector uid="348" angle="17.6501">
+					<from>Incoming_Orders</from>
+					<to>Backorder</to>
+				</connector>
+				<connector uid="349" angle="12.5288">
+					<from>
+						<alias uid="350"/>
+					</from>
+					<to>Naive_Order_Decision</to>
+				</connector>
+				<connector uid="351" angle="90">
+					<from>Incoming_Order</from>
+					<to>Incoming_Order_Rate</to>
+				</connector>
+				<connector uid="352" angle="26.5651">
+					<from>
+						<alias uid="353"/>
+					</from>
+					<to>Target_Supply_Line</to>
+				</connector>
+				<connector uid="354" angle="324.462">
+					<from>Converter_3</from>
+					<to>Incoming_Delivery</to>
+				</connector>
+				<connector uid="355" angle="165.964">
+					<from>Multiplayer_Mode_ON</from>
+					<to>Actual_Order</to>
+				</connector>
+				<connector uid="356" angle="35.5377">
+					<from>Outgoing_Delivery</from>
+					<to>Outgoing_Delivery_Rate</to>
+				</connector>
+				<connector uid="357" angle="55.8892">
+					<from>
+						<alias uid="358"/>
+					</from>
+					<to>Making_Orders</to>
+				</connector>
+				<stock x="445" y="164" name="Inventory"/>
+				<flow x="306" y="171" name="Incoming Delivery Rate">
+					<pts>
+						<pt x="201.5" y="171"/>
+						<pt x="422.5" y="171"/>
+					</pts>
+				</flow>
+				<flow x="536" y="161" name="Outgoing Delivery Rate">
+					<pts>
+						<pt x="467.5" y="161"/>
+						<pt x="616.5" y="161"/>
+					</pts>
+				</flow>
+				<aux x="1007" y="790" name="Order"/>
+				<stock x="639" y="170" name="Deliveries"/>
+				<stock x="627" y="423" name="Incoming Orders"/>
+				<flow x="532.75" y="421" name="Incoming Order Rate">
+					<pts>
+						<pt x="461" y="421"/>
+						<pt x="604.5" y="421"/>
+					</pts>
+				</flow>
+				<aux x="704" y="286" name="Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="111" y="285" name="Converter 2"/>
+				<aux x="266" y="283" name="Incoming Delivery"/>
+				<aux x="703" y="90" name="Surplus"/>
+				<aux x="504" y="476" name="Incoming Order"/>
+				<aux x="587" y="711" name="Delivery Decision"/>
+				<aux x="522" y="239" name="Outgoing Delivery"/>
+				<aux x="1105" y="666" name="Actual Order"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1289" y="693" name="Single Player Simple Policy ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="173" y="349" name="Converter 3"/>
+				<stock x="1287" y="922" name="Order Line"/>
+				<flow x="1223.25" y="922" name="Making Orders">
+					<pts>
+						<pt x="1182" y="922"/>
+						<pt x="1264.5" y="922"/>
+					</pts>
+				</flow>
+				<flow x="1336.75" y="920" name="Sending Orders">
+					<pts>
+						<pt x="1309.5" y="920"/>
+						<pt x="1388" y="920"/>
+					</pts>
+				</flow>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1298" y="849" name="Order Delay"/>
+				<aux x="1356" y="1027" name="Order from Order Line"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="587" y="531" name="Converter 4"/>
+				<stock x="179" y="174" name="Open Orders"/>
+				<flow x="101.75" y="174" name="Orders">
+					<pts>
+						<pt x="47" y="174"/>
+						<pt x="156.5" y="174"/>
+					</pts>
+				</flow>
+				<aux x="1332" y="397" name="Sophisticated Order Decision"/>
+				<aux x="282" y="59" name="Total Stock"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1091" y="435" name="Weighting on Supply Line"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1200" y="340" name="Stock Adjustment Time"/>
+				<aux x="1350" y="95" name="Target Total Stock"/>
+				<aux x="1281" y="38" name="Target Supply Line"/>
+				<aux x="855" y="393" name="Expected Order"/>
+				<aux x="956" y="294" name="Naive Order Decision"/>
+				<aux x="1067" y="518" name="Order Decision"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="955" y="525" name="Sophisticated Order Decision ON"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1124" y="224" name="Converter 5"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="971" y="157" name="Weight on Backorder"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="829" y="330" name="Weight on Inventory"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1167" y="119" name="Transit Averaging Time"/>
+				<aux color="blue" font_style="italic" font_weight="bold" x="1289" y="595" name="Multiplayer Mode ON"/>
+				<alias font_style="italic" uid="333" x="661" y="798" width="18" height="18">
+					<of>Incoming_Order</of>
+				</alias>
+				<alias font_style="italic" uid="325" x="1053" y="174" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="301" x="1246" y="304" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="345" x="1465" y="57" width="18" height="18">
+					<of>Converter_5</of>
+				</alias>
+				<alias font_style="italic" uid="353" x="1139" y="36" width="18" height="18">
+					<of>Expected_Order</of>
+				</alias>
+				<alias font_style="italic" uid="320" x="1396.5" y="247.5" width="45" height="35">
+					<of>Open_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="294" x="849.5" y="170.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="328" x="498.5" y="799.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="337" x="830" y="451" width="18" height="18">
+					<of>Incoming_Order</of>
+				</alias>
+				<alias font_style="italic" uid="303" x="1456.5" y="294.5" width="45" height="35">
+					<of>Inventory</of>
+				</alias>
+				<alias font_style="italic" uid="350" x="876" y="244" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="308" x="1103" y="747" width="18" height="18">
+					<of>Order_from_Order_Line</of>
+				</alias>
+				<alias font_style="italic" uid="298" x="488" y="296" width="18" height="18">
+					<of>Delivery_Decision</of>
+				</alias>
+				<alias font_style="italic" uid="343" x="591" y="796" width="18" height="18">
+					<of>Backorder</of>
+				</alias>
+				<alias font_style="italic" uid="358" x="1156" y="999" width="18" height="18">
+					<of>Order_Decision</of>
+				</alias>
+				<alias color="blue" font_style="italic" font_weight="bold" uid="323" x="1463" y="406" width="18" height="18">
+					<of>Converter_5</of>
+				</alias>
+				<alias font_style="italic" uid="310" x="42" y="202" width="18" height="18">
+					<of>Making_Orders</of>
+				</alias>
+				<alias font_style="italic" uid="317" x="409" y="790" width="18" height="18">
+					<of>Incoming_Delivery_Rate</of>
+				</alias>
+				<alias font_style="italic" uid="340" x="1324" y="253" width="18" height="18">
+					<of>Target_Supply_Line</of>
+				</alias>
+			</view>
+			<view page_height="528" page_width="788" home_view="true" type="interface" isee:show_pages="false">
+				<style/>
+			</view>
+			<isee:templates/>
+			<isee:stories/>
+		</views>
+	</model>
+	<isee:controls>
+		<isee:control priority="interactive" name="Policy_Settings.Sophisticated_Order_Decision_ON" value="1"/>
+		<isee:control priority="interactive" name="Policy_Settings.Stock_Adjustment_Time" value="8"/>
+		<isee:control priority="interactive" name="Policy_Settings.Weighting_Backorder" value="0"/>
+		<isee:control priority="interactive" name="Policy_Settings.Weighting_Open_Orders" value="1"/>
+	</isee:controls>
+</xmile>
+

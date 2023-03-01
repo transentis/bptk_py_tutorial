@@ -1,4 +1,5 @@
-# BPTK-Py: System Dynamics and Agent-based Modeling In Python
+# Business Prototyping Toolkit
+**System Dynamics and Agent-based Modeling In Python**
 
 ::: {.meta description="In-depth explanation of agent-based modeling"
 title="BPTK Py" 
@@ -22,8 +23,7 @@ and then use them *independently* in a Python.
 ## Main Features
 
 -   The BPTK-Py framework supports System Dynamics models in XMILE
-    Format, native SD models and native Agent-based models. You can also
-    build hybrid SD-ABM-Models natively in Python.
+    Format, native SD models using the SD DSL and native Agent-based models. You can also build hybrid SD-ABM-Models natively in Python.
 -   The objective of the framework is to let the modeller concentrate on
     building simulation models by providing a seamless interface for
     managing model settings and scenarios and for plotting simulation
@@ -39,21 +39,18 @@ and then use them *independently* in a Python.
 
 ## Getting Started
 
-The best way to get started with BPTK is our tutorial, which contains a
-number of simulation models and Jupyter notebooks to get you started --
-you can clone or download the tutorial from our [git
-repository](https://github.com/transentis/bptk_py_tutorial/) on Github.
+The best way to get started with BPTK is to read our [Quickstart](quickstart/quickstart.ipynb). You might also like the [System Dynamics Tutorial](tutorials/tutorials.md)
 
 Our [Business Prototyping Toolkit
 Meetup](https://www.transentis.com/business-prototyping-toolkit-meetup/en/)
-meets online regularly. All meetups are recorded and the recordings are
-available on the meetup page.
+meets online regularly. Materials and recordings from past meetups are available on the meetup page.
 
-BPTK was also used to build our implementation of the infamous [Beer
-Distribution Game](https://beergame.transentis.com). Our [beergame
-repository](https://github.com/transentis/beergame) contains Jupyter
-notebooks that analyse the Beergame in-depth and also provides XMILE, SD
-DSL and Agent-based versions of the Beergame.
+BPTK was also used to build our implementation of the infamous _Beer
+Distribution Game_. Our [model library](/model_library/model_library.md) contains simulation models of the Beergame in both System Dynamics and Agent-based versions. It also contains an illustration of how to [train reinforcement-learning algorithms to play the Beer Distribution Game](/model_library/beergame/training_ai_beergame.ipynb).
+
+You can play the game online at [beergame.transentis.com](https://beergame.transentis.com)
+
+Currently we are working on an _Enterprise Digital Twin_ for transentis. You can find the simulation part of the digital twin in our [model library](/model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb) 
 
 ## Getting Help
 
@@ -105,3 +102,5 @@ always happy to help.
 {{< include api/_api_content.md >}}
 
 [Limitations](usage/limitations.md)
+
+[Changelog](changelog.md)

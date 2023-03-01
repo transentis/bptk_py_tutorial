@@ -4,8 +4,7 @@ keywords: agent-based modeling, system dynamics,abm, bptk, bptk-py, python, busi
 description: "General overview of the BPTK-Py business simulation framework, as it applies to Agent-based modeling and System Dynamics."
 ---
 
-Concepts
-========
+# Core Concepts
 
 This section contains documents that are relevant to Agent-based modeling, System Dynamics with XMILE and System Dynamics with the SD DSL.
 
