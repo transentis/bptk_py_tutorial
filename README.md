@@ -29,7 +29,7 @@ Our model library contains some interesting models that you can use as a startin
 
 
 * [Bass Diffusion Model](./model_library/bass_diffusion/bptk_py_bass_diffusion.ipynb). The classic [Bass Diffusion Model](https://en.wikipedia.org/wiki/Bass_diffusion_model) that is used to explain the dynamics of introductiong a new product or service into a market.
-* [Beer Distribution Game](https://github.com/transentis/beergame). In-depth analysis of the beergame using both System Dynamics and Agent-based simulation. Includes an illustration of how to use BPTK in conjunction with reinforcement learning to train agents to play the beergame autonomously.
+* [Beer Distribution Game](./model_library/beergame/beergame.ipynb). In-depth analysis of the beergame using both System Dynamics and Agent-based simulation. Includes an illustration of how to use BPTK in conjunction with reinforcement learning to train agents to play the beergame autonomously.
 * [Competitive Pricing](./model_libary/competitive_pricing/competitive_pricing_dynamics_sd_dsl.ipynb) A neat little model that can be used to understand pricing dynamics.
 * [Customer Acquisition](.model_library/customer_acquisition/customer_acquisition.ipynb). A model that analyses the effects of referral marketing on customer acquisition.
 * [Make Your Professional Service Firm Grow](./model_library/make_your_psf_grow/sddsl/make_your_psf_grow_part_1.ipynb). A model that analyses growth strategies in professional service firms.
