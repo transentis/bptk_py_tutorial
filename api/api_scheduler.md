@@ -1,17 +1,22 @@
 # Scheduler
 
+Scheduler for agent based modelling. 
 
-## _class_ Scheduler()
+## Scheduler Constructor
+
+**Scheduler()**
+
 Scheduler for agent based modelling
 
+## Scheduler.handle_delayed_event
 
-### handle_delayed_event(event, dt)
+**handle_delayed_event(event, dt)**
+
 This method checks to see whether the event is a DelayedEvent.
 
 If not, it simply returns the event.
 
 If yes, it counts down the delay by one timestep (dt), caches the event in delayed_events and returns None.
-
 
 * **Parameters**
 
@@ -27,9 +32,11 @@ If yes, it counts down the delay by one timestep (dt), caches the event in delay
 Returns
 
     The event if this is not a DelayedEvent or the delay<=0 , otherwise None
+ 
+## Scheduler.run
 
+**run(model, progress_widget=None, collect_data=True)**
 
-### run(model, progress_widget=None, collect_data=True)
 Run the simulation.
 Override this in a subclass.
 
@@ -43,9 +50,10 @@ Override this in a subclass.
     * **progress_widget** – Widget (Default=None).
     If set, the widget is used to show progress during execution
 
+## Scheduler.run
 
+**run_step(model, sim_round, dt, progress_widget=None, collect_data=True)**
 
-### run_step(model, sim_round, dt, progress_widget=None, collect_data=True)
 Run a simulation step.
 
 Override this in a subclass.

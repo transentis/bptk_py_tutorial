@@ -1,7 +1,8 @@
 # Module
 
+## Module Constructor
 
-## _class_ Module(model, name, parent=None)
+**Module(model, name, parent=None)**
 
 The Module class is used to structure SD DSL models into individual modules.
 Modules can be nested. If you create model elements such as stocks, flows and
@@ -11,34 +12,46 @@ parent_module_name.module_name.name. The fully qualfied name is used as the equa
 name in the Model class and is needed when making calls to bptk.run_scenario or
 bptk.plot_scenario.
 
-Check our [Enterprise Digital Twin](../model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb) to see an example that uses the module class
+Check the [Beergame](/model_library/beergame/beergame_sd_dsl.ipynb) or [Enterprise Digital Twin](/model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb) models to see the module class in action. 
 
+## Module.biflow
 
-### biflow(name)
+**biflow(name)**
+
 Add a biflow to the model. The name of the biflow will be a fully qualified name
 consisting of all nested module names plus the actual element name using dot
 notation, i.e. namespace.name
 
 
-### constant(name)
+## Module.constant
+
+**constant(name)**
+
 Add a constanst to the model. The name of the constant will be a fully qualified name
 consisting of all nested module names plus the actual element name using dot
 notation, i.e. namespace.name
 
 
-### converter(name)
+## Module.converter
+
+**converter(name)**
+
 Add a converter to the model. The name of the converter will be a fully qualified name
 consisting of all nested module names plus the actual element name using dot
 notation, i.e. namespace.name
 
+## Module.flow
 
-### flow(name)
+**flow(name)**
+
 Add a flow to the model. The name of the flow will be a fully qualified name
 consisting of all nested module names plus the actual element name using dot
 notation, i.e. namespace.name
 
+## Module.fqn
 
-### fqn(name)
+**fqn(name)**
+
 Given a name this returns the fully qualified name, i.e. name prefixed
 by the module namespace.
 
@@ -52,15 +65,20 @@ by the module namespace.
 Returns the fully qualified name, i.e. namespace.name. The namespace is defined
 by the names of all the parent modules, e.g. parent_module_name.module_name
 
+## Module.initialize
 
-### initialize()
+**initialize()**
+
 Override this method in concrete Module subclasses. All elements that
 are internal to the module should be declared here and the equations
 for both the exported elements as well as the internal elements should
 be defined here.
 
 
-### stock(name)
+## Module.stock
+
+**stock(name)**
+
 Add a stock to the model. The name of the stock will be a fully qualified name
 consisting of all nested module names plus the actual element name using dot
 notation, i.e. namespace.name

@@ -1,7 +1,0 @@
-- [Architecture of the BPTK Framework](/concepts/bptk_architecture/bptk_architecture.html)
-- [Scenarios in Depth](/concepts/scenarios/scenarios.html)
-- [Accessing Raw Simulation Results](/concepts/accessing_raw_simulation_results/accessing_raw_simulation_results.html)
-- [Advanced Plotting Features](/concepts/advanced_plotting_features/advanced_plotting_features.html)
-- [Developing Dashboards using Jupyter Widgets](/concepts/develop_dashboards_using_jupyter_widgets/developing_dashboards_using_juypter_widgets.html)
-- [Developing Dashboards using the SimpleDashboard Utility Class](/concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.html)
-- [Persisting the BPTK-Server State](/concepts/external_state/external_state.html)

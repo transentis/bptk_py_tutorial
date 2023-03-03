@@ -1,6 +1,0 @@
-- [Bass Diffusion Model](/model_library/bass_diffusion/bass_diffusion.ipynb). The classic [Bass Diffusion Model](https://en.wikipedia.org/wiki/Bass_diffusion_model) that is used to explain the dynamics of introductiong a new product or service into a market.
-- [Beer Distribution Game](/model_library/beergame/beergame.ipynb). Computational notebooks, simulation models and AI training algorithms that explore the [beer distribution game](https://beergame.transentis.com) in depth.
-- [Competitive Pricing Dynamics](/model_library/competitive_pricing/competitive_pricing_dynamics.ipynb) A neat little model that can be used to understand pricing dynamics.
-- [Customer Acquisition](/model_library/customer_acquisition/customer_acquisition.ipynb). A model that analyses the effects of referral marketing on customer acquisition.
-- [Enterprise Digital Twin](/model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb). A simulation of a professional service firm that forms part of the transentis Enterprise Digital Twin. This is work in progress that accompanies our current [meetup series](https://www.transentis.com/resources/business-prototyping-toolkit-meetup)
-- [Make Your Professional Service Firm Grow](/model_library/make_your_psf_grow/make_your_psf_grow.md). A model that analyses growth strategies in professional service firms.

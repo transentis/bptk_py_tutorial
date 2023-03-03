@@ -1,13 +1,17 @@
 # Flow
 
-
-## _class_ Flow(model, name, function_string=None)
 Flow in a SD DSL model.
+## Flow Constructor
 
+**Flow(model, name, function_string=None)**
 
-### _property_ equation()
+Create the flow.
+
+## Flow.equation
+
+**_property_ equation()**
+
 Returns the equation as originally set.
-
 
 * **Returns**
 

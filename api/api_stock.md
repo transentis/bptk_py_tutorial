@@ -1,11 +1,17 @@
 # Stock
 
 
-## _class_ Stock(model, name)
+## Stock.__init__
+
+**Stock(model, name)**
+
 Stock in a SD DSL model.
 
 
-### _property_ equation()
+## Stock.equation
+ 
+**_property_ equation()**
+
 Returns the equation as originally set.
 
 

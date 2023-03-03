@@ -1,5 +1,0 @@
-- [Working With XMILE System Dynamics Models](/xmile/how-to/how_to_working_with_XMILE/how_to_working_with_XMILE.html)
-- [Exporting Simulation Results](/xmile/how-to/how_to_exporting_simulation_results/how_to_exporting_simulation_results.html)
-- [Working with Arrayed Variables in XMILE Models](/xmile/how-to/how_to_xmile_arrays/how_to_xmile_arrays.html)
-- [Using the XMILE Compiler Standalone](/xmile/how-to/how_to_use_sd_compiler_standalone/how_to_use_sd_compiler_standalone.html)
-- [Writing Computational Essays](/xmile/in-depth/writing_computational_essays/writing_computational_essays.html)

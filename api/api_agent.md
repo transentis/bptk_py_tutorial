@@ -4,7 +4,7 @@ The agent class is the base class for all agents used in an agent-based simulati
 
 Your agents must inherit from this class if they are to be part of an agent-based simulation.
 
-## Agent.__init__
+## Agent Constructor
 
 **Agent(agent_id, model, properties, agent_type='agent')**
 

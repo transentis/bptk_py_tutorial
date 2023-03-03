@@ -1,2 +1,0 @@
-- [Agent-based Modeling With BPTK-Py](/abm/agent_based_modeling/agent_based_modeling.ipynb)
-- [Custom Data Collectors](/abm/custom_datacollectors/custom_datacollectors.ipynb)

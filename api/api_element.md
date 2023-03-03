@@ -1,7 +1,9 @@
 # Element
 
+## Element Constructor
 
-## _class_ Element(model, name, function_string=None)
+**Element(model, name, function_string=None)**
+
 Generic element in a SD DSL model.
 
 Concrete elements are Biflows, Flows, Constants and Converters.
@@ -25,7 +27,10 @@ In general elements are created via an instance of the Model class, using the ap
 
 
 
-### _property_ equation()
+## Element.equation
+
+**_property_ equation()**
+
 Returns the equation as originally set.
 
 
@@ -33,12 +38,17 @@ Returns the equation as originally set.
 
     The equation, either a SD DSL Element or Operator.
 
-### _property_ function_string()
-Returns a string representation of the underlying function.
+## Element.function_string
 
+**_property_ function_string()**
 
-### plot(starttime=None, stoptime=None, dt=None, return_df=False)
-Plot the equation.
+Returns a string representation of the underlying function. Useful for debugging purposes.
+
+###  Element.plot
+
+**plot(starttime=None, stoptime=None, dt=None, return_df=False)**
+
+Plot the equation or return a dataframe with the simulated data.
 
 
 * **Parameters**

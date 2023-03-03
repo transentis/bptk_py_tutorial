@@ -11,8 +11,7 @@ bptk=bptk()
 
 This automatically starts a background process that scans your `scenario` directory and imports all scenarios.
 
-
-## bptk.__init__
+## bptk Constructor
 
 **bptk(loglevel='WARN', configuration=None)**
 

@@ -1,9 +1,15 @@
 # SimpleDashboard
 
+Helper class that can be used to set up a dashboard. Check the [Develop Dashboards Using SimpleDashboard](/concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.ipynb) document for an indepth explanation.
 
-## _class_ SimpleDashboard(bptk, scenario_manager, scenario, style={}, layout={})
+## SimpleDashboard Constructor
 
-### add_custom_plot(plot: Callable)
+**SimpleDashboard(bptk, scenario_manager, scenario, style={}, layout={})**
+
+## SimpleDashboard.add_custom_plot
+
+**add_custom_plot(plot: Callable)**
+
 Adds custom plot. Plotting must be handeled in the function.
 :param equations: Callable
 
@@ -15,14 +21,14 @@ Adds custom plot. Plotting must be handeled in the function.
     The output the plot gets drawn on.
 
 
-
 * **Return type**
 
     widgets.Output
 
+## SimpleDashboard.add_plot
 
+**add_plot(equations: List[str], title: str, names: List[str], x_label='', y_label='', start_date='', kind: Optional[str] = None, visualize_from_period=0, visualize_to_period=0, freq='D', agents: List[str] = [], agent_states: List[str] = [], agent_properties: List[str] = [], agent_property_types: List[str] = [])**
 
-### add_plot(equations: List[str], title: str, names: List[str], x_label='', y_label='', start_date='', kind: Optional[str] = None, visualize_from_period=0, visualize_to_period=0, freq='D', agents: List[str] = [], agent_states: List[str] = [], agent_properties: List[str] = [], agent_property_types: List[str] = [])
 Wrapper function for bptk.plot_scenarios.
 :param equations: List.
 
@@ -89,9 +95,11 @@ Wrapper function for bptk.plot_scenarios.
 
     Plot id (used for identification when plot data is updated).
 
-### add_widget(widget, model_connection: Optional[Union[str, ModelConnection, Callable]] = None)
-Add any custom widget to the dashboard
+## SimpleDashboard.add_widget
 
+**add_widget(widget, model_connection: Optional[Union[str, ModelConnection, Callable]] = None)**
+
+Add any custom widget to the dashboard
 
 * **Parameters**
 
@@ -103,22 +111,24 @@ Add any custom widget to the dashboard
     The connection this widget has to the model. Can either be a direct connection to a constant using a string, a ModelConnection or a Callable, that gets called when the widget updates.
 
 
-### start()
+## SimpleDashboard.start
+
+**start()**
+
 Starts the dashboard. Call this at the end of the script.
 
 
-### update_plot_data(attribute: str, value: str, plot: int)
+## SimpleDashboard.update_plot_data
+
+**update_plot_data(attribute: str, value: str, plot: int)**
 
 * **Parameters**
-
     
     * **attribute** – string
     The attribute of the plot that will be updated.
 
-
     * **value** – string
     The value the attribute will be set to.
-
 
     * **plot** – int
     The plot id to update. Plot ids are returned when plots are added to the dashboard using the add_plot function.
