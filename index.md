@@ -98,7 +98,7 @@ always happy to help.
 - [A Simple Python Library For System Dynamics](./sd-dsl/simple_python_library_sd_dsl/simple_python_library_sd_dsl.ipynb)
 - [SD DSL Functions](./sd-dsl/sd_dsl_functions/sd_dsl_functions.ipynb)
 - [Creating User-defined Functions in SD Models](./sd-dsl/sd_user_defined_functions/sd_user_defined_functions.ipynb)
-- [SD DSL: Under The Hood](./sd-dsl/sd_dsl_unter_the_hood/sd_dsl_under_the_hood.ipynb)
+- [SD DSL: Under The Hood](./sd-dsl/sd_dsl_under_the_hood/sd_dsl_under_the_hood.ipynb)
 
 [XMILE Models](xmile/xmile.ipynb)
 
