@@ -15,7 +15,7 @@ Then follow these steps:
 5. Install the necessary python modules: ```pip install -r requirements.txt```
 6. Start JupyerLab: ```jupyter lab```
 7. Your browser will open showing JupyterLab and your chosen directory
-8. Open the notebook ```readme.ipynb``` from within JupyterLab
+8. Open the notebook ```readme.md``` from within JupyterLab
 
 ## Getting Started
 

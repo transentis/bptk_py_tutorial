@@ -1,3 +1,9 @@
+---
+title: Flow
+description: BPTK API Documentation for the Element class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
+
 # Flow
 
 Flow in a SD DSL model.

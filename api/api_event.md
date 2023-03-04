@@ -1,3 +1,9 @@
+---
+title: Event
+description: BPTK API Documentation for the Element class
+keywords: agent-based modeling, bptk, bptk-py, python, business prototyping
+---
+
 # Event
 
 ## Event Constructor

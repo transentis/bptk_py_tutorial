@@ -1,3 +1,9 @@
+---
+title: Element
+description: BPTK API Documentation for the Element class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
+
 # Element
 
 ## Element Constructor

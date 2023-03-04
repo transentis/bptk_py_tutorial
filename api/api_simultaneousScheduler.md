@@ -1,3 +1,9 @@
+---
+title: Simultaneous Scheduler
+description: API Documentation for the Simultaneous Scheduler class
+keywords: agent-based modeling, bptk, bptk-py, python, business prototyping
+---
+
 # Simultaneous Scheduler
 
 ## SimultaneousScheduler Constructor

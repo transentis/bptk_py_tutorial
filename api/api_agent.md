@@ -1,3 +1,9 @@
+---
+title: Agent
+description: BPTK API Documentation for the Agent class
+keywords: agent-based modeling, bptk, bptk-py, python, business prototyping
+---
+
 # Agent
 
 The agent class is the base class for all agents used in an agent-based simulation.

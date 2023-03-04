@@ -1,3 +1,11 @@
+---
+title: BptkServer
+description: BPTK API Documentation for the BptkServer class
+keywords: system dynamics, agent-based modeling, flask, REST, bptk, bptk-py, python, business prototyping
+---
+
+
+
 # BptkServer
 
 The `BptkServer` class provides a REST-API using the Flask framework.

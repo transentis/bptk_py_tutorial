@@ -1,3 +1,11 @@
+---
+title: Constant
+description: BPTK API Documentation for the Constant class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
+
+
+
 # Constant
 
 

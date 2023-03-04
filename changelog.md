@@ -6,7 +6,7 @@
 * BPTK: Fix bug in reset_scenarios for Hybrid Scenario Managers
 
 ### 1.7.3
-* BPTK: Update dependencies of Pandas/Matplotlib/Sympy/Parsimonious/Pyyaml/Xlsxwriter/Jinja2/Requests/Jsonpickle/Flask
+* BPTK: Update dependencies of Pandas / Matplotlib / Sympy / Parsimonious / Pyyaml / Xlsxwriter / Jinja2 / Requests / Jsonpickle / Flask
 * Successfully tested with Python 3.11
 
 ### 1.7.2

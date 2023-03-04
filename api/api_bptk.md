@@ -1,3 +1,9 @@
+---
+title: bptk
+description: BPTK API Documentation for the bptk class
+keywords: agent-based modeling, system dynamics, bptk, bptk-py, python, business prototyping
+---
+
 # bptk
 
 The `bptk` class provides high level functions that let you interact with your simulation models and scenarios.

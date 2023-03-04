@@ -1,3 +1,9 @@
+---
+title: Scheduler
+description: BPTK API Documentation for the Module class
+keywords: agent-based modeling, bptk, bptk-py, python, business prototyping
+---
+
 # Scheduler
 
 Scheduler for agent based modelling. 

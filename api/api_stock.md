@@ -1,12 +1,16 @@
-# Stock
+---
+title: Stock
+description: BPTK API Documentation for the Stock class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
 
+# Stock
 
 ## Stock Constructor
 
 **Stock(model, name)**
 
 Stock in a SD DSL model.
-
 
 ## Stock.equation
  

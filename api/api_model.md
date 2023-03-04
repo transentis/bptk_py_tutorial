@@ -1,5 +1,10 @@
-# Model
+---
+title: Model
+description: BPTK API Documentation for the Model class
+keywords: agent-based modeling, system dynamics, bptk, bptk-py, python, business prototyping
+---
 
+# Model
 
 ## Model Constructor
 

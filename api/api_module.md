@@ -1,3 +1,9 @@
+---
+title: Module
+description: BPTK API Documentation for the Module class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
+
 # Module
 
 ## Module Constructor

@@ -1,3 +1,9 @@
+---
+title: Biflow
+description: BPTK API Documentation for the Biflow class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
+
 # Biflow
 
 

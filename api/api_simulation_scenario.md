@@ -1,4 +1,10 @@
-# SimulationScenario
+---
+title: Simulation Scenario
+description: BPTK API Documentation for the SimulationScenario class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
+
+# Simulation Scenario
 
 ## SimulationScenario Constructor
 

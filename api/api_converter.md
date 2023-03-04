@@ -1,5 +1,10 @@
-# Converter
+---
+title: Converter
+description: API Documentation for the Biflow class
+keywords: system dynamics, bptk, bptk-py, python, business prototyping
+---
 
+# Converter
 
 ## Converter Constructor
 
