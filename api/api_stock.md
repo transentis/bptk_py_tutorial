@@ -1,7 +1,7 @@
 # Stock
 
 
-## Stock.__init__
+## Stock Constructor
 
 **Stock(model, name)**
 
