@@ -2,6 +2,9 @@
 
 ## BPTK Change Log
 
+### 1.7.5
+* BPTK: Fix that caused a crash when using multiple scenario files for hybrid models
+
 ### 1.7.4
 * BPTK: Fix bug in reset_scenarios for Hybrid Scenario Managers
 
@@ -26,6 +29,10 @@
 * Bug Fix: Remove debug print message
 
 ## BPTK Tutorial and Documentation Change Log
+
+### 2023-03-11
+
+* Bump version of BPTK
 
 ### 2023-03-04
 
