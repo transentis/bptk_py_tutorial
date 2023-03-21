@@ -6,7 +6,7 @@ keywords: agent-based modeling, system dynamics, bptk, bptk-py, python, business
 
 # Simple Dashboard
 
-Helper class that can be used to set up a dashboard. Check the [Develop Dashboards Using SimpleDashboard](/concepts/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.ipynb) document for an indepth explanation.
+Helper class that can be used to set up a dashboard. Check the [Develop Dashboards Using SimpleDashboard](/tutorials/develop_dashboards_using_simpledashboard/develop_dashboards_using_simpledashboard.ipynb) document for an in-depth explanation.
 
 ## SimpleDashboard Constructor
 

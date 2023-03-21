@@ -142,7 +142,7 @@ Export data for the given scenarios in a structure that is amenable to analysis 
 
 **get_scenario(scenario_manager, scenario)**
 
-Get a scenario object from a scenario manager
+Get a scenario object for a particular scenario manager - this can be a [SimulationScenario](./api_simulation_scenario.md) (for SD DSL and XMILE models) instance or a [Model](./api_model.ipynb) instance (for ABM and Hybrid models).
 
 
 * **Parameters**
@@ -188,7 +188,7 @@ Returns a concatenated list of all the scenario names from a list of scenario ma
 
 **get_scenarios(scenario_managers=[], scenarios=[], scenario_manager_type='')**
 
-Get a dictionary of scenario objects.
+Get a dictionary of scenario objects - this can be a [SimulationScenario](./api_simulation_scenario.md) (for SD DSL and XMILE models) instance or a [Model](./api_model.ipynb) instance (for ABM and Hybrid models).
 
 The keys of the dictionary are the scenario names, unless more than one scenario manager is passed, in which case the name of the scenario manager is used to prefixes the scenario name (i.e. <scenario_manager>_<scenario>).
 

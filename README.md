@@ -75,14 +75,8 @@ You can best reach us per e-mail at [support@transentis.com](mailto:support@tran
 - [SD DSL Functions](./sd-dsl/sd_dsl_functions/sd_dsl_functions.ipynb)
 - [Creating User-defined Functions in SD Models](./sd-dsl/sd_user_defined_functions/sd_user_defined_functions.ipynb)
 - [SD DSL: Under The Hood](./sd-dsl/sd_dsl_unter_the_hood/sd_dsl_under_the_hood.ipynb)
-
-[XMILE Models](xmile/xmile.ipynb)
-
-- [Working With XMILE System Dynamics Models](./xmile/working_with_XMILE/working_with_XMILE.ipynb)
-- [Exporting Simulation Results](./xmile/exporting_simulation_results/exporting_simulation_results.ipynb)
-- [Working with Arrayed Variables in XMILE Models](./xmile/xmile_arrays/xmile_arrays.ipynb)
-- [Using the XMILE Compiler Standalone](./xmile/use_sd_compiler_standalone/use_sd_compiler_standalone.md)
-- [Writing Computational Essays](./xmile/writing_computational_essays/writing_computational_essays.ipynb)
+- [The Mathematics Underlying the SD DSL](./sd-dsl/sd_dsl_mathematics/sd_dsl_mathematics.ipynb)
+- [Working With XMILE](./xmile/xmile.ipynb)
 
 [Model Library](./model_library/model_library.ipynb)
 
@@ -106,8 +100,8 @@ You can best reach us per e-mail at [support@transentis.com](mailto:support@tran
 * [Element](./api/api_element.md)
 * [Event](./api/api_event.md)
 * [Flow](./api/api_flow.md)
-* [Model](./api/api_model.md)
-* [Module](./api/api_module.md)
+* [Model](./api/api_model.ipynb)
+* [Module](./api/api_module.ipynb)
 * [Scheduler](./api/api_scheduler.md)
 * [SimpleDashboard](./api/api_simpledashboard.md)
 * [SimulationScenario](./api/api_simulation_scenario.md)

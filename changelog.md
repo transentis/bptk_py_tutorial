@@ -2,6 +2,10 @@
 
 ## BPTK Change Log
 
+### 1.7.6
+* BPTK: Improve handling of floating point numbers when using small DTs
+* ScenarioManagerSD: Fixed an issue that caused models with biflows to be cloned incorrectly
+
 ### 1.7.5
 * BPTK: Fix that caused a crash when using multiple scenario files for hybrid models
 
@@ -29,6 +33,17 @@
 * Bug Fix: Remove debug print message
 
 ## BPTK Tutorial and Documentation Change Log
+
+### 2023-03-xx
+
+* Simplify SD model in Enterprise Digital Twin
+* Update documentation of Model and Module
+* Re-organize tutorials
+* Merge docs on BptkServer
+* Move doc on ExternalStateAdapter to API section
+* Add a document on the mathematics underlying the SD DSL
+* Update document on SD DSL functions
+* Bump version of BPTK
 
 ### 2023-03-11
 

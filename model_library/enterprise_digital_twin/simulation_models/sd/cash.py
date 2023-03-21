@@ -4,10 +4,6 @@ from BPTK_Py import Module
 
 class Cash(Module):
 
-    def __init__(self, model,name):
-        super().__init__(model,name)
-
-
     def initialize(self,revenue,cost):
 
         # stocks
@@ -28,5 +24,5 @@ class Cash(Module):
         cash.initial_value = 0.0
         cash.equation = cash_in-cash_out
 
-        cash_in.equation = revenue.receivables_out
-        cash_out.equation = cost.salaries
+        cash_in.equation = revenue.flow("receivables_out")
+        cash_out.equation = cost.flow("salaries")

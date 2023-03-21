@@ -3,10 +3,6 @@ from BPTK_Py import Module
 
 class Earnings(Module):
 
-    def __init__(self, model,name):
-        super().__init__(model,name)
-
-
     def initialize(self,revenue, cost):
 
         # stocks
@@ -19,7 +15,7 @@ class Earnings(Module):
         earnings = self.converter("earnings")
 
         # equations
-        earnings.equation=revenue.revenue - cost.expenses
+        earnings.equation=revenue.converter("revenue") - cost.converter("expenses")
 
         accumulated_earnings.initial_value = 0.0
         accumulated_earnings_in.equation=earnings       
