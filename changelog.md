@@ -34,7 +34,12 @@
 
 ## BPTK Tutorial and Documentation Change Log
 
-### 2023-03-xx
+### 2023-04-02
+
+* Add section on System Archetypes to model library
+* Update and fix some of the diagrams
+
+### 2023-03-21
 
 * Simplify SD model in Enterprise Digital Twin
 * Update documentation of Model and Module

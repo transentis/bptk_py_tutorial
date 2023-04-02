@@ -86,6 +86,7 @@ You can best reach us per e-mail at [support@transentis.com](mailto:support@tran
 - [Customer Acquisition](./model_library/customer_acquisition/customer_acquisition.ipynb). A model that analyses the effects of referral marketing on customer acquisition.
 - [Enterprise Digital Twin](./model_library/enterprise_digital_twin/enterprise_digital_twin.ipynb). A simulation of a professional service firm that forms part of the transentis Enterprise Digital Twin. This is work in progress that accompanies our current [meetup series](https://www.transentis.com/resources/business-prototyping-toolkit-meetup)
 - [Make Your Professional Service Firm Grow](./model_library/make_your_psf_grow/make_your_psf_grow.md). A model that analyses growth strategies in professional service firms.
+- [System Archetypes](./model_library/system_archetypes/system_archetypes.ipynb). System Archtetypes are basic patterns of behaviour of a system. The model library provides System Dynamics models and dashboards to gain a deeper understanding of the archetypes and of how to model them.
 
 
 [BPTK API](api/api.md)

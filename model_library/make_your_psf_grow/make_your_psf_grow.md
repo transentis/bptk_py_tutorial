@@ -12,7 +12,7 @@ A simulation that captures grow dynamics in professional service firms.
 
 * [Introduction](./sddsl/make_your_psf_grow_intro.ipynb)
 * [Part 1 - Growth Strategies in Professional Service Firms](./sddsl/make_your_psf_grow_part_1.ipynb)
-* [Part 2 - A Model To Analsye Game Strategies](./sddsl/make_your_psf_grow_part_2.ipynb)
+* [Part 2 - A Model To Analyse Game Strategies](./sddsl/make_your_psf_grow_part_2.ipynb)
 * [Part 3 – Reaching the Easy Cash Target](./sddsl/make_your_psf_grow_part_3.ipynb)
 * [Part 4 – Reaching the Expert Cash Target](./sddsl/make_your_psf_grow_part_4.ipynb)
 
