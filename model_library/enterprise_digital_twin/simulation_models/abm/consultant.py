@@ -25,7 +25,8 @@ class Consultant(Agent):
         controlling = self.model.next_agent("controlling", "active")
         
         if controlling:
-            controlling.receive_instantaneous_event(Event("salary", self.id, controlling.id,{"salary":self.salary}))
+            controlling.receive_instantaneous_event(Event("consultant_cost", self.id, controlling.id,{"salary":self.salary*self.model.dt,"workplace_cost":self.workplace_cost*self.model.dt}))
+            controlling.receive_instantaneous_event(Event("consultant_capacity", self.id, controlling.id,{"capacity":self.model.dt}))
 
         self._effort_spent=0
   
@@ -47,8 +48,20 @@ class Consultant(Agent):
                         self.state = "busy"
                         self.project.receive_instantaneous_event(Event("project_joined",self.id, self.project.id))
                     else:
-                        # no available projects
-                        work_capacity = 0
+                        self.project = self.model.next_agent("marketing_campaign","ready")
+
+                        if self.project is not None:
+                            self.state = "busy"
+                            self.project.receive_instantaneous_event(Event("project_started",self.id,self.project.id))
+                        else:
+                            self.project = self.model.next_agent("marketing_campaign", "started")
+
+                            if self.project is not None:
+                                self.state = "busy"
+                                self.project.receive_instantaneous_event(Event("project_joined",self.id,self.project.id))
+                            else:
+                                # no available projects and no marketing campaign
+                                work_capacity = 0
 
             if self.state == "busy":
                 if self.project.state == "completed":
@@ -56,19 +69,26 @@ class Consultant(Agent):
                     self.project = None
                     return
 
-                # the actual progress we make on a project depends on the remaining effort
+
+                # the actual progress made on the project depends on the remaining effort
 
                 work_done = min(work_capacity, self.project.remaining_effort)
-                work_capacity -= work_done
 
-                self.project.receive_instantaneous_event(
-                    Event(
-                         "project_progress",
-                        self.id,
-                        self.project.id,
-                        {"progress": work_done}
-                     )
-                )
+                if work_done > 0:
+                    work_capacity -= work_done
+
+                    self.project.receive_instantaneous_event(
+                        Event(
+                            "project_progress",
+                            self.id,
+                            self.project.id,
+                            {"progress": work_done}
+                        )
+                    )
+                else:
+                    # the project has no budget the consultant stays on the project for now
+                    work_capacity = 0
+                
 
    
 

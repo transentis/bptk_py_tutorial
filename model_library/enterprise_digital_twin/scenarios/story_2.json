@@ -1,0 +1,115 @@
+{
+  "smEDT": {
+    "type": "abm",
+    "name": "Enterprise Digital Twin",
+    "model" : "simulation_models.enterprise_digital_twin.EnterpriseDigitalTwin",
+
+    "scenarios": {
+      "story_2": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 25,
+          "dt": 1.0
+        },
+          "properties": {
+	        "revenue_risk_level":
+	      {
+
+		  "type": "Double",
+		  "value": 1.0
+
+	      },
+	     "fixed_cost":{
+		  "type":"Double",
+		      "value": 15.000
+		  }
+        
+        },
+        "agents": [
+          
+          {
+            "name": "controlling",
+              "count": 1,
+	      "properties":{
+		 
+	      }
+          },
+            {
+            "name": "consultant",
+            "count": 1,
+            "properties":
+            {
+              "salary":
+              {
+                "type":"Double",
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 1000.0
+		}
+            }
+         },
+          {
+            "name": "project",
+            "count": 1,
+            "properties":
+              {
+		  "name":{
+		      "type": "String",
+		      "value": "project"
+		  },
+              "contracted_effort":
+              {
+                "type": "Double",
+                "value": 6.0
+              },
+                "contracted_probability":
+                {
+                    "type":"Double",
+                    "value":1.0
+                },
+                "extension_probability":
+                {
+                    "type": "Double",
+                    "value": 0.0
+                },
+                "extension_effort":
+                {
+                    "type": "Double",
+                    "value": 0.0
+                },
+                "follow_on_probability":
+                {
+                    "type": "Double",
+                    "value": 0.0
+                },
+              "consultants":
+              {
+                "type": "Double",
+                "value":2.0
+              },
+              "start_time":
+              {
+                "type": "Double",
+                "value":3.0
+              },
+                "deadline":
+                {
+                  "type":"Double",
+                  "value":22.0
+                },
+              "billing_rate":
+              {
+                "type": "Double",
+                "value":18000.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

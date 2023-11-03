@@ -25,4 +25,4 @@ class Cash(Module):
         cash.equation = cash_in-cash_out
 
         cash_in.equation = revenue.flow("receivables_out")
-        cash_out.equation = cost.flow("salaries")
+        cash_out.equation = cost.converter("expenses")

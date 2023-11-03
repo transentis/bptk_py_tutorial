@@ -1,0 +1,172 @@
+{
+  "smEDT": {
+    "type": "abm",
+    "name": "Enterprise Digital Twin",
+    "model" : "simulation_models.enterprise_digital_twin.EnterpriseDigitalTwin",
+
+    "scenarios": {
+      "story_5": {
+        "runspecs": {
+          "starttime": 1,
+          "stoptime": 25,
+          "dt": 1.0
+        },
+          "properties": {
+	      "revenue_risk_level":
+	      {
+
+		  "type": "Double",
+		  "value": 1.0
+
+	      },
+	     "fixed_cost":
+		  {
+		      "type":"Double",
+		      "value": 40000.0
+		  }
+	      
+        },
+        "agents": [
+          
+          {
+            "name": "controlling",
+              "count": 1,
+	      "properties":{
+		 
+	      }
+          },
+            {
+            "name": "consultant",
+            "count": 10,
+            "properties":
+            {
+              "salary":
+              {
+                "type":"Double",
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
+            }
+         },
+          {
+            "name": "project",
+            "count": 3,
+            "properties":
+              {
+		  "name":{
+		      "type": "String",
+		      "value": "project"
+		  },
+              "contracted_effort":
+              {
+                "type": "Double",
+                "value": 6.0
+              },
+                "contracted_probability":
+                {
+                    "type":"Double",
+                    "value":1.0
+                },
+                "extension_probability":
+                {
+                    "type": "Double",
+                    "value": 0.5
+                },
+                "extension_effort":
+                {
+                    "type": "Double",
+                    "value": 10.0
+                },
+                "follow_on_probability":
+                {
+                    "type": "Double",
+                    "value": 0.25
+                },
+              "consultants":
+              {
+                "type": "Double",
+                "value":2.0
+              },
+              "start_time":
+              {
+                "type": "Double",
+                "value":1.0
+              },
+                "deadline":
+                {
+                  "type":"Double",
+                  "value":18.0
+                },
+              "billing_rate":
+              {
+                "type": "Double",
+                "value":18000.0
+              }
+            }
+          },
+	    {
+            "name": "project",
+            "count": 2,
+            "properties":
+		{
+		    "name":{
+		      "type": "String",
+		      "value": "project"
+		  },
+              "contracted_effort":
+              {
+                "type": "Double",
+                "value": 6.0
+              },
+                "contracted_probability":
+                {
+                    "type":"Double",
+                    "value":1.0
+                },
+                "extension_probability":
+                {
+                    "type": "Double",
+                    "value": 0.5
+                },
+                "extension_effort":
+                {
+                    "type": "Double",
+                    "value": 10.0
+                },
+                "follow_on_probability":
+                {
+                    "type": "Double",
+                    "value": 0.25
+                },
+              "consultants":
+              {
+                "type": "Double",
+                "value":2.0
+              },
+              "start_time":
+              {
+                "type": "Double",
+                "value":4.0
+              },
+                "deadline":
+                {
+                  "type":"Double",
+                  "value":16.0
+                },
+              "billing_rate":
+              {
+                "type": "Double",
+                "value":16000.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

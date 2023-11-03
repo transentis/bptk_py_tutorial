@@ -79,3 +79,7 @@
 * Add Quickstart
 * Migrate model library from Model Library Github repo
 * Add Enterprise Digital Twin to Model Libary
+
+### 2023-11-03
+
+* Update to Enterprise Digital Twin

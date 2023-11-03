@@ -8,11 +8,22 @@
 "interactive": {
         "runspecs": {
           "starttime": 1,
-          "stoptime": 61,
-          "dt": 1.0
+          "stoptime": 25,
+          "dt": 0.25
         },
-        "properties": {
-        
+          "properties": {
+	      "revenue_risk_level":
+	      {
+
+		  "type": "Double",
+		  "value": 1.0
+
+	      },
+	    "fixed_cost":
+		  {
+		      "type":"Double",
+		      "value": 40000.0
+		  }
         },
         "agents": [
           {
@@ -28,8 +39,13 @@
               "salary":
               {
                 "type":"Double",
-                "value":1000.0
-              }
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
             }
          },
          {
@@ -45,8 +61,13 @@
               "salary":
               {
                 "type":"Double",
-                "value":1000.0
-              }
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
             }
          },
           {
@@ -62,8 +83,13 @@
               "salary":
               {
                 "type":"Double",
-                "value":1000.0
-              }
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
             }
          },
          {
@@ -79,8 +105,13 @@
               "salary":
               {
                 "type":"Double",
-                "value":1000.0
-              }
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
             }
          },
          {
@@ -96,8 +127,13 @@
               "salary":
               {
                 "type":"Double",
-                "value":1000.0
-              }
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
             }
          },
          {
@@ -113,13 +149,21 @@
               "salary":
               {
                 "type":"Double",
-                "value":1000.0
-              }
+                "value":6000.0
+              },
+		"workplace_cost":
+		{
+		    "type": "Double",
+		    "value": 2000.0
+		}
             }
          },
           {
             "name": "controlling",
-            "count": 1
+            "count": 1,
+	      "properties":{
+		  
+	      }
           },
           {
             "name": "project",
@@ -130,12 +174,42 @@
               {
                 "type":"String",
                 "value":"Project 1"
-              },
-              "effort":
+              },  
+		 "contracted_effort":
               {
                 "type": "Double",
-                "value": 120.0
+                "value": 48.0
               },
+		"contracted_probability":{
+		    "type":"Double",
+		    "value": 1.0
+
+	      },
+		"extension_probability":
+		{
+		    "type": "Double",
+		    "value": 0.75
+		},
+		"extension_effort":
+		{
+		    "type": "Double",
+		    "value": 12.0
+		},
+		"follow_on_probability":
+		{
+		    "type": "Double",
+		    "value": 0.25
+		},
+		"is_follow_on":
+		{
+		    "type":"Boolean",
+		    "value":false
+		},
+		  "deadline":
+		  {
+		     "type": "Double",
+		     "value":26.0
+		  },
               "consultants":
               {
                 "type": "Double",
@@ -149,7 +223,7 @@
               "billing_rate":
               {
                 "type":"Double",
-                "value":1000.0
+                "value":18000.0
               }
             }
           },
@@ -163,11 +237,42 @@
                 "type":"String",
                 "value":"Project 2"
               },
-              "effort":
+             
+		 "contracted_effort":
               {
                 "type": "Double",
-                "value": 120.0
+                "value": 48.0
               },
+		"contracted_probability":{
+		    "type":"Double",
+		    "value": 1.0
+
+	      },
+		"extension_probability":
+		{
+		    "type": "Double",
+		    "value": 0.75
+		},
+		"extension_effort":
+		{
+		    "type": "Double",
+		    "value": 12.0
+		},
+		"follow_on_probability":
+		{
+		    "type": "Double",
+		    "value": 0.25
+		},
+		"is_follow_on":
+		{
+		    "type":"Boolean",
+		    "value":false
+		},
+		  "deadline":
+		  {
+		      "type": "Double",
+		      "value":26.0
+		  },
 
               "consultants":
               {
@@ -182,7 +287,7 @@
               "billing_rate":
               {
                 "type":"Double",
-                "value":1000.0
+                "value":18000.0
               }
             }
           },
@@ -196,12 +301,43 @@
                 "type":"String",
                 "value":"Project 3"
               },
-              "effort":
+             
+
+		 "contracted_effort":
               {
                 "type": "Double",
-                "value": 120.0
+                "value": 48.0
               },
+		"contracted_probability":{
+		    "type":"Double",
+		    "value": 1.0
 
+	      },
+		"extension_probability":
+		{
+		    "type": "Double",
+		    "value": 0.75
+		},
+		"extension_effort":
+		{
+		    "type": "Double",
+		    "value": 12.0
+		},
+		"follow_on_probability":
+		{
+		    "type": "Double",
+		    "value": 0.25
+		},
+		"is_follow_on":
+		{
+		    "type":"Boolean",
+		    "value":false
+		},
+		  "deadline":
+		  {
+		      "type": "Double",
+		      "value":26.0
+		  },
               "consultants":
               {
                 "type": "Double",
@@ -215,7 +351,7 @@
               "billing_rate":
               {
                 "type":"Double",
-                "value":1000.0
+                "value":18000.0
               }
             }
           }
