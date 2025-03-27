@@ -48,21 +48,13 @@ class EnterpriseDigitalTwin(Model):
 
         self.sd_model.reset_cache()
         
-        # delete all the follow on projects - really there should be a method in the framework to make this easier
-        temp_agents=[]
+        delete_agent_ids=[]
       
         for agent in self.agents:
-            if agent.agent_type != "project" or (agent.agent_type=="project" and not agent.is_follow_on):
-                temp_agents.append(agent)
+            if agent.agent_type=="project" and agent.is_follow_on:
+                delete_agent_ids.append(agent.id)
 
-        self.agents = temp_agents
-
-        self.agent_type_map["project"]=[]
-
-        for agent in self.agents:
-            if agent.agent_type == "project":
-                self.agent_type_map["project"].append(agent.id)
-
+        self.delete_agents(delete_agent_ids)
 
        
 

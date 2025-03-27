@@ -79,7 +79,7 @@ def update_plots():
             agent_property_types=["total"],
             series_names={
               "smEDT_interactive_controlling_active_profit_margin_total" : "Profit Margin (Monthly)",
-             "smEDT_interactive_controlling_active_overall_profit_margin_total" : "Proft Margin (To Date)"
+             "smEDT_interactive_controlling_active_overall_profit_margin_total" : "Profit Margin (To Date)"
              }
         )
         plt.show()
