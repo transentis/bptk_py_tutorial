@@ -85,7 +85,7 @@
 ### 2025-03-27
 
 * Update to BPTK 2.0.0
-* Add notebook on array models
+* Add notebook on multidimensional models
 
 ### 2023-11-03
 
